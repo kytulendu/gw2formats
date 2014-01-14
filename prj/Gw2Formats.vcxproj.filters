@@ -85,367 +85,361 @@
     <Filter Include="Source Files\pf\chunks\CINP">
       <UniqueIdentifier>{33c7c255-56cc-4b2b-b7f9-cdba7b31624e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\external">
-      <UniqueIdentifier>{72038f1a-548c-400f-a0f5-4b61fa6dc308}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf">
-      <UniqueIdentifier>{9ac2a60f-f6ec-4805-9812-14a3a3a37457}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\helpers">
-      <UniqueIdentifier>{16f807a2-bcee-41f7-9f54-eba9aeff4e5b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks">
-      <UniqueIdentifier>{099287d9-6ac9-4583-81a6-35dbf7437838}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\AMAT">
-      <UniqueIdentifier>{9fbbaec7-8c14-4f44-83db-1bb46408b41d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\eula">
-      <UniqueIdentifier>{7c6bb592-e961-4bd9-9a4e-8bda69b17848}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\MODL">
-      <UniqueIdentifier>{82c34941-444f-4a57-8794-3a6f8a8f09a2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\txtm">
-      <UniqueIdentifier>{dbecd905-e55a-49c4-8952-12886ef7a08b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\PIMG">
-      <UniqueIdentifier>{761ef4ef-20a9-4088-9552-a0ea1aa2fe9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\ASND">
-      <UniqueIdentifier>{c83b0079-1a07-4253-bc37-b3296d6fb8ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\ABNK">
-      <UniqueIdentifier>{0f062fc8-cbee-4231-bf6d-1ceb5c19d92a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\hvkC">
-      <UniqueIdentifier>{0913f5c8-812e-4d74-aeb5-00b834e65313}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\ABIX">
-      <UniqueIdentifier>{aa3e1929-a0c1-4db0-9b7f-143dced8d1b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\txtV">
-      <UniqueIdentifier>{eb72eabd-b320-40a0-8062-ca8e78875c1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\txtv_">
-      <UniqueIdentifier>{76c9aaef-f3cb-4bf2-8c93-662bea728e7f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\mpsd">
-      <UniqueIdentifier>{fbd7b93b-3176-4809-9398-65187920f916}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\mMet">
-      <UniqueIdentifier>{57586266-a364-46af-a2aa-d31e00ce9fa6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\emoc">
-      <UniqueIdentifier>{ae650402-85b5-4f88-a2fb-0094d44fe656}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\cntc">
-      <UniqueIdentifier>{0b749cc5-16d1-4141-b9bb-67f1690d5c60}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\cmaC">
-      <UniqueIdentifier>{29bc1641-156a-4017-881b-cb566ae878a2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\AMSP">
-      <UniqueIdentifier>{7fc070e4-4242-40a5-97e1-b8a54432ba6a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\prlt">
-      <UniqueIdentifier>{e10f625a-87f9-4f2c-87d3-b0f78e64bd69}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\cmpc">
-      <UniqueIdentifier>{5d3f9dc2-7d25-4567-a9fa-7017a1778bab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\anic">
-      <UniqueIdentifier>{47e205b3-1d34-4d61-a80d-297ccb9b96c0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\CINP">
-      <UniqueIdentifier>{267d475c-eefd-49c7-a4aa-b4edc8109db5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\internal">
-      <UniqueIdentifier>{c99b7bc0-774b-470b-939b-cd083d0b73d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\pf\chunks\mapc">
-      <UniqueIdentifier>{2417c4f4-7457-4085-ae4a-1c0b6f583377}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\pf\chunks\mapc">
       <UniqueIdentifier>{1fd3d960-4090-44fc-b466-7427aa6e8470}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\external\bxml2">
-      <UniqueIdentifier>{baafe3b8-fbb7-4a29-be9a-752037a2ab95}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\bxml2">
       <UniqueIdentifier>{8b5119f7-db15-40a6-9781-282feaf3336d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\bxml2">
+      <UniqueIdentifier>{baafe3b8-fbb7-4a29-be9a-752037a2ab95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf">
+      <UniqueIdentifier>{9ac2a60f-f6ec-4805-9812-14a3a3a37457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\helpers">
+      <UniqueIdentifier>{16f807a2-bcee-41f7-9f54-eba9aeff4e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks">
+      <UniqueIdentifier>{099287d9-6ac9-4583-81a6-35dbf7437838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\AMAT">
+      <UniqueIdentifier>{9fbbaec7-8c14-4f44-83db-1bb46408b41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\eula">
+      <UniqueIdentifier>{7c6bb592-e961-4bd9-9a4e-8bda69b17848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\MODL">
+      <UniqueIdentifier>{82c34941-444f-4a57-8794-3a6f8a8f09a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\txtm">
+      <UniqueIdentifier>{dbecd905-e55a-49c4-8952-12886ef7a08b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\PIMG">
+      <UniqueIdentifier>{761ef4ef-20a9-4088-9552-a0ea1aa2fe9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\ASND">
+      <UniqueIdentifier>{c83b0079-1a07-4253-bc37-b3296d6fb8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\ABNK">
+      <UniqueIdentifier>{0f062fc8-cbee-4231-bf6d-1ceb5c19d92a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\hvkC">
+      <UniqueIdentifier>{0913f5c8-812e-4d74-aeb5-00b834e65313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\ABIX">
+      <UniqueIdentifier>{aa3e1929-a0c1-4db0-9b7f-143dced8d1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\txtV">
+      <UniqueIdentifier>{eb72eabd-b320-40a0-8062-ca8e78875c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\txtv_">
+      <UniqueIdentifier>{76c9aaef-f3cb-4bf2-8c93-662bea728e7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\mpsd">
+      <UniqueIdentifier>{fbd7b93b-3176-4809-9398-65187920f916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\mMet">
+      <UniqueIdentifier>{57586266-a364-46af-a2aa-d31e00ce9fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\emoc">
+      <UniqueIdentifier>{ae650402-85b5-4f88-a2fb-0094d44fe656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\cntc">
+      <UniqueIdentifier>{0b749cc5-16d1-4141-b9bb-67f1690d5c60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\cmaC">
+      <UniqueIdentifier>{29bc1641-156a-4017-881b-cb566ae878a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\AMSP">
+      <UniqueIdentifier>{7fc070e4-4242-40a5-97e1-b8a54432ba6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\prlt">
+      <UniqueIdentifier>{e10f625a-87f9-4f2c-87d3-b0f78e64bd69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\cmpc">
+      <UniqueIdentifier>{5d3f9dc2-7d25-4567-a9fa-7017a1778bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\anic">
+      <UniqueIdentifier>{47e205b3-1d34-4d61-a80d-297ccb9b96c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\CINP">
+      <UniqueIdentifier>{267d475c-eefd-49c7-a4aa-b4edc8109db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\mapc">
+      <UniqueIdentifier>{2417c4f4-7457-4085-ae4a-1c0b6f583377}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\gw2formats\base.h">
-      <Filter>Header Files\external</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\PackFile.h">
-      <Filter>Header Files\external\pf</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\gw2formats\fcc.h">
-      <Filter>Header Files\external</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\ChunkFactory.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\ModelPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\MaterialPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\Array.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\read.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\Ptr.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\RefList.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\StringBase.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\String.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\WString.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\Vector.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\EulaPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\FileName.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\helpers\FileReference.h">
-      <Filter>Header Files\external\pf\helpers</Filter>
+      <Filter>Header Files\pf\helpers</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatDx9Material.h">
-      <Filter>Header Files\external\pf\chunks\AMAT</Filter>
+      <Filter>Header Files\pf\chunks\AMAT</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatGr.h">
-      <Filter>Header Files\external\pf\chunks\AMAT</Filter>
+      <Filter>Header Files\pf\chunks\AMAT</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\eula\PackEula.h">
-      <Filter>Header Files\external\pf\chunks\eula</Filter>
+      <Filter>Header Files\pf\chunks\eula</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileData.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileGeometry.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\common.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileAnimation.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileProperties.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileRootMotion.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileSkeleton.h">
-      <Filter>Header Files\external\pf\chunks\MODL</Filter>
+      <Filter>Header Files\pf\chunks\MODL</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtm\TextPackManifest.h">
-      <Filter>Header Files\external\pf\chunks\txtm</Filter>
+      <Filter>Header Files\pf\chunks\txtm</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\TextManifestPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\PagedImagePackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\PIMG\PagedImageTableData.h">
-      <Filter>Header Files\external\pf\chunks\PIMG</Filter>
+      <Filter>Header Files\pf\chunks\PIMG</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\AudioPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\ASND\WaveformData.h">
-      <Filter>Header Files\external\pf\chunks\ASND</Filter>
+      <Filter>Header Files\pf\chunks\ASND</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\BankPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\ABNK\BankFileData.h">
-      <Filter>Header Files\external\pf\chunks\ABNK</Filter>
+      <Filter>Header Files\pf\chunks\ABNK</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\HavokPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\hvkC\PackMapCollide.h">
-      <Filter>Header Files\external\pf\chunks\hvkC</Filter>
+      <Filter>Header Files\pf\chunks\hvkC</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\BankIndexPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\ABIX\BankIndexData.h">
-      <Filter>Header Files\external\pf\chunks\ABIX</Filter>
+      <Filter>Header Files\pf\chunks\ABIX</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtV\TextPackVariants.h">
-      <Filter>Header Files\external\pf\chunks\txtV</Filter>
+      <Filter>Header Files\pf\chunks\txtV</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\TextVariantPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\TextVoicePackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtv_\TextPackVoices.h">
-      <Filter>Header Files\external\pf\chunks\txtv_</Filter>
+      <Filter>Header Files\pf\chunks\txtv_</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\MapShadowPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mpsd\PackMapShadow.h">
-      <Filter>Header Files\external\pf\chunks\mpsd</Filter>
+      <Filter>Header Files\pf\chunks\mpsd</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\MapMetadataPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mMet\PackMapMetadata.h">
-      <Filter>Header Files\external\pf\chunks\mMet</Filter>
+      <Filter>Header Files\pf\chunks\mMet</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\EmoteAnimPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\emoc\PackEmoteAnimations.h">
-      <Filter>Header Files\external\pf\chunks\emoc</Filter>
+      <Filter>Header Files\pf\chunks\emoc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\ContentManifestPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\cntc\PackContent.h">
-      <Filter>Header Files\external\pf\chunks\cntc</Filter>
+      <Filter>Header Files\pf\chunks\cntc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\CollideModelManifestPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\cmaC\CollideModelManifest.h">
-      <Filter>Header Files\external\pf\chunks\cmaC</Filter>
+      <Filter>Header Files\pf\chunks\cmaC</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\ScriptPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMSP\ScriptFileData.h">
-      <Filter>Header Files\external\pf\chunks\AMSP</Filter>
+      <Filter>Header Files\pf\chunks\AMSP</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\PortalManifestPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\prlt\ContentPortalManifest.h">
-      <Filter>Header Files\external\pf\chunks\prlt</Filter>
+      <Filter>Header Files\pf\chunks\prlt</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\CompositePackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\cmpc\PackComposite.h">
-      <Filter>Header Files\external\pf\chunks\cmpc</Filter>
+      <Filter>Header Files\pf\chunks\cmpc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\AnimSequencesPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\anic\PackAnimSequences.h">
-      <Filter>Header Files\external\pf\chunks\anic</Filter>
+      <Filter>Header Files\pf\chunks\anic</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\ScenePackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\CINP\SceneData.h">
-      <Filter>Header Files\external\pf\chunks\CINP</Filter>
+      <Filter>Header Files\pf\chunks\CINP</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\MapPackFile.h">
-      <Filter>Header Files\external\pf</Filter>
+      <Filter>Header Files\pf</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\MapParam.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapTerrain.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\MapTerrainImg.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\MapSurfaces.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapAreas.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\MapMission.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapCollide.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapZones.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapProp.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\common.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapRivers.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapShadowExt.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapCubeMap.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapEnvironment.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapDecals.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\MapShore.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\MapAudio.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapLights.h">
-      <Filter>Header Files\external\pf\chunks\mapc</Filter>
+      <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\bxml2\XmlDocument.h">
-      <Filter>Header Files\external\bxml2</Filter>
+      <Filter>Header Files\bxml2</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\bxml2\XmlElement.h">
-      <Filter>Header Files\external\bxml2</Filter>
+      <Filter>Header Files\bxml2</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\bxml2\XmlAttribute.h">
-      <Filter>Header Files\external\bxml2</Filter>
+      <Filter>Header Files\bxml2</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\bxml2\Bxml2Reader.h">
-      <Filter>Header Files\external\bxml2</Filter>
+      <Filter>Header Files\bxml2</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\bxml2\XmlWriter.h">
-      <Filter>Header Files\external\bxml2</Filter>
+      <Filter>Header Files\bxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gw2formats\base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gw2formats\fcc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gw2formats\language.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\StringsFile.h">
-      <Filter>Header Files\external</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\gw2formats\Language.h">
-      <Filter>Header Files\external</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\gw2formats\TextureFile.h">
-      <Filter>Header Files\external</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
