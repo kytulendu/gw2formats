@@ -88,12 +88,6 @@
     <Filter Include="Source Files\pf\chunks\mapc">
       <UniqueIdentifier>{1fd3d960-4090-44fc-b466-7427aa6e8470}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\bxml2">
-      <UniqueIdentifier>{8b5119f7-db15-40a6-9781-282feaf3336d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\bxml2">
-      <UniqueIdentifier>{baafe3b8-fbb7-4a29-be9a-752037a2ab95}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\pf">
       <UniqueIdentifier>{9ac2a60f-f6ec-4805-9812-14a3a3a37457}</UniqueIdentifier>
     </Filter>
@@ -411,21 +405,6 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapLights.h">
       <Filter>Header Files\pf\chunks\mapc</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\gw2formats\bxml2\XmlDocument.h">
-      <Filter>Header Files\bxml2</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\gw2formats\bxml2\XmlElement.h">
-      <Filter>Header Files\bxml2</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\gw2formats\bxml2\XmlAttribute.h">
-      <Filter>Header Files\bxml2</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\gw2formats\bxml2\Bxml2Reader.h">
-      <Filter>Header Files\bxml2</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\gw2formats\bxml2\XmlWriter.h">
-      <Filter>Header Files\bxml2</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\gw2formats\base.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -583,21 +562,6 @@
     </ClCompile>
     <ClCompile Include="..\src\pf\chunks\mapc\PackMapLights.cpp">
       <Filter>Source Files\pf\chunks\mapc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\bxml2\XmlDocument.cpp">
-      <Filter>Source Files\bxml2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\bxml2\XmlElement.cpp">
-      <Filter>Source Files\bxml2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\bxml2\XmlAttribute.cpp">
-      <Filter>Source Files\bxml2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\bxml2\Bxml2Reader.cpp">
-      <Filter>Source Files\bxml2</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\bxml2\XmlWriter.cpp">
-      <Filter>Source Files\bxml2</Filter>
     </ClCompile>
     <ClCompile Include="..\src\StringsFile.cpp">
       <Filter>Source Files</Filter>
