@@ -55,7 +55,7 @@ namespace gw2f {
 				*                          data read by this class. */
 				Array( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr )
 					: m_data( new std::vector<T> ) {
-					p_data = assign( p_data, p_size )
+					p_data = assign( p_data, p_size );
 						if ( po_pointer ) { *po_pointer = p_data; }
 				}
 
