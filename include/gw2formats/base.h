@@ -29,20 +29,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // DLL
 #ifdef GW2FORMATS_DLL
-#  ifdef _MSC_VER
-#    ifdef GW2FORMATS_EXPORT
-#      define GW2FORMATS_API __declspec(dllexport)
-#    else
-#      define GW2FORMATS_API __declspec(dllimport)
-#    endif
-#    define GW2FORMATS_APIENTRY __stdcall
-#  else
-#    error For gw2formats to be able to compile as a DLL with this compiler, support must be added to include/gw2formats/base.h.
-#  endif
+#	ifdef _MSC_VER
+#		ifdef GW2FORMATS_EXPORT
+#			define GW2FORMATS_API __declspec(dllexport)
+#		else
+#			define GW2FORMATS_API __declspec(dllimport)
+#		endif
+#		define GW2FORMATS_APIENTRY __stdcall
+#	else
+#		error For gw2formats to be able to compile as a DLL with this compiler, support must be added to include/gw2formats/base.h.
+#	endif
 // STATIC LIB
 #else
-#  define GW2FORMATS_API
-#  define GW2FORMATS_APIENTRY
+#	define GW2FORMATS_API
+#	define GW2FORMATS_APIENTRY
 #endif
 
 namespace gw2f {
@@ -63,8 +63,36 @@ namespace gw2f {
 	typedef uint64_t				uint64;		/**< Unsigned 64-bit integer. */
 
 	typedef char					char8;		/**< 8-bit character. */
+
+// Unicode chars (NOTE: UNTESTED FOR ANYTHING BUT MSVC)
+#ifdef _MSC_VER
 	typedef wchar_t					char16;		/**< UTF-16 character. */
 	typedef uint32					char32;		/**< UTF-32 character. */
+#	define GW2F_U16(x)				L##x
+#elif defined(__has_feature) && __has_feature(cxx_unicode_literals)
+	typedef char16_t				char16;		/**< UTF-16 character. */
+	typedef char32_t				char32;		/**< UTF-32 character. */
+#	define GW2F_U16(x)				u##x
+#	define GW2F_U32(x)				U##x
+#elif defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5))
+	typedef char16_t				char16;		/**< UTF-16 character. */
+	typedef char32_t				char32;		/**< UTF-32 character. */
+#  define GW2F_U16(x)				u##x
+#  define GW2F_U32(x)				U##x
+#else
+#	if defined(WCHAR_MAX) && (WCHAR_MAX == 0xffff)
+	typedef wchar_t					char16;		/**< UTF-16 character. */
+#    define GW2F_U16(x)				L##x
+#	else
+     typedef uint16					char16;		/**< UTF-16 character. */
+#	endif
+#	if defined(WCHAR_MAX) && (WCHAR_MAX == 0xffffffff)
+	typedef wchar_t					char32;		/**< UTF-32 character. */
+#	define GW2F_U32(x)				L##x
+#	else
+	typedef uint32					char32;		/**< UTF-32 character. */
+#	endif
+#endif
 
 	typedef unsigned short			ushort;		/**< Short for 'unsigned short'. */
 	typedef unsigned int			uint;		/**< Short for 'unsigned int'. */
@@ -72,8 +100,6 @@ namespace gw2f {
 
 	typedef float					float32;	/**< 32-bit IEEE floating point number. */
 	typedef double					float64;	/**< 64-bit IEEE floating point number. */
-
-#define GW2F_U16(x)  L##x
 
 }; // namespace gw2f
 
