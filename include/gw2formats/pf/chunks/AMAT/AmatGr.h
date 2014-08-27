@@ -32,37 +32,36 @@
 #include <gw2formats/pf/helpers/Array.h>
 
 namespace gw2f {
-namespace pf {
-namespace chunks {
+	namespace pf {
+		namespace chunks {
 
-GW2FORMATS_API struct AmatGrV5
-{
-    byte texArrayRange;
-    byte texCount;
-    byte texTransformRange;
-    byte sortOrder;
-    byte sortTri;
-    byte procAnim;
-    dword debugFlags;
-    dword flags;
-    dword texType;
-    dword textureMasks[4];
-    helpers::Array<qword> texTokens;
-public:
-    AmatGrV5();
-    AmatGrV5(const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr);
-    AmatGrV5(const AmatGrV5& p_other);
-    AmatGrV5& operator=(const AmatGrV5& p_other);
-    const byte* assign(const byte* p_data, uint32 p_size);
-};
+			GW2FORMATS_API struct AmatGrV5 {
+				byte texArrayRange;
+				byte texCount;
+				byte texTransformRange;
+				byte sortOrder;
+				byte sortTri;
+				byte procAnim;
+				dword debugFlags;
+				dword flags;
+				dword texType;
+				dword textureMasks[4];
+				helpers::Array<qword> texTokens;
+			public:
+				AmatGrV5( );
+				AmatGrV5( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatGrV5( const AmatGrV5& p_other );
+				AmatGrV5& operator=( const AmatGrV5& p_other );
+				const byte* assign( const byte* p_data, uint32 p_size );
+			};
 
-typedef AmatGrV5 AmatGr;
+			typedef AmatGrV5 AmatGr;
 
-}; // namespace chunks
+		}; // namespace chunks
 
-template<> struct ChunkFactory<fcc::AMAT,fcc::GRMT> { typedef chunks::AmatGr Type; };
+		template<> struct ChunkFactory<fcc::AMAT, fcc::GRMT> { typedef chunks::AmatGr Type; };
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2f
 
 #endif // GW2FORMATS_PF_CHUNKS_AMAT_AMATGR_H_INCLUDED

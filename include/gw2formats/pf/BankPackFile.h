@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/ABNK/BankFileData.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::ABNK> AbnkPackFile;
-typedef PackFile<fcc::ABNK> BankPackFile;
+		typedef PackFile<fcc::ABNK> AbnkPackFile;
+		typedef PackFile<fcc::ABNK> BankPackFile;
 
-namespace BankChunks { enum 
-{
-    BKCK     = fcc::BKCK,
-    BankFile = fcc::BKCK,
-}; // anon enum
-}; // namespace BankChunks
+		namespace BankChunks {
+			enum {
+				BKCK = fcc::BKCK,
+				BankFile = fcc::BKCK,
+			}; // anon enum
+		}; // namespace BankChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_BANKPACKFILE_H_INCLUDED

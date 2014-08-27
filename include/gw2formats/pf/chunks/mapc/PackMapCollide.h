@@ -32,11 +32,11 @@
 #include <gw2formats/pf/chunks/hvkC/PackMapCollide.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-template<> struct ChunkFactory<fcc::mapc,fcc::havk> { typedef chunks::PackMapCollide Type; };
+		template<> struct ChunkFactory<fcc::mapc, fcc::havk> { typedef chunks::PackMapCollide Type; };
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2f
 
 #endif // GW2FORMATS_PF_CHUNKS_MAPC_PACKMAPCOLLIDE_H_INCLUDED

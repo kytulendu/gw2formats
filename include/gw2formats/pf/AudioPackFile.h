@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/ASND/WaveformData.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::ASND> AsndPackFile;
-typedef PackFile<fcc::ASND> AudioPackFile;
+		typedef PackFile<fcc::ASND> AsndPackFile;
+		typedef PackFile<fcc::ASND> AudioPackFile;
 
-namespace AudioChunks{ enum
-{
-    ASND     = fcc::ASND,
-    Waveform = fcc::ASND,
-}; // anon enum
-}; // namespace AudioChunks
+		namespace AudioChunks {
+			enum {
+				ASND = fcc::ASND,
+				Waveform = fcc::ASND,
+			}; // anon enum
+		}; // namespace AudioChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_AUDIOPACKFILE_H_INCLUDED

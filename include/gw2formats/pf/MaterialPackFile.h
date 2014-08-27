@@ -30,21 +30,21 @@
 #include <gw2formats/pf/chunks/AMAT/AmatDx9Material.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::AMAT> AmatPackFile;
-typedef PackFile<fcc::AMAT> MaterialPackFile;
+		typedef PackFile<fcc::AMAT> AmatPackFile;
+		typedef PackFile<fcc::AMAT> MaterialPackFile;
 
-namespace MaterialChunks { enum 
-{
-    GRMT           = fcc::GRMT,
-    GrannyMaterial = fcc::GRMT,
-    DX9S           = fcc::DX9S,
-    Dx9Shader      = fcc::DX9S,
-}; // anon enum
-}; // namespace MaterialChunks
+		namespace MaterialChunks {
+			enum {
+				GRMT = fcc::GRMT,
+				GrannyMaterial = fcc::GRMT,
+				DX9S = fcc::DX9S,
+				Dx9Shader = fcc::DX9S,
+			}; // anon enum
+		}; // namespace MaterialChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_MATERIALPACKFILE_H_INCLUDED

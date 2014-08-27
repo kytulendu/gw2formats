@@ -34,28 +34,27 @@
 #include <gw2formats/pf/helpers/Vector.h>
 
 namespace gw2f {
-namespace pf {
-namespace chunks {
+	namespace pf {
+		namespace chunks {
 
-GW2FORMATS_API struct PackMapShadowExtV1
-{
-    helpers::FileName filename;
-    dword2 shadowDims;
-public:
-    PackMapShadowExtV1();
-    PackMapShadowExtV1(const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr);
-    PackMapShadowExtV1(const PackMapShadowExtV1& p_other);
-    PackMapShadowExtV1& operator=(const PackMapShadowExtV1& p_other);
-    const byte* assign(const byte* p_data, uint32 p_size);
-};
+			GW2FORMATS_API struct PackMapShadowExtV1 {
+				helpers::FileName filename;
+				dword2 shadowDims;
+			public:
+				PackMapShadowExtV1( );
+				PackMapShadowExtV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapShadowExtV1( const PackMapShadowExtV1& p_other );
+				PackMapShadowExtV1& operator=( const PackMapShadowExtV1& p_other );
+				const byte* assign( const byte* p_data, uint32 p_size );
+			};
 
-typedef PackMapShadowExtV1 PackMapShadowExt;
+			typedef PackMapShadowExtV1 PackMapShadowExt;
 
-}; // namespace chunks
+		}; // namespace chunks
 
-template<> struct ChunkFactory<fcc::mapc,fcc::shex> { typedef chunks::PackMapShadowExt Type; };
+		template<> struct ChunkFactory<fcc::mapc, fcc::shex> { typedef chunks::PackMapShadowExt Type; };
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2f
 
 #endif // GW2FORMATS_PF_CHUNKS_MAPC_PACKMAPSHADOWEXT_H_INCLUDED

@@ -29,18 +29,19 @@
 #include <gw2formats/pf/chunks/anic/PackAnimSequences.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::anic> AnicPackFile;
-typedef PackFile<fcc::anic> AnimSequencesPackFile;
+		typedef PackFile<fcc::anic> AnicPackFile;
+		typedef PackFile<fcc::anic> AnimSequencesPackFile;
 
-namespace { enum {
-    seqn          = fcc::seqn,
-    AnimSequences = fcc::seqn,
-}; // anon enum
-}; // namespace AnimSequencesChunks
+		namespace {
+			enum {
+				seqn = fcc::seqn,
+				AnimSequences = fcc::seqn,
+			}; // anon enum
+		}; // namespace AnimSequencesChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_ANIMSEQUENCESPACKFILE_H_INCLUDED

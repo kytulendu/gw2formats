@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/cmaC/CollideModelManifest.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::cmaC> CmacPackFile;
-typedef PackFile<fcc::cmaC> CollideModelManifestPackFile;
+		typedef PackFile<fcc::cmaC> CmacPackFile;
+		typedef PackFile<fcc::cmaC> CollideModelManifestPackFile;
 
-namespace CollideModelManifestChunks { enum 
-{
-    main                 = fcc::main,
-    CollideModelManifest = fcc::main,
-}; // anon enum
-}; // namespace CollideModelManifestChunks
+		namespace CollideModelManifestChunks {
+			enum {
+				main = fcc::main,
+				CollideModelManifest = fcc::main,
+			}; // anon enum
+		}; // namespace CollideModelManifestChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_COLLIDEMODELMANIFESTPACKFILE_H_INCLUDED

@@ -29,18 +29,18 @@
 #include <gw2formats/pf/chunks/eula/PackEula.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::eula> EulaPackFile;
+		typedef PackFile<fcc::eula> EulaPackFile;
 
-namespace EulaChunks { enum
-{
-    eula = fcc::eula,
-    Eula = fcc::eula,
-}; // anon enum
-}; // namespace EulaChunks
+		namespace EulaChunks {
+			enum {
+				eula = fcc::eula,
+				Eula = fcc::eula,
+			}; // anon enum
+		}; // namespace EulaChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_EULAPACKFILE_H_INCLUDED

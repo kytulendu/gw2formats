@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/cntc/PackContent.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::cntc> CntcPackFile;
-typedef PackFile<fcc::cntc> ContentManifestPackFile;
+		typedef PackFile<fcc::cntc> CntcPackFile;
+		typedef PackFile<fcc::cntc> ContentManifestPackFile;
 
-namespace ContentManifestChunks { enum
-{
-    Main    = fcc::Main,
-    Content = fcc::Main,
-}; // anon enum
-}; // namespace ContentManifestChunks
+		namespace ContentManifestChunks {
+			enum {
+				Main = fcc::Main,
+				Content = fcc::Main,
+			}; // anon enum
+		}; // namespace ContentManifestChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_EMOTEANIMPACKFILE_H_INCLUDED

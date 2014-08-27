@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/PIMG/PagedImageTableData.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::PIMG> PimgPackFile;
-typedef PackFile<fcc::PIMG> PagedImagePackFile;
+		typedef PackFile<fcc::PIMG> PimgPackFile;
+		typedef PackFile<fcc::PIMG> PagedImagePackFile;
 
-namespace PagedImageChunks { enum
-{
-    PGTB            = fcc::PGTB,
-    PagedImageTable = fcc::PGTB,
-}; // anon enum
-}; // namespace PagedImageChunks
+		namespace PagedImageChunks {
+			enum {
+				PGTB = fcc::PGTB,
+				PagedImageTable = fcc::PGTB,
+			}; // anon enum
+		}; // namespace PagedImageChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_PAGEDIMAGEPACKFILE_H_INCLUDED

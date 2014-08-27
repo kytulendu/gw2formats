@@ -29,18 +29,19 @@
 #include <gw2formats/pf/chunks/AMSP/ScriptFileData.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::AMSP> AmspPackFile;
-typedef PackFile<fcc::AMSP> ScriptPackFile;
+		typedef PackFile<fcc::AMSP> AmspPackFile;
+		typedef PackFile<fcc::AMSP> ScriptPackFile;
 
-namespace ScriptChunks { enum {
-    AMSP   = fcc::AMSP,
-    Script = fcc::AMSP,
-}; // anon enum
-}; // namespace ScriptChunks
+		namespace ScriptChunks {
+			enum {
+				AMSP = fcc::AMSP,
+				Script = fcc::AMSP,
+			}; // anon enum
+		}; // namespace ScriptChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_SCRIPTPACKFILE_H_INCLUDED

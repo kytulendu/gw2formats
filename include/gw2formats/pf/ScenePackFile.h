@@ -29,18 +29,19 @@
 #include <gw2formats/pf/chunks/CINP/SceneData.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::CINP> CinpPackFile;
-typedef PackFile<fcc::CINP> ScenePackFile;
+		typedef PackFile<fcc::CINP> CinpPackFile;
+		typedef PackFile<fcc::CINP> ScenePackFile;
 
-namespace SceneChunks { enum {
-    CSCN  = fcc::CSCN,
-    Scene = fcc::CSCN,
-}; // anon enum
-}; // namespace SceneChunks
+		namespace SceneChunks {
+			enum {
+				CSCN = fcc::CSCN,
+				Scene = fcc::CSCN,
+			}; // anon enum
+		}; // namespace SceneChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_SCENEPACKFILE_H_INCLUDED

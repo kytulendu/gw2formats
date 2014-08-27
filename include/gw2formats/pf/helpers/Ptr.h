@@ -29,76 +29,66 @@
 #include <gw2formats/pf/helpers/read.h>
 
 namespace gw2f {
-namespace pf {
-namespace helpers {
+	namespace pf {
+		namespace helpers {
 
-template <typename T>
-    class Ptr
-{
-    T m_data;
-public:
-    Ptr()
-    {
-    }
-    
-    Ptr(const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr)
-    {
-        auto pointer = assign(p_data, p_size);
-        if (po_pointer) { *po_pointer = pointer; }
-    }
+			template <typename T>
+			class Ptr {
+				T m_data;
+			public:
+				Ptr( ) {
+				}
 
-    Ptr(const Ptr& p_other)
-        : m_data(p_other.m_data)
-    {
-    }
+				Ptr( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr ) {
+					auto pointer = assign( p_data, p_size );
+					if ( po_pointer ) { *po_pointer = pointer; }
+				}
 
-    ~Ptr()
-    {
-    }
+				Ptr( const Ptr& p_other )
+					: m_data( p_other.m_data ) {
+				}
 
-    Ptr& operator=(const Ptr& p_other)
-    {
-        m_data = p_other.m_data;
-        return *this;
-    }
+				~Ptr( ) {
+				}
 
-    const byte* assign(const byte* p_data, uint32 p_size)
-    {
-        if (!p_data) { throw std::invalid_argument("p_data must not be null"); }
-        if (p_size < sizeof(int32)) { throw std::invalid_argument("p_size must be large enough to contain one 32-bit integer."); }
+				Ptr& operator=( const Ptr& p_other ) {
+					m_data = p_other.m_data;
+					return *this;
+				}
 
-        auto offset  = *reinterpret_cast<const int32*>(p_data);
+				const byte* assign( const byte* p_data, uint32 p_size ) {
+					if ( !p_data ) { throw std::invalid_argument( "p_data must not be null" ); }
+					if ( p_size < sizeof( int32 ) ) { throw std::invalid_argument( "p_size must be large enough to contain one 32-bit integer." ); }
 
-        if (offset != 0) {
-            auto pointer = p_data + offset;
-            auto end     = p_data + p_size;
-            uint32 size  = (end - pointer);
+					auto offset = *reinterpret_cast<const int32*>( p_data );
 
-            if (pointer >= end) { throw std::out_of_range("pointer went past the end of the buffer."); }
-            read(pointer, size, m_data);
-        }
+					if ( offset != 0 ) {
+						auto pointer = p_data + offset;
+						auto end = p_data + p_size;
+						uint32 size = ( end - pointer );
 
-        return p_data + sizeof(offset);
-    }
+						if ( pointer >= end ) { throw std::out_of_range( "pointer went past the end of the buffer." ); }
+						read( pointer, size, m_data );
+					}
 
-    const T* data() const
-    {
-        return &m_data;
-    }
+					return p_data + sizeof( offset );
+				}
 
-    const T& operator*() const
-    {
-        return m_data;
-    }
+				const T* data( ) const {
+					return &m_data;
+				}
 
-    const T* operator->() const
-    {
-        return &m_data;
-    }
-};
+				const T& operator*( ) const {
+					return m_data;
+				}
 
-}; // namespace helpers
-}; // namespace pf
+				const T* operator->( ) const {
+					return &m_data;
+				}
+			};
+
+		}; // namespace helpers
+	}; // namespace pf
 }; // namespace gw2f
 
 #endif // GW2FORMATS_PF_HELPERS_PTR_H_INCLUDED

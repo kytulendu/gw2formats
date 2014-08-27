@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/prlt/ContentPortalManifest.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::prlt> PrltPackFile;
-typedef PackFile<fcc::prlt> PortalManifestPackFile;
+		typedef PackFile<fcc::prlt> PrltPackFile;
+		typedef PackFile<fcc::prlt> PortalManifestPackFile;
 
-namespace PortalManifestChunks { enum
-{
-    mfst     = fcc::mfst,
-    Manifest = fcc::mfst,
-}; // anon enum
-}; // namespace PortalManifestChunks
+		namespace PortalManifestChunks {
+			enum {
+				mfst = fcc::mfst,
+				Manifest = fcc::mfst,
+			}; // anon enum
+		}; // namespace PortalManifestChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_PORTALMANIFESTPACKFILE_H_INCLUDED

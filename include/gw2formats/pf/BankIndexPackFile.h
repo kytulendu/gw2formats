@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/ABIX/BankIndexData.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::ABIX> AbixPackFile;
-typedef PackFile<fcc::ABIX> BankIndexPackFile;
+		typedef PackFile<fcc::ABIX> AbixPackFile;
+		typedef PackFile<fcc::ABIX> BankIndexPackFile;
 
-namespace BankIndexChunks { enum 
-{
-    BIDX      = fcc::BIDX,
-    BankIndex = fcc::BIDX,
-}; // anon enum
-}; // namespace BankIndexChunks
+		namespace BankIndexChunks {
+			enum {
+				BIDX = fcc::BIDX,
+				BankIndex = fcc::BIDX,
+			}; // anon enum
+		}; // namespace BankIndexChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_BANKINDEXPACKFILE_H_INCLUDED

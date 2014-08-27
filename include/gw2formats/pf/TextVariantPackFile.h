@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/txtV/TextPackVariants.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::txtV> TxtVPackFile;
-typedef PackFile<fcc::txtV> TextVariantPackFile;
+		typedef PackFile<fcc::txtV> TxtVPackFile;
+		typedef PackFile<fcc::txtV> TextVariantPackFile;
 
-namespace TextVariantChunks { enum
-{
-    vari         = fcc::vari,
-    TextVariants = fcc::vari,
-}; // anon enum
-}; // namespace TextVariantChunks
+		namespace TextVariantChunks {
+			enum {
+				vari = fcc::vari,
+				TextVariants = fcc::vari,
+			}; // anon enum
+		}; // namespace TextVariantChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_TEXTVARIANTPACKFILE_H_INCLUDED

@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/txtv_/TextPackVoices.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::txtv> TxtvPackFile;
-typedef PackFile<fcc::txtv> TextVoicePackFile;
+		typedef PackFile<fcc::txtv> TxtvPackFile;
+		typedef PackFile<fcc::txtv> TextVoicePackFile;
 
-namespace TextVoiceChunks { enum 
-{
-    txtv       = fcc::txtv,
-    TextVoices = fcc::txtv,
-}; // anon enum
-}; // namespace TextVoiceChunks
+		namespace TextVoiceChunks {
+			enum {
+				txtv = fcc::txtv,
+				TextVoices = fcc::txtv,
+			}; // anon enum
+		}; // namespace TextVoiceChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_TEXTVOICEPACKFILE_H_INCLUDED

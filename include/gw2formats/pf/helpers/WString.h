@@ -29,18 +29,17 @@
 #include <gw2formats/pf/helpers/StringBase.h>
 
 namespace gw2f {
-namespace pf {
-namespace helpers {
+	namespace pf {
+		namespace helpers {
 
-typedef StringBase<char16> WString;
+			typedef StringBase<char16> WString;
 
-template<> inline uint32 StringBase<char16>::strlen(const char16* p_string) const
-{
-    return std::wcslen(p_string);
-}
+			template<> inline uint32 StringBase<char16>::strlen( const char16* p_string ) const {
+				return std::wcslen( p_string );
+			}
 
-}; // namespace helpers
-}; // namespace pf
+		}; // namespace helpers
+	}; // namespace pf
 }; // namespace gw2f
 
 #endif // GW2FORMATS_PF_HELPERS_WSTRING_H_INCLUDED

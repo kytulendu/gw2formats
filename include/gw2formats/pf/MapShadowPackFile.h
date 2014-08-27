@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/mpsd/PackMapShadow.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::mpsd> MpsdPackFile;
-typedef PackFile<fcc::mpsd> MapShadowPackFile;
+		typedef PackFile<fcc::mpsd> MpsdPackFile;
+		typedef PackFile<fcc::mpsd> MapShadowPackFile;
 
-namespace MapShadowChunks { enum 
-{
-    shad      = fcc::shad,
-    MapShadow = fcc::shad,
-}; // anon enum
-}; // namespace MapShadowChunks
+		namespace MapShadowChunks {
+			enum {
+				shad = fcc::shad,
+				MapShadow = fcc::shad,
+			}; // anon enum
+		}; // namespace MapShadowChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_MAPSHADOWPACKFILE_H_INCLUDED

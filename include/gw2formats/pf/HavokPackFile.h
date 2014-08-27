@@ -29,19 +29,19 @@
 #include <gw2formats/pf/chunks/hvkC/PackMapCollide.h>
 
 namespace gw2f {
-namespace pf {
+	namespace pf {
 
-typedef PackFile<fcc::hvkC> HvkcPackFile;
-typedef PackFile<fcc::hvkC> HavokPackFile;
+		typedef PackFile<fcc::hvkC> HvkcPackFile;
+		typedef PackFile<fcc::hvkC> HavokPackFile;
 
-namespace HavokChunks { enum 
-{
-    havk    = fcc::havk,
-    Collide = fcc::havk,
-}; // anon enum
-}; // namespace HavokChunks
+		namespace HavokChunks {
+			enum {
+				havk = fcc::havk,
+				Collide = fcc::havk,
+			}; // anon enum
+		}; // namespace HavokChunks
 
-}; // namespace pf
+	}; // namespace pf
 }; // namespace gw2formats
 
 #endif // GW2FORMATS_PF_HAVOKPACKFILE_H_INCLUDED
