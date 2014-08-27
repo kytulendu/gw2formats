@@ -42,7 +42,7 @@ namespace gw2f {
 					: m_data( new std::basic_string<TChar> ) {
 				}
 
-				StringBase( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr ) {
+				StringBase( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr ) {
 					auto pointer = assign( p_data, p_size );
 					if ( po_pointer ) { *po_pointer = pointer; }
 				}
@@ -59,7 +59,7 @@ namespace gw2f {
 					return *this;
 				}
 
-				const byte* assign( const byte* p_data, uint32 p_size ) {
+				const byte* assign( const byte* p_data, size_t p_size ) {
 					if ( !p_data ) { throw std::invalid_argument( "p_data must not be null" ); }
 					if ( p_size < sizeof( int32 ) ) { throw std::invalid_argument( "p_size must be large enough to contain one 32-bit integer." ); }
 

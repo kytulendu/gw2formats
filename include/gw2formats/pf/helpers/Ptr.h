@@ -39,7 +39,7 @@ namespace gw2f {
 				Ptr( ) {
 				}
 
-				Ptr( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr ) {
+				Ptr( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr ) {
 					auto pointer = assign( p_data, p_size );
 					if ( po_pointer ) { *po_pointer = pointer; }
 				}
@@ -56,7 +56,7 @@ namespace gw2f {
 					return *this;
 				}
 
-				const byte* assign( const byte* p_data, uint32 p_size ) {
+				const byte* assign( const byte* p_data, size_t p_size ) {
 					if ( !p_data ) { throw std::invalid_argument( "p_data must not be null" ); }
 					if ( p_size < sizeof( int32 ) ) { throw std::invalid_argument( "p_size must be large enough to contain one 32-bit integer." ); }
 
@@ -65,7 +65,7 @@ namespace gw2f {
 					if ( offset != 0 ) {
 						auto pointer = p_data + offset;
 						auto end = p_data + p_size;
-						uint32 size = ( end - pointer );
+						size_t size = ( end - pointer );
 
 						if ( pointer >= end ) { throw std::out_of_range( "pointer went past the end of the buffer." ); }
 						read( pointer, size, m_data );

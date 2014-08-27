@@ -44,10 +44,10 @@ namespace gw2f {
 				dword reserved4;
 			public:
 				ReservedWaveformDataV2( );
-				ReservedWaveformDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ReservedWaveformDataV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ReservedWaveformDataV2( const ReservedWaveformDataV2& p_other );
 				ReservedWaveformDataV2& operator=( const ReservedWaveformDataV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct WaveformDataV2 {
@@ -73,10 +73,10 @@ namespace gw2f {
 				helpers::Array<byte> otherData;
 			public:
 				WaveformDataV2( );
-				WaveformDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				WaveformDataV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				WaveformDataV2( const WaveformDataV2& p_other );
 				WaveformDataV2& operator=( const WaveformDataV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef WaveformDataV2 WaveformData;

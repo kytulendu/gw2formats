@@ -40,7 +40,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackMapAudioRegionV0::PackMapAudioRegionV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAudioRegionV0::PackMapAudioRegionV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -86,7 +86,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAudioRegionV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAudioRegionV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, regionType );
 				p_data = helpers::read( p_data, p_size, overrideMode );
 				p_data = helpers::read( p_data, p_size, filenameSourceDay );
@@ -114,7 +114,7 @@ namespace gw2f {
 			PackMapAudioRegionToolV0::PackMapAudioRegionToolV0( ) {
 			}
 
-			PackMapAudioRegionToolV0::PackMapAudioRegionToolV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAudioRegionToolV0::PackMapAudioRegionToolV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -128,7 +128,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAudioRegionToolV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAudioRegionToolV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, annotation );
 				return p_data;
 			}
@@ -141,7 +141,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			PackMapAudioDepV0::PackMapAudioDepV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAudioDepV0::PackMapAudioDepV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -157,7 +157,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAudioDepV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAudioDepV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, dependency );
 				p_data = helpers::read( p_data, p_size, flags );
 				return p_data;
@@ -170,7 +170,7 @@ namespace gw2f {
 			MapAudioV0::MapAudioV0( ) {
 			}
 
-			MapAudioV0::MapAudioV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapAudioV0::MapAudioV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -196,7 +196,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapAudioV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapAudioV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filenameAmbientDaySurface );
 				p_data = helpers::read( p_data, p_size, filenameAmbientDayUnderwater );
 				p_data = helpers::read( p_data, p_size, filenameAmbientNightSurface );

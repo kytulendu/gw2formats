@@ -28,7 +28,7 @@ namespace gw2f {
 			FileName::FileName( ) {
 			}
 
-			FileName::FileName( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			FileName::FileName( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* FileName::assign( const byte* p_data, uint32 p_size ) {
+			const byte* FileName::assign( const byte* p_data, size_t p_size ) {
 				p_data = read( p_data, p_size, m_reference );
 				return p_data;
 			}

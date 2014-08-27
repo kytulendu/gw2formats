@@ -34,7 +34,7 @@ namespace gw2f {
 				: language( 0 ) {
 			}
 
-			PackEulaLanguageV0::PackEulaLanguageV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackEulaLanguageV0::PackEulaLanguageV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -50,7 +50,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackEulaLanguageV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackEulaLanguageV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, language );
 				p_data = helpers::read( p_data, p_size, text );
 				return p_data;
@@ -64,7 +64,7 @@ namespace gw2f {
 				: version( 0 ) {
 			}
 
-			PackEulaV0::PackEulaV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackEulaV0::PackEulaV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -80,7 +80,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackEulaV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackEulaV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, languages );
 				p_data = helpers::read( p_data, p_size, version );
 				return p_data;

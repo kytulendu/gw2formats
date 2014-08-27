@@ -31,7 +31,7 @@ namespace gw2f {
 			TextPackLanguageV0::TextPackLanguageV0( ) {
 			}
 
-			TextPackLanguageV0::TextPackLanguageV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			TextPackLanguageV0::TextPackLanguageV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextPackLanguageV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* TextPackLanguageV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filenames );
 				return p_data;
 			}
@@ -58,7 +58,7 @@ namespace gw2f {
 				: stringsPerFile( 0 ) {
 			}
 
-			TextPackManifestV0::TextPackManifestV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			TextPackManifestV0::TextPackManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -74,7 +74,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextPackManifestV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* TextPackManifestV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, stringsPerFile );
 				p_data = helpers::read( p_data, p_size, languages );
 				return p_data;

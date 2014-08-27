@@ -41,10 +41,10 @@ namespace gw2f {
 				helpers::Array<helpers::FileName> filenames;
 			public:
 				TextPackLanguageV0( );
-				TextPackLanguageV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextPackLanguageV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextPackLanguageV0( const TextPackLanguageV0& p_other );
 				TextPackLanguageV0& operator=( const TextPackLanguageV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TextPackManifestV0 {
@@ -52,10 +52,10 @@ namespace gw2f {
 				helpers::Array<TextPackLanguageV0> languages;
 			public:
 				TextPackManifestV0( );
-				TextPackManifestV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextPackManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextPackManifestV0( const TextPackManifestV0& p_other );
 				TextPackManifestV0& operator=( const TextPackManifestV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef TextPackManifestV0 TextPackManifest;

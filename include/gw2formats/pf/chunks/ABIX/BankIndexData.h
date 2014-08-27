@@ -41,30 +41,30 @@ namespace gw2f {
 				helpers::FileName fileName;
 			public:
 				BankFileNameDataV0( );
-				BankFileNameDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				BankFileNameDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				BankFileNameDataV0( const BankFileNameDataV0& p_other );
 				BankFileNameDataV0& operator=( const BankFileNameDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct BankLanguageDataV0 {
 				helpers::Array<BankFileNameDataV0> bankFileName;
 			public:
 				BankLanguageDataV0( );
-				BankLanguageDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				BankLanguageDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				BankLanguageDataV0( const BankLanguageDataV0& p_other );
 				BankLanguageDataV0& operator=( const BankLanguageDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct BankIndexDataV0 {
 				helpers::Array<BankLanguageDataV0> bankLanguage;
 			public:
 				BankIndexDataV0( );
-				BankIndexDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				BankIndexDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				BankIndexDataV0( const BankIndexDataV0& p_other );
 				BankIndexDataV0& operator=( const BankIndexDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef BankIndexDataV0 BankIndexData;

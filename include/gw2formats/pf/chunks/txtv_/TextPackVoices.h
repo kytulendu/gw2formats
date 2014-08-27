@@ -41,20 +41,20 @@ namespace gw2f {
 				dword voiceId;
 			public:
 				TextPackVoiceV0( );
-				TextPackVoiceV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextPackVoiceV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextPackVoiceV0( const TextPackVoiceV0& p_other );
 				TextPackVoiceV0& operator=( const TextPackVoiceV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TextPackVoicesV0 {
 				helpers::Array<TextPackVoiceV0> voices;
 			public:
 				TextPackVoicesV0( );
-				TextPackVoicesV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextPackVoicesV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextPackVoicesV0( const TextPackVoicesV0& p_other );
 				TextPackVoicesV0& operator=( const TextPackVoicesV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef TextPackVoicesV0 TextPackVoices;

@@ -35,11 +35,11 @@ namespace gw2f {
 				uint16 m_terminator;
 			public:
 				FileReference( );
-				FileReference( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				FileReference( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				FileReference( const FileReference& p_other );
 				~FileReference( );
 				FileReference& operator=( const FileReference& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 				uint16 lowPart( ) const;
 				uint16 highPart( ) const;
 				uint32 fileId( ) const;

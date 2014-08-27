@@ -31,7 +31,7 @@ namespace gw2f {
 			PackMapShadowExtV1::PackMapShadowExtV1( ) {
 			}
 
-			PackMapShadowExtV1::PackMapShadowExtV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapShadowExtV1::PackMapShadowExtV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -47,7 +47,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapShadowExtV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapShadowExtV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, shadowDims );
 				return p_data;

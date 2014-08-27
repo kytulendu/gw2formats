@@ -90,7 +90,7 @@ namespace gw2f {
 			*  caller.
 			*  \param[in]  p_data  Data containing PackFile data.
 			*  \param[in]  p_size  Size of p_data. */
-			PackFile( const byte* p_data, uint32 p_size )
+			PackFile( const byte* p_data, size_t p_size )
 				: m_header( nullptr ) {
 				assign( p_data, p_size );
 			}
@@ -131,7 +131,7 @@ namespace gw2f {
 
 				// determine size
 				input.seekg( 0, std::ios::end );
-				uint32 size = static_cast<uint32>( input.tellg( ) );
+				size_t size = static_cast<uint>( input.tellg( ) );
 				if ( size < sizeof( FileHeader ) ) { return false; }
 				input.seekg( 0, std::ios::beg );
 
@@ -156,7 +156,7 @@ namespace gw2f {
 			*  \param[in]  p_data      Data to assign.
 			*  \param[in]  p_size      Size of p_data.
 			*  \return     bool        True if successful, false if not. */
-			bool assign( const byte* p_data, uint32 p_size ) {
+			bool assign( const byte* p_data, size_t p_size ) {
 				if ( !p_data || !p_size ) { return false; }
 				if ( p_size < sizeof( FileHeader ) ) { return false; }
 
@@ -184,7 +184,7 @@ namespace gw2f {
 			*  \param[out] po_size         Size of the returned data.
 			*  \return     const byte*     Pointer to the chunk's data if found, or
 			*                              nullptr if not found. */
-			const byte* chunk( dword p_identifier, uint32& po_size ) const {
+			const byte* chunk( dword p_identifier, size_t& po_size ) const {
 				po_size = 0;
 				if ( !m_header ) { return nullptr; }
 
@@ -219,7 +219,7 @@ namespace gw2f {
 			*                                  contains nullptr. */
 			template <dword TId>
 			std::shared_ptr<typename ChunkFactory<TFileType, TId>::Type> chunk( ) const {
-				uint32 size;
+				size_t size;
 				const byte* data = chunk( TId, size );
 
 				if ( data ) {

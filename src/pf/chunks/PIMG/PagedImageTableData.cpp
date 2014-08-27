@@ -34,7 +34,7 @@ namespace gw2f {
 				, diskFormat( 0 ) {
 			}
 
-			PagedImageLayerDataV3::PagedImageLayerDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PagedImageLayerDataV3::PagedImageLayerDataV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -56,7 +56,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PagedImageLayerDataV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PagedImageLayerDataV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, rawDims );
 				p_data = helpers::read( p_data, p_size, strippedDims );
 				p_data = helpers::read( p_data, p_size, rawFormat );
@@ -74,7 +74,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PagedImagePageDataV3::PagedImagePageDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PagedImagePageDataV3::PagedImagePageDataV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -96,7 +96,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PagedImagePageDataV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PagedImagePageDataV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, layer );
 				p_data = helpers::read( p_data, p_size, coord );
 				p_data = helpers::read( p_data, p_size, filename );
@@ -113,7 +113,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			PagedImageTableDataV3::PagedImageTableDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PagedImageTableDataV3::PagedImageTableDataV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -133,7 +133,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PagedImageTableDataV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PagedImageTableDataV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, layers );
 				p_data = helpers::read( p_data, p_size, rawPages );
 				p_data = helpers::read( p_data, p_size, strippedPages );

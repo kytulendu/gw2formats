@@ -33,7 +33,7 @@ namespace gw2f {
 				, endingChargeLevel( 0 ) {
 			}
 
-			PackAnimSequenceChargeStageV0::PackAnimSequenceChargeStageV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceChargeStageV0::PackAnimSequenceChargeStageV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -49,7 +49,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceChargeStageV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceChargeStageV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, duration );
 				p_data = helpers::read( p_data, p_size, endingChargeLevel );
 				return p_data;
@@ -63,7 +63,7 @@ namespace gw2f {
 				: duration( 0 ) {
 			}
 
-			PackAnimSequenceStepActionV0::PackAnimSequenceStepActionV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceStepActionV0::PackAnimSequenceStepActionV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -77,7 +77,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceStepActionV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceStepActionV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, duration );
 				return p_data;
 			}
@@ -90,7 +90,7 @@ namespace gw2f {
 				: duration( 0 ) {
 			}
 
-			PackAnimSequenceStepMoveV0::PackAnimSequenceStepMoveV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceStepMoveV0::PackAnimSequenceStepMoveV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -110,7 +110,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceStepMoveV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceStepMoveV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, duration );
 				p_data = helpers::read( p_data, p_size, moveRotation );
 				p_data = helpers::read( p_data, p_size, facingRotation );
@@ -128,7 +128,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackAnimSequenceStepV0::PackAnimSequenceStepV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceStepV0::PackAnimSequenceStepV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -150,7 +150,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceStepV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceStepV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, animationSpeed );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -169,7 +169,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackAnimSequenceTriggerV0::PackAnimSequenceTriggerV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceTriggerV0::PackAnimSequenceTriggerV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -187,7 +187,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceTriggerV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceTriggerV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, trigger );
 				p_data = helpers::read( p_data, p_size, time );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -205,7 +205,7 @@ namespace gw2f {
 				, blendOutTime( 0 ) {
 			}
 
-			PackAnimSequenceDataV0::PackAnimSequenceDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceDataV0::PackAnimSequenceDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -231,7 +231,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, blendInTime );
@@ -250,7 +250,7 @@ namespace gw2f {
 				: sequence( 0 ) {
 			}
 
-			PackAnimSequenceV0::PackAnimSequenceV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequenceV0::PackAnimSequenceV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -266,7 +266,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequenceV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequenceV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sequence );
 				p_data = helpers::read( p_data, p_size, animationData );
 				return p_data;
@@ -279,7 +279,7 @@ namespace gw2f {
 			PackAnimSequencesV0::PackAnimSequencesV0( ) {
 			}
 
-			PackAnimSequencesV0::PackAnimSequencesV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackAnimSequencesV0::PackAnimSequencesV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -293,7 +293,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackAnimSequencesV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackAnimSequencesV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sequences );
 				return p_data;
 			}

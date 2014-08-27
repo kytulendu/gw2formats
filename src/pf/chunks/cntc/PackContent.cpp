@@ -31,7 +31,7 @@ namespace gw2f {
 			PackContentManifestV0::PackContentManifestV0( ) {
 			}
 
-			PackContentManifestV0::PackContentManifestV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackContentManifestV0::PackContentManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackContentManifestV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackContentManifestV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, data );
 				return p_data;
 			}
@@ -58,7 +58,7 @@ namespace gw2f {
 				: domain( 0 ) {
 			}
 
-			PackContentNamespaceV0::PackContentNamespaceV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackContentNamespaceV0::PackContentNamespaceV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -76,7 +76,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackContentNamespaceV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackContentNamespaceV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, domain );
 				p_data = helpers::read( p_data, p_size, data );
@@ -91,7 +91,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			PackContentV0::PackContentV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackContentV0::PackContentV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -111,7 +111,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackContentV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackContentV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, manifest );
 				p_data = helpers::read( p_data, p_size, namespaces );

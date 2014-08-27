@@ -41,10 +41,10 @@ namespace gw2f {
 				helpers::WString text;
 			public:
 				PackEulaLanguageV0( );
-				PackEulaLanguageV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackEulaLanguageV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackEulaLanguageV0( const PackEulaLanguageV0& p_other );
 				PackEulaLanguageV0& operator=( const PackEulaLanguageV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackEulaV0 {
@@ -52,10 +52,10 @@ namespace gw2f {
 				byte version;
 			public:
 				PackEulaV0( );
-				PackEulaV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackEulaV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackEulaV0( const PackEulaV0& p_other );
 				PackEulaV0& operator=( const PackEulaV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackEulaV0 PackEula;

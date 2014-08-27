@@ -36,7 +36,7 @@ namespace gw2f {
 				, outroDuration( 0 ) {
 			}
 
-			PackEmoteTimingV2::PackEmoteTimingV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackEmoteTimingV2::PackEmoteTimingV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -60,7 +60,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackEmoteTimingV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackEmoteTimingV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, modelFile );
 				p_data = helpers::read( p_data, p_size, blendIn );
 				p_data = helpers::read( p_data, p_size, blendOut );
@@ -78,7 +78,7 @@ namespace gw2f {
 				: token( 0 ) {
 			}
 
-			PackEmoteAnimationV2::PackEmoteAnimationV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackEmoteAnimationV2::PackEmoteAnimationV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -94,7 +94,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackEmoteAnimationV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackEmoteAnimationV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, timings );
 				return p_data;
@@ -107,7 +107,7 @@ namespace gw2f {
 			PackEmoteAnimationsV2::PackEmoteAnimationsV2( ) {
 			}
 
-			PackEmoteAnimationsV2::PackEmoteAnimationsV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackEmoteAnimationsV2::PackEmoteAnimationsV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -121,7 +121,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackEmoteAnimationsV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackEmoteAnimationsV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, animations );
 				return p_data;
 			}

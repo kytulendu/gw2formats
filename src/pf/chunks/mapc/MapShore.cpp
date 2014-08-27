@@ -39,7 +39,7 @@ namespace gw2f {
 				, simplifyDot( 0 ) {
 			}
 
-			MapShoreChainV0::MapShoreChainV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapShoreChainV0::MapShoreChainV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -77,7 +77,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapShoreChainV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapShoreChainV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, offset );
 				p_data = helpers::read( p_data, p_size, opacity );
 				p_data = helpers::read( p_data, p_size, animationSpeed );
@@ -101,7 +101,7 @@ namespace gw2f {
 			MapShoreV0::MapShoreV0( ) {
 			}
 
-			MapShoreV0::MapShoreV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapShoreV0::MapShoreV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -115,7 +115,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapShoreV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapShoreV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, chains );
 				return p_data;
 			}

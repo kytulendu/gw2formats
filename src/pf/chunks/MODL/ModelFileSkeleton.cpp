@@ -32,7 +32,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			ModelTransformDataV0::ModelTransformDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelTransformDataV0::ModelTransformDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -52,7 +52,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTransformDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelTransformDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, orientation );
@@ -69,7 +69,7 @@ namespace gw2f {
 				, lodError( 0 ) {
 			}
 
-			ModelBoneDataV0::ModelBoneDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelBoneDataV0::ModelBoneDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -95,7 +95,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoneDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelBoneDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, parentIndex );
 				p_data = helpers::read( p_data, p_size, localTransform );
@@ -114,7 +114,7 @@ namespace gw2f {
 				: lodType( 0 ) {
 			}
 
-			ModelGrannySkeletonV1::ModelGrannySkeletonV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelGrannySkeletonV1::ModelGrannySkeletonV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -136,7 +136,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelGrannySkeletonV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelGrannySkeletonV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, bones );
 				p_data = helpers::read( p_data, p_size, lodType );
@@ -152,7 +152,7 @@ namespace gw2f {
 			ModelMeshBindingDataV0::ModelMeshBindingDataV0( ) {
 			}
 
-			ModelMeshBindingDataV0::ModelMeshBindingDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshBindingDataV0::ModelMeshBindingDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -166,7 +166,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshBindingDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshBindingDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mesh );
 				return p_data;
 			}
@@ -178,7 +178,7 @@ namespace gw2f {
 			ModelGrannyModelV1::ModelGrannyModelV1( ) {
 			}
 
-			ModelGrannyModelV1::ModelGrannyModelV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelGrannyModelV1::ModelGrannyModelV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -202,7 +202,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelGrannyModelV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelGrannyModelV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, skeleton );
 				p_data = helpers::read( p_data, p_size, initialPlacement );
@@ -222,7 +222,7 @@ namespace gw2f {
 				, token( 0 ) {
 			}
 
-			ModelBoneConstraintLinkV63::ModelBoneConstraintLinkV63( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelBoneConstraintLinkV63::ModelBoneConstraintLinkV63( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -242,7 +242,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoneConstraintLinkV63::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelBoneConstraintLinkV63::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, angle );
 				p_data = helpers::read( p_data, p_size, azimuth );
 				p_data = helpers::read( p_data, p_size, distance );
@@ -274,7 +274,7 @@ namespace gw2f {
 				, twistType( 0 ) {
 			}
 
-			ModelBoneConstraintV63::ModelBoneConstraintV63( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelBoneConstraintV63::ModelBoneConstraintV63( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -330,7 +330,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoneConstraintV63::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelBoneConstraintV63::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, twistOffset );
@@ -363,7 +363,7 @@ namespace gw2f {
 			PackGrannyMirrorSpecTypeV0::PackGrannyMirrorSpecTypeV0( ) {
 			}
 
-			PackGrannyMirrorSpecTypeV0::PackGrannyMirrorSpecTypeV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackGrannyMirrorSpecTypeV0::PackGrannyMirrorSpecTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -377,7 +377,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackGrannyMirrorSpecTypeV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackGrannyMirrorSpecTypeV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mirrorSpec );
 				return p_data;
 			}
@@ -389,7 +389,7 @@ namespace gw2f {
 			PackGrannyTrackMaskTypeV0::PackGrannyTrackMaskTypeV0( ) {
 			}
 
-			PackGrannyTrackMaskTypeV0::PackGrannyTrackMaskTypeV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackGrannyTrackMaskTypeV0::PackGrannyTrackMaskTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -403,7 +403,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackGrannyTrackMaskTypeV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackGrannyTrackMaskTypeV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, trackMask );
 				return p_data;
 			}
@@ -416,7 +416,7 @@ namespace gw2f {
 				: token( 0 ) {
 			}
 
-			ModelTrackMaskV63::ModelTrackMaskV63( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelTrackMaskV63::ModelTrackMaskV63( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -432,7 +432,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTrackMaskV63::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelTrackMaskV63::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, data );
 				p_data = helpers::read( p_data, p_size, token );
 				return p_data;
@@ -445,7 +445,7 @@ namespace gw2f {
 			ModelSkeletonDataV63::ModelSkeletonDataV63( ) {
 			}
 
-			ModelSkeletonDataV63::ModelSkeletonDataV63( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelSkeletonDataV63::ModelSkeletonDataV63( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -469,7 +469,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelSkeletonDataV63::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelSkeletonDataV63::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, grannyModel );
 				p_data = helpers::read( p_data, p_size, boneConstraints );
 				p_data = helpers::read( p_data, p_size, boneFlags );
@@ -486,7 +486,7 @@ namespace gw2f {
 			ModelSkeletonOverridesV1::ModelSkeletonOverridesV1( ) {
 			}
 
-			ModelSkeletonOverridesV1::ModelSkeletonOverridesV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelSkeletonOverridesV1::ModelSkeletonOverridesV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -500,7 +500,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelSkeletonOverridesV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelSkeletonOverridesV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, boneConstraints );
 				return p_data;
 			}
@@ -512,7 +512,7 @@ namespace gw2f {
 			ModelFileSkeletonV1::ModelFileSkeletonV1( ) {
 			}
 
-			ModelFileSkeletonV1::ModelFileSkeletonV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFileSkeletonV1::ModelFileSkeletonV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -530,7 +530,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFileSkeletonV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFileSkeletonV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, skeletonData );
 				p_data = helpers::read( p_data, p_size, fileReference );
 				p_data = helpers::read( p_data, p_size, overrides );

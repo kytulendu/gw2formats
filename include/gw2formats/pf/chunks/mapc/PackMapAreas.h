@@ -43,10 +43,10 @@ namespace gw2f {
 				float height;
 			public:
 				PackMapAreaPolygonV4( );
-				PackMapAreaPolygonV4( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAreaPolygonV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAreaPolygonV4( const PackMapAreaPolygonV4& p_other );
 				PackMapAreaPolygonV4& operator=( const PackMapAreaPolygonV4& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAreaPortalV4 {
@@ -55,10 +55,10 @@ namespace gw2f {
 				float3 rotation;
 			public:
 				PackMapAreaPortalV4( );
-				PackMapAreaPortalV4( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAreaPortalV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAreaPortalV4( const PackMapAreaPortalV4& p_other );
 				PackMapAreaPortalV4& operator=( const PackMapAreaPortalV4& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAreaVolumeV4 {
@@ -69,10 +69,10 @@ namespace gw2f {
 				float3 pointExterior;
 			public:
 				PackMapAreaVolumeV4( );
-				PackMapAreaVolumeV4( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAreaVolumeV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAreaVolumeV4( const PackMapAreaVolumeV4& p_other );
 				PackMapAreaVolumeV4& operator=( const PackMapAreaVolumeV4& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAreaV4 {
@@ -84,10 +84,10 @@ namespace gw2f {
 				PackMapAreaVolumeV4 volume;
 			public:
 				PackMapAreaV4( );
-				PackMapAreaV4( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAreaV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAreaV4( const PackMapAreaV4& p_other );
 				PackMapAreaV4& operator=( const PackMapAreaV4& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAreaToolV4 {
@@ -95,10 +95,10 @@ namespace gw2f {
 				float renderOffset;
 			public:
 				PackMapAreaToolV4( );
-				PackMapAreaToolV4( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAreaToolV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAreaToolV4( const PackMapAreaToolV4& p_other );
 				PackMapAreaToolV4& operator=( const PackMapAreaToolV4& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAreasV4 {
@@ -106,10 +106,10 @@ namespace gw2f {
 				helpers::Array<PackMapAreaToolV4> areaTools;
 			public:
 				PackMapAreasV4( );
-				PackMapAreasV4( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAreasV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAreasV4( const PackMapAreasV4& p_other );
 				PackMapAreasV4& operator=( const PackMapAreasV4& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapAreasV4 PackMapAreas;

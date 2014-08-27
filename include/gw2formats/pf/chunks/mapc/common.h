@@ -34,10 +34,10 @@ namespace gw2f {
 				helpers::Array<byte> broadphaseData;
 			public:
 				PackBroadphaseType( );
-				PackBroadphaseType( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackBroadphaseType( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackBroadphaseType( const PackBroadphaseType& p_other );
 				PackBroadphaseType& operator=( const PackBroadphaseType& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 		}; // namespace chunks

@@ -43,7 +43,7 @@ namespace gw2f {
 					: m_data( new std::vector<T> ) {
 				}
 
-				RefList( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr )
+				RefList( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr )
 					: m_data( nullptr ) {
 					auto pointer = assign( p_data, p_size );
 					if ( po_pointer ) { *po_pointer = pointer; }
@@ -66,7 +66,7 @@ namespace gw2f {
 					return ( *m_data )[p_index];
 				}
 
-				const byte* assign( const byte* p_data, uint32 p_size ) {
+				const byte* assign( const byte* p_data, size_t p_size ) {
 					auto end = p_data + p_size;
 
 					Array<int32> offsets;
@@ -76,20 +76,20 @@ namespace gw2f {
 					m_data.reset( new std::vector<T>( offsets.size( ) ) );
 
 					auto pointer = p_data - sizeof( int32 );
-					auto offset = *reinterpret_cast<const int32*>( pointer );
+					auto offset = *reinterpret_cast<const int*>( pointer );
 					pointer += offset;
 
-					for ( uint32 i = 0; i < m_data->size( ); i++ ) {
+					for ( uint i = 0; i < m_data->size( ); i++ ) {
 						auto item = pointer + i * sizeof( int32 ) + offsets[i];
 						if ( item >= end ) { throw std::out_of_range( "pointer went past the end of the buffer." ); }
-						uint32 size = ( end - item );
+						size_t size = ( end - item );
 						item = read( item, size, ( *m_data )[i] );
 					}
 
 					return p_data;
 				}
 
-				uint32 size( ) const {
+				size_t size( ) const {
 					return m_data->size( );
 				}
 

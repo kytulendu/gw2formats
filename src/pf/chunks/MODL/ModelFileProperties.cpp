@@ -33,7 +33,7 @@ namespace gw2f {
 				, parentBone( 0 ) {
 			}
 
-			ModelFixedOffsetDataV0::ModelFixedOffsetDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFixedOffsetDataV0::ModelFixedOffsetDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -51,7 +51,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFixedOffsetDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFixedOffsetDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, parentBone );
 				p_data = helpers::read( p_data, p_size, translation );
@@ -70,7 +70,7 @@ namespace gw2f {
 				, val( 0 ) {
 			}
 
-			ModelPropertyDataV0::ModelPropertyDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelPropertyDataV0::ModelPropertyDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -94,7 +94,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelPropertyDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelPropertyDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, id );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, mergeIndex );
@@ -111,7 +111,7 @@ namespace gw2f {
 			ModelFilePropertiesV0::ModelFilePropertiesV0( ) {
 			}
 
-			ModelFilePropertiesV0::ModelFilePropertiesV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFilePropertiesV0::ModelFilePropertiesV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -127,7 +127,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFilePropertiesV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFilePropertiesV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, fixedOffsetData );
 				p_data = helpers::read( p_data, p_size, properties );
 				return p_data;

@@ -47,10 +47,10 @@ namespace gw2f {
 				float3 scaleShear[3];
 			public:
 				ModelTransformDataV0( );
-				ModelTransformDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelTransformDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelTransformDataV0( const ModelTransformDataV0& p_other );
 				ModelTransformDataV0& operator=( const ModelTransformDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelBoneDataV0 {
@@ -63,10 +63,10 @@ namespace gw2f {
 				helpers::Ptr<byte> extendedDataObject;
 			public:
 				ModelBoneDataV0( );
-				ModelBoneDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelBoneDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelBoneDataV0( const ModelBoneDataV0& p_other );
 				ModelBoneDataV0& operator=( const ModelBoneDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelGrannySkeletonV1 {
@@ -77,20 +77,20 @@ namespace gw2f {
 				helpers::Ptr<byte> extendedDataObject;
 			public:
 				ModelGrannySkeletonV1( );
-				ModelGrannySkeletonV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelGrannySkeletonV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelGrannySkeletonV1( const ModelGrannySkeletonV1& p_other );
 				ModelGrannySkeletonV1& operator=( const ModelGrannySkeletonV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelMeshBindingDataV0 {
 				helpers::Ptr<byte> mesh;
 			public:
 				ModelMeshBindingDataV0( );
-				ModelMeshBindingDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelMeshBindingDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelMeshBindingDataV0( const ModelMeshBindingDataV0& p_other );
 				ModelMeshBindingDataV0& operator=( const ModelMeshBindingDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelGrannyModelV1 {
@@ -102,10 +102,10 @@ namespace gw2f {
 				helpers::Ptr<byte> extendedDataObject;
 			public:
 				ModelGrannyModelV1( );
-				ModelGrannyModelV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelGrannyModelV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelGrannyModelV1( const ModelGrannyModelV1& p_other );
 				ModelGrannyModelV1& operator=( const ModelGrannyModelV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelBoneConstraintLinkV63 {
@@ -115,10 +115,10 @@ namespace gw2f {
 				qword token;
 			public:
 				ModelBoneConstraintLinkV63( );
-				ModelBoneConstraintLinkV63( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelBoneConstraintLinkV63( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelBoneConstraintLinkV63( const ModelBoneConstraintLinkV63& p_other );
 				ModelBoneConstraintLinkV63& operator=( const ModelBoneConstraintLinkV63& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelBoneConstraintV63 {
@@ -146,30 +146,30 @@ namespace gw2f {
 				byte twistType;
 			public:
 				ModelBoneConstraintV63( );
-				ModelBoneConstraintV63( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelBoneConstraintV63( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelBoneConstraintV63( const ModelBoneConstraintV63& p_other );
 				ModelBoneConstraintV63& operator=( const ModelBoneConstraintV63& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackGrannyMirrorSpecTypeV0 {
 				helpers::Array<byte> mirrorSpec;
 			public:
 				PackGrannyMirrorSpecTypeV0( );
-				PackGrannyMirrorSpecTypeV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackGrannyMirrorSpecTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackGrannyMirrorSpecTypeV0( const PackGrannyMirrorSpecTypeV0& p_other );
 				PackGrannyMirrorSpecTypeV0& operator=( const PackGrannyMirrorSpecTypeV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackGrannyTrackMaskTypeV0 {
 				helpers::Array<byte> trackMask;
 			public:
 				PackGrannyTrackMaskTypeV0( );
-				PackGrannyTrackMaskTypeV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackGrannyTrackMaskTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackGrannyTrackMaskTypeV0( const PackGrannyTrackMaskTypeV0& p_other );
 				PackGrannyTrackMaskTypeV0& operator=( const PackGrannyTrackMaskTypeV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelTrackMaskV63 {
@@ -177,10 +177,10 @@ namespace gw2f {
 				qword token;
 			public:
 				ModelTrackMaskV63( );
-				ModelTrackMaskV63( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelTrackMaskV63( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelTrackMaskV63( const ModelTrackMaskV63& p_other );
 				ModelTrackMaskV63& operator=( const ModelTrackMaskV63& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelSkeletonDataV63 {
@@ -192,20 +192,20 @@ namespace gw2f {
 				helpers::Array<ModelTrackMaskV63> trackMasks;
 			public:
 				ModelSkeletonDataV63( );
-				ModelSkeletonDataV63( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelSkeletonDataV63( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelSkeletonDataV63( const ModelSkeletonDataV63& p_other );
 				ModelSkeletonDataV63& operator=( const ModelSkeletonDataV63& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelSkeletonOverridesV1 {
 				helpers::Array<ModelBoneConstraintV63> boneConstraints;
 			public:
 				ModelSkeletonOverridesV1( );
-				ModelSkeletonOverridesV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelSkeletonOverridesV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelSkeletonOverridesV1( const ModelSkeletonOverridesV1& p_other );
 				ModelSkeletonOverridesV1& operator=( const ModelSkeletonOverridesV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelFileSkeletonV1 {
@@ -214,10 +214,10 @@ namespace gw2f {
 				helpers::Ptr<ModelSkeletonOverridesV1> overrides;
 			public:
 				ModelFileSkeletonV1( );
-				ModelFileSkeletonV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelFileSkeletonV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelFileSkeletonV1( const ModelFileSkeletonV1& p_other );
 				ModelFileSkeletonV1& operator=( const ModelFileSkeletonV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef ModelFileSkeletonV1 ModelFileSkeleton;

@@ -42,20 +42,20 @@ namespace gw2f {
 				byte mapType;
 			public:
 				PackMapMetadataMapV0( );
-				PackMapMetadataMapV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapMetadataMapV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapMetadataMapV0( const PackMapMetadataMapV0& p_other );
 				PackMapMetadataMapV0& operator=( const PackMapMetadataMapV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapMetadataV0 {
 				helpers::Array<PackMapMetadataMapV0> maps;
 			public:
 				PackMapMetadataV0( );
-				PackMapMetadataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapMetadataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapMetadataV0( const PackMapMetadataV0& p_other );
 				PackMapMetadataV0& operator=( const PackMapMetadataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapMetadataV0 PackMapMetadata;

@@ -33,7 +33,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackMapZoneModelV22::PackMapZoneModelV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZoneModelV22::PackMapZoneModelV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -55,7 +55,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneModelV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZoneModelV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, probability );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -81,7 +81,7 @@ namespace gw2f {
 				, layerFlags( 0 ) {
 			}
 
-			PackMapZoneLayerDefV22::PackMapZoneLayerDefV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZoneLayerDefV22::PackMapZoneLayerDefV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -129,7 +129,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneLayerDefV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZoneLayerDefV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, height );
 				p_data = helpers::read( p_data, p_size, width );
@@ -159,7 +159,7 @@ namespace gw2f {
 				: seed( 0 ) {
 			}
 
-			PackMapZonePageV10::PackMapZonePageV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZonePageV10::PackMapZonePageV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -181,7 +181,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZonePageV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZonePageV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, chunkCoord );
 				p_data = helpers::read( p_data, p_size, seed );
@@ -198,7 +198,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			PackMapZonePageTableV10::PackMapZonePageTableV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZonePageTableV10::PackMapZonePageTableV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -214,7 +214,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZonePageTableV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZonePageTableV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, pageArray );
 				p_data = helpers::read( p_data, p_size, flags );
 				return p_data;
@@ -229,7 +229,7 @@ namespace gw2f {
 				, timeStamp( 0 ) {
 			}
 
-			PackMapZoneDefV22::PackMapZoneDefV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZoneDefV22::PackMapZoneDefV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -253,7 +253,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneDefV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZoneDefV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, defFilename );
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, layerDefArray );
@@ -272,7 +272,7 @@ namespace gw2f {
 				, offset( 0 ) {
 			}
 
-			PackMapZoneEncodingDataV22::PackMapZoneEncodingDataV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZoneEncodingDataV22::PackMapZoneEncodingDataV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -288,7 +288,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneEncodingDataV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZoneEncodingDataV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, index );
 				p_data = helpers::read( p_data, p_size, offset );
 				return p_data;
@@ -304,7 +304,7 @@ namespace gw2f {
 				, zPos( 0 ) {
 			}
 
-			PackMapZoneCollideDataV22::PackMapZoneCollideDataV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZoneCollideDataV22::PackMapZoneCollideDataV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -322,7 +322,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneCollideDataV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZoneCollideDataV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, normalX );
 				p_data = helpers::read( p_data, p_size, normalY );
 				p_data = helpers::read( p_data, p_size, zPos );
@@ -342,7 +342,7 @@ namespace gw2f {
 				, broadId( 0 ) {
 			}
 
-			PackMapZoneV22::PackMapZoneV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZoneV22::PackMapZoneV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -382,7 +382,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZoneV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, zoneFlags );
 				p_data = helpers::read( p_data, p_size, vertRect );
 				p_data = helpers::read( p_data, p_size, waterHeight );
@@ -408,7 +408,7 @@ namespace gw2f {
 				: maxBroadId( 0 ) {
 			}
 
-			PackMapZonesV22::PackMapZonesV22( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapZonesV22::PackMapZonesV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -430,7 +430,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZonesV22::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapZonesV22::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, zoneDefArray );
 				p_data = helpers::read( p_data, p_size, zoneArray );
 				p_data = helpers::read( p_data, p_size, broadPhase );

@@ -32,7 +32,7 @@ namespace gw2f {
 				: layer( 0 ) {
 			}
 
-			PagedImageEmbeddedPageDataV3::PagedImageEmbeddedPageDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PagedImageEmbeddedPageDataV3::PagedImageEmbeddedPageDataV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -50,7 +50,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PagedImageEmbeddedPageDataV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PagedImageEmbeddedPageDataV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, layer );
 				p_data = helpers::read( p_data, p_size, coord );
 				p_data = helpers::read( p_data, p_size, data );
@@ -64,7 +64,7 @@ namespace gw2f {
 			PagedImageEmbeddedPagesDataV3::PagedImageEmbeddedPagesDataV3( ) {
 			}
 
-			PagedImageEmbeddedPagesDataV3::PagedImageEmbeddedPagesDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PagedImageEmbeddedPagesDataV3::PagedImageEmbeddedPagesDataV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -80,7 +80,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PagedImageEmbeddedPagesDataV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PagedImageEmbeddedPagesDataV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, rawPages );
 				p_data = helpers::read( p_data, p_size, strippedPages );
 				return p_data;
@@ -93,7 +93,7 @@ namespace gw2f {
 			MapTerrainImgV0::MapTerrainImgV0( ) {
 			}
 
-			MapTerrainImgV0::MapTerrainImgV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapTerrainImgV0::MapTerrainImgV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -109,7 +109,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapTerrainImgV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapTerrainImgV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, tableData );
 				p_data = helpers::read( p_data, p_size, pageData );
 				return p_data;

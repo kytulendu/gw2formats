@@ -43,7 +43,7 @@ namespace gw2f {
 				, reserved8( 0 ) {
 			}
 
-			AsndFileDataV2::AsndFileDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AsndFileDataV2::AsndFileDataV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -81,7 +81,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AsndFileDataV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AsndFileDataV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, voiceId );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, reserved1 );
@@ -109,7 +109,7 @@ namespace gw2f {
 				, reserved4( 0 ) {
 			}
 
-			ReservedBankDataV2::ReservedBankDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ReservedBankDataV2::ReservedBankDataV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -129,7 +129,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ReservedBankDataV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ReservedBankDataV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, reserved1 );
 				p_data = helpers::read( p_data, p_size, reserved2 );
 				p_data = helpers::read( p_data, p_size, reserved3 );
@@ -148,7 +148,7 @@ namespace gw2f {
 				, reserved4( 0 ) {
 			}
 
-			BankFileDataV2::BankFileDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			BankFileDataV2::BankFileDataV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -172,7 +172,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* BankFileDataV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* BankFileDataV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, reserved1 );
 				p_data = helpers::read( p_data, p_size, reserved2 );
 				p_data = helpers::read( p_data, p_size, reserved3 );

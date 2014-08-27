@@ -32,7 +32,7 @@ namespace gw2f {
 				: chunkFlags( 0 ) {
 			}
 
-			PackMapTerrainChunkV14::PackMapTerrainChunkV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainChunkV14::PackMapTerrainChunkV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -50,7 +50,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainChunkV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainChunkV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, chunkFlags );
 				p_data = helpers::read( p_data, p_size, surfaceIndexArray );
 				p_data = helpers::read( p_data, p_size, surfaceTokenArray );
@@ -65,7 +65,7 @@ namespace gw2f {
 				: tokenName( 0 ) {
 			}
 
-			PackMapTerrainConstV14::PackMapTerrainConstV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainConstV14::PackMapTerrainConstV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -81,7 +81,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainConstV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainConstV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, tokenName );
 				p_data = helpers::read( p_data, p_size, value );
 				return p_data;
@@ -97,7 +97,7 @@ namespace gw2f {
 				, layer( 0 ) {
 			}
 
-			PackMapTerrainTexV14::PackMapTerrainTexV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainTexV14::PackMapTerrainTexV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -119,7 +119,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainTexV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainTexV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, tokenName );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, filename );
@@ -136,7 +136,7 @@ namespace gw2f {
 				: fvf( 0 ) {
 			}
 
-			PackMapTerrainMaterialV14::PackMapTerrainMaterialV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainMaterialV14::PackMapTerrainMaterialV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -156,7 +156,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainMaterialV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainMaterialV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, materialFile );
 				p_data = helpers::read( p_data, p_size, fvf );
 				p_data = helpers::read( p_data, p_size, constIndexArray );
@@ -172,7 +172,7 @@ namespace gw2f {
 				: rotation( 0 ) {
 			}
 
-			PackMapTerrainChunkUVDataV14::PackMapTerrainChunkUVDataV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainChunkUVDataV14::PackMapTerrainChunkUVDataV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -194,7 +194,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainChunkUVDataV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainChunkUVDataV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, translation );
 				p_data = helpers::read( p_data, p_size, xScaleRange );
 				p_data = helpers::read( p_data, p_size, yScaleRange );
@@ -210,7 +210,7 @@ namespace gw2f {
 			PackMapTerrrainChunkMaterialV14::PackMapTerrrainChunkMaterialV14( ) {
 			}
 
-			PackMapTerrrainChunkMaterialV14::PackMapTerrrainChunkMaterialV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrrainChunkMaterialV14::PackMapTerrrainChunkMaterialV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -232,7 +232,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrrainChunkMaterialV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrrainChunkMaterialV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, tiling );
 				p_data = helpers::read( p_data, p_size, hiResMaterial );
 				p_data = helpers::read( p_data, p_size, loResMaterial );
@@ -248,7 +248,7 @@ namespace gw2f {
 			PackMapTerrainMaterialsV14::PackMapTerrainMaterialsV14( ) {
 			}
 
-			PackMapTerrainMaterialsV14::PackMapTerrainMaterialsV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainMaterialsV14::PackMapTerrainMaterialsV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -272,7 +272,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainMaterialsV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainMaterialsV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, pagedImage );
 				p_data = helpers::read( p_data, p_size, constArray );
 				p_data = helpers::read( p_data, p_size, texFileArray );
@@ -290,7 +290,7 @@ namespace gw2f {
 				: swapDistance( 0 ) {
 			}
 
-			PackMapTerrainV14::PackMapTerrainV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapTerrainV14::PackMapTerrainV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -314,7 +314,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapTerrainV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapTerrainV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, dims );
 				p_data = helpers::read( p_data, p_size, swapDistance );
 				p_data = helpers::read( p_data, p_size, heightMapArray );

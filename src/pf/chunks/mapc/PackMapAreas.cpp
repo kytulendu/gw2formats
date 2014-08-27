@@ -32,7 +32,7 @@ namespace gw2f {
 				: height( 0 ) {
 			}
 
-			PackMapAreaPolygonV4::PackMapAreaPolygonV4( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAreaPolygonV4::PackMapAreaPolygonV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -48,7 +48,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAreaPolygonV4::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAreaPolygonV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, points );
 				p_data = helpers::read( p_data, p_size, height );
 				return p_data;
@@ -61,7 +61,7 @@ namespace gw2f {
 			PackMapAreaPortalV4::PackMapAreaPortalV4( ) {
 			}
 
-			PackMapAreaPortalV4::PackMapAreaPortalV4( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAreaPortalV4::PackMapAreaPortalV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -79,7 +79,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAreaPortalV4::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAreaPortalV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, extents );
 				p_data = helpers::read( p_data, p_size, rotation );
@@ -93,7 +93,7 @@ namespace gw2f {
 			PackMapAreaVolumeV4::PackMapAreaVolumeV4( ) {
 			}
 
-			PackMapAreaVolumeV4::PackMapAreaVolumeV4( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAreaVolumeV4::PackMapAreaVolumeV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -115,7 +115,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAreaVolumeV4::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAreaVolumeV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, portals );
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, extents );
@@ -135,7 +135,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackMapAreaV4::PackMapAreaV4( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAreaV4::PackMapAreaV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -159,7 +159,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAreaV4::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAreaV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, floor );
@@ -177,7 +177,7 @@ namespace gw2f {
 				: renderOffset( 0 ) {
 			}
 
-			PackMapAreaToolV4::PackMapAreaToolV4( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAreaToolV4::PackMapAreaToolV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -193,7 +193,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAreaToolV4::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAreaToolV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, annotation );
 				p_data = helpers::read( p_data, p_size, renderOffset );
 				return p_data;
@@ -206,7 +206,7 @@ namespace gw2f {
 			PackMapAreasV4::PackMapAreasV4( ) {
 			}
 
-			PackMapAreasV4::PackMapAreasV4( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapAreasV4::PackMapAreasV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -222,7 +222,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAreasV4::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapAreasV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, areas );
 				p_data = helpers::read( p_data, p_size, areaTools );
 				return p_data;

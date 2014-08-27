@@ -41,10 +41,10 @@ namespace gw2f {
 				helpers::Array<byte> moppData;
 			public:
 				PackMoppType( );
-				PackMoppType( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMoppType( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMoppType( const PackMoppType& p_other );
 				PackMoppType& operator=( const PackMoppType& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideCollisionV14 {
@@ -54,20 +54,20 @@ namespace gw2f {
 				PackMoppType moppCodeData;
 			public:
 				PackMapCollideCollisionV14( );
-				PackMapCollideCollisionV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideCollisionV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideCollisionV14( const PackMapCollideCollisionV14& p_other );
 				PackMapCollideCollisionV14& operator=( const PackMapCollideCollisionV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideBlockerV14 {
 				helpers::Array<float3> vertices;
 			public:
 				PackMapCollideBlockerV14( );
-				PackMapCollideBlockerV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideBlockerV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideBlockerV14( const PackMapCollideBlockerV14& p_other );
 				PackMapCollideBlockerV14& operator=( const PackMapCollideBlockerV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideNavMeshV14 {
@@ -76,10 +76,10 @@ namespace gw2f {
 				helpers::Array<byte> mediator;
 			public:
 				PackMapCollideNavMeshV14( );
-				PackMapCollideNavMeshV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideNavMeshV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideNavMeshV14( const PackMapCollideNavMeshV14& p_other );
 				PackMapCollideNavMeshV14& operator=( const PackMapCollideNavMeshV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideAnimationV14 {
@@ -88,10 +88,10 @@ namespace gw2f {
 				helpers::Array<dword> blockerIndices;
 			public:
 				PackMapCollideAnimationV14( );
-				PackMapCollideAnimationV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideAnimationV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideAnimationV14( const PackMapCollideAnimationV14& p_other );
 				PackMapCollideAnimationV14& operator=( const PackMapCollideAnimationV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideGeometryV14 {
@@ -100,10 +100,10 @@ namespace gw2f {
 				word navMeshIndex;
 			public:
 				PackMapCollideGeometryV14( );
-				PackMapCollideGeometryV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideGeometryV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideGeometryV14( const PackMapCollideGeometryV14& p_other );
 				PackMapCollideGeometryV14& operator=( const PackMapCollideGeometryV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideModelObsV14 {
@@ -111,10 +111,10 @@ namespace gw2f {
 				dword geometryIndex;
 			public:
 				PackMapCollideModelObsV14( );
-				PackMapCollideModelObsV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideModelObsV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideModelObsV14( const PackMapCollideModelObsV14& p_other );
 				PackMapCollideModelObsV14& operator=( const PackMapCollideModelObsV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideModelPropV14 {
@@ -126,10 +126,10 @@ namespace gw2f {
 				dword geometryIndex;
 			public:
 				PackMapCollideModelPropV14( );
-				PackMapCollideModelPropV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideModelPropV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideModelPropV14( const PackMapCollideModelPropV14& p_other );
 				PackMapCollideModelPropV14& operator=( const PackMapCollideModelPropV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideModelZoneV14 {
@@ -139,10 +139,10 @@ namespace gw2f {
 				dword geometryIndex;
 			public:
 				PackMapCollideModelZoneV14( );
-				PackMapCollideModelZoneV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideModelZoneV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideModelZoneV14( const PackMapCollideModelZoneV14& p_other );
 				PackMapCollideModelZoneV14& operator=( const PackMapCollideModelZoneV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCollideV14 {
@@ -158,10 +158,10 @@ namespace gw2f {
 				helpers::Array<PackMapCollideModelZoneV14> zoneModels;
 			public:
 				PackMapCollideV14( );
-				PackMapCollideV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCollideV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCollideV14( const PackMapCollideV14& p_other );
 				PackMapCollideV14& operator=( const PackMapCollideV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapCollideV14 PackMapCollide;

@@ -38,7 +38,7 @@ namespace gw2f {
 			*  \tparam         T           Type of object to read.
 			*  \return         const byte* Pointer to the first byte beyond the read data. */
 			template <typename T>
-			const byte* read( const byte* p_data, uint32& po_size, T& po_output ) {
+			const byte* read( const byte* p_data, size_t& po_size, T& po_output ) {
 				auto pointer = po_output.assign( p_data, po_size );
 				po_size -= ( pointer - p_data );
 				return pointer;
@@ -51,8 +51,8 @@ namespace gw2f {
 			*  \tparam         T           Type of elements contained in the array.
 			*  \tparam         TSize       Size of the fixed-size array.
 			*  \return         const byte* Pointer to the first byte beyond the read data. */
-			template <typename T, uint32 TSize>
-			const byte* read( const byte* p_data, uint32& po_size, T( &po_output )[TSize] ) {
+			template <typename T, size_t TSize>
+			const byte* read( const byte* p_data, size_t& po_size, T( &po_output )[TSize] ) {
 				for ( auto it = std::begin( po_output ); it != std::end( po_output ); it++ ) {
 					p_data = read( p_data, po_size, *it );
 				}
@@ -67,7 +67,7 @@ namespace gw2f {
 			*  \return         const byte* Pointer to the first byte beyond the read data. */
 
 			template <typename T>
-			const byte* readNumber( const byte* p_data, uint32& po_size, T& po_output ) {
+			const byte* readNumber( const byte* p_data, size_t& po_size, T& po_output ) {
 				if ( !p_data ) { throw std::invalid_argument( "p_data must not be nullptr." ); }
 				if ( po_size < sizeof( T ) ) { throw std::invalid_argument( "p_data does not contain enough data." ); }
 				po_output = *reinterpret_cast<const T*>( p_data );
@@ -76,62 +76,62 @@ namespace gw2f {
 			}
 
 			// double
-			template<> inline const byte* read<double>( const byte* p_data, uint32& po_size, double& po_output ) {
+			template<> inline const byte* read<double>( const byte* p_data, size_t& po_size, double& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// float
-			template<> inline const byte* read<float>( const byte* p_data, uint32& po_size, float& po_output ) {
+			template<> inline const byte* read<float>( const byte* p_data, size_t& po_size, float& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// uint64
-			template<> inline const byte* read<uint64>( const byte* p_data, uint32& po_size, uint64& po_output ) {
+			template<> inline const byte* read<uint64>( const byte* p_data, size_t& po_size, uint64& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// int64
-			template<> inline const byte* read<int64>( const byte* p_data, uint32& po_size, int64& po_output ) {
+			template<> inline const byte* read<int64>( const byte* p_data, size_t& po_size, int64& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// uint32
-			template<> inline const byte* read<uint32>( const byte* p_data, uint32& po_size, uint32& po_output ) {
+			template<> inline const byte* read<uint32>( const byte* p_data, size_t& po_size, uint32& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// int32
-			template<> inline const byte* read<int32>( const byte* p_data, uint32& po_size, int32& po_output ) {
+			template<> inline const byte* read<int32>( const byte* p_data, size_t& po_size, int32& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// uint16
-			template<> inline const byte* read<uint16>( const byte* p_data, uint32& po_size, uint16& po_output ) {
+			template<> inline const byte* read<uint16>( const byte* p_data, size_t& po_size, uint16& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// int16
-			template<> inline const byte* read<int16>( const byte* p_data, uint32& po_size, int16& po_output ) {
+			template<> inline const byte* read<int16>( const byte* p_data, size_t& po_size, int16& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// uint8
-			template<> inline const byte* read<uint8>( const byte* p_data, uint32& po_size, uint8& po_output ) {
+			template<> inline const byte* read<uint8>( const byte* p_data, size_t& po_size, uint8& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// int8
-			template<> inline const byte* read<int8>( const byte* p_data, uint32& po_size, int8& po_output ) {
+			template<> inline const byte* read<int8>( const byte* p_data, size_t& po_size, int8& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// char16
-			template<> inline const byte* read<char16>( const byte* p_data, uint32& po_size, char16& po_output ) {
+			template<> inline const byte* read<char16>( const byte* p_data, size_t& po_size, char16& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 
 			// char
-			template<> inline const byte* read<char>( const byte* p_data, uint32& po_size, char& po_output ) {
+			template<> inline const byte* read<char>( const byte* p_data, size_t& po_size, char& po_output ) {
 				return readNumber( p_data, po_size, po_output );
 			}
 

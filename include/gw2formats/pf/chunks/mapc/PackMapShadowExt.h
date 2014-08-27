@@ -42,10 +42,10 @@ namespace gw2f {
 				dword2 shadowDims;
 			public:
 				PackMapShadowExtV1( );
-				PackMapShadowExtV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapShadowExtV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapShadowExtV1( const PackMapShadowExtV1& p_other );
 				PackMapShadowExtV1& operator=( const PackMapShadowExtV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapShadowExtV1 PackMapShadowExt;

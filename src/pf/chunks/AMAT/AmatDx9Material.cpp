@@ -32,7 +32,7 @@ namespace gw2f {
 				: textureIndex( 0 ) {
 			}
 
-			AmatDx9SamplerV10::AmatDx9SamplerV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatDx9SamplerV10::AmatDx9SamplerV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -48,7 +48,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatDx9SamplerV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatDx9SamplerV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, textureIndex );
 				p_data = helpers::read( p_data, p_size, state );
 				return p_data;
@@ -62,7 +62,7 @@ namespace gw2f {
 				: instructionCount( 0 ) {
 			}
 
-			AmatDx9ShaderV10::AmatDx9ShaderV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatDx9ShaderV10::AmatDx9ShaderV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -82,7 +82,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatDx9ShaderV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatDx9ShaderV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, shader );
 				p_data = helpers::read( p_data, p_size, constRegisters );
 				p_data = helpers::read( p_data, p_size, constTokens );
@@ -102,7 +102,7 @@ namespace gw2f {
 				, passFlags( 0 ) {
 			}
 
-			AmatDx9EffectV10::AmatDx9EffectV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatDx9EffectV10::AmatDx9EffectV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -132,7 +132,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatDx9EffectV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatDx9EffectV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, renderStates );
 				p_data = helpers::read( p_data, p_size, samplerIndex );
@@ -152,7 +152,7 @@ namespace gw2f {
 			AmatDx9PassV10::AmatDx9PassV10( ) {
 			}
 
-			AmatDx9PassV10::AmatDx9PassV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatDx9PassV10::AmatDx9PassV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -166,7 +166,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatDx9PassV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatDx9PassV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, effects );
 				return p_data;
 			}
@@ -180,7 +180,7 @@ namespace gw2f {
 				, maxVsVersion( 0 ) {
 			}
 
-			AmatDx9TechniqueV10::AmatDx9TechniqueV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatDx9TechniqueV10::AmatDx9TechniqueV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -200,7 +200,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatDx9TechniqueV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatDx9TechniqueV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, passes );
 				p_data = helpers::read( p_data, p_size, maxPsVersion );
@@ -215,7 +215,7 @@ namespace gw2f {
 			AmatDx9MaterialV10::AmatDx9MaterialV10( ) {
 			}
 
-			AmatDx9MaterialV10::AmatDx9MaterialV10( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatDx9MaterialV10::AmatDx9MaterialV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -233,7 +233,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatDx9MaterialV10::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatDx9MaterialV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, samplers );
 				p_data = helpers::read( p_data, p_size, shaders );
 				p_data = helpers::read( p_data, p_size, techniques );

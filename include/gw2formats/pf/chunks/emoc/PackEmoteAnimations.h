@@ -46,10 +46,10 @@ namespace gw2f {
 				dword outroDuration;
 			public:
 				PackEmoteTimingV2( );
-				PackEmoteTimingV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackEmoteTimingV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackEmoteTimingV2( const PackEmoteTimingV2& p_other );
 				PackEmoteTimingV2& operator=( const PackEmoteTimingV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackEmoteAnimationV2 {
@@ -57,20 +57,20 @@ namespace gw2f {
 				helpers::Array<PackEmoteTimingV2> timings;
 			public:
 				PackEmoteAnimationV2( );
-				PackEmoteAnimationV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackEmoteAnimationV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackEmoteAnimationV2( const PackEmoteAnimationV2& p_other );
 				PackEmoteAnimationV2& operator=( const PackEmoteAnimationV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackEmoteAnimationsV2 {
 				helpers::Array<PackEmoteAnimationV2> animations;
 			public:
 				PackEmoteAnimationsV2( );
-				PackEmoteAnimationsV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackEmoteAnimationsV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackEmoteAnimationsV2( const PackEmoteAnimationsV2& p_other );
 				PackEmoteAnimationsV2& operator=( const PackEmoteAnimationsV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackEmoteAnimationsV2 PackEmoteAnimations;

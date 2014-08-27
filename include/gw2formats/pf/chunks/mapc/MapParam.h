@@ -42,10 +42,10 @@ namespace gw2f {
 				byte16 guid;
 			public:
 				MapParamV0( );
-				MapParamV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapParamV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapParamV0( const MapParamV0& p_other );
 				MapParamV0& operator=( const MapParamV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef MapParamV0 MapParam;

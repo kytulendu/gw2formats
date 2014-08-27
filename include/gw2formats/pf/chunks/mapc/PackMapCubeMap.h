@@ -48,10 +48,10 @@ namespace gw2f {
 				qword envID;
 			public:
 				PackMapCubeMapSampleV3( );
-				PackMapCubeMapSampleV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCubeMapSampleV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCubeMapSampleV3( const PackMapCubeMapSampleV3& p_other );
 				PackMapCubeMapSampleV3& operator=( const PackMapCubeMapSampleV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCubeMapParamsV3 {
@@ -62,10 +62,10 @@ namespace gw2f {
 				helpers::WString envVolume;
 			public:
 				PackMapCubeMapParamsV3( );
-				PackMapCubeMapParamsV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCubeMapParamsV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCubeMapParamsV3( const PackMapCubeMapParamsV3& p_other );
 				PackMapCubeMapParamsV3& operator=( const PackMapCubeMapParamsV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCubeMapV3 {
@@ -73,10 +73,10 @@ namespace gw2f {
 				helpers::Array<PackMapCubeMapParamsV3> paramsArray;
 			public:
 				PackMapCubeMapV3( );
-				PackMapCubeMapV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCubeMapV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCubeMapV3( const PackMapCubeMapV3& p_other );
 				PackMapCubeMapV3& operator=( const PackMapCubeMapV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapCubeMapV3 PackMapCubeMap;

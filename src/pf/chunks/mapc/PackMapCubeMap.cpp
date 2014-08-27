@@ -32,7 +32,7 @@ namespace gw2f {
 				: envID( 0 ) {
 			}
 
-			PackMapCubeMapSampleV3::PackMapCubeMapSampleV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCubeMapSampleV3::PackMapCubeMapSampleV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -56,7 +56,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCubeMapSampleV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCubeMapSampleV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, filenameDayDefault );
 				p_data = helpers::read( p_data, p_size, filenameNightDefault );
@@ -77,7 +77,7 @@ namespace gw2f {
 				, blurPasses( 0 ) {
 			}
 
-			PackMapCubeMapParamsV3::PackMapCubeMapParamsV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCubeMapParamsV3::PackMapCubeMapParamsV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -99,7 +99,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCubeMapParamsV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCubeMapParamsV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, modulateColor );
 				p_data = helpers::read( p_data, p_size, brightness );
 				p_data = helpers::read( p_data, p_size, contrast );
@@ -115,7 +115,7 @@ namespace gw2f {
 			PackMapCubeMapV3::PackMapCubeMapV3( ) {
 			}
 
-			PackMapCubeMapV3::PackMapCubeMapV3( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCubeMapV3::PackMapCubeMapV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -131,7 +131,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCubeMapV3::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCubeMapV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sampleArray );
 				p_data = helpers::read( p_data, p_size, paramsArray );
 				return p_data;

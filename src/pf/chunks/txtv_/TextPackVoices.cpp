@@ -33,7 +33,7 @@ namespace gw2f {
 				, voiceId( 0 ) {
 			}
 
-			TextPackVoiceV0::TextPackVoiceV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			TextPackVoiceV0::TextPackVoiceV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -49,7 +49,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextPackVoiceV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* TextPackVoiceV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, textId );
 				p_data = helpers::read( p_data, p_size, voiceId );
 				return p_data;
@@ -62,7 +62,7 @@ namespace gw2f {
 			TextPackVoicesV0::TextPackVoicesV0( ) {
 			}
 
-			TextPackVoicesV0::TextPackVoicesV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			TextPackVoicesV0::TextPackVoicesV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -76,7 +76,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextPackVoicesV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* TextPackVoicesV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, voices );
 				return p_data;
 			}

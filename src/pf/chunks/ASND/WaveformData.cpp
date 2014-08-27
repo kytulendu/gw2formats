@@ -35,7 +35,7 @@ namespace gw2f {
 				, reserved4( 0 ) {
 			}
 
-			ReservedWaveformDataV2::ReservedWaveformDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ReservedWaveformDataV2::ReservedWaveformDataV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -55,7 +55,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ReservedWaveformDataV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ReservedWaveformDataV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, reserved1 );
 				p_data = helpers::read( p_data, p_size, reserved2 );
 				p_data = helpers::read( p_data, p_size, reserved3 );
@@ -87,7 +87,7 @@ namespace gw2f {
 				, reserved8( 0 ) {
 			}
 
-			WaveformDataV2::WaveformDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			WaveformDataV2::WaveformDataV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -139,7 +139,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* WaveformDataV2::assign( const byte* p_data, uint32 p_size ) {
+			const byte* WaveformDataV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, length );
 				p_data = helpers::read( p_data, p_size, offset );
 				p_data = helpers::read( p_data, p_size, reservedData );

@@ -31,7 +31,7 @@ namespace gw2f {
 			PackMapDecalVertexV8::PackMapDecalVertexV8( ) {
 			}
 
-			PackMapDecalVertexV8::PackMapDecalVertexV8( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapDecalVertexV8::PackMapDecalVertexV8( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -51,7 +51,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapDecalVertexV8::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapDecalVertexV8::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, normal );
 				p_data = helpers::read( p_data, p_size, tangent );
@@ -72,7 +72,7 @@ namespace gw2f {
 				, id( 0 ) {
 			}
 
-			PackMapDecalV9::PackMapDecalV9( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapDecalV9::PackMapDecalV9( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -132,7 +132,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapDecalV9::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapDecalV9::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, extents );
 				p_data = helpers::read( p_data, p_size, rotation );
@@ -167,7 +167,7 @@ namespace gw2f {
 			PackMapDecalsV9::PackMapDecalsV9( ) {
 			}
 
-			PackMapDecalsV9::PackMapDecalsV9( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapDecalsV9::PackMapDecalsV9( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -181,7 +181,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapDecalsV9::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapDecalsV9::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, decals );
 				return p_data;
 			}

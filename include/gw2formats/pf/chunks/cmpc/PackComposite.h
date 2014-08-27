@@ -46,10 +46,10 @@ namespace gw2f {
 				helpers::Array<dword4> rectArray;
 			public:
 				PackCompositeBlitRectSetV14( );
-				PackCompositeBlitRectSetV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeBlitRectSetV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeBlitRectSetV14( const PackCompositeBlitRectSetV14& p_other );
 				PackCompositeBlitRectSetV14& operator=( const PackCompositeBlitRectSetV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeBoneScaleParamV14 {
@@ -62,10 +62,10 @@ namespace gw2f {
 				float3 translate;
 			public:
 				PackCompositeBoneScaleParamV14( );
-				PackCompositeBoneScaleParamV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleParamV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeBoneScaleParamV14( const PackCompositeBoneScaleParamV14& p_other );
 				PackCompositeBoneScaleParamV14& operator=( const PackCompositeBoneScaleParamV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeBoneScaleRegionV14 {
@@ -74,10 +74,10 @@ namespace gw2f {
 				helpers::Array<PackCompositeBoneScaleParamV14> bone;
 			public:
 				PackCompositeBoneScaleRegionV14( );
-				PackCompositeBoneScaleRegionV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleRegionV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeBoneScaleRegionV14( const PackCompositeBoneScaleRegionV14& p_other );
 				PackCompositeBoneScaleRegionV14& operator=( const PackCompositeBoneScaleRegionV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeMorphWeightV14 {
@@ -85,10 +85,10 @@ namespace gw2f {
 				float value;
 			public:
 				PackCompositeMorphWeightV14( );
-				PackCompositeMorphWeightV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeMorphWeightV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeMorphWeightV14( const PackCompositeMorphWeightV14& p_other );
 				PackCompositeMorphWeightV14& operator=( const PackCompositeMorphWeightV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeBoneScaleV14 {
@@ -96,20 +96,20 @@ namespace gw2f {
 				helpers::Array<PackCompositeMorphWeightV14> morphWeight;
 			public:
 				PackCompositeBoneScaleV14( );
-				PackCompositeBoneScaleV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeBoneScaleV14( const PackCompositeBoneScaleV14& p_other );
 				PackCompositeBoneScaleV14& operator=( const PackCompositeBoneScaleV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeBoneScaleFileV14 {
 				helpers::WString fileName;
 			public:
 				PackCompositeBoneScaleFileV14( );
-				PackCompositeBoneScaleFileV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleFileV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeBoneScaleFileV14( const PackCompositeBoneScaleFileV14& p_other );
 				PackCompositeBoneScaleFileV14& operator=( const PackCompositeBoneScaleFileV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeFileDataV14 {
@@ -131,10 +131,10 @@ namespace gw2f {
 				byte blitRectIndex;
 			public:
 				PackCompositeFileDataV14( );
-				PackCompositeFileDataV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeFileDataV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeFileDataV14( const PackCompositeFileDataV14& p_other );
 				PackCompositeFileDataV14& operator=( const PackCompositeFileDataV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeSkinPatternV14 {
@@ -146,10 +146,10 @@ namespace gw2f {
 				helpers::FileName ears;
 			public:
 				PackCompositeSkinPatternV14( );
-				PackCompositeSkinPatternV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeSkinPatternV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeSkinPatternV14( const PackCompositeSkinPatternV14& p_other );
 				PackCompositeSkinPatternV14& operator=( const PackCompositeSkinPatternV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeColorV14 {
@@ -160,10 +160,10 @@ namespace gw2f {
 				byte lightness;
 			public:
 				PackCompositeColorV14( );
-				PackCompositeColorV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeColorV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeColorV14( const PackCompositeColorV14& p_other );
 				PackCompositeColorV14& operator=( const PackCompositeColorV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeVariantComponentV14 {
@@ -174,10 +174,10 @@ namespace gw2f {
 				PackCompositeColorV14 color3;
 			public:
 				PackCompositeVariantComponentV14( );
-				PackCompositeVariantComponentV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeVariantComponentV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeVariantComponentV14( const PackCompositeVariantComponentV14& p_other );
 				PackCompositeVariantComponentV14& operator=( const PackCompositeVariantComponentV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeVariantV14 {
@@ -192,10 +192,10 @@ namespace gw2f {
 				dword skinIndex;
 			public:
 				PackCompositeVariantV14( );
-				PackCompositeVariantV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeVariantV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeVariantV14( const PackCompositeVariantV14& p_other );
 				PackCompositeVariantV14& operator=( const PackCompositeVariantV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeRaceDataV14 {
@@ -223,10 +223,10 @@ namespace gw2f {
 				helpers::Array<PackCompositeVariantV14> variants;
 			public:
 				PackCompositeRaceDataV14( );
-				PackCompositeRaceDataV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeRaceDataV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeRaceDataV14( const PackCompositeRaceDataV14& p_other );
 				PackCompositeRaceDataV14& operator=( const PackCompositeRaceDataV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackCompositeV14 {
@@ -237,10 +237,10 @@ namespace gw2f {
 				word configVersion;
 			public:
 				PackCompositeV14( );
-				PackCompositeV14( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackCompositeV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackCompositeV14( const PackCompositeV14& p_other );
 				PackCompositeV14& operator=( const PackCompositeV14& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackCompositeV14 PackComposite;

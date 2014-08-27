@@ -45,20 +45,20 @@ namespace gw2f {
 				helpers::Array<float> scales;
 			public:
 				CollideModelManifestFileV0( );
-				CollideModelManifestFileV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				CollideModelManifestFileV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				CollideModelManifestFileV0( const CollideModelManifestFileV0& p_other );
 				CollideModelManifestFileV0& operator=( const CollideModelManifestFileV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct CollideModelManifestV0 {
 				helpers::Array<CollideModelManifestFileV0> files;
 			public:
 				CollideModelManifestV0( );
-				CollideModelManifestV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				CollideModelManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				CollideModelManifestV0( const CollideModelManifestV0& p_other );
 				CollideModelManifestV0& operator=( const CollideModelManifestV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef CollideModelManifestV0 CollideModelManifest;

@@ -40,7 +40,7 @@ namespace gw2f {
 				, texType( 0 ) {
 			}
 
-			AmatGrV5::AmatGrV5( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			AmatGrV5::AmatGrV5( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -74,7 +74,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmatGrV5::assign( const byte* p_data, uint32 p_size ) {
+			const byte* AmatGrV5::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, texArrayRange );
 				p_data = helpers::read( p_data, p_size, texCount );
 				p_data = helpers::read( p_data, p_size, texTransformRange );

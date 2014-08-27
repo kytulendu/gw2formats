@@ -46,10 +46,10 @@ namespace gw2f {
 				helpers::Array<byte> data;
 			public:
 				PagedImageEmbeddedPageDataV3( );
-				PagedImageEmbeddedPageDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PagedImageEmbeddedPageDataV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PagedImageEmbeddedPageDataV3( const PagedImageEmbeddedPageDataV3& p_other );
 				PagedImageEmbeddedPageDataV3& operator=( const PagedImageEmbeddedPageDataV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PagedImageEmbeddedPagesDataV3 {
@@ -57,10 +57,10 @@ namespace gw2f {
 				helpers::Array<PagedImageEmbeddedPageDataV3> strippedPages;
 			public:
 				PagedImageEmbeddedPagesDataV3( );
-				PagedImageEmbeddedPagesDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PagedImageEmbeddedPagesDataV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PagedImageEmbeddedPagesDataV3( const PagedImageEmbeddedPagesDataV3& p_other );
 				PagedImageEmbeddedPagesDataV3& operator=( const PagedImageEmbeddedPagesDataV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapTerrainImgV0 {
@@ -68,10 +68,10 @@ namespace gw2f {
 				helpers::Ptr<PagedImageEmbeddedPagesDataV3> pageData;
 			public:
 				MapTerrainImgV0( );
-				MapTerrainImgV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapTerrainImgV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapTerrainImgV0( const MapTerrainImgV0& p_other );
 				MapTerrainImgV0& operator=( const MapTerrainImgV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef MapTerrainImgV0 MapTerrainImg;

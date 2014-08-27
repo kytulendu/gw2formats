@@ -45,10 +45,10 @@ namespace gw2f {
 				float3 bitangent;
 			public:
 				PackMapDecalVertexV8( );
-				PackMapDecalVertexV8( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapDecalVertexV8( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapDecalVertexV8( const PackMapDecalVertexV8& p_other );
 				PackMapDecalVertexV8& operator=( const PackMapDecalVertexV8& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapDecalV9 {
@@ -78,20 +78,20 @@ namespace gw2f {
 				qword id;
 			public:
 				PackMapDecalV9( );
-				PackMapDecalV9( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapDecalV9( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapDecalV9( const PackMapDecalV9& p_other );
 				PackMapDecalV9& operator=( const PackMapDecalV9& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapDecalsV9 {
 				helpers::Array<PackMapDecalV9> decals;
 			public:
 				PackMapDecalsV9( );
-				PackMapDecalsV9( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapDecalsV9( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapDecalsV9( const PackMapDecalsV9& p_other );
 				PackMapDecalsV9& operator=( const PackMapDecalsV9& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapDecalsV9 PackMapDecals;

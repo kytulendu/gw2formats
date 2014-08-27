@@ -47,10 +47,10 @@ namespace gw2f {
 				dword submodel;
 			public:
 				PackMapPropConstantV18( );
-				PackMapPropConstantV18( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropConstantV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropConstantV18( const PackMapPropConstantV18& p_other );
 				PackMapPropConstantV18& operator=( const PackMapPropConstantV18& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropObjV21 {
@@ -74,10 +74,10 @@ namespace gw2f {
 				byte sortLayer;
 			public:
 				PackMapPropObjV21( );
-				PackMapPropObjV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropObjV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropObjV21( const PackMapPropObjV21& p_other );
 				PackMapPropObjV21& operator=( const PackMapPropObjV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropObjAnimSeqV21 {
@@ -102,10 +102,10 @@ namespace gw2f {
 				qword animSequence;
 			public:
 				PackMapPropObjAnimSeqV21( );
-				PackMapPropObjAnimSeqV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropObjAnimSeqV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropObjAnimSeqV21( const PackMapPropObjAnimSeqV21& p_other );
 				PackMapPropObjAnimSeqV21& operator=( const PackMapPropObjAnimSeqV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropTransformV21 {
@@ -114,10 +114,10 @@ namespace gw2f {
 				float scale;
 			public:
 				PackMapPropTransformV21( );
-				PackMapPropTransformV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropTransformV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropTransformV21( const PackMapPropTransformV21& p_other );
 				PackMapPropTransformV21& operator=( const PackMapPropTransformV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropObjInstanceV21 {
@@ -143,10 +143,10 @@ namespace gw2f {
 				helpers::Array<qword> origGuidArray;
 			public:
 				PackMapPropObjInstanceV21( );
-				PackMapPropObjInstanceV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropObjInstanceV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropObjInstanceV21( const PackMapPropObjInstanceV21& p_other );
 				PackMapPropObjInstanceV21& operator=( const PackMapPropObjInstanceV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropObjToolV21 {
@@ -156,10 +156,10 @@ namespace gw2f {
 				helpers::Array<qword> children;
 			public:
 				PackMapPropObjToolV21( );
-				PackMapPropObjToolV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropObjToolV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropObjToolV21( const PackMapPropObjToolV21& p_other );
 				PackMapPropObjToolV21& operator=( const PackMapPropObjToolV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropObjMetaV21 {
@@ -187,10 +187,10 @@ namespace gw2f {
 				float3 glomOrigin;
 			public:
 				PackMapPropObjMetaV21( );
-				PackMapPropObjMetaV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropObjMetaV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropObjMetaV21( const PackMapPropObjMetaV21& p_other );
 				PackMapPropObjMetaV21& operator=( const PackMapPropObjMetaV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropObjVolumeV21 {
@@ -204,10 +204,10 @@ namespace gw2f {
 				float scale;
 			public:
 				PackMapPropObjVolumeV21( );
-				PackMapPropObjVolumeV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropObjVolumeV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropObjVolumeV21( const PackMapPropObjVolumeV21& p_other );
 				PackMapPropObjVolumeV21& operator=( const PackMapPropObjVolumeV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPropV21 {
@@ -222,10 +222,10 @@ namespace gw2f {
 				dword nextBroadId;
 			public:
 				PackMapPropV21( );
-				PackMapPropV21( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPropV21( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPropV21( const PackMapPropV21& p_other );
 				PackMapPropV21& operator=( const PackMapPropV21& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapPropV21 PackMapProp;

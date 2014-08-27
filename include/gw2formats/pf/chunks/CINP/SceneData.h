@@ -46,10 +46,10 @@ namespace gw2f {
 				byte type;
 			public:
 				PropertyDataV33( );
-				PropertyDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PropertyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PropertyDataV33( const PropertyDataV33& p_other );
 				PropertyDataV33& operator=( const PropertyDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct CurveKeyDataV33 {
@@ -59,10 +59,10 @@ namespace gw2f {
 				float outTangent;
 			public:
 				CurveKeyDataV33( );
-				CurveKeyDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				CurveKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				CurveKeyDataV33( const CurveKeyDataV33& p_other );
 				CurveKeyDataV33& operator=( const CurveKeyDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct FlagKeyDataV33 {
@@ -70,10 +70,10 @@ namespace gw2f {
 				float value;
 			public:
 				FlagKeyDataV33( );
-				FlagKeyDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				FlagKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				FlagKeyDataV33( const FlagKeyDataV33& p_other );
 				FlagKeyDataV33& operator=( const FlagKeyDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TriggerKeyDataV33 {
@@ -90,10 +90,10 @@ namespace gw2f {
 				float value4;
 			public:
 				TriggerKeyDataV33( );
-				TriggerKeyDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TriggerKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TriggerKeyDataV33( const TriggerKeyDataV33& p_other );
 				TriggerKeyDataV33& operator=( const TriggerKeyDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TrackDataV33 {
@@ -104,10 +104,10 @@ namespace gw2f {
 				byte type;
 			public:
 				TrackDataV33( );
-				TrackDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TrackDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TrackDataV33( const TrackDataV33& p_other );
 				TrackDataV33& operator=( const TrackDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TrackGroupDataV33 {
@@ -118,10 +118,10 @@ namespace gw2f {
 				byte type;
 			public:
 				TrackGroupDataV33( );
-				TrackGroupDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TrackGroupDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TrackGroupDataV33( const TrackGroupDataV33& p_other );
 				TrackGroupDataV33& operator=( const TrackGroupDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct SequenceDataV33 {
@@ -136,10 +136,10 @@ namespace gw2f {
 				helpers::Array<TrackGroupDataV33> trackGroups;
 			public:
 				SequenceDataV33( );
-				SequenceDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				SequenceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				SequenceDataV33( const SequenceDataV33& p_other );
 				SequenceDataV33& operator=( const SequenceDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ColorDefDataV33 {
@@ -147,10 +147,10 @@ namespace gw2f {
 				byte3 color;
 			public:
 				ColorDefDataV33( );
-				ColorDefDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ColorDefDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ColorDefDataV33( const ColorDefDataV33& p_other );
 				ColorDefDataV33& operator=( const ColorDefDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AmbientLightDataV33 {
@@ -161,10 +161,10 @@ namespace gw2f {
 				qword name;
 			public:
 				AmbientLightDataV33( );
-				AmbientLightDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmbientLightDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmbientLightDataV33( const AmbientLightDataV33& p_other );
 				AmbientLightDataV33& operator=( const AmbientLightDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct FileNameRefDataV33 {
@@ -172,10 +172,10 @@ namespace gw2f {
 				helpers::FileName fileName;
 			public:
 				FileNameRefDataV33( );
-				FileNameRefDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				FileNameRefDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				FileNameRefDataV33( const FileNameRefDataV33& p_other );
 				FileNameRefDataV33& operator=( const FileNameRefDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ScriptDataV33 {
@@ -183,10 +183,10 @@ namespace gw2f {
 				helpers::Array<byte> byteCode;
 			public:
 				ScriptDataV33( );
-				ScriptDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ScriptDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ScriptDataV33( const ScriptDataV33& p_other );
 				ScriptDataV33& operator=( const ScriptDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TextEntryDataV33 {
@@ -194,10 +194,10 @@ namespace gw2f {
 				byte language;
 			public:
 				TextEntryDataV33( );
-				TextEntryDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextEntryDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextEntryDataV33( const TextEntryDataV33& p_other );
 				TextEntryDataV33& operator=( const TextEntryDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TextResourceDataV33 {
@@ -207,10 +207,10 @@ namespace gw2f {
 				helpers::Array<TextEntryDataV33> textEntries;
 			public:
 				TextResourceDataV33( );
-				TextResourceDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextResourceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextResourceDataV33( const TextResourceDataV33& p_other );
 				TextResourceDataV33& operator=( const TextResourceDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ResourceDataV33 {
@@ -221,10 +221,10 @@ namespace gw2f {
 				helpers::Array<TextResourceDataV33> textResources;
 			public:
 				ResourceDataV33( );
-				ResourceDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ResourceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ResourceDataV33( const ResourceDataV33& p_other );
 				ResourceDataV33& operator=( const ResourceDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct SceneDataV33 {
@@ -234,10 +234,10 @@ namespace gw2f {
 				helpers::Ptr<TrackGroupDataV33> trackGroups;
 			public:
 				SceneDataV33( );
-				SceneDataV33( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				SceneDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				SceneDataV33( const SceneDataV33& p_other );
 				SceneDataV33& operator=( const SceneDataV33& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef SceneDataV33 SceneData;

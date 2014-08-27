@@ -31,7 +31,7 @@ namespace gw2f {
 			BankFileNameDataV0::BankFileNameDataV0( ) {
 			}
 
-			BankFileNameDataV0::BankFileNameDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			BankFileNameDataV0::BankFileNameDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* BankFileNameDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* BankFileNameDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, fileName );
 				return p_data;
 			}
@@ -57,7 +57,7 @@ namespace gw2f {
 			BankLanguageDataV0::BankLanguageDataV0( ) {
 			}
 
-			BankLanguageDataV0::BankLanguageDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			BankLanguageDataV0::BankLanguageDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -71,7 +71,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* BankLanguageDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* BankLanguageDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bankFileName );
 				return p_data;
 			}
@@ -83,7 +83,7 @@ namespace gw2f {
 			BankIndexDataV0::BankIndexDataV0( ) {
 			}
 
-			BankIndexDataV0::BankIndexDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			BankIndexDataV0::BankIndexDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -97,7 +97,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* BankIndexDataV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* BankIndexDataV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bankLanguage );
 				return p_data;
 			}

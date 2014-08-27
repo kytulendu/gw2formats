@@ -34,7 +34,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			MapSurfaceAttributeV0::MapSurfaceAttributeV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapSurfaceAttributeV0::MapSurfaceAttributeV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -52,7 +52,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfaceAttributeV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapSurfaceAttributeV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, id );
 				p_data = helpers::read( p_data, p_size, sound );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -66,7 +66,7 @@ namespace gw2f {
 			MapSurfaceAttributeToolV0::MapSurfaceAttributeToolV0( ) {
 			}
 
-			MapSurfaceAttributeToolV0::MapSurfaceAttributeToolV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapSurfaceAttributeToolV0::MapSurfaceAttributeToolV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -84,7 +84,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfaceAttributeToolV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapSurfaceAttributeToolV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, category );
 				p_data = helpers::read( p_data, p_size, color );
@@ -99,7 +99,7 @@ namespace gw2f {
 				: surfaceId( 0 ) {
 			}
 
-			MapSurfaceOverrideV0::MapSurfaceOverrideV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapSurfaceOverrideV0::MapSurfaceOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -115,7 +115,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfaceOverrideV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapSurfaceOverrideV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, surfaceId );
 				p_data = helpers::read( p_data, p_size, bitArray );
 				return p_data;
@@ -128,7 +128,7 @@ namespace gw2f {
 			MapSurfaceTerrainOverrideV0::MapSurfaceTerrainOverrideV0( ) {
 			}
 
-			MapSurfaceTerrainOverrideV0::MapSurfaceTerrainOverrideV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapSurfaceTerrainOverrideV0::MapSurfaceTerrainOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -144,7 +144,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfaceTerrainOverrideV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapSurfaceTerrainOverrideV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, chunkCoord );
 				p_data = helpers::read( p_data, p_size, overrideArray );
 				return p_data;
@@ -158,7 +158,7 @@ namespace gw2f {
 				: propId( 0 ) {
 			}
 
-			MapSurfacePropOverrideV0::MapSurfacePropOverrideV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapSurfacePropOverrideV0::MapSurfacePropOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -174,7 +174,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfacePropOverrideV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapSurfacePropOverrideV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, propId );
 				p_data = helpers::read( p_data, p_size, overrideArray );
 				return p_data;
@@ -187,7 +187,7 @@ namespace gw2f {
 			MapSurfacesV0::MapSurfacesV0( ) {
 			}
 
-			MapSurfacesV0::MapSurfacesV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapSurfacesV0::MapSurfacesV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -207,7 +207,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfacesV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapSurfacesV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, attributeData );
 				p_data = helpers::read( p_data, p_size, toolData );
 				p_data = helpers::read( p_data, p_size, terrainArray );

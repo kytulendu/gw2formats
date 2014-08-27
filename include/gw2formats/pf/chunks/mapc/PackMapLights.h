@@ -51,10 +51,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				PackMapLightV0( );
-				PackMapLightV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapLightV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapLightV0( const PackMapLightV0& p_other );
 				PackMapLightV0& operator=( const PackMapLightV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapCurveV0 {
@@ -67,10 +67,10 @@ namespace gw2f {
 				dword curveType;
 			public:
 				PackMapCurveV0( );
-				PackMapCurveV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapCurveV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapCurveV0( const PackMapCurveV0& p_other );
 				PackMapCurveV0& operator=( const PackMapCurveV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPointLightgroupsV0 {
@@ -80,10 +80,10 @@ namespace gw2f {
 				word broadId;
 			public:
 				PackMapPointLightgroupsV0( );
-				PackMapPointLightgroupsV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPointLightgroupsV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPointLightgroupsV0( const PackMapPointLightgroupsV0& p_other );
 				PackMapPointLightgroupsV0& operator=( const PackMapPointLightgroupsV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPortalDataV0 {
@@ -93,10 +93,10 @@ namespace gw2f {
 				float darken;
 			public:
 				PackMapPortalDataV0( );
-				PackMapPortalDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPortalDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPortalDataV0( const PackMapPortalDataV0& p_other );
 				PackMapPortalDataV0& operator=( const PackMapPortalDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapPortalLightV0 {
@@ -106,20 +106,20 @@ namespace gw2f {
 				word broadId;
 			public:
 				PackMapPortalLightV0( );
-				PackMapPortalLightV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapPortalLightV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapPortalLightV0( const PackMapPortalLightV0& p_other );
 				PackMapPortalLightV0& operator=( const PackMapPortalLightV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapSpotShadowV0 {
 				helpers::FileName shadowFilename;
 			public:
 				PackMapSpotShadowV0( );
-				PackMapSpotShadowV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapSpotShadowV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapSpotShadowV0( const PackMapSpotShadowV0& p_other );
 				PackMapSpotShadowV0& operator=( const PackMapSpotShadowV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapSpotLightV0 {
@@ -136,10 +136,10 @@ namespace gw2f {
 				helpers::Ptr<PackMapSpotShadowV0> shadowData;
 			public:
 				PackMapSpotLightV0( );
-				PackMapSpotLightV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapSpotLightV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapSpotLightV0( const PackMapSpotLightV0& p_other );
 				PackMapSpotLightV0& operator=( const PackMapSpotLightV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapSpotLightgroupsV0 {
@@ -149,10 +149,10 @@ namespace gw2f {
 				word broadId;
 			public:
 				PackMapSpotLightgroupsV0( );
-				PackMapSpotLightgroupsV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapSpotLightgroupsV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapSpotLightgroupsV0( const PackMapSpotLightgroupsV0& p_other );
 				PackMapSpotLightgroupsV0& operator=( const PackMapSpotLightgroupsV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapVolumeImageV0 {
@@ -162,10 +162,10 @@ namespace gw2f {
 				helpers::Array<byte> image;
 			public:
 				PackMapVolumeImageV0( );
-				PackMapVolumeImageV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapVolumeImageV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapVolumeImageV0( const PackMapVolumeImageV0& p_other );
 				PackMapVolumeImageV0& operator=( const PackMapVolumeImageV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapVolumeLightV0 {
@@ -182,10 +182,10 @@ namespace gw2f {
 				word broadId;
 			public:
 				PackMapVolumeLightV0( );
-				PackMapVolumeLightV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapVolumeLightV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapVolumeLightV0( const PackMapVolumeLightV0& p_other );
 				PackMapVolumeLightV0& operator=( const PackMapVolumeLightV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapLightsV0 {
@@ -197,10 +197,10 @@ namespace gw2f {
 				word maxBroadId;
 			public:
 				PackMapLightsV0( );
-				PackMapLightsV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapLightsV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapLightsV0( const PackMapLightsV0& p_other );
 				PackMapLightsV0& operator=( const PackMapLightsV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapLightsV0 PackMapLights;

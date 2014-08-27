@@ -33,7 +33,7 @@ namespace gw2f {
 				, submodel( 0 ) {
 			}
 
-			PackMapPropConstantV18::PackMapPropConstantV18( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropConstantV18::PackMapPropConstantV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -51,7 +51,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropConstantV18::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropConstantV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, constant );
 				p_data = helpers::read( p_data, p_size, submodel );
@@ -76,7 +76,7 @@ namespace gw2f {
 				, sortLayer( 0 ) {
 			}
 
-			PackMapPropObjV21::PackMapPropObjV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropObjV21::PackMapPropObjV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -124,7 +124,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropObjV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropObjV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, blitTextures );
 				p_data = helpers::read( p_data, p_size, constants );
@@ -165,7 +165,7 @@ namespace gw2f {
 				, animSequence( 0 ) {
 			}
 
-			PackMapPropObjAnimSeqV21::PackMapPropObjAnimSeqV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropObjAnimSeqV21::PackMapPropObjAnimSeqV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -215,7 +215,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropObjAnimSeqV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropObjAnimSeqV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, blitTextures );
 				p_data = helpers::read( p_data, p_size, constants );
@@ -246,7 +246,7 @@ namespace gw2f {
 				: scale( 0 ) {
 			}
 
-			PackMapPropTransformV21::PackMapPropTransformV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropTransformV21::PackMapPropTransformV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -264,7 +264,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropTransformV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropTransformV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, rotation );
 				p_data = helpers::read( p_data, p_size, scale );
@@ -289,7 +289,7 @@ namespace gw2f {
 				, sortLayer( 0 ) {
 			}
 
-			PackMapPropObjInstanceV21::PackMapPropObjInstanceV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropObjInstanceV21::PackMapPropObjInstanceV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -341,7 +341,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropObjInstanceV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropObjInstanceV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, blitTextures );
 				p_data = helpers::read( p_data, p_size, constants );
@@ -375,7 +375,7 @@ namespace gw2f {
 				, glomType( 0 ) {
 			}
 
-			PackMapPropObjToolV21::PackMapPropObjToolV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropObjToolV21::PackMapPropObjToolV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -395,7 +395,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropObjToolV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropObjToolV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, layerMask );
 				p_data = helpers::read( p_data, p_size, glomType );
@@ -424,7 +424,7 @@ namespace gw2f {
 				, parent( 0 ) {
 			}
 
-			PackMapPropObjMetaV21::PackMapPropObjMetaV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropObjMetaV21::PackMapPropObjMetaV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -480,7 +480,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropObjMetaV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropObjMetaV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, blitTextures );
 				p_data = helpers::read( p_data, p_size, constants );
@@ -517,7 +517,7 @@ namespace gw2f {
 				, scale( 0 ) {
 			}
 
-			PackMapPropObjVolumeV21::PackMapPropObjVolumeV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropObjVolumeV21::PackMapPropObjVolumeV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -545,7 +545,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropObjVolumeV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropObjVolumeV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, layerMask );
 				p_data = helpers::read( p_data, p_size, glomType );
@@ -565,7 +565,7 @@ namespace gw2f {
 				: nextBroadId( 0 ) {
 			}
 
-			PackMapPropV21::PackMapPropV21( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapPropV21::PackMapPropV21( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -595,7 +595,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPropV21::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapPropV21::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, propArray );
 				p_data = helpers::read( p_data, p_size, propAnimArray );
 				p_data = helpers::read( p_data, p_size, propInstanceArray );

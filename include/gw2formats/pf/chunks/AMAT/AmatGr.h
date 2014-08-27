@@ -49,10 +49,10 @@ namespace gw2f {
 				helpers::Array<qword> texTokens;
 			public:
 				AmatGrV5( );
-				AmatGrV5( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatGrV5( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatGrV5( const AmatGrV5& p_other );
 				AmatGrV5& operator=( const AmatGrV5& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef AmatGrV5 AmatGr;

@@ -34,18 +34,18 @@ namespace gw2f {
 			: public IStringsFileEntry {
 			std::vector<byte> m_data;
 		public:
-			StringsFileEntry( const byte* p_data, uint32 p_size );
+			StringsFileEntry( const byte* p_data, size_t p_size );
 			StringsFileEntry( const IStringsFileEntry& p_other );
 			virtual ~StringsFileEntry( );
 			virtual const byte* data( ) const override;
-			virtual uint32 size( ) const override;
+			virtual size_t size( ) const override;
 			virtual bool isEncrypted( ) const override;
 			virtual uint16 decryptionOffset( ) const override;
 			virtual uint16 bitsPerSymbol( ) const override;
 			virtual std::basic_string<char16> get( ) const override;
 		};
 
-		StringsFileEntry::StringsFileEntry( const byte* p_data, uint32 p_size )
+		StringsFileEntry::StringsFileEntry( const byte* p_data, size_t p_size )
 			: m_data( p_size ) {
 			std::copy_n( p_data, p_size, m_data.data( ) );
 		}
@@ -68,7 +68,7 @@ namespace gw2f {
 			return m_data.data( ) + 6;
 		}
 
-		uint32 StringsFileEntry::size( ) const {
+		size_t StringsFileEntry::size( ) const {
 			return m_data.size( ) - 6;
 		}
 
@@ -104,7 +104,7 @@ namespace gw2f {
 		: m_language( language::English ) {
 	}
 
-	StringsFile::StringsFile( const byte* p_data, uint32 p_size )
+	StringsFile::StringsFile( const byte* p_data, size_t p_size )
 		: m_language( language::English ) {
 		assign( p_data, p_size );
 	}
@@ -155,7 +155,7 @@ namespace gw2f {
 		return assign( buffer.data( ), buffer.size( ) );
 	}
 
-	bool StringsFile::assign( const byte* p_data, uint32 p_size ) {
+	bool StringsFile::assign( const byte* p_data, size_t p_size ) {
 		clear( );
 		if ( p_size < 6 ) { return false; }
 

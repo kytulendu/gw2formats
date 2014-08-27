@@ -42,10 +42,10 @@ namespace gw2f {
 				helpers::Array<byte> bytes;
 			public:
 				PackMapShadowTileV1( );
-				PackMapShadowTileV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapShadowTileV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapShadowTileV1( const PackMapShadowTileV1& p_other );
 				PackMapShadowTileV1& operator=( const PackMapShadowTileV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapShadowV1 {
@@ -61,10 +61,10 @@ namespace gw2f {
 				float3 shadowUp;
 			public:
 				PackMapShadowV1( );
-				PackMapShadowV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapShadowV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapShadowV1( const PackMapShadowV1& p_other );
 				PackMapShadowV1& operator=( const PackMapShadowV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapShadowV1 PackMapShadow;

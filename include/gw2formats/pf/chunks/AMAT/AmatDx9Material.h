@@ -42,10 +42,10 @@ namespace gw2f {
 				helpers::Array<dword> state;
 			public:
 				AmatDx9SamplerV10( );
-				AmatDx9SamplerV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatDx9SamplerV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatDx9SamplerV10( const AmatDx9SamplerV10& p_other );
 				AmatDx9SamplerV10& operator=( const AmatDx9SamplerV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AmatDx9ShaderV10 {
@@ -55,10 +55,10 @@ namespace gw2f {
 				word instructionCount;
 			public:
 				AmatDx9ShaderV10( );
-				AmatDx9ShaderV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatDx9ShaderV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatDx9ShaderV10( const AmatDx9ShaderV10& p_other );
 				AmatDx9ShaderV10& operator=( const AmatDx9ShaderV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AmatDx9EffectV10 {
@@ -73,20 +73,20 @@ namespace gw2f {
 				dword passFlags;
 			public:
 				AmatDx9EffectV10( );
-				AmatDx9EffectV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatDx9EffectV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatDx9EffectV10( const AmatDx9EffectV10& p_other );
 				AmatDx9EffectV10& operator=( const AmatDx9EffectV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AmatDx9PassV10 {
 				helpers::RefList<AmatDx9EffectV10> effects;
 			public:
 				AmatDx9PassV10( );
-				AmatDx9PassV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatDx9PassV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatDx9PassV10( const AmatDx9PassV10& p_other );
 				AmatDx9PassV10& operator=( const AmatDx9PassV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AmatDx9TechniqueV10 {
@@ -96,10 +96,10 @@ namespace gw2f {
 				word maxVsVersion;
 			public:
 				AmatDx9TechniqueV10( );
-				AmatDx9TechniqueV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatDx9TechniqueV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatDx9TechniqueV10( const AmatDx9TechniqueV10& p_other );
 				AmatDx9TechniqueV10& operator=( const AmatDx9TechniqueV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AmatDx9MaterialV10 {
@@ -108,10 +108,10 @@ namespace gw2f {
 				helpers::Array<AmatDx9TechniqueV10> techniques;
 			public:
 				AmatDx9MaterialV10( );
-				AmatDx9MaterialV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AmatDx9MaterialV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AmatDx9MaterialV10( const AmatDx9MaterialV10& p_other );
 				AmatDx9MaterialV10& operator=( const AmatDx9MaterialV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef AmatDx9MaterialV10 AmatDx9Material;

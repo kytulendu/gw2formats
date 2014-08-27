@@ -32,7 +32,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			MapParamV0::MapParamV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapParamV0::MapParamV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -50,7 +50,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapParamV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapParamV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, rect );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, guid );

@@ -44,20 +44,20 @@ namespace gw2f {
 				helpers::Array<float4> quatValues;
 			public:
 				ModelRootMotionV1( );
-				ModelRootMotionV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelRootMotionV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelRootMotionV1( const ModelRootMotionV1& p_other );
 				ModelRootMotionV1& operator=( const ModelRootMotionV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelFileRootMotionV1 {
 				helpers::Array<ModelRootMotionV1> rootMotions;
 			public:
 				ModelFileRootMotionV1( );
-				ModelFileRootMotionV1( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelFileRootMotionV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelFileRootMotionV1( const ModelFileRootMotionV1& p_other );
 				ModelFileRootMotionV1& operator=( const ModelFileRootMotionV1& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef ModelFileRootMotionV1 ModelFileRootMotion;

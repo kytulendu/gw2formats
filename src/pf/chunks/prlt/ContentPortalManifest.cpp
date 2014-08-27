@@ -34,7 +34,7 @@ namespace gw2f {
 				, radius( 0 ) {
 			}
 
-			ContentMapRedirectorV0::ContentMapRedirectorV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ContentMapRedirectorV0::ContentMapRedirectorV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -54,7 +54,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ContentMapRedirectorV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ContentMapRedirectorV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mapId );
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, position );
@@ -71,7 +71,7 @@ namespace gw2f {
 				, type( 0 ) {
 			}
 
-			ContentMapModelV0::ContentMapModelV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ContentMapModelV0::ContentMapModelV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -89,7 +89,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ContentMapModelV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ContentMapModelV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, type );
@@ -105,7 +105,7 @@ namespace gw2f {
 				, radius( 0 ) {
 			}
 
-			ContentMapStartV0::ContentMapStartV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ContentMapStartV0::ContentMapStartV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -125,7 +125,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ContentMapStartV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ContentMapStartV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, modelArray );
 				p_data = helpers::read( p_data, p_size, position );
@@ -141,7 +141,7 @@ namespace gw2f {
 				: mapId( 0 ) {
 			}
 
-			ContentMapV0::ContentMapV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ContentMapV0::ContentMapV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -159,7 +159,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ContentMapV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ContentMapV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mapId );
 				p_data = helpers::read( p_data, p_size, mapRedirectorArray );
 				p_data = helpers::read( p_data, p_size, mapStartArray );
@@ -173,7 +173,7 @@ namespace gw2f {
 			ContentPortalManifestV0::ContentPortalManifestV0( ) {
 			}
 
-			ContentPortalManifestV0::ContentPortalManifestV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ContentPortalManifestV0::ContentPortalManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -187,7 +187,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ContentPortalManifestV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ContentPortalManifestV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mapArray );
 				return p_data;
 			}

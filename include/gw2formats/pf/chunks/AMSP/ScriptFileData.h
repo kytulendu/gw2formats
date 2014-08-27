@@ -45,10 +45,10 @@ namespace gw2f {
 				helpers::Array<float> properties;
 			public:
 				DspDataV24( );
-				DspDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				DspDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				DspDataV24( const DspDataV24& p_other );
 				DspDataV24& operator=( const DspDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct BussDynamicDataV24 {
@@ -58,10 +58,10 @@ namespace gw2f {
 				helpers::Array<DspDataV24> dsp;
 			public:
 				BussDynamicDataV24( );
-				BussDynamicDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				BussDynamicDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				BussDynamicDataV24( const BussDynamicDataV24& p_other );
 				BussDynamicDataV24& operator=( const BussDynamicDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct BussDataV24 {
@@ -71,10 +71,10 @@ namespace gw2f {
 				helpers::Ptr<BussDynamicDataV24> dynamicData;
 			public:
 				BussDataV24( );
-				BussDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				BussDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				BussDataV24( const BussDataV24& p_other );
 				BussDataV24& operator=( const BussDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct EnvelopePointDataV24 {
@@ -82,10 +82,10 @@ namespace gw2f {
 				float value;
 			public:
 				EnvelopePointDataV24( );
-				EnvelopePointDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				EnvelopePointDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				EnvelopePointDataV24( const EnvelopePointDataV24& p_other );
 				EnvelopePointDataV24& operator=( const EnvelopePointDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct EnvelopeDataV24 {
@@ -94,10 +94,10 @@ namespace gw2f {
 				byte offsetType;
 			public:
 				EnvelopeDataV24( );
-				EnvelopeDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				EnvelopeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				EnvelopeDataV24( const EnvelopeDataV24& p_other );
 				EnvelopeDataV24& operator=( const EnvelopeDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct RangeDataV24 {
@@ -106,10 +106,10 @@ namespace gw2f {
 				byte minByte;
 			public:
 				RangeDataV24( );
-				RangeDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				RangeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				RangeDataV24( const RangeDataV24& p_other );
 				RangeDataV24& operator=( const RangeDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct RandomParamDataV24 {
@@ -117,10 +117,10 @@ namespace gw2f {
 				RangeDataV24 value;
 			public:
 				RandomParamDataV24( );
-				RandomParamDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				RandomParamDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				RandomParamDataV24( const RandomParamDataV24& p_other );
 				RandomParamDataV24& operator=( const RandomParamDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct DynamicParamDataV24 {
@@ -130,10 +130,10 @@ namespace gw2f {
 				byte type;
 			public:
 				DynamicParamDataV24( );
-				DynamicParamDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				DynamicParamDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				DynamicParamDataV24( const DynamicParamDataV24& p_other );
 				DynamicParamDataV24& operator=( const DynamicParamDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AttenuationDataV24 {
@@ -147,10 +147,10 @@ namespace gw2f {
 				DynamicParamDataV24 volumeB;
 			public:
 				AttenuationDataV24( );
-				AttenuationDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AttenuationDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AttenuationDataV24( const AttenuationDataV24& p_other );
 				AttenuationDataV24& operator=( const AttenuationDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct CategoryDynamicDataV24 {
@@ -164,10 +164,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				CategoryDynamicDataV24( );
-				CategoryDynamicDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				CategoryDynamicDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				CategoryDynamicDataV24( const CategoryDynamicDataV24& p_other );
 				CategoryDynamicDataV24& operator=( const CategoryDynamicDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct CategoryDataV24 {
@@ -182,10 +182,10 @@ namespace gw2f {
 				byte maxAudibleBehavior;
 			public:
 				CategoryDataV24( );
-				CategoryDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				CategoryDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				CategoryDataV24( const CategoryDataV24& p_other );
 				CategoryDataV24& operator=( const CategoryDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MusicConditionDataV24 {
@@ -194,10 +194,10 @@ namespace gw2f {
 				helpers::Array<byte> byteCode;
 			public:
 				MusicConditionDataV24( );
-				MusicConditionDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MusicConditionDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MusicConditionDataV24( const MusicConditionDataV24& p_other );
 				MusicConditionDataV24& operator=( const MusicConditionDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct FileNameDataV24 {
@@ -212,10 +212,10 @@ namespace gw2f {
 				byte noteMax;
 			public:
 				FileNameDataV24( );
-				FileNameDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				FileNameDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				FileNameDataV24( const FileNameDataV24& p_other );
 				FileNameDataV24& operator=( const FileNameDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MusicPlaylistDataV24 {
@@ -234,10 +234,10 @@ namespace gw2f {
 				byte fileIterateMode;
 			public:
 				MusicPlaylistDataV24( );
-				MusicPlaylistDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MusicPlaylistDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MusicPlaylistDataV24( const MusicPlaylistDataV24& p_other );
 				MusicPlaylistDataV24& operator=( const MusicPlaylistDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ReverbDataV24 {
@@ -262,10 +262,10 @@ namespace gw2f {
 				float echoDryMix;
 			public:
 				ReverbDataV24( );
-				ReverbDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ReverbDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ReverbDataV24( const ReverbDataV24& p_other );
 				ReverbDataV24& operator=( const ReverbDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct SnapshotDataV24 {
@@ -278,10 +278,10 @@ namespace gw2f {
 				byte priority;
 			public:
 				SnapshotDataV24( );
-				SnapshotDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				SnapshotDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				SnapshotDataV24( const SnapshotDataV24& p_other );
 				SnapshotDataV24& operator=( const SnapshotDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct AudioSettingsDataV24 {
@@ -301,10 +301,10 @@ namespace gw2f {
 				helpers::FileName musicScriptFileName;
 			public:
 				AudioSettingsDataV24( );
-				AudioSettingsDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AudioSettingsDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AudioSettingsDataV24( const AudioSettingsDataV24& p_other );
 				AudioSettingsDataV24& operator=( const AudioSettingsDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct HandlerDataV24 {
@@ -313,10 +313,10 @@ namespace gw2f {
 				helpers::Array<byte> byteCode;
 			public:
 				HandlerDataV24( );
-				HandlerDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				HandlerDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				HandlerDataV24( const HandlerDataV24& p_other );
 				HandlerDataV24& operator=( const HandlerDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MetaSoundDataV24 {
@@ -360,10 +360,10 @@ namespace gw2f {
 				byte repeatTimeFrom;
 			public:
 				MetaSoundDataV24( );
-				MetaSoundDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MetaSoundDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MetaSoundDataV24( const MetaSoundDataV24& p_other );
 				MetaSoundDataV24& operator=( const MetaSoundDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ScriptRefDataV24 {
@@ -371,10 +371,10 @@ namespace gw2f {
 				helpers::FileName fileName;
 			public:
 				ScriptRefDataV24( );
-				ScriptRefDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ScriptRefDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ScriptRefDataV24( const ScriptRefDataV24& p_other );
 				ScriptRefDataV24& operator=( const ScriptRefDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TriggerMarkerDataV24 {
@@ -384,10 +384,10 @@ namespace gw2f {
 				byte type;
 			public:
 				TriggerMarkerDataV24( );
-				TriggerMarkerDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TriggerMarkerDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TriggerMarkerDataV24( const TriggerMarkerDataV24& p_other );
 				TriggerMarkerDataV24& operator=( const TriggerMarkerDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TriggerKeyDataV24 {
@@ -395,10 +395,10 @@ namespace gw2f {
 				helpers::Array<TriggerMarkerDataV24> triggerMarkers;
 			public:
 				TriggerKeyDataV24( );
-				TriggerKeyDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TriggerKeyDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TriggerKeyDataV24( const TriggerKeyDataV24& p_other );
 				TriggerKeyDataV24& operator=( const TriggerKeyDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ScriptFileDataV24 {
@@ -419,10 +419,10 @@ namespace gw2f {
 				byte musicMutePriority;
 			public:
 				ScriptFileDataV24( );
-				ScriptFileDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ScriptFileDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ScriptFileDataV24( const ScriptFileDataV24& p_other );
 				ScriptFileDataV24& operator=( const ScriptFileDataV24& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef ScriptFileDataV24 ScriptFileData;

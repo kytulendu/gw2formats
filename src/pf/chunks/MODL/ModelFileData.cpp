@@ -36,7 +36,7 @@ namespace gw2f {
 				, uvPSInputIndex( 0 ) {
 			}
 
-			ModelTextureDataV65::ModelTextureDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelTextureDataV65::ModelTextureDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -60,7 +60,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTextureDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelTextureDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, textureFlags );
 				p_data = helpers::read( p_data, p_size, token );
@@ -79,7 +79,7 @@ namespace gw2f {
 				, constantFlags( 0 ) {
 			}
 
-			ModelConstantDataV65::ModelConstantDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelConstantDataV65::ModelConstantDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -97,7 +97,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelConstantDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelConstantDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, value );
 				p_data = helpers::read( p_data, p_size, constantFlags );
@@ -113,7 +113,7 @@ namespace gw2f {
 				, constantToken( 0 ) {
 			}
 
-			ModelMatConstLinkV65::ModelMatConstLinkV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMatConstLinkV65::ModelMatConstLinkV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -129,7 +129,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMatConstLinkV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMatConstLinkV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, linkToken );
 				p_data = helpers::read( p_data, p_size, constantToken );
 				return p_data;
@@ -145,7 +145,7 @@ namespace gw2f {
 				, type( 0 ) {
 			}
 
-			ModelUVTransLinkV65::ModelUVTransLinkV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelUVTransLinkV65::ModelUVTransLinkV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -163,7 +163,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelUVTransLinkV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelUVTransLinkV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, linkToken );
 				p_data = helpers::read( p_data, p_size, uvAnimId );
 				p_data = helpers::read( p_data, p_size, type );
@@ -184,7 +184,7 @@ namespace gw2f {
 				, rotate( 0 ) {
 			}
 
-			ModelMaterialTexTransformV65::ModelMaterialTexTransformV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMaterialTexTransformV65::ModelMaterialTexTransformV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -218,7 +218,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMaterialTexTransformV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMaterialTexTransformV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, uvIndex );
 				p_data = helpers::read( p_data, p_size, columns );
@@ -245,7 +245,7 @@ namespace gw2f {
 				, texCoordCount( 0 ) {
 			}
 
-			ModelMaterialDataV65::ModelMaterialDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMaterialDataV65::ModelMaterialDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -279,7 +279,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMaterialDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMaterialDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, materialId );
 				p_data = helpers::read( p_data, p_size, filename );
@@ -302,7 +302,7 @@ namespace gw2f {
 				: token( 0 ) {
 			}
 
-			ModelPermutationDataV65::ModelPermutationDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelPermutationDataV65::ModelPermutationDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -318,7 +318,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelPermutationDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelPermutationDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, materials );
 				return p_data;
@@ -336,7 +336,7 @@ namespace gw2f {
 				, materialIndex( 0 ) {
 			}
 
-			ModelParticleCloudV65::ModelParticleCloudV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelParticleCloudV65::ModelParticleCloudV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -366,7 +366,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelParticleCloudV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelParticleCloudV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, acceleration );
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, drag );
@@ -387,7 +387,7 @@ namespace gw2f {
 				: curveType( 0 ) {
 			}
 
-			ModelParticleCurveV65::ModelParticleCurveV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelParticleCurveV65::ModelParticleCurveV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -403,7 +403,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelParticleCurveV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelParticleCurveV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, curveType );
 				p_data = helpers::read( p_data, p_size, keys );
 				return p_data;
@@ -421,7 +421,7 @@ namespace gw2f {
 				, start( 0 ) {
 			}
 
-			ModelParticleFlipbookV65::ModelParticleFlipbookV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelParticleFlipbookV65::ModelParticleFlipbookV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -443,7 +443,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelParticleFlipbookV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelParticleFlipbookV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, columns );
 				p_data = helpers::read( p_data, p_size, count );
 				p_data = helpers::read( p_data, p_size, fps );
@@ -459,7 +459,7 @@ namespace gw2f {
 			ModelMatrix43V65::ModelMatrix43V65( ) {
 			}
 
-			ModelMatrix43V65::ModelMatrix43V65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMatrix43V65::ModelMatrix43V65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -477,7 +477,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMatrix43V65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMatrix43V65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, x );
 				p_data = helpers::read( p_data, p_size, y );
 				p_data = helpers::read( p_data, p_size, z );
@@ -506,7 +506,7 @@ namespace gw2f {
 				, spawnShape( 0 ) {
 			}
 
-			ModelParticleEmitterV65::ModelParticleEmitterV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelParticleEmitterV65::ModelParticleEmitterV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -598,7 +598,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelParticleEmitterV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelParticleEmitterV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, acceleration );
 				p_data = helpers::read( p_data, p_size, accelerationDistRange );
 				p_data = helpers::read( p_data, p_size, accelerationDistSpeed );
@@ -649,7 +649,7 @@ namespace gw2f {
 			ModelCloudDataV65::ModelCloudDataV65( ) {
 			}
 
-			ModelCloudDataV65::ModelCloudDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelCloudDataV65::ModelCloudDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -665,7 +665,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelCloudDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelCloudDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, clouds );
 				p_data = helpers::read( p_data, p_size, emitters );
 				return p_data;
@@ -689,7 +689,7 @@ namespace gw2f {
 				, radius( 0 ) {
 			}
 
-			ModelObstacleDataV65::ModelObstacleDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelObstacleDataV65::ModelObstacleDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -725,7 +725,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelObstacleDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelObstacleDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, affinity );
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, type );
@@ -756,7 +756,7 @@ namespace gw2f {
 				, wind( 0 ) {
 			}
 
-			ModelStreakV65::ModelStreakV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelStreakV65::ModelStreakV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -790,7 +790,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelStreakV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelStreakV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, acceleration );
 				p_data = helpers::read( p_data, p_size, velocity );
 				p_data = helpers::read( p_data, p_size, anchorIndices );
@@ -819,7 +819,7 @@ namespace gw2f {
 				, texV( 0 ) {
 			}
 
-			ModelStreakAnchorV65::ModelStreakAnchorV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelStreakAnchorV65::ModelStreakAnchorV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -845,7 +845,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelStreakAnchorV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelStreakAnchorV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, colorStart );
 				p_data = helpers::read( p_data, p_size, colorEnd );
@@ -863,7 +863,7 @@ namespace gw2f {
 			ModelStreakDataV65::ModelStreakDataV65( ) {
 			}
 
-			ModelStreakDataV65::ModelStreakDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelStreakDataV65::ModelStreakDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -879,7 +879,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelStreakDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelStreakDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, streaks );
 				p_data = helpers::read( p_data, p_size, anchors );
 				return p_data;
@@ -896,7 +896,7 @@ namespace gw2f {
 				, nearDistance( 0 ) {
 			}
 
-			ModelEffectLightV65::ModelEffectLightV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelEffectLightV65::ModelEffectLightV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -918,7 +918,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelEffectLightV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelEffectLightV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, color );
 				p_data = helpers::read( p_data, p_size, farDistance );
@@ -934,7 +934,7 @@ namespace gw2f {
 			ModelLightDataV65::ModelLightDataV65( ) {
 			}
 
-			ModelLightDataV65::ModelLightDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightDataV65::ModelLightDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -948,7 +948,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, effectLights );
 				return p_data;
 			}
@@ -962,7 +962,7 @@ namespace gw2f {
 				, weight( 0 ) {
 			}
 
-			ModelClothBoneWeightV65::ModelClothBoneWeightV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelClothBoneWeightV65::ModelClothBoneWeightV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -978,7 +978,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelClothBoneWeightV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelClothBoneWeightV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, weight );
 				return p_data;
@@ -991,7 +991,7 @@ namespace gw2f {
 			ModelClothMeshGroupV65::ModelClothMeshGroupV65( ) {
 			}
 
-			ModelClothMeshGroupV65::ModelClothMeshGroupV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelClothMeshGroupV65::ModelClothMeshGroupV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1005,7 +1005,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelClothMeshGroupV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelClothMeshGroupV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, weights );
 				return p_data;
 			}
@@ -1018,7 +1018,7 @@ namespace gw2f {
 				: strippedToken( 0 ) {
 			}
 
-			ModelClothGroupBindingV65::ModelClothGroupBindingV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelClothGroupBindingV65::ModelClothGroupBindingV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1038,7 +1038,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelClothGroupBindingV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelClothGroupBindingV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, strippedToken );
 				p_data = helpers::read( p_data, p_size, boneName );
 				p_data = helpers::read( p_data, p_size, OBBMin );
@@ -1055,7 +1055,7 @@ namespace gw2f {
 				, vertIndex( 0 ) {
 			}
 
-			ModelClothSoftLockV65::ModelClothSoftLockV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelClothSoftLockV65::ModelClothSoftLockV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1071,7 +1071,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelClothSoftLockV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelClothSoftLockV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, weight );
 				p_data = helpers::read( p_data, p_size, vertIndex );
 				return p_data;
@@ -1088,7 +1088,7 @@ namespace gw2f {
 				, vertIndexB( 0 ) {
 			}
 
-			ModelClothConstraintV65::ModelClothConstraintV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelClothConstraintV65::ModelClothConstraintV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1108,7 +1108,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelClothConstraintV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelClothConstraintV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, distance );
 				p_data = helpers::read( p_data, p_size, relationship );
 				p_data = helpers::read( p_data, p_size, vertIndexA );
@@ -1137,7 +1137,7 @@ namespace gw2f {
 				, visBone( 0 ) {
 			}
 
-			ModelClothDataV65::ModelClothDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelClothDataV65::ModelClothDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1205,7 +1205,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelClothDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelClothDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, materialIndex );
 				p_data = helpers::read( p_data, p_size, drag );
 				p_data = helpers::read( p_data, p_size, gravity );
@@ -1248,7 +1248,7 @@ namespace gw2f {
 				, nearDistance( 0 ) {
 			}
 
-			ModelEffectWindV65::ModelEffectWindV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelEffectWindV65::ModelEffectWindV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1268,7 +1268,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelEffectWindV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelEffectWindV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, farDistance );
 				p_data = helpers::read( p_data, p_size, intensity );
@@ -1283,7 +1283,7 @@ namespace gw2f {
 			ModelWindDataV65::ModelWindDataV65( ) {
 			}
 
-			ModelWindDataV65::ModelWindDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelWindDataV65::ModelWindDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1297,7 +1297,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelWindDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelWindDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, effectWind );
 				return p_data;
 			}
@@ -1313,7 +1313,7 @@ namespace gw2f {
 				, materialIndex( 0 ) {
 			}
 
-			ModelLightningSystemV65::ModelLightningSystemV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightningSystemV65::ModelLightningSystemV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1335,7 +1335,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightningSystemV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightningSystemV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, boltIndices );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -1369,7 +1369,7 @@ namespace gw2f {
 				, noise( 0 ) {
 			}
 
-			ModelLightningBoltV65::ModelLightningBoltV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightningBoltV65::ModelLightningBoltV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1435,7 +1435,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightningBoltV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightningBoltV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, nodeIndices );
 				p_data = helpers::read( p_data, p_size, colorBegin );
@@ -1478,7 +1478,7 @@ namespace gw2f {
 				, updatePos( 0 ) {
 			}
 
-			ModelLightningNodeV65::ModelLightningNodeV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightningNodeV65::ModelLightningNodeV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1504,7 +1504,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightningNodeV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightningNodeV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, childrenIndices );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -1522,7 +1522,7 @@ namespace gw2f {
 			ModelLightningDataV65::ModelLightningDataV65( ) {
 			}
 
-			ModelLightningDataV65::ModelLightningDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightningDataV65::ModelLightningDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1540,7 +1540,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightningDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightningDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, systems );
 				p_data = helpers::read( p_data, p_size, bolts );
 				p_data = helpers::read( p_data, p_size, nodes );
@@ -1557,7 +1557,7 @@ namespace gw2f {
 				, vertexFvf( 0 ) {
 			}
 
-			ModelSoftBodyDataV65::ModelSoftBodyDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelSoftBodyDataV65::ModelSoftBodyDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1581,7 +1581,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelSoftBodyDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelSoftBodyDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, materialIndex );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, vertexFvf );
@@ -1599,7 +1599,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelBoneOffsetDataV65::ModelBoneOffsetDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelBoneOffsetDataV65::ModelBoneOffsetDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1619,7 +1619,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoneOffsetDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelBoneOffsetDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, translation );
 				p_data = helpers::read( p_data, p_size, rotation );
@@ -1635,7 +1635,7 @@ namespace gw2f {
 				: radius( 0 ) {
 			}
 
-			ModelBoundingSphereV65::ModelBoundingSphereV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelBoundingSphereV65::ModelBoundingSphereV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1651,7 +1651,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoundingSphereV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelBoundingSphereV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, center );
 				p_data = helpers::read( p_data, p_size, radius );
 				return p_data;
@@ -1664,7 +1664,7 @@ namespace gw2f {
 			ModelFileDataV65::ModelFileDataV65( ) {
 			}
 
-			ModelFileDataV65::ModelFileDataV65( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFileDataV65::ModelFileDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -1706,7 +1706,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFileDataV65::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFileDataV65::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, permutations );
 				p_data = helpers::read( p_data, p_size, cloudData );
 				p_data = helpers::read( p_data, p_size, obstacles );

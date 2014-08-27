@@ -31,7 +31,7 @@ namespace gw2f {
 			PackMapInterestPointV0::PackMapInterestPointV0( ) {
 			}
 
-			PackMapInterestPointV0::PackMapInterestPointV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapInterestPointV0::PackMapInterestPointV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -49,7 +49,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapInterestPointV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapInterestPointV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, forward );
 				p_data = helpers::read( p_data, p_size, description );
@@ -63,7 +63,7 @@ namespace gw2f {
 			MapMissionV0::MapMissionV0( ) {
 			}
 
-			MapMissionV0::MapMissionV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapMissionV0::MapMissionV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -77,7 +77,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapMissionV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapMissionV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, interestPoints );
 				return p_data;
 			}

@@ -54,20 +54,20 @@ namespace gw2f {
 				float simplifyDot;
 			public:
 				MapShoreChainV0( );
-				MapShoreChainV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapShoreChainV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapShoreChainV0( const MapShoreChainV0& p_other );
 				MapShoreChainV0& operator=( const MapShoreChainV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapShoreV0 {
 				helpers::Array<MapShoreChainV0> chains;
 			public:
 				MapShoreV0( );
-				MapShoreV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapShoreV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapShoreV0( const MapShoreV0& p_other );
 				MapShoreV0& operator=( const MapShoreV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef MapShoreV0 MapShore;

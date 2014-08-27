@@ -41,20 +41,20 @@ namespace gw2f {
 				helpers::Array<dword> variantTextIds;
 			public:
 				TextPackVariantV0( );
-				TextPackVariantV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextPackVariantV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextPackVariantV0( const TextPackVariantV0& p_other );
 				TextPackVariantV0& operator=( const TextPackVariantV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct TextPackVariantsV0 {
 				helpers::Array<TextPackVariantV0> variants;
 			public:
 				TextPackVariantsV0( );
-				TextPackVariantsV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				TextPackVariantsV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				TextPackVariantsV0( const TextPackVariantsV0& p_other );
 				TextPackVariantsV0& operator=( const TextPackVariantsV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef TextPackVariantsV0 TextPackVariants;

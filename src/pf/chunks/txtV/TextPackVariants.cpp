@@ -32,7 +32,7 @@ namespace gw2f {
 				: textId( 0 ) {
 			}
 
-			TextPackVariantV0::TextPackVariantV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			TextPackVariantV0::TextPackVariantV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -48,7 +48,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextPackVariantV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* TextPackVariantV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, textId );
 				p_data = helpers::read( p_data, p_size, variantTextIds );
 				return p_data;
@@ -61,7 +61,7 @@ namespace gw2f {
 			TextPackVariantsV0::TextPackVariantsV0( ) {
 			}
 
-			TextPackVariantsV0::TextPackVariantsV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			TextPackVariantsV0::TextPackVariantsV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -75,7 +75,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextPackVariantsV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* TextPackVariantsV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, variants );
 				return p_data;
 			}

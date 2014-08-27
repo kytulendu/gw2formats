@@ -50,10 +50,10 @@ namespace gw2f {
 				byte uvIndex;
 			public:
 				MapRiverTextureMapV0( );
-				MapRiverTextureMapV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapRiverTextureMapV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapRiverTextureMapV0( const MapRiverTextureMapV0& p_other );
 				MapRiverTextureMapV0& operator=( const MapRiverTextureMapV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapRiverMaterialV0 {
@@ -65,10 +65,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				MapRiverMaterialV0( );
-				MapRiverMaterialV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapRiverMaterialV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapRiverMaterialV0( const MapRiverMaterialV0& p_other );
 				MapRiverMaterialV0& operator=( const MapRiverMaterialV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapRiverReachV0 {
@@ -84,10 +84,10 @@ namespace gw2f {
 				helpers::WString reserved;
 			public:
 				MapRiverReachV0( );
-				MapRiverReachV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapRiverReachV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapRiverReachV0( const MapRiverReachV0& p_other );
 				MapRiverReachV0& operator=( const MapRiverReachV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapRiverV0 {
@@ -99,10 +99,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				MapRiverV0( );
-				MapRiverV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapRiverV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapRiverV0( const MapRiverV0& p_other );
 				MapRiverV0& operator=( const MapRiverV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapRiversV0 {
@@ -112,10 +112,10 @@ namespace gw2f {
 				PackBroadphaseType broadPhase;
 			public:
 				PackMapRiversV0( );
-				PackMapRiversV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapRiversV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapRiversV0( const PackMapRiversV0& p_other );
 				PackMapRiversV0& operator=( const PackMapRiversV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapRiversV0 PackMapRivers;

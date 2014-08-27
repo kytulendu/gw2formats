@@ -31,7 +31,7 @@ namespace gw2f {
 				, m_terminator( 0 ) {
 			}
 
-			FileReference::FileReference( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			FileReference::FileReference( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -52,7 +52,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* FileReference::assign( const byte* p_data, uint32 p_size ) {
+			const byte* FileReference::assign( const byte* p_data, size_t p_size ) {
 				p_data = read( p_data, p_size, m_lowPart );
 				p_data = read( p_data, p_size, m_highPart );
 				p_data = read( p_data, p_size, m_terminator );

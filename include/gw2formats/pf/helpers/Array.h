@@ -51,7 +51,7 @@ namespace gw2f {
 				*  \param[in]  p_size      Size of data.
 				*  \param[out] po_pointer  Optional. If given, it is set to the end of the
 				*                          data read by this class. */
-				Array( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr )
+				Array( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr )
 					: m_data( new std::vector<T> ) {
 					p_data = assign( p_data, p_size )
 						if ( po_pointer ) { *po_pointer = p_data; }
@@ -82,7 +82,7 @@ namespace gw2f {
 				*  \param[in]  p_data      Data to assign.
 				*  \param[in]  p_size      Size of p_data.
 				*  \return     const byte* Pointer to the first byte after the read data. */
-				const byte* assign( const byte* p_data, uint32 p_size ) {
+				const byte* assign( const byte* p_data, size_t p_size ) {
 					if ( !p_data ) { throw std::invalid_argument( "p_data must not be null" ); }
 					if ( p_size < 2 * sizeof( int32 ) ) { throw std::invalid_argument( "p_size must be large enough to contain two 32-bit integers." ); }
 
@@ -90,19 +90,19 @@ namespace gw2f {
 					// check the safety of that without providing yet *another* parameter.
 					// ... I'll probably add that at some point, for now I trust GW2 files.
 
-					auto count = *reinterpret_cast<const uint32*>( p_data );
-					auto offset = *reinterpret_cast<const int32*>( p_data + sizeof( count ) );
+					auto count = *reinterpret_cast<const uint*>( p_data );
+					auto offset = *reinterpret_cast<const int*>( p_data + sizeof( count ) );
 					p_size -= sizeof( count ) + sizeof( offset );
 					p_data += sizeof( count ) + sizeof( offset );
 
 					auto pointer = p_data - sizeof( offset ) + offset;
 					auto end = p_data + p_size;
-					auto size = p_size - ( pointer - p_data );
+					size_t size = p_size - ( pointer - p_data );
 
 					m_data.reset( new std::vector<T> );
 					m_data->resize( count );
 
-					for ( uint32 i = 0; i < count; i++ ) {
+					for ( uint i = 0; i < count; i++ ) {
 						if ( pointer >= end ) { throw std::out_of_range( "pointer went past the end of the buffer." ); }
 						pointer = read( pointer, size, ( *m_data )[i] );
 						size = ( end - pointer );
@@ -112,7 +112,7 @@ namespace gw2f {
 				}
 
 				/** Gets the amount of elements contained in this array. */
-				uint32 size( ) const {
+				size_t size( ) const {
 					return m_data->size( );
 				}
 

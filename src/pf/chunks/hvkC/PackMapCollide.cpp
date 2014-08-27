@@ -31,7 +31,7 @@ namespace gw2f {
 			PackMoppType::PackMoppType( ) {
 			}
 
-			PackMoppType::PackMoppType( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMoppType::PackMoppType( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMoppType::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMoppType::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, moppData );
 				return p_data;
 			}
@@ -57,7 +57,7 @@ namespace gw2f {
 			PackMapCollideCollisionV14::PackMapCollideCollisionV14( ) {
 			}
 
-			PackMapCollideCollisionV14::PackMapCollideCollisionV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideCollisionV14::PackMapCollideCollisionV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -77,7 +77,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideCollisionV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideCollisionV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, indices );
 				p_data = helpers::read( p_data, p_size, vertices );
 				p_data = helpers::read( p_data, p_size, surfaces );
@@ -92,7 +92,7 @@ namespace gw2f {
 			PackMapCollideBlockerV14::PackMapCollideBlockerV14( ) {
 			}
 
-			PackMapCollideBlockerV14::PackMapCollideBlockerV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideBlockerV14::PackMapCollideBlockerV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -106,7 +106,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideBlockerV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideBlockerV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, vertices );
 				return p_data;
 			}
@@ -118,7 +118,7 @@ namespace gw2f {
 			PackMapCollideNavMeshV14::PackMapCollideNavMeshV14( ) {
 			}
 
-			PackMapCollideNavMeshV14::PackMapCollideNavMeshV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideNavMeshV14::PackMapCollideNavMeshV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -136,7 +136,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideNavMeshV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideNavMeshV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, navMesh );
 				p_data = helpers::read( p_data, p_size, graph );
 				p_data = helpers::read( p_data, p_size, mediator );
@@ -151,7 +151,7 @@ namespace gw2f {
 				: sequence( 0 ) {
 			}
 
-			PackMapCollideAnimationV14::PackMapCollideAnimationV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideAnimationV14::PackMapCollideAnimationV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -169,7 +169,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideAnimationV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideAnimationV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sequence );
 				p_data = helpers::read( p_data, p_size, collisionIndices );
 				p_data = helpers::read( p_data, p_size, blockerIndices );
@@ -185,7 +185,7 @@ namespace gw2f {
 				, navMeshIndex( 0 ) {
 			}
 
-			PackMapCollideGeometryV14::PackMapCollideGeometryV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideGeometryV14::PackMapCollideGeometryV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -203,7 +203,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideGeometryV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideGeometryV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, quantizedExtents );
 				p_data = helpers::read( p_data, p_size, animations );
 				p_data = helpers::read( p_data, p_size, navMeshIndex );
@@ -218,7 +218,7 @@ namespace gw2f {
 				: geometryIndex( 0 ) {
 			}
 
-			PackMapCollideModelObsV14::PackMapCollideModelObsV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideModelObsV14::PackMapCollideModelObsV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -234,7 +234,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideModelObsV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideModelObsV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, translate );
 				p_data = helpers::read( p_data, p_size, geometryIndex );
 				return p_data;
@@ -251,7 +251,7 @@ namespace gw2f {
 				, geometryIndex( 0 ) {
 			}
 
-			PackMapCollideModelPropV14::PackMapCollideModelPropV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideModelPropV14::PackMapCollideModelPropV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -275,7 +275,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideModelPropV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideModelPropV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, sequence );
 				p_data = helpers::read( p_data, p_size, scale );
@@ -294,7 +294,7 @@ namespace gw2f {
 				, geometryIndex( 0 ) {
 			}
 
-			PackMapCollideModelZoneV14::PackMapCollideModelZoneV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideModelZoneV14::PackMapCollideModelZoneV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -314,7 +314,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideModelZoneV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideModelZoneV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, scale );
 				p_data = helpers::read( p_data, p_size, translate );
 				p_data = helpers::read( p_data, p_size, rotate );
@@ -329,7 +329,7 @@ namespace gw2f {
 			PackMapCollideV14::PackMapCollideV14( ) {
 			}
 
-			PackMapCollideV14::PackMapCollideV14( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapCollideV14::PackMapCollideV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -361,7 +361,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideV14::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapCollideV14::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, boundsMin );
 				p_data = helpers::read( p_data, p_size, boundsMax );
 				p_data = helpers::read( p_data, p_size, collisions );

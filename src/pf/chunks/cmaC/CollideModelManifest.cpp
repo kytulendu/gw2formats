@@ -31,7 +31,7 @@ namespace gw2f {
 			CollideModelManifestFileV0::CollideModelManifestFileV0( ) {
 			}
 
-			CollideModelManifestFileV0::CollideModelManifestFileV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			CollideModelManifestFileV0::CollideModelManifestFileV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -51,7 +51,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* CollideModelManifestFileV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* CollideModelManifestFileV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, modelFileStr );
 				p_data = helpers::read( p_data, p_size, modelFile );
 				p_data = helpers::read( p_data, p_size, collisionFile );
@@ -66,7 +66,7 @@ namespace gw2f {
 			CollideModelManifestV0::CollideModelManifestV0( ) {
 			}
 
-			CollideModelManifestV0::CollideModelManifestV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			CollideModelManifestV0::CollideModelManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -80,7 +80,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* CollideModelManifestV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* CollideModelManifestV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, files );
 				return p_data;
 			}

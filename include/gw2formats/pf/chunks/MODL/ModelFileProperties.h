@@ -44,10 +44,10 @@ namespace gw2f {
 				float3 translation;
 			public:
 				ModelFixedOffsetDataV0( );
-				ModelFixedOffsetDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelFixedOffsetDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelFixedOffsetDataV0( const ModelFixedOffsetDataV0& p_other );
 				ModelFixedOffsetDataV0& operator=( const ModelFixedOffsetDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelPropertyDataV0 {
@@ -59,10 +59,10 @@ namespace gw2f {
 				helpers::FileName strVal;
 			public:
 				ModelPropertyDataV0( );
-				ModelPropertyDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelPropertyDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelPropertyDataV0( const ModelPropertyDataV0& p_other );
 				ModelPropertyDataV0& operator=( const ModelPropertyDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelFilePropertiesV0 {
@@ -70,10 +70,10 @@ namespace gw2f {
 				helpers::Array<ModelPropertyDataV0> properties;
 			public:
 				ModelFilePropertiesV0( );
-				ModelFilePropertiesV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ModelFilePropertiesV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ModelFilePropertiesV0( const ModelFilePropertiesV0& p_other );
 				ModelFilePropertiesV0& operator=( const ModelFilePropertiesV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef ModelFilePropertiesV0 ModelFileProperties;

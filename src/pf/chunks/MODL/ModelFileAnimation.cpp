@@ -31,7 +31,7 @@ namespace gw2f {
 			PackGrannyAnimationType::PackGrannyAnimationType( ) {
 			}
 
-			PackGrannyAnimationType::PackGrannyAnimationType( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackGrannyAnimationType::PackGrannyAnimationType( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackGrannyAnimationType::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackGrannyAnimationType::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, animation );
 				return p_data;
 			}
@@ -57,7 +57,7 @@ namespace gw2f {
 			ModelAnimationLodV24::ModelAnimationLodV24( ) {
 			}
 
-			ModelAnimationLodV24::ModelAnimationLodV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelAnimationLodV24::ModelAnimationLodV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -73,7 +73,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimationLodV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelAnimationLodV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, data );
 				p_data = helpers::read( p_data, p_size, fileFull );
 				return p_data;
@@ -87,7 +87,7 @@ namespace gw2f {
 				: boneToken( 0 ) {
 			}
 
-			ModelVisTrackDataV32::ModelVisTrackDataV32( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelVisTrackDataV32::ModelVisTrackDataV32( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -103,7 +103,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelVisTrackDataV32::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelVisTrackDataV32::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, boneToken );
 				p_data = helpers::read( p_data, p_size, keys );
 				return p_data;
@@ -119,7 +119,7 @@ namespace gw2f {
 				, vectorTrackIndex( 0 ) {
 			}
 
-			ModelTrackTypeDataV24::ModelTrackTypeDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelTrackTypeDataV24::ModelTrackTypeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -139,7 +139,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTrackTypeDataV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelTrackTypeDataV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, trackGroupIndex );
 				p_data = helpers::read( p_data, p_size, vectorTrackIndex );
@@ -155,7 +155,7 @@ namespace gw2f {
 				: uvAnimId( 0 ) {
 			}
 
-			ModelUVAnimationV24::ModelUVAnimationV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelUVAnimationV24::ModelUVAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -171,7 +171,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelUVAnimationV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelUVAnimationV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, uvAnimId );
 				p_data = helpers::read( p_data, p_size, uvTransformData );
 				return p_data;
@@ -185,7 +185,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelCloudAnimV24::ModelCloudAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelCloudAnimV24::ModelCloudAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -201,7 +201,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelCloudAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelCloudAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, cloudTrackData );
 				return p_data;
@@ -218,7 +218,7 @@ namespace gw2f {
 				, vectorTrackIndex( 0 ) {
 			}
 
-			ModelMatConstAnimV24::ModelMatConstAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMatConstAnimV24::ModelMatConstAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -240,7 +240,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMatConstAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMatConstAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, materialId );
 				p_data = helpers::read( p_data, p_size, constToken );
 				p_data = helpers::read( p_data, p_size, trackGroupIndex );
@@ -257,7 +257,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelLightAnimationV24::ModelLightAnimationV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightAnimationV24::ModelLightAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -273,7 +273,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightAnimationV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightAnimationV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, lightTrackData );
 				return p_data;
@@ -290,7 +290,7 @@ namespace gw2f {
 				, val( 0 ) {
 			}
 
-			ModelAnimPropertyDataV24::ModelAnimPropertyDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelAnimPropertyDataV24::ModelAnimPropertyDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -312,7 +312,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimPropertyDataV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelAnimPropertyDataV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, id );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, time );
@@ -331,7 +331,7 @@ namespace gw2f {
 				, vectorTrackIndex( 0 ) {
 			}
 
-			ModelTokenMapAnimV24::ModelTokenMapAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelTokenMapAnimV24::ModelTokenMapAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -351,7 +351,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTokenMapAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelTokenMapAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, linkToken );
 				p_data = helpers::read( p_data, p_size, trackGroupIndex );
 				p_data = helpers::read( p_data, p_size, vectorTrackIndex );
@@ -367,7 +367,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelBoneConstraintAnimV24::ModelBoneConstraintAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelBoneConstraintAnimV24::ModelBoneConstraintAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -383,7 +383,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoneConstraintAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelBoneConstraintAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, bcTrackData );
 				return p_data;
@@ -397,7 +397,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelAnchorAnimV24::ModelAnchorAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelAnchorAnimV24::ModelAnchorAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -413,7 +413,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnchorAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelAnchorAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, anchorTrackData );
 				return p_data;
@@ -427,7 +427,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelStreakAnimV24::ModelStreakAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelStreakAnimV24::ModelStreakAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -443,7 +443,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelStreakAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelStreakAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, anchorAnim );
 				return p_data;
@@ -457,7 +457,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelLightningAnimV24::ModelLightningAnimV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelLightningAnimV24::ModelLightningAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -473,7 +473,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelLightningAnimV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelLightningAnimV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, lightningTrackData );
 				return p_data;
@@ -487,7 +487,7 @@ namespace gw2f {
 				: bone( 0 ) {
 			}
 
-			ModelWindAnimationV24::ModelWindAnimationV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelWindAnimationV24::ModelWindAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -503,7 +503,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelWindAnimationV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelWindAnimationV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, windTrackData );
 				return p_data;
@@ -521,7 +521,7 @@ namespace gw2f {
 				, radius( 0 ) {
 			}
 
-			ModelAnimationDataV32::ModelAnimationDataV32( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelAnimationDataV32::ModelAnimationDataV32( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -579,7 +579,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimationDataV32::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelAnimationDataV32::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, data );
 				p_data = helpers::read( p_data, p_size, animLod );
@@ -617,7 +617,7 @@ namespace gw2f {
 				, end( 0 ) {
 			}
 
-			ModelCompoundAnimationDataV24::ModelCompoundAnimationDataV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelCompoundAnimationDataV24::ModelCompoundAnimationDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -637,7 +637,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelCompoundAnimationDataV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelCompoundAnimationDataV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, start );
 				p_data = helpers::read( p_data, p_size, loop );
@@ -654,7 +654,7 @@ namespace gw2f {
 				, duration( 0 ) {
 			}
 
-			ModelAnimationImportSequenceV24::ModelAnimationImportSequenceV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelAnimationImportSequenceV24::ModelAnimationImportSequenceV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -670,7 +670,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimationImportSequenceV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelAnimationImportSequenceV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, duration );
 				return p_data;
@@ -683,7 +683,7 @@ namespace gw2f {
 			ModelAnimationImportDataV32::ModelAnimationImportDataV32( ) {
 			}
 
-			ModelAnimationImportDataV32::ModelAnimationImportDataV32( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelAnimationImportDataV32::ModelAnimationImportDataV32( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -699,7 +699,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimationImportDataV32::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelAnimationImportDataV32::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, sequences );
 				return p_data;
@@ -712,7 +712,7 @@ namespace gw2f {
 			ModelFileAnimationBankV24::ModelFileAnimationBankV24( ) {
 			}
 
-			ModelFileAnimationBankV24::ModelFileAnimationBankV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFileAnimationBankV24::ModelFileAnimationBankV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -732,7 +732,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFileAnimationBankV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFileAnimationBankV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, animations );
 				p_data = helpers::read( p_data, p_size, compoundAnimations );
 				p_data = helpers::read( p_data, p_size, fallbacks );
@@ -747,7 +747,7 @@ namespace gw2f {
 			ModelFileAnimationV24::ModelFileAnimationV24( ) {
 			}
 
-			ModelFileAnimationV24::ModelFileAnimationV24( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFileAnimationV24::ModelFileAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -763,7 +763,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFileAnimationV24::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFileAnimationV24::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bank );
 				p_data = helpers::read( p_data, p_size, anim );
 				return p_data;

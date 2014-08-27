@@ -44,10 +44,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				MapSurfaceAttributeV0( );
-				MapSurfaceAttributeV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapSurfaceAttributeV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapSurfaceAttributeV0( const MapSurfaceAttributeV0& p_other );
 				MapSurfaceAttributeV0& operator=( const MapSurfaceAttributeV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapSurfaceAttributeToolV0 {
@@ -56,10 +56,10 @@ namespace gw2f {
 				byte4 color;
 			public:
 				MapSurfaceAttributeToolV0( );
-				MapSurfaceAttributeToolV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapSurfaceAttributeToolV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapSurfaceAttributeToolV0( const MapSurfaceAttributeToolV0& p_other );
 				MapSurfaceAttributeToolV0& operator=( const MapSurfaceAttributeToolV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapSurfaceOverrideV0 {
@@ -67,10 +67,10 @@ namespace gw2f {
 				helpers::Array<dword> bitArray;
 			public:
 				MapSurfaceOverrideV0( );
-				MapSurfaceOverrideV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapSurfaceOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapSurfaceOverrideV0( const MapSurfaceOverrideV0& p_other );
 				MapSurfaceOverrideV0& operator=( const MapSurfaceOverrideV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapSurfaceTerrainOverrideV0 {
@@ -78,10 +78,10 @@ namespace gw2f {
 				helpers::Array<MapSurfaceOverrideV0> overrideArray;
 			public:
 				MapSurfaceTerrainOverrideV0( );
-				MapSurfaceTerrainOverrideV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapSurfaceTerrainOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapSurfaceTerrainOverrideV0( const MapSurfaceTerrainOverrideV0& p_other );
 				MapSurfaceTerrainOverrideV0& operator=( const MapSurfaceTerrainOverrideV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapSurfacePropOverrideV0 {
@@ -89,10 +89,10 @@ namespace gw2f {
 				helpers::Array<MapSurfaceOverrideV0> overrideArray;
 			public:
 				MapSurfacePropOverrideV0( );
-				MapSurfacePropOverrideV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapSurfacePropOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapSurfacePropOverrideV0( const MapSurfacePropOverrideV0& p_other );
 				MapSurfacePropOverrideV0& operator=( const MapSurfacePropOverrideV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapSurfacesV0 {
@@ -102,10 +102,10 @@ namespace gw2f {
 				helpers::Array<MapSurfacePropOverrideV0> propArray;
 			public:
 				MapSurfacesV0( );
-				MapSurfacesV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapSurfacesV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapSurfacesV0( const MapSurfacesV0& p_other );
 				MapSurfacesV0& operator=( const MapSurfacesV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef MapSurfacesV0 MapSurfaces;

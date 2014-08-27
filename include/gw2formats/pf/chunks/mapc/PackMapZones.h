@@ -50,10 +50,10 @@ namespace gw2f {
 				byte zOffsets[2];
 			public:
 				PackMapZoneModelV22( );
-				PackMapZoneModelV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZoneModelV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZoneModelV22( const PackMapZoneModelV22& p_other );
 				PackMapZoneModelV22& operator=( const PackMapZoneModelV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZoneLayerDefV22 {
@@ -77,10 +77,10 @@ namespace gw2f {
 				helpers::WString reserved;
 			public:
 				PackMapZoneLayerDefV22( );
-				PackMapZoneLayerDefV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZoneLayerDefV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZoneLayerDefV22( const PackMapZoneLayerDefV22& p_other );
 				PackMapZoneLayerDefV22& operator=( const PackMapZoneLayerDefV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZonePageV10 {
@@ -91,10 +91,10 @@ namespace gw2f {
 				helpers::WString string;
 			public:
 				PackMapZonePageV10( );
-				PackMapZonePageV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZonePageV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZonePageV10( const PackMapZonePageV10& p_other );
 				PackMapZonePageV10& operator=( const PackMapZonePageV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZonePageTableV10 {
@@ -102,10 +102,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				PackMapZonePageTableV10( );
-				PackMapZonePageTableV10( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZonePageTableV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZonePageTableV10( const PackMapZonePageTableV10& p_other );
 				PackMapZonePageTableV10& operator=( const PackMapZonePageTableV10& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZoneDefV22 {
@@ -117,10 +117,10 @@ namespace gw2f {
 				helpers::WString reserved;
 			public:
 				PackMapZoneDefV22( );
-				PackMapZoneDefV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZoneDefV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZoneDefV22( const PackMapZoneDefV22& p_other );
 				PackMapZoneDefV22& operator=( const PackMapZoneDefV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZoneEncodingDataV22 {
@@ -128,10 +128,10 @@ namespace gw2f {
 				byte offset;
 			public:
 				PackMapZoneEncodingDataV22( );
-				PackMapZoneEncodingDataV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZoneEncodingDataV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZoneEncodingDataV22( const PackMapZoneEncodingDataV22& p_other );
 				PackMapZoneEncodingDataV22& operator=( const PackMapZoneEncodingDataV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZoneCollideDataV22 {
@@ -140,10 +140,10 @@ namespace gw2f {
 				float zPos;
 			public:
 				PackMapZoneCollideDataV22( );
-				PackMapZoneCollideDataV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZoneCollideDataV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZoneCollideDataV22( const PackMapZoneCollideDataV22& p_other );
 				PackMapZoneCollideDataV22& operator=( const PackMapZoneCollideDataV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZoneV22 {
@@ -163,10 +163,10 @@ namespace gw2f {
 				helpers::WString reserved;
 			public:
 				PackMapZoneV22( );
-				PackMapZoneV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZoneV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZoneV22( const PackMapZoneV22& p_other );
 				PackMapZoneV22& operator=( const PackMapZoneV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapZonesV22 {
@@ -177,10 +177,10 @@ namespace gw2f {
 				helpers::WString string;
 			public:
 				PackMapZonesV22( );
-				PackMapZonesV22( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapZonesV22( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapZonesV22( const PackMapZonesV22& p_other );
 				PackMapZonesV22& operator=( const PackMapZonesV22& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackMapZonesV22 PackMapZones;

@@ -46,10 +46,10 @@ namespace gw2f {
 				dword diskFormat;
 			public:
 				PagedImageLayerDataV3( );
-				PagedImageLayerDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PagedImageLayerDataV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PagedImageLayerDataV3( const PagedImageLayerDataV3& p_other );
 				PagedImageLayerDataV3& operator=( const PagedImageLayerDataV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PagedImagePageDataV3 {
@@ -60,10 +60,10 @@ namespace gw2f {
 				byte4 solidColor;
 			public:
 				PagedImagePageDataV3( );
-				PagedImagePageDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PagedImagePageDataV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PagedImagePageDataV3( const PagedImagePageDataV3& p_other );
 				PagedImagePageDataV3& operator=( const PagedImagePageDataV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PagedImageTableDataV3 {
@@ -73,10 +73,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				PagedImageTableDataV3( );
-				PagedImageTableDataV3( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PagedImageTableDataV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PagedImageTableDataV3( const PagedImageTableDataV3& p_other );
 				PagedImageTableDataV3& operator=( const PagedImageTableDataV3& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PagedImageTableDataV3 PagedImageTableData;

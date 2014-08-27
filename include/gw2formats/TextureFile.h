@@ -44,9 +44,9 @@ namespace gw2f {
 		/** Gets the compressed pixel data. */
 		virtual const byte* data( ) const = 0;
 		/** Gets the size of the compressed pixel data. */
-		virtual uint32 size( ) const = 0;
+		virtual size_t size( ) const = 0;
 		/** Gets the size of the uncompressed pixel data. */
-		virtual uint32 uncompressedSize( ) const = 0;
+		virtual size_t uncompressedSize( ) const = 0;
 	};
 
 	/** Represents a texture file. */
@@ -60,7 +60,7 @@ namespace gw2f {
 		*  claimed, it still needs to be freed by the caller.
 		*  \param[in]  p_data  Data to assign.
 		*  \param[in]  p_size  Size of the given data. */
-		TextureFile( const byte* p_data, uint32 p_size );
+		TextureFile( const byte* p_data, size_t p_size );
 		/** Constructor. Loads data from the given file.
 		*  \param[in]  p_filename  Name of the file to load. */
 		TextureFile( const std::string& p_filename );
@@ -80,7 +80,7 @@ namespace gw2f {
 		*  \param[in]  p_data  Data to load.
 		*  \param[in]  p_size  Size of p_data.
 		*  \return bool    True if successful, false if not. */
-		bool assign( const byte* p_data, uint32 p_size );
+		bool assign( const byte* p_data, size_t p_size );
 		/** Clears the contents of this instance. */
 		void clear( );
 

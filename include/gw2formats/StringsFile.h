@@ -39,7 +39,7 @@ namespace gw2f {
 		/** Gets a pointer to the data contained in this entry. */
 		virtual const byte* data( ) const = 0;
 		/** Gets the size of the data contained in this entry. */
-		virtual uint32 size( ) const = 0;
+		virtual size_t size( ) const = 0;
 		/** Gets whether the entry is encrypted or not. */
 		virtual bool isEncrypted( ) const = 0;
 		/** Gets the offset to use when decrypting this entry. */
@@ -62,7 +62,7 @@ namespace gw2f {
 		*  claimed, it still needs to be freed by the caller.
 		*  \param[in]  p_data  Data to assign.
 		*  \param[in]  p_size  Size of the given data. */
-		StringsFile( const byte* p_data, uint32 p_size );
+		StringsFile( const byte* p_data, size_t p_size );
 		/** Constructor. Loads data from the given file.
 		*  \param[in]  p_filename  Name of the file to load. */
 		StringsFile( const std::string& p_filename );
@@ -82,7 +82,7 @@ namespace gw2f {
 		*  \param[in]  p_data  Data to load.
 		*  \param[in]  p_size  Size of p_data.
 		*  \return bool    True if successful, false if not. */
-		bool assign( const byte* p_data, uint32 p_size );
+		bool assign( const byte* p_data, size_t p_size );
 		/** Clears the contents of this instance. */
 		void clear( );
 

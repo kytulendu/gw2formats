@@ -36,18 +36,18 @@ namespace gw2f {
 			uint32 m_format;
 			std::vector<byte> m_data;
 		public:
-			MipMapData( uint16 p_width, uint16 p_height, uint32 p_format, const byte* p_data, uint32 p_size );
+			MipMapData( uint16 p_width, uint16 p_height, uint32 p_format, const byte* p_data, size_t p_size );
 			MipMapData( const IMipMapData& p_other );
 			virtual ~MipMapData( );
 			virtual uint16 width( ) const override;
 			virtual uint16 height( ) const override;
 			virtual uint32 format( ) const override;
 			virtual const byte* data( ) const override;
-			virtual uint32 size( ) const override;
-			virtual uint32 uncompressedSize( ) const override;
+			virtual size_t size( ) const override;
+			virtual size_t uncompressedSize( ) const override;
 		};
 
-		MipMapData::MipMapData( uint16 p_width, uint16 p_height, uint32 p_format, const byte* p_data, uint32 p_size )
+		MipMapData::MipMapData( uint16 p_width, uint16 p_height, uint32 p_format, const byte* p_data, size_t p_size )
 			: m_width( p_width )
 			, m_height( p_height )
 			, m_format( p_format )
@@ -82,11 +82,11 @@ namespace gw2f {
 			return m_data.data( );
 		}
 
-		uint32 MipMapData::size( ) const {
+		size_t MipMapData::size( ) const {
 			return m_data.size( );
 		}
 
-		uint32 MipMapData::uncompressedSize( ) const {
+		size_t MipMapData::uncompressedSize( ) const {
 			uint32 numBlocks = ( ( m_width + 3 ) >> 2 ) * ( ( m_height + 3 ) >> 2 );
 			switch ( m_format ) {
 			case fcc::DXT1:
@@ -110,7 +110,7 @@ namespace gw2f {
 	TextureFile::TextureFile( ) {
 	}
 
-	TextureFile::TextureFile( const byte* p_data, uint32 p_size ) {
+	TextureFile::TextureFile( const byte* p_data, size_t p_size ) {
 		assign( p_data, p_size );
 	}
 
@@ -151,7 +151,7 @@ namespace gw2f {
 		return assign( buffer.data( ), buffer.size( ) );
 	}
 
-	bool TextureFile::assign( const byte* p_data, uint32 p_size ) {
+	bool TextureFile::assign( const byte* p_data, size_t p_size ) {
 		if ( p_size < 12 ) { return false; }
 		clear( );
 

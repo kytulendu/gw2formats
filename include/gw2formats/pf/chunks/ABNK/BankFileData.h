@@ -53,10 +53,10 @@ namespace gw2f {
 				helpers::Array<byte> audioData;
 			public:
 				AsndFileDataV2( );
-				AsndFileDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				AsndFileDataV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				AsndFileDataV2( const AsndFileDataV2& p_other );
 				AsndFileDataV2& operator=( const AsndFileDataV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ReservedBankDataV2 {
@@ -66,10 +66,10 @@ namespace gw2f {
 				dword reserved4;
 			public:
 				ReservedBankDataV2( );
-				ReservedBankDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				ReservedBankDataV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				ReservedBankDataV2( const ReservedBankDataV2& p_other );
 				ReservedBankDataV2& operator=( const ReservedBankDataV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct BankFileDataV2 {
@@ -81,10 +81,10 @@ namespace gw2f {
 				helpers::Ptr<ReservedBankDataV2> reservedData;
 			public:
 				BankFileDataV2( );
-				BankFileDataV2( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				BankFileDataV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				BankFileDataV2( const BankFileDataV2& p_other );
 				BankFileDataV2& operator=( const BankFileDataV2& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef BankFileDataV2 BankFileData;

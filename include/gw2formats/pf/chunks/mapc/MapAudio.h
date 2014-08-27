@@ -59,20 +59,20 @@ namespace gw2f {
 				dword flags;
 			public:
 				PackMapAudioRegionV0( );
-				PackMapAudioRegionV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAudioRegionV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAudioRegionV0( const PackMapAudioRegionV0& p_other );
 				PackMapAudioRegionV0& operator=( const PackMapAudioRegionV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAudioRegionToolV0 {
 				helpers::WString annotation;
 			public:
 				PackMapAudioRegionToolV0( );
-				PackMapAudioRegionToolV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAudioRegionToolV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAudioRegionToolV0( const PackMapAudioRegionToolV0& p_other );
 				PackMapAudioRegionToolV0& operator=( const PackMapAudioRegionToolV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackMapAudioDepV0 {
@@ -80,10 +80,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				PackMapAudioDepV0( );
-				PackMapAudioDepV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackMapAudioDepV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackMapAudioDepV0( const PackMapAudioDepV0& p_other );
 				PackMapAudioDepV0& operator=( const PackMapAudioDepV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct MapAudioV0 {
@@ -96,10 +96,10 @@ namespace gw2f {
 				helpers::Array<PackMapAudioDepV0> audioDepArray;
 			public:
 				MapAudioV0( );
-				MapAudioV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				MapAudioV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				MapAudioV0( const MapAudioV0& p_other );
 				MapAudioV0& operator=( const MapAudioV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef MapAudioV0 MapAudio;

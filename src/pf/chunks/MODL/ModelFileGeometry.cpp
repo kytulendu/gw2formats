@@ -32,7 +32,7 @@ namespace gw2f {
 				: index( 0 ) {
 			}
 
-			ModelMeshMorphVertV66::ModelMeshMorphVertV66( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshMorphVertV66::ModelMeshMorphVertV66( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -48,7 +48,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshMorphVertV66::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshMorphVertV66::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, index );
 				p_data = helpers::read( p_data, p_size, vector );
 				return p_data;
@@ -62,7 +62,7 @@ namespace gw2f {
 				: mesh( 0 ) {
 			}
 
-			ModelMeshMorphTargetV66::ModelMeshMorphTargetV66( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshMorphTargetV66::ModelMeshMorphTargetV66( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -80,7 +80,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshMorphTargetV66::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshMorphTargetV66::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, positions );
 				p_data = helpers::read( p_data, p_size, normals );
 				p_data = helpers::read( p_data, p_size, mesh );
@@ -95,7 +95,7 @@ namespace gw2f {
 				: sphereRadius( 0 ) {
 			}
 
-			GrBoundData::GrBoundData( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			GrBoundData::GrBoundData( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -113,7 +113,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* GrBoundData::assign( const byte* p_data, uint32 p_size ) {
+			const byte* GrBoundData::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, center );
 				p_data = helpers::read( p_data, p_size, boxExtent );
 				p_data = helpers::read( p_data, p_size, sphereRadius );
@@ -128,7 +128,7 @@ namespace gw2f {
 				: vertexCount( 0 ) {
 			}
 
-			ModelMeshVertexDataV1::ModelMeshVertexDataV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshVertexDataV1::ModelMeshVertexDataV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -144,7 +144,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshVertexDataV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshVertexDataV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, vertexCount );
 				p_data = helpers::read( p_data, p_size, mesh );
 				return p_data;
@@ -157,7 +157,7 @@ namespace gw2f {
 			ModelMeshIndexDataV1::ModelMeshIndexDataV1( ) {
 			}
 
-			ModelMeshIndexDataV1::ModelMeshIndexDataV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshIndexDataV1::ModelMeshIndexDataV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -171,7 +171,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshIndexDataV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshIndexDataV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, indices );
 				return p_data;
 			}
@@ -183,7 +183,7 @@ namespace gw2f {
 			ModelMeshGeometryV1::ModelMeshGeometryV1( ) {
 			}
 
-			ModelMeshGeometryV1::ModelMeshGeometryV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshGeometryV1::ModelMeshGeometryV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -203,7 +203,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshGeometryV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshGeometryV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, verts );
 				p_data = helpers::read( p_data, p_size, indices );
 				p_data = helpers::read( p_data, p_size, lods );
@@ -222,7 +222,7 @@ namespace gw2f {
 				, materialIndex( 0 ) {
 			}
 
-			ModelMeshDataV66::ModelMeshDataV66( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelMeshDataV66::ModelMeshDataV66( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -258,7 +258,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMeshDataV66::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelMeshDataV66::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, visBone );
 				p_data = helpers::read( p_data, p_size, morphTargets );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -281,7 +281,7 @@ namespace gw2f {
 			ModelFileGeometryV1::ModelFileGeometryV1( ) {
 			}
 
-			ModelFileGeometryV1::ModelFileGeometryV1( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			ModelFileGeometryV1::ModelFileGeometryV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -295,7 +295,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFileGeometryV1::assign( const byte* p_data, uint32 p_size ) {
+			const byte* ModelFileGeometryV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, meshes );
 				return p_data;
 			}

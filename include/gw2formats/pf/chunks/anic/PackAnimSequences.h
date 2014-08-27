@@ -43,20 +43,20 @@ namespace gw2f {
 				byte endingChargeLevel;
 			public:
 				PackAnimSequenceChargeStageV0( );
-				PackAnimSequenceChargeStageV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceChargeStageV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceChargeStageV0( const PackAnimSequenceChargeStageV0& p_other );
 				PackAnimSequenceChargeStageV0& operator=( const PackAnimSequenceChargeStageV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequenceStepActionV0 {
 				dword duration;
 			public:
 				PackAnimSequenceStepActionV0( );
-				PackAnimSequenceStepActionV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceStepActionV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceStepActionV0( const PackAnimSequenceStepActionV0& p_other );
 				PackAnimSequenceStepActionV0& operator=( const PackAnimSequenceStepActionV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequenceStepMoveV0 {
@@ -66,10 +66,10 @@ namespace gw2f {
 				float2 velocity;
 			public:
 				PackAnimSequenceStepMoveV0( );
-				PackAnimSequenceStepMoveV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceStepMoveV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceStepMoveV0( const PackAnimSequenceStepMoveV0& p_other );
 				PackAnimSequenceStepMoveV0& operator=( const PackAnimSequenceStepMoveV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequenceStepV0 {
@@ -80,10 +80,10 @@ namespace gw2f {
 				helpers::Ptr<PackAnimSequenceStepMoveV0> move;
 			public:
 				PackAnimSequenceStepV0( );
-				PackAnimSequenceStepV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceStepV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceStepV0( const PackAnimSequenceStepV0& p_other );
 				PackAnimSequenceStepV0& operator=( const PackAnimSequenceStepV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequenceTriggerV0 {
@@ -92,10 +92,10 @@ namespace gw2f {
 				dword flags;
 			public:
 				PackAnimSequenceTriggerV0( );
-				PackAnimSequenceTriggerV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceTriggerV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceTriggerV0( const PackAnimSequenceTriggerV0& p_other );
 				PackAnimSequenceTriggerV0& operator=( const PackAnimSequenceTriggerV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequenceDataV0 {
@@ -108,10 +108,10 @@ namespace gw2f {
 				helpers::Array<PackAnimSequenceTriggerV0> triggers;
 			public:
 				PackAnimSequenceDataV0( );
-				PackAnimSequenceDataV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceDataV0( const PackAnimSequenceDataV0& p_other );
 				PackAnimSequenceDataV0& operator=( const PackAnimSequenceDataV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequenceV0 {
@@ -119,20 +119,20 @@ namespace gw2f {
 				helpers::Array<PackAnimSequenceDataV0> animationData;
 			public:
 				PackAnimSequenceV0( );
-				PackAnimSequenceV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequenceV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequenceV0( const PackAnimSequenceV0& p_other );
 				PackAnimSequenceV0& operator=( const PackAnimSequenceV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct PackAnimSequencesV0 {
 				helpers::Array<PackAnimSequenceV0> sequences;
 			public:
 				PackAnimSequencesV0( );
-				PackAnimSequencesV0( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackAnimSequencesV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackAnimSequencesV0( const PackAnimSequencesV0& p_other );
 				PackAnimSequencesV0& operator=( const PackAnimSequencesV0& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			typedef PackAnimSequencesV0 PackAnimSequences;

@@ -31,7 +31,7 @@ namespace gw2f {
 			PackBroadphaseType::PackBroadphaseType( ) {
 			}
 
-			PackBroadphaseType::PackBroadphaseType( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackBroadphaseType::PackBroadphaseType( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -45,7 +45,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackBroadphaseType::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackBroadphaseType::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, broadphaseData );
 				return p_data;
 			}

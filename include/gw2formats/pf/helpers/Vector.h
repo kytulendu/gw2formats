@@ -41,7 +41,7 @@ namespace gw2f {
 					std::fill( m_data, m_data + TDimensions, static_cast<T>( 0 ) );
 				}
 
-				Vector( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr ) {
+				Vector( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr ) {
 					auto pointer = assign( p_data, p_size );
 					if ( po_pointer ) { *po_pointer = pointer; }
 				}
@@ -58,7 +58,7 @@ namespace gw2f {
 					return *this;
 				}
 
-				const byte* assign( const byte* p_data, uint32 p_size ) {
+				const byte* assign( const byte* p_data, size_t p_size ) {
 					for ( uint32 i = 0; i < TDimensions; i++ ) {
 						p_data = read( p_data, p_size, m_data[i] );
 					}
@@ -70,7 +70,7 @@ namespace gw2f {
 					return p_index;
 				}
 
-				uint32 size( ) const {
+				size_t size( ) const {
 					return TDimensions;
 				}
 			};

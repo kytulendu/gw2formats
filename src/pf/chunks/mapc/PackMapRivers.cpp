@@ -37,7 +37,7 @@ namespace gw2f {
 				, uvIndex( 0 ) {
 			}
 
-			MapRiverTextureMapV0::MapRiverTextureMapV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapRiverTextureMapV0::MapRiverTextureMapV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -61,7 +61,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapRiverTextureMapV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapRiverTextureMapV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, scale );
 				p_data = helpers::read( p_data, p_size, speedX );
 				p_data = helpers::read( p_data, p_size, speedY );
@@ -79,7 +79,7 @@ namespace gw2f {
 				: flags( 0 ) {
 			}
 
-			MapRiverMaterialV0::MapRiverMaterialV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapRiverMaterialV0::MapRiverMaterialV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -103,7 +103,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapRiverMaterialV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapRiverMaterialV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, materialFile );
 				p_data = helpers::read( p_data, p_size, textureFiles );
 				p_data = helpers::read( p_data, p_size, constantTokens );
@@ -127,7 +127,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			MapRiverReachV0::MapRiverReachV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapRiverReachV0::MapRiverReachV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -159,7 +159,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapRiverReachV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapRiverReachV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, width );
 				p_data = helpers::read( p_data, p_size, curveLength );
 				p_data = helpers::read( p_data, p_size, curvePercent );
@@ -183,7 +183,7 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			MapRiverV0::MapRiverV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			MapRiverV0::MapRiverV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -207,7 +207,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapRiverV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* MapRiverV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, xTiling );
@@ -226,7 +226,7 @@ namespace gw2f {
 				, nextBroadId( 0 ) {
 			}
 
-			PackMapRiversV0::PackMapRiversV0( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
+			PackMapRiversV0::PackMapRiversV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
@@ -246,7 +246,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapRiversV0::assign( const byte* p_data, uint32 p_size ) {
+			const byte* PackMapRiversV0::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, nextBroadId );
 				p_data = helpers::read( p_data, p_size, rivers );

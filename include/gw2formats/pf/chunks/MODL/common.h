@@ -37,10 +37,10 @@ namespace gw2f {
 				helpers::Array<byte> vertices;
 			public:
 				PackVertexType( );
-				PackVertexType( const byte* p_data, uint32 p_size, const byte** po_pointer = nullptr );
+				PackVertexType( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
 				PackVertexType( const PackVertexType& p_other );
 				PackVertexType& operator=( const PackVertexType& p_other );
-				const byte* assign( const byte* p_data, uint32 p_size );
+				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 		}; // namespace chunks
