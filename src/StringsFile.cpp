@@ -55,7 +55,7 @@ namespace gw2f {
 
 		StringsFileEntry::StringsFileEntry( const IStringsFileEntry& p_other )
 			: m_data( p_other.size( ) + 6 ) {
-			*reinterpret_cast<uint16*>( m_data.data( ) + 0 ) = p_other.size( ) + 6;
+			*reinterpret_cast<uint16*>( m_data.data( ) + 0 ) = *reinterpret_cast<uint16*>( p_other.size( ) ) + 6;
 			*reinterpret_cast<uint16*>( m_data.data( ) + 2 ) = p_other.decryptionOffset( );
 			*reinterpret_cast<uint16*>( m_data.data( ) + 4 ) = p_other.bitsPerSymbol( );
 
@@ -120,7 +120,7 @@ namespace gw2f {
 	StringsFile::StringsFile( const StringsFile& p_other )
 		: m_language( p_other.m_language )
 		, m_entries( p_other.m_entries.size( ) ) {
-		for ( uint32 i = 0; i < p_other.m_entries.size( ); i++ ) {
+		for ( uint i = 0; i < p_other.m_entries.size( ); i++ ) {
 			m_entries[i] = new StringsFileEntry( *p_other.m_entries[i] );
 		}
 	}
@@ -137,7 +137,7 @@ namespace gw2f {
 		m_language = p_other.m_language;
 		m_entries.resize( p_other.m_entries.size( ) );
 
-		for ( uint32 i = 0; i < m_entries.size( ); i++ ) {
+		for ( uint i = 0; i < m_entries.size( ); i++ ) {
 			m_entries[i] = new StringsFileEntry( *p_other.m_entries[i] );
 		}
 
@@ -190,7 +190,7 @@ namespace gw2f {
 		m_entries.clear( );
 	}
 
-	uint32 StringsFile::entryCount( ) const {
+	size_t StringsFile::entryCount( ) const {
 		return m_entries.size( );
 	}
 

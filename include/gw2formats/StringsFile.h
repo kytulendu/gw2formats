@@ -89,7 +89,7 @@ namespace gw2f {
 		void clear( );
 
 		/** Gets the amount of entries contained in this strs file. */
-		uint32 entryCount( ) const;
+		size_t entryCount( ) const;
 		/** Gets the entry with the given index.
 		*  \param[in]  p_index     Index of the entry to get.
 		*  \throws std::out_of_range   Thrown if the index is too large. */

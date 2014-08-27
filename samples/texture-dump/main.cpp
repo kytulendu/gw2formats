@@ -71,8 +71,9 @@ int main( int argc, char** argv ) {
 		}
 
 		// Decompress mipmap
-		uint32_t size = buffer.size( );
-		gw2dt::compression::inflateTextureBlockBuffer( mipmap.width( ), mipmap.height( ), mipmap.format( ), mipmap.size( ), mipmap.data( ), size, buffer.data( ) );
+		uint32_t size = *reinterpret_cast <const uint32_t*> ( buffer.size( ) );
+		uint32_t mipmap_size = *reinterpret_cast <const uint32_t*> ( mipmap.size( ) );
+		gw2dt::compression::inflateTextureBlockBuffer( mipmap.width( ), mipmap.height( ), mipmap.format( ), mipmap_size, mipmap.data( ), size, buffer.data( ) );
 
 		// Dump to file
 		dumpData( filename.str( ), buffer.data( ), size );

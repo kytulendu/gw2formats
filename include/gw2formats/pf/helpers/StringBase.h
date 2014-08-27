@@ -81,7 +81,7 @@ namespace gw2f {
 				}
 
 			private:
-				uint32 strlen( const TChar* p_string ) const {
+				size_t strlen( const TChar* p_string ) const {
 					throw std::exception( "Unimplemented StringBase<TChar>::strlen method." );
 				}
 			};

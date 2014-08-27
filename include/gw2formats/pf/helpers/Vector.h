@@ -61,7 +61,7 @@ namespace gw2f {
 				}
 
 				const byte* assign( const byte* p_data, size_t p_size ) {
-					for ( uint32 i = 0; i < TDimensions; i++ ) {
+					for ( uint i = 0; i < TDimensions; i++ ) {
 						p_data = read( p_data, p_size, m_data[i] );
 					}
 					return p_data;

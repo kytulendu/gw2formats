@@ -37,7 +37,7 @@ int main( int argc, char** argv ) {
 	auto isAbove127 = [] ( gw2f::char16 c ) { return ( c >= 0x80 ); };
 
 	gw2f::StringsFile file( argv[1] );
-	for ( uint32_t i = 0; i < file.entryCount( ); i++ ) {
+	for ( unsigned int i = 0; i < file.entryCount( ); i++ ) {
 		auto& entry = file.entry( i );
 
 		// Under windows, this poses the same problem as the Eula sample. When

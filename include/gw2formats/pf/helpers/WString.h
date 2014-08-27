@@ -1,21 +1,23 @@
 // File: gw2formats/pf/helpers/WString.h
 
-/*	Copyright (C) 2012 Rhoot <https://github.com/rhoot>
+/*
+Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
-    This file is part of gw2formats.
+This file is part of gw2formats.
 
-    gw2formats is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+gw2formats is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
@@ -34,7 +36,7 @@ namespace gw2f {
 
 			typedef StringBase<char16> WString;
 
-			template<> inline uint32 StringBase<char16>::strlen( const char16* p_string ) const {
+			template<> inline size_t StringBase<char16>::strlen( const char16* p_string ) const {
 				return std::wcslen( p_string );
 			}
 

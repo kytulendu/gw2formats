@@ -134,7 +134,7 @@ namespace gw2f {
 	TextureFile& TextureFile::operator=( const TextureFile& p_other ) {
 		clear( );
 		m_data.resize( p_other.m_data.size( ) );
-		for ( uint32 i = 0; i < p_other.m_data.size( ); i++ ) {
+		for ( uint i = 0; i < p_other.m_data.size( ); i++ ) {
 			m_data[i] = new MipMapData( *p_other.m_data[i] );
 		}
 		return *this;
@@ -178,6 +178,7 @@ namespace gw2f {
 			width >>= 1;
 			height >>= 1;
 		}
+		return true;
 	}
 
 	void TextureFile::clear( ) {
@@ -194,15 +195,15 @@ namespace gw2f {
 
 	uint16 TextureFile::height( ) const {
 		if ( m_data.size( ) == 0 ) { return 0; }
-		m_data[0]->height( );
+		return m_data[0]->height( );
 	}
 
 	uint32 TextureFile::format( ) const {
 		if ( m_data.size( ) == 0 ) { return 0; }
-		m_data[0]->format( );
+		return m_data[0]->format( );
 	}
 
-	uint32 TextureFile::mipMapCount( ) const {
+	size_t TextureFile::mipMapCount( ) const {
 		return m_data.size( );
 	}
 

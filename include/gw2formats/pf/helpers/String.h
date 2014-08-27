@@ -34,7 +34,7 @@ namespace gw2f {
 
 			typedef StringBase<char> String;
 
-			template<> inline uint32 StringBase<char>::strlen( const char* p_string ) const {
+			template<> inline size_t StringBase<char>::strlen( const char* p_string ) const {
 				return std::strlen( p_string );
 			}
 

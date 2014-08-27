@@ -95,7 +95,7 @@ namespace gw2f {
 		uint32 format( ) const;
 
 		/** Gets the amount of mipmaps contained in this texture file. */
-		uint32 mipMapCount( ) const;
+		size_t mipMapCount( ) const;
 		/** Gets the given mipmap level.
 		*  \param[in]  p_level     Mipmap level to get.
 		*  \throws std::out_of_range   Thrown if the given mipmap level is too high. */
