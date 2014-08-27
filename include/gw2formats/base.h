@@ -1,21 +1,23 @@
 // gw2formats/base.h
 
-/*	Copyright (C) 2012 Rhoot <https://github.com/rhoot>
+/*
+Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
-    This file is part of gw2formats.
+This file is part of gw2formats.
 
-    gw2formats is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+gw2formats is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
@@ -61,8 +63,6 @@ namespace gw2f {
 	typedef uint64_t				uint64;		/**< Unsigned 64-bit integer. */
 
 	typedef char					char8;		/**< 8-bit character. */
-	//typedef wxChar16				char16;		/**< 16-bit character. */
-	//typedef wxChar32				char32;		/**< 32-bit character. */
 	typedef wchar_t					char16;		/**< UTF-16 character. */
 	typedef uint32					char32;		/**< UTF-32 character. */
 
