@@ -75,7 +75,7 @@ namespace gw2f {
 				}
 
 				/** Gets the element contained in this array at the given index. */
-				const T& operator[]( uint32 p_index ) const {
+				const T& operator[]( size_t p_index ) const {
 					if ( p_index >= m_data->size( ) ) { throw std::out_of_range( "The given index is too large." ); }
 					return ( *m_data )[p_index];
 				}

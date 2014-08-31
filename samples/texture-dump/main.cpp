@@ -34,7 +34,7 @@
 namespace {
 
 	/** Writes the given data to the given file. */
-	void dumpData( const std::string& p_filename, const uint8_t* p_data, uint32_t p_size ) {
+	void dumpData( const std::string& p_filename, const uint8_t* p_data, size_t p_size ) {
 		auto fp = std::fopen( p_filename.c_str( ), "wb" );
 		std::fwrite( p_data, 1, p_size, fp );
 		std::fclose( fp );
@@ -58,7 +58,7 @@ int main( int argc, char** argv ) {
 	std::vector<uint8_t> buffer;
 
 	// Loop through each mipmap level and write them to file
-	for ( uint32_t i = 0; i < file.mipMapCount( ); i++ ) {
+	for ( size_t i = 0; i < file.mipMapCount( ); i++ ) {
 		auto& mipmap = file.mipMapLevel( i );
 
 		// Build filename
@@ -76,7 +76,7 @@ int main( int argc, char** argv ) {
 		gw2dt::compression::inflateTextureBlockBuffer( mipmap.width( ), mipmap.height( ), mipmap.format( ), mipmap_size, mipmap.data( ), size, buffer.data( ) );
 
 		// Dump to file
-		dumpData( filename.str( ), buffer.data( ), size );
+		dumpData( filename.str( ), buffer.data( ), buffer.size( ) );
 	}
 
 	return 0;

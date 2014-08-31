@@ -61,13 +61,13 @@ namespace gw2f {
 				}
 
 				const byte* assign( const byte* p_data, size_t p_size ) {
-					for ( uint i = 0; i < TDimensions; i++ ) {
+					for ( size_t i = 0; i < TDimensions; i++ ) {
 						p_data = read( p_data, p_size, m_data[i] );
 					}
 					return p_data;
 				}
 
-				const T& operator[]( uint32 p_index ) const {
+				const T& operator[]( size_t p_index ) const {
 					if ( p_index >= TDimensions ) { throw std::out_of_range( "The given index is too large." ); }
 					return m_data[p_index];
 				}

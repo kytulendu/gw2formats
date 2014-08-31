@@ -93,7 +93,7 @@ namespace gw2f {
 		/** Gets the entry with the given index.
 		*  \param[in]  p_index     Index of the entry to get.
 		*  \throws std::out_of_range   Thrown if the index is too large. */
-		const IStringsFileEntry& entry( uint32 p_index ) const;
+		const IStringsFileEntry& entry( size_t p_index ) const;
 
 		/** Gets the language used in the entries contained in this file. */
 		language::Type language( ) const;

@@ -134,7 +134,7 @@ namespace gw2f {
 	TextureFile& TextureFile::operator=( const TextureFile& p_other ) {
 		clear( );
 		m_data.resize( p_other.m_data.size( ) );
-		for ( uint i = 0; i < p_other.m_data.size( ); i++ ) {
+		for ( size_t i = 0; i < p_other.m_data.size( ); i++ ) {
 			m_data[i] = new MipMapData( *p_other.m_data[i] );
 		}
 		return *this;
@@ -207,7 +207,7 @@ namespace gw2f {
 		return m_data.size( );
 	}
 
-	const IMipMapData& TextureFile::mipMapLevel( uint32 p_level ) const {
+	const IMipMapData& TextureFile::mipMapLevel( size_t p_level ) const {
 		if ( p_level >= m_data.size( ) ) { throw std::out_of_range( "The given index is too large." ); }
 		return *m_data[p_level];
 	}

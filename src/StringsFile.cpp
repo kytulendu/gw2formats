@@ -120,7 +120,7 @@ namespace gw2f {
 	StringsFile::StringsFile( const StringsFile& p_other )
 		: m_language( p_other.m_language )
 		, m_entries( p_other.m_entries.size( ) ) {
-		for ( uint i = 0; i < p_other.m_entries.size( ); i++ ) {
+		for ( size_t i = 0; i < p_other.m_entries.size( ); i++ ) {
 			m_entries[i] = new StringsFileEntry( *p_other.m_entries[i] );
 		}
 	}
@@ -137,7 +137,7 @@ namespace gw2f {
 		m_language = p_other.m_language;
 		m_entries.resize( p_other.m_entries.size( ) );
 
-		for ( uint i = 0; i < m_entries.size( ); i++ ) {
+		for ( size_t i = 0; i < m_entries.size( ); i++ ) {
 			m_entries[i] = new StringsFileEntry( *p_other.m_entries[i] );
 		}
 
@@ -194,7 +194,7 @@ namespace gw2f {
 		return m_entries.size( );
 	}
 
-	const IStringsFileEntry& StringsFile::entry( uint32 p_index ) const {
+	const IStringsFileEntry& StringsFile::entry( size_t p_index ) const {
 		if ( p_index >= m_entries.size( ) ) { throw std::out_of_range( "The given index is too large." ); }
 		return *m_entries[p_index];
 	}

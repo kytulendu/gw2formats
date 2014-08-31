@@ -99,7 +99,7 @@ namespace gw2f {
 		/** Gets the given mipmap level.
 		*  \param[in]  p_level     Mipmap level to get.
 		*  \throws std::out_of_range   Thrown if the given mipmap level is too high. */
-		const IMipMapData& mipMapLevel( uint32 p_level ) const;
+		const IMipMapData& mipMapLevel( size_t p_level ) const;
 	};
 
 }; // namespace gw2f
