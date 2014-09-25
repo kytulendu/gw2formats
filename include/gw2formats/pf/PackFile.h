@@ -169,7 +169,7 @@ namespace gw2f {
 				if ( header->contentType != TFileType ) { return false; }
 
 				m_data.reset( new DataVector( p_size ) );
-				std::copy_n( p_data, p_size, m_data->data( ) );
+				std::memcpy( m_data->data( ), p_data, p_size );
 				m_header = reinterpret_cast<const FileHeader*>( m_data->data( ) );
 				return true;
 			}
