@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\samples\eula\main.cpp">
+    <ClCompile Include="..\samples\eula.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
