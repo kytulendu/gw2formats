@@ -73,9 +73,6 @@
     <Filter Include="Source Files\pf\chunks\AMSP">
       <UniqueIdentifier>{25b72085-60cb-454e-95ab-af3a11c43f23}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\pf\chunks\mfst">
-      <UniqueIdentifier>{017dbd82-cf71-4e4d-81b1-8c4cd055d7b3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\pf\chunks\cmpc">
       <UniqueIdentifier>{08b581d8-18a0-4919-92d9-567936e94122}</UniqueIdentifier>
     </Filter>
@@ -162,6 +159,9 @@
     </Filter>
     <Filter Include="Header Files\pf\chunks\mapc">
       <UniqueIdentifier>{2417c4f4-7457-4085-ae4a-1c0b6f583377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pf\chunks\prlt">
+      <UniqueIdentifier>{017dbd82-cf71-4e4d-81b1-8c4cd055d7b3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -501,7 +501,7 @@
       <Filter>Source Files\pf\chunks\AMSP</Filter>
     </ClCompile>
     <ClCompile Include="..\src\pf\chunks\prlt\ContentPortalManifest.cpp">
-      <Filter>Source Files\pf\chunks\mfst</Filter>
+      <Filter>Source Files\pf\chunks\prlt</Filter>
     </ClCompile>
     <ClCompile Include="..\src\pf\chunks\cmpc\PackComposite.cpp">
       <Filter>Source Files\pf\chunks\cmpc</Filter>
