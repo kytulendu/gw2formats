@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/AMAT/AmatGr.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -37,27 +37,24 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct AmatGrV5 {
+			GW2FORMATS_API struct AmatGrV6 {
 				byte texArrayRange;
 				byte texCount;
-				byte texTransformRange;
 				byte sortOrder;
 				byte sortTri;
 				byte procAnim;
 				dword debugFlags;
 				dword flags;
-				dword texType;
-				dword textureMasks[4];
 				helpers::Array<qword> texTokens;
 			public:
-				AmatGrV5( );
-				AmatGrV5( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				AmatGrV5( const AmatGrV5& p_other );
-				AmatGrV5& operator=( const AmatGrV5& p_other );
+				AmatGrV6( );
+				AmatGrV6( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				AmatGrV6( const AmatGrV6& p_other );
+				AmatGrV6& operator=( const AmatGrV6& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef AmatGrV5 AmatGr;
+			typedef AmatGrV6 AmatGr;
 
 		}; // namespace chunks
 

@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/MODL/ModelFileSkeleton.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -42,38 +42,38 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct ModelTransformDataV0 {
+			GW2FORMATS_API struct ModelTransformData {
 				dword flags;
 				float3 position;
 				float4 orientation;
 				float3 scaleShear[3];
 			public:
-				ModelTransformDataV0( );
-				ModelTransformDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelTransformDataV0( const ModelTransformDataV0& p_other );
-				ModelTransformDataV0& operator=( const ModelTransformDataV0& p_other );
+				ModelTransformData( );
+				ModelTransformData( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelTransformData( const ModelTransformData& p_other );
+				ModelTransformData& operator=( const ModelTransformData& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelBoneDataV0 {
+			GW2FORMATS_API struct ModelBoneData {
 				helpers::String name;
 				dword parentIndex;
-				ModelTransformDataV0 localTransform;
+				ModelTransformData localTransform;
 				float4 inverseWorld4x4[4];
 				float lodError;
 				helpers::Ptr<byte> extendedDataType;
 				helpers::Ptr<byte> extendedDataObject;
 			public:
-				ModelBoneDataV0( );
-				ModelBoneDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelBoneDataV0( const ModelBoneDataV0& p_other );
-				ModelBoneDataV0& operator=( const ModelBoneDataV0& p_other );
+				ModelBoneData( );
+				ModelBoneData( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelBoneData( const ModelBoneData& p_other );
+				ModelBoneData& operator=( const ModelBoneData& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelGrannySkeletonV1 {
 				helpers::String name;
-				helpers::Array<ModelBoneDataV0> bones;
+				helpers::Array<ModelBoneData> bones;
 				dword lodType;
 				helpers::Ptr<byte> extendedDataType;
 				helpers::Ptr<byte> extendedDataObject;
@@ -85,21 +85,21 @@ namespace gw2f {
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelMeshBindingDataV0 {
+			GW2FORMATS_API struct ModelMeshBindingData {
 				helpers::Ptr<byte> mesh;
 			public:
-				ModelMeshBindingDataV0( );
-				ModelMeshBindingDataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelMeshBindingDataV0( const ModelMeshBindingDataV0& p_other );
-				ModelMeshBindingDataV0& operator=( const ModelMeshBindingDataV0& p_other );
+				ModelMeshBindingData( );
+				ModelMeshBindingData( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelMeshBindingData( const ModelMeshBindingData& p_other );
+				ModelMeshBindingData& operator=( const ModelMeshBindingData& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelGrannyModelV1 {
 				helpers::String name;
 				helpers::Ptr<ModelGrannySkeletonV1> skeleton;
-				ModelTransformDataV0 initialPlacement;
-				helpers::Array<ModelMeshBindingDataV0> meshBindings;
+				ModelTransformData initialPlacement;
+				helpers::Array<ModelMeshBindingData> meshBindings;
 				helpers::Ptr<byte> extendedDataType;
 				helpers::Ptr<byte> extendedDataObject;
 			public:
@@ -154,28 +154,28 @@ namespace gw2f {
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackGrannyMirrorSpecTypeV0 {
+			GW2FORMATS_API struct PackGrannyMirrorSpecType {
 				helpers::Array<byte> mirrorSpec;
 			public:
-				PackGrannyMirrorSpecTypeV0( );
-				PackGrannyMirrorSpecTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackGrannyMirrorSpecTypeV0( const PackGrannyMirrorSpecTypeV0& p_other );
-				PackGrannyMirrorSpecTypeV0& operator=( const PackGrannyMirrorSpecTypeV0& p_other );
+				PackGrannyMirrorSpecType( );
+				PackGrannyMirrorSpecType( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackGrannyMirrorSpecType( const PackGrannyMirrorSpecType& p_other );
+				PackGrannyMirrorSpecType& operator=( const PackGrannyMirrorSpecType& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackGrannyTrackMaskTypeV0 {
+			GW2FORMATS_API struct PackGrannyTrackMaskType {
 				helpers::Array<byte> trackMask;
 			public:
-				PackGrannyTrackMaskTypeV0( );
-				PackGrannyTrackMaskTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackGrannyTrackMaskTypeV0( const PackGrannyTrackMaskTypeV0& p_other );
-				PackGrannyTrackMaskTypeV0& operator=( const PackGrannyTrackMaskTypeV0& p_other );
+				PackGrannyTrackMaskType( );
+				PackGrannyTrackMaskType( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackGrannyTrackMaskType( const PackGrannyTrackMaskType& p_other );
+				PackGrannyTrackMaskType& operator=( const PackGrannyTrackMaskType& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
 			GW2FORMATS_API struct ModelTrackMaskV63 {
-				PackGrannyTrackMaskTypeV0 data;
+				PackGrannyTrackMaskType data;
 				qword token;
 			public:
 				ModelTrackMaskV63( );
@@ -189,7 +189,7 @@ namespace gw2f {
 				helpers::Ptr<ModelGrannyModelV1> grannyModel;
 				helpers::Array<ModelBoneConstraintV63> boneConstraints;
 				helpers::Array<dword> boneFlags;
-				PackGrannyMirrorSpecTypeV0 mirrorSpec;
+				PackGrannyMirrorSpecType mirrorSpec;
 				helpers::Array<dword> emitterBones;
 				helpers::Array<ModelTrackMaskV63> trackMasks;
 			public:

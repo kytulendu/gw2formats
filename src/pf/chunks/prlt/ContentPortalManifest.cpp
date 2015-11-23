@@ -1,7 +1,7 @@
 // File: pf/chunks/prlt/ContentPortalManifest.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,37 +27,36 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      ContentMapRedirectorV0
+			//      ContentMapRedirector
 			//============================================================================/
 
-			ContentMapRedirectorV0::ContentMapRedirectorV0( )
-				: mapId( 0 )
-				, token( 0 )
+			ContentMapRedirector::ContentMapRedirector( )
+				: token( 0 )
 				, radius( 0 ) {
 			}
 
-			ContentMapRedirectorV0::ContentMapRedirectorV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ContentMapRedirector::ContentMapRedirector( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ContentMapRedirectorV0::ContentMapRedirectorV0( const ContentMapRedirectorV0& p_other )
-				: mapId( p_other.mapId )
+			ContentMapRedirector::ContentMapRedirector( const ContentMapRedirector& p_other )
+				: mapGUID( p_other.mapGUID )
 				, token( p_other.token )
 				, position( p_other.position )
 				, radius( p_other.radius ) {
 			}
 
-			ContentMapRedirectorV0& ContentMapRedirectorV0::operator=( const ContentMapRedirectorV0& p_other ) {
-				mapId = p_other.mapId;
+			ContentMapRedirector& ContentMapRedirector::operator=( const ContentMapRedirector& p_other ) {
+				mapGUID = p_other.mapGUID;
 				token = p_other.token;
 				position = p_other.position;
 				radius = p_other.radius;
 				return *this;
 			}
 
-			const byte* ContentMapRedirectorV0::assign( const byte* p_data, size_t p_size ) {
-				p_data = helpers::read( p_data, p_size, mapId );
+			const byte* ContentMapRedirector::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, mapGUID );
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, radius );
@@ -65,61 +64,64 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ContentMapModelV0
+			//      ContentMapModel
 			//============================================================================/
 
-			ContentMapModelV0::ContentMapModelV0( )
+			ContentMapModel::ContentMapModel( )
 				: flags( 0 )
 				, type( 0 ) {
 			}
 
-			ContentMapModelV0::ContentMapModelV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ContentMapModel::ContentMapModel( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ContentMapModelV0::ContentMapModelV0( const ContentMapModelV0& p_other )
+			ContentMapModel::ContentMapModel( const ContentMapModel& p_other )
 				: filename( p_other.filename )
 				, flags( p_other.flags )
-				, type( p_other.type ) {
+				, type( p_other.type ) 
+				, permutation( p_other.permutation ) {
 			}
 
-			ContentMapModelV0& ContentMapModelV0::operator=( const ContentMapModelV0& p_other ) {
+			ContentMapModel& ContentMapModel::operator=( const ContentMapModel& p_other ) {
 				filename = p_other.filename;
 				flags = p_other.flags;
 				type = p_other.type;
+				permutation = p_other.permutation;
 				return *this;
 			}
 
-			const byte* ContentMapModelV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* ContentMapModel::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, type );
+				p_data = helpers::read( p_data, p_size, permutation );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ContentMapStartV0
+			//      ContentMapStart
 			//============================================================================/
 
-			ContentMapStartV0::ContentMapStartV0( )
+			ContentMapStart::ContentMapStart( )
 				: token( 0 )
 				, radius( 0 ) {
 			}
 
-			ContentMapStartV0::ContentMapStartV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ContentMapStart::ContentMapStart( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ContentMapStartV0::ContentMapStartV0( const ContentMapStartV0& p_other )
+			ContentMapStart::ContentMapStart( const ContentMapStart& p_other )
 				: token( p_other.token )
 				, modelArray( p_other.modelArray )
 				, position( p_other.position )
 				, radius( p_other.radius ) {
 			}
 
-			ContentMapStartV0& ContentMapStartV0::operator=( const ContentMapStartV0& p_other ) {
+			ContentMapStart& ContentMapStart::operator=( const ContentMapStart& p_other ) {
 				token = p_other.token;
 				modelArray = p_other.modelArray;
 				position = p_other.position;
@@ -127,7 +129,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ContentMapStartV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* ContentMapStart::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, modelArray );
 				p_data = helpers::read( p_data, p_size, position );
@@ -136,60 +138,59 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ContentMapV0
+			//      ContentMap
 			//============================================================================/
 
-			ContentMapV0::ContentMapV0( )
-				: mapId( 0 ) {
+			ContentMap::ContentMap( ) {
 			}
 
-			ContentMapV0::ContentMapV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ContentMap::ContentMap( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ContentMapV0::ContentMapV0( const ContentMapV0& p_other )
-				: mapId( p_other.mapId )
+			ContentMap::ContentMap( const ContentMap& p_other )
+				: mapGUID( p_other.mapGUID )
 				, mapRedirectorArray( p_other.mapRedirectorArray )
 				, mapStartArray( p_other.mapStartArray ) {
 			}
 
-			ContentMapV0& ContentMapV0::operator=( const ContentMapV0& p_other ) {
-				mapId = p_other.mapId;
+			ContentMap& ContentMap::operator=( const ContentMap& p_other ) {
+				mapGUID = p_other.mapGUID;
 				mapRedirectorArray = p_other.mapRedirectorArray;
 				mapStartArray = p_other.mapStartArray;
 				return *this;
 			}
 
-			const byte* ContentMapV0::assign( const byte* p_data, size_t p_size ) {
-				p_data = helpers::read( p_data, p_size, mapId );
+			const byte* ContentMap::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, mapGUID );
 				p_data = helpers::read( p_data, p_size, mapRedirectorArray );
 				p_data = helpers::read( p_data, p_size, mapStartArray );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ContentPortalManifestV0
+			//      ContentPortalManifest
 			//============================================================================/
 
-			ContentPortalManifestV0::ContentPortalManifestV0( ) {
+			ContentPortalManifest::ContentPortalManifest( ) {
 			}
 
-			ContentPortalManifestV0::ContentPortalManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ContentPortalManifest::ContentPortalManifest( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ContentPortalManifestV0::ContentPortalManifestV0( const ContentPortalManifestV0& p_other )
+			ContentPortalManifest::ContentPortalManifest( const ContentPortalManifest& p_other )
 				: mapArray( p_other.mapArray ) {
 			}
 
-			ContentPortalManifestV0& ContentPortalManifestV0::operator=( const ContentPortalManifestV0& p_other ) {
+			ContentPortalManifest& ContentPortalManifest::operator=( const ContentPortalManifest& p_other ) {
 				mapArray = p_other.mapArray;
 				return *this;
 			}
 
-			const byte* ContentPortalManifestV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* ContentPortalManifest::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mapArray );
 				return p_data;
 			}

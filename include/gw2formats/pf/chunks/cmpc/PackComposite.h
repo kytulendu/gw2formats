@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/cmpc/PackComposite.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -41,20 +41,20 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackCompositeBlitRectSetV14 {
+			GW2FORMATS_API struct PackCompositeBlitRectSetV18 {
 				helpers::WString name;
 				dword2 size;
 				helpers::Array<byte> rectIndex;
 				helpers::Array<dword4> rectArray;
 			public:
-				PackCompositeBlitRectSetV14( );
-				PackCompositeBlitRectSetV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBlitRectSetV14( const PackCompositeBlitRectSetV14& p_other );
-				PackCompositeBlitRectSetV14& operator=( const PackCompositeBlitRectSetV14& p_other );
+				PackCompositeBlitRectSetV18( );
+				PackCompositeBlitRectSetV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBlitRectSetV18( const PackCompositeBlitRectSetV18& p_other );
+				PackCompositeBlitRectSetV18& operator=( const PackCompositeBlitRectSetV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleParamV14 {
+			GW2FORMATS_API struct PackCompositeBoneScaleParamV18 {
 				qword name;
 				byte flags;
 				float max;
@@ -63,61 +63,62 @@ namespace gw2f {
 				float3 scale;
 				float3 translate;
 			public:
-				PackCompositeBoneScaleParamV14( );
-				PackCompositeBoneScaleParamV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleParamV14( const PackCompositeBoneScaleParamV14& p_other );
-				PackCompositeBoneScaleParamV14& operator=( const PackCompositeBoneScaleParamV14& p_other );
+				PackCompositeBoneScaleParamV18( );
+				PackCompositeBoneScaleParamV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleParamV18( const PackCompositeBoneScaleParamV18& p_other );
+				PackCompositeBoneScaleParamV18& operator=( const PackCompositeBoneScaleParamV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleRegionV14 {
+			GW2FORMATS_API struct PackCompositeBoneScaleRegionV18 {
 				qword name;
 				float value;
-				helpers::Array<PackCompositeBoneScaleParamV14> bone;
+				helpers::Array<PackCompositeBoneScaleParamV18> bone;
 			public:
-				PackCompositeBoneScaleRegionV14( );
-				PackCompositeBoneScaleRegionV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleRegionV14( const PackCompositeBoneScaleRegionV14& p_other );
-				PackCompositeBoneScaleRegionV14& operator=( const PackCompositeBoneScaleRegionV14& p_other );
+				PackCompositeBoneScaleRegionV18( );
+				PackCompositeBoneScaleRegionV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleRegionV18( const PackCompositeBoneScaleRegionV18& p_other );
+				PackCompositeBoneScaleRegionV18& operator=( const PackCompositeBoneScaleRegionV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeMorphWeightV14 {
+			GW2FORMATS_API struct PackCompositeMorphWeightV18 {
 				qword name;
 				float value;
 			public:
-				PackCompositeMorphWeightV14( );
-				PackCompositeMorphWeightV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeMorphWeightV14( const PackCompositeMorphWeightV14& p_other );
-				PackCompositeMorphWeightV14& operator=( const PackCompositeMorphWeightV14& p_other );
+				PackCompositeMorphWeightV18( );
+				PackCompositeMorphWeightV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeMorphWeightV18( const PackCompositeMorphWeightV18& p_other );
+				PackCompositeMorphWeightV18& operator=( const PackCompositeMorphWeightV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleV14 {
-				helpers::Array<PackCompositeBoneScaleRegionV14> bodyRegion;
-				helpers::Array<PackCompositeMorphWeightV14> morphWeight;
+			GW2FORMATS_API struct PackCompositeBoneScaleV18 {
+				helpers::Array<PackCompositeBoneScaleRegionV18> bodyRegion;
+				helpers::Array<PackCompositeMorphWeightV18> morphWeight;
 			public:
-				PackCompositeBoneScaleV14( );
-				PackCompositeBoneScaleV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleV14( const PackCompositeBoneScaleV14& p_other );
-				PackCompositeBoneScaleV14& operator=( const PackCompositeBoneScaleV14& p_other );
+				PackCompositeBoneScaleV18( );
+				PackCompositeBoneScaleV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleV18( const PackCompositeBoneScaleV18& p_other );
+				PackCompositeBoneScaleV18& operator=( const PackCompositeBoneScaleV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleFileV14 {
+			GW2FORMATS_API struct PackCompositeBoneScaleFileV18 {
 				helpers::WString fileName;
 			public:
-				PackCompositeBoneScaleFileV14( );
-				PackCompositeBoneScaleFileV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleFileV14( const PackCompositeBoneScaleFileV14& p_other );
-				PackCompositeBoneScaleFileV14& operator=( const PackCompositeBoneScaleFileV14& p_other );
+				PackCompositeBoneScaleFileV18( );
+				PackCompositeBoneScaleFileV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleFileV18( const PackCompositeBoneScaleFileV18& p_other );
+				PackCompositeBoneScaleFileV18& operator=( const PackCompositeBoneScaleFileV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeFileDataV14 {
+			GW2FORMATS_API struct PackCompositeFileDataV18 {
 				qword name;
 				byte type;
 				byte flags;
+				qword animRoleOverride;
 				helpers::FileName meshBase;
 				helpers::FileName meshOverlap;
 				helpers::FileName maskDye1;
@@ -132,14 +133,14 @@ namespace gw2f {
 				dword skinFlags;
 				byte blitRectIndex;
 			public:
-				PackCompositeFileDataV14( );
-				PackCompositeFileDataV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeFileDataV14( const PackCompositeFileDataV14& p_other );
-				PackCompositeFileDataV14& operator=( const PackCompositeFileDataV14& p_other );
+				PackCompositeFileDataV18( );
+				PackCompositeFileDataV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeFileDataV18( const PackCompositeFileDataV18& p_other );
+				PackCompositeFileDataV18& operator=( const PackCompositeFileDataV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeSkinPatternV14 {
+			GW2FORMATS_API struct PackCompositeSkinPatternV18 {
 				helpers::FileName chest;
 				helpers::FileName face;
 				helpers::FileName feet;
@@ -147,105 +148,130 @@ namespace gw2f {
 				helpers::FileName legs;
 				helpers::FileName ears;
 			public:
-				PackCompositeSkinPatternV14( );
-				PackCompositeSkinPatternV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeSkinPatternV14( const PackCompositeSkinPatternV14& p_other );
-				PackCompositeSkinPatternV14& operator=( const PackCompositeSkinPatternV14& p_other );
+				PackCompositeSkinPatternV18( );
+				PackCompositeSkinPatternV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeSkinPatternV18( const PackCompositeSkinPatternV18& p_other );
+				PackCompositeSkinPatternV18& operator=( const PackCompositeSkinPatternV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeColorV14 {
+			GW2FORMATS_API struct PackCompositeSkinStyleV18 {
+				qword chest;
+				qword feet;
+				qword hands;
+				qword legs;
+			public:
+				PackCompositeSkinStyleV18( );
+				PackCompositeSkinStyleV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeSkinStyleV18( const PackCompositeSkinStyleV18& p_other );
+				PackCompositeSkinStyleV18& operator=( const PackCompositeSkinStyleV18& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackCompositeColorV18 {
 				byte brightness;
 				byte contrast;
 				byte hue;
 				byte saturation;
 				byte lightness;
 			public:
-				PackCompositeColorV14( );
-				PackCompositeColorV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeColorV14( const PackCompositeColorV14& p_other );
-				PackCompositeColorV14& operator=( const PackCompositeColorV14& p_other );
+				PackCompositeColorV18( );
+				PackCompositeColorV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeColorV18( const PackCompositeColorV18& p_other );
+				PackCompositeColorV18& operator=( const PackCompositeColorV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeVariantComponentV14 {
+			GW2FORMATS_API struct PackCompositeVariantComponentV18 {
 				qword nameToken;
-				PackCompositeColorV14 color0;
-				PackCompositeColorV14 color1;
-				PackCompositeColorV14 color2;
-				PackCompositeColorV14 color3;
+				PackCompositeColorV18 color0;
+				PackCompositeColorV18 color1;
+				PackCompositeColorV18 color2;
+				PackCompositeColorV18 color3;
 			public:
-				PackCompositeVariantComponentV14( );
-				PackCompositeVariantComponentV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeVariantComponentV14( const PackCompositeVariantComponentV14& p_other );
-				PackCompositeVariantComponentV14& operator=( const PackCompositeVariantComponentV14& p_other );
+				PackCompositeVariantComponentV18( );
+				PackCompositeVariantComponentV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeVariantComponentV18( const PackCompositeVariantComponentV18& p_other );
+				PackCompositeVariantComponentV18& operator=( const PackCompositeVariantComponentV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeVariantV14 {
+			GW2FORMATS_API struct PackCompositeVariantV18 {
 				qword token;
 				dword boneScaleIndex;
-				helpers::Array<PackCompositeVariantComponentV14> components;
-				PackCompositeColorV14 eyeColor;
-				PackCompositeColorV14 hairColor;
-				PackCompositeColorV14 hairColor2;
-				PackCompositeColorV14 patternColor;
-				PackCompositeColorV14 skinColor;
+				helpers::Array<PackCompositeVariantComponentV18> components;
+				PackCompositeColorV18 eyeColor;
+				PackCompositeColorV18 hairColor;
+				PackCompositeColorV18 hairColor2;
+				PackCompositeColorV18 patternColor;
+				PackCompositeColorV18 skinColor;
 				dword skinIndex;
 			public:
-				PackCompositeVariantV14( );
-				PackCompositeVariantV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeVariantV14( const PackCompositeVariantV14& p_other );
-				PackCompositeVariantV14& operator=( const PackCompositeVariantV14& p_other );
+				PackCompositeVariantV18( );
+				PackCompositeVariantV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeVariantV18( const PackCompositeVariantV18& p_other );
+				PackCompositeVariantV18& operator=( const PackCompositeVariantV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeRaceDataV14 {
+			GW2FORMATS_API struct PackCompositeAnimOverrideV18 {
+				qword animRole;
+				helpers::FileName filepath;
+			public:
+				PackCompositeAnimOverrideV18( );
+				PackCompositeAnimOverrideV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeAnimOverrideV18( const PackCompositeAnimOverrideV18& p_other );
+				PackCompositeAnimOverrideV18& operator=( const PackCompositeAnimOverrideV18& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackCompositeRaceDataV18 {
 				helpers::WString name;
 				qword nameToken;
 				qword baseHeadToken;
 				helpers::Array<qword> beard;
-				helpers::Array<PackCompositeBoneScaleV14> bodyBoneScales;
-				helpers::Array<PackCompositeBoneScaleFileV14> bodyBoneScaleFiles;
+				helpers::Array<PackCompositeBoneScaleV18> bodyBoneScales;
+				helpers::Array<PackCompositeBoneScaleFileV18> bodyBoneScaleFiles;
 				helpers::Array<qword> ears;
 				helpers::WString eyeColorPalette;
-				helpers::Array<PackCompositeBoneScaleV14> faceBoneScales;
+				helpers::Array<PackCompositeBoneScaleV18> faceBoneScales;
 				helpers::Array<qword> faces;
-				helpers::Array<PackCompositeFileDataV14> fileData;
+				helpers::Array<PackCompositeFileDataV18> fileData;
 				dword flags;
 				helpers::Array<qword> hairStyles;
 				helpers::WString hairColorPalette;
 				helpers::FileName skeletonFile;
-				helpers::Array<PackCompositeSkinPatternV14> skinPatterns;
+				helpers::Array<PackCompositeSkinPatternV18> skinPatterns;
 				helpers::WString skinColorPalette;
 				helpers::WString skinPatternPalette;
-				byte skinStyleCount;
+				helpers::Array<PackCompositeSkinStyleV18> skinStyles;
 				dword type;
 				qword variantRefRace;
-				helpers::Array<PackCompositeVariantV14> variants;
+				helpers::Array<PackCompositeVariantV18> variants;
+				helpers::Array<PackCompositeAnimOverrideV18> animOverrides;
 			public:
-				PackCompositeRaceDataV14( );
-				PackCompositeRaceDataV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeRaceDataV14( const PackCompositeRaceDataV14& p_other );
-				PackCompositeRaceDataV14& operator=( const PackCompositeRaceDataV14& p_other );
+				PackCompositeRaceDataV18( );
+				PackCompositeRaceDataV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeRaceDataV18( const PackCompositeRaceDataV18& p_other );
+				PackCompositeRaceDataV18& operator=( const PackCompositeRaceDataV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeV14 {
+			GW2FORMATS_API struct PackCompositeV18 {
 				helpers::Array<dword> armorColorIds;
-				helpers::Array<PackCompositeBlitRectSetV14> blitRects;
-				helpers::Array<PackCompositeBoneScaleV14> boneScales;
-				helpers::Array<PackCompositeRaceDataV14> raceSexData;
+				helpers::Array<PackCompositeBlitRectSetV18> blitRects;
+				helpers::Array<PackCompositeBoneScaleV18> boneScales;
+				helpers::Array<PackCompositeRaceDataV18> raceSexData;
 				word configVersion;
 			public:
-				PackCompositeV14( );
-				PackCompositeV14( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeV14( const PackCompositeV14& p_other );
-				PackCompositeV14& operator=( const PackCompositeV14& p_other );
+				PackCompositeV18( );
+				PackCompositeV18( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeV18( const PackCompositeV18& p_other );
+				PackCompositeV18& operator=( const PackCompositeV18& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackCompositeV14 PackComposite;
+			typedef PackCompositeV18 PackComposite;
 
 		}; // namespace chunks
 

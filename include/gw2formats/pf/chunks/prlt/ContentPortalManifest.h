@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/prlt/ContentPortalManifest.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -40,67 +40,68 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct ContentMapRedirectorV0 {
-				dword mapId;
+			GW2FORMATS_API struct ContentMapRedirector {
+				byte16 mapGUID;
 				dword token;
 				float3 position;
 				float radius;
 			public:
-				ContentMapRedirectorV0( );
-				ContentMapRedirectorV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ContentMapRedirectorV0( const ContentMapRedirectorV0& p_other );
-				ContentMapRedirectorV0& operator=( const ContentMapRedirectorV0& p_other );
+				ContentMapRedirector( );
+				ContentMapRedirector( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ContentMapRedirector( const ContentMapRedirector& p_other );
+				ContentMapRedirector& operator=( const ContentMapRedirector& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ContentMapModelV0 {
+			GW2FORMATS_API struct ContentMapModel {
 				helpers::FileName filename;
 				dword flags;
 				dword type;
+				qword permutation;
 			public:
-				ContentMapModelV0( );
-				ContentMapModelV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ContentMapModelV0( const ContentMapModelV0& p_other );
-				ContentMapModelV0& operator=( const ContentMapModelV0& p_other );
+				ContentMapModel( );
+				ContentMapModel( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ContentMapModel( const ContentMapModel& p_other );
+				ContentMapModel& operator=( const ContentMapModel& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ContentMapStartV0 {
+			GW2FORMATS_API struct ContentMapStart {
 				dword token;
-				helpers::Array<ContentMapModelV0> modelArray;
+				helpers::Array<ContentMapModel> modelArray;
 				float3 position;
 				float radius;
 			public:
-				ContentMapStartV0( );
-				ContentMapStartV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ContentMapStartV0( const ContentMapStartV0& p_other );
-				ContentMapStartV0& operator=( const ContentMapStartV0& p_other );
+				ContentMapStart( );
+				ContentMapStart( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ContentMapStart( const ContentMapStart& p_other );
+				ContentMapStart& operator=( const ContentMapStart& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ContentMapV0 {
-				dword mapId;
-				helpers::Array<ContentMapRedirectorV0> mapRedirectorArray;
-				helpers::Array<ContentMapStartV0> mapStartArray;
+			GW2FORMATS_API struct ContentMap {
+				byte16 mapGUID;
+				helpers::Array<ContentMapRedirector> mapRedirectorArray;
+				helpers::Array<ContentMapStart> mapStartArray;
 			public:
-				ContentMapV0( );
-				ContentMapV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ContentMapV0( const ContentMapV0& p_other );
-				ContentMapV0& operator=( const ContentMapV0& p_other );
+				ContentMap( );
+				ContentMap( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ContentMap( const ContentMap& p_other );
+				ContentMap& operator=( const ContentMap& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ContentPortalManifestV0 {
-				helpers::Array<ContentMapV0> mapArray;
+			GW2FORMATS_API struct ContentPortalManifest {
+				helpers::Array<ContentMap> mapArray;
 			public:
-				ContentPortalManifestV0( );
-				ContentPortalManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ContentPortalManifestV0( const ContentPortalManifestV0& p_other );
-				ContentPortalManifestV0& operator=( const ContentPortalManifestV0& p_other );
+				ContentPortalManifest( );
+				ContentPortalManifest( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ContentPortalManifest( const ContentPortalManifest& p_other );
+				ContentPortalManifest& operator=( const ContentPortalManifest& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef ContentPortalManifestV0 ContentPortalManifest;
+			typedef ContentPortalManifest ContentPortalManifest;
 
 		}; // namespace chunks
 

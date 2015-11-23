@@ -1,7 +1,7 @@
 // File: pf/chunks/CINP/SceneData.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,33 +27,33 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PropertyDataV33
+			//      PropertyDataV36
 			//============================================================================/
 
-			PropertyDataV33::PropertyDataV33( )
+			PropertyDataV36::PropertyDataV36( )
 				: value( 0 )
 				, type( 0 ) {
 			}
 
-			PropertyDataV33::PropertyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PropertyDataV36::PropertyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PropertyDataV33::PropertyDataV33( const PropertyDataV33& p_other )
+			PropertyDataV36::PropertyDataV36( const PropertyDataV36& p_other )
 				: value( p_other.value )
 				, pathVal( p_other.pathVal )
 				, type( p_other.type ) {
 			}
 
-			PropertyDataV33& PropertyDataV33::operator=( const PropertyDataV33& p_other ) {
+			PropertyDataV36& PropertyDataV36::operator=( const PropertyDataV36& p_other ) {
 				value = p_other.value;
 				pathVal = p_other.pathVal;
 				type = p_other.type;
 				return *this;
 			}
 
-			const byte* PropertyDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* PropertyDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, value );
 				p_data = helpers::read( p_data, p_size, pathVal );
 				p_data = helpers::read( p_data, p_size, type );
@@ -61,29 +61,29 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      CurveKeyDataV33
+			//      CurveKeyDataV36
 			//============================================================================/
 
-			CurveKeyDataV33::CurveKeyDataV33( )
+			CurveKeyDataV36::CurveKeyDataV36( )
 				: time( 0 )
 				, value( 0 )
 				, inTangent( 0 )
 				, outTangent( 0 ) {
 			}
 
-			CurveKeyDataV33::CurveKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			CurveKeyDataV36::CurveKeyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			CurveKeyDataV33::CurveKeyDataV33( const CurveKeyDataV33& p_other )
+			CurveKeyDataV36::CurveKeyDataV36( const CurveKeyDataV36& p_other )
 				: time( p_other.time )
 				, value( p_other.value )
 				, inTangent( p_other.inTangent )
 				, outTangent( p_other.outTangent ) {
 			}
 
-			CurveKeyDataV33& CurveKeyDataV33::operator=( const CurveKeyDataV33& p_other ) {
+			CurveKeyDataV36& CurveKeyDataV36::operator=( const CurveKeyDataV36& p_other ) {
 				time = p_other.time;
 				value = p_other.value;
 				inTangent = p_other.inTangent;
@@ -91,7 +91,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* CurveKeyDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* CurveKeyDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, time );
 				p_data = helpers::read( p_data, p_size, value );
 				p_data = helpers::read( p_data, p_size, inTangent );
@@ -100,41 +100,41 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      FlagKeyDataV33
+			//      FlagKeyDataV36
 			//============================================================================/
 
-			FlagKeyDataV33::FlagKeyDataV33( )
+			FlagKeyDataV36::FlagKeyDataV36( )
 				: time( 0 )
 				, value( 0 ) {
 			}
 
-			FlagKeyDataV33::FlagKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			FlagKeyDataV36::FlagKeyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			FlagKeyDataV33::FlagKeyDataV33( const FlagKeyDataV33& p_other )
+			FlagKeyDataV36::FlagKeyDataV36( const FlagKeyDataV36& p_other )
 				: time( p_other.time )
 				, value( p_other.value ) {
 			}
 
-			FlagKeyDataV33& FlagKeyDataV33::operator=( const FlagKeyDataV33& p_other ) {
+			FlagKeyDataV36& FlagKeyDataV36::operator=( const FlagKeyDataV36& p_other ) {
 				time = p_other.time;
 				value = p_other.value;
 				return *this;
 			}
 
-			const byte* FlagKeyDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* FlagKeyDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, time );
 				p_data = helpers::read( p_data, p_size, value );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      TriggerKeyDataV33
+			//      TriggerKeyDataV36
 			//============================================================================/
 
-			TriggerKeyDataV33::TriggerKeyDataV33( )
+			TriggerKeyDataV36::TriggerKeyDataV36( )
 				: time( 0 )
 				, flags1( 0 )
 				, flags2( 0 )
@@ -148,12 +148,12 @@ namespace gw2f {
 				, value4( 0 ) {
 			}
 
-			TriggerKeyDataV33::TriggerKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TriggerKeyDataV36::TriggerKeyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TriggerKeyDataV33::TriggerKeyDataV33( const TriggerKeyDataV33& p_other )
+			TriggerKeyDataV36::TriggerKeyDataV36( const TriggerKeyDataV36& p_other )
 				: time( p_other.time )
 				, flags1( p_other.flags1 )
 				, flags2( p_other.flags2 )
@@ -167,7 +167,7 @@ namespace gw2f {
 				, value4( p_other.value4 ) {
 			}
 
-			TriggerKeyDataV33& TriggerKeyDataV33::operator=( const TriggerKeyDataV33& p_other ) {
+			TriggerKeyDataV36& TriggerKeyDataV36::operator=( const TriggerKeyDataV36& p_other ) {
 				time = p_other.time;
 				flags1 = p_other.flags1;
 				flags2 = p_other.flags2;
@@ -182,7 +182,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TriggerKeyDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* TriggerKeyDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, time );
 				p_data = helpers::read( p_data, p_size, flags1 );
 				p_data = helpers::read( p_data, p_size, flags2 );
@@ -198,20 +198,20 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      TrackDataV33
+			//      TrackDataV36
 			//============================================================================/
 
-			TrackDataV33::TrackDataV33( )
+			TrackDataV36::TrackDataV36( )
 				: name( 0 )
 				, type( 0 ) {
 			}
 
-			TrackDataV33::TrackDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TrackDataV36::TrackDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TrackDataV33::TrackDataV33( const TrackDataV33& p_other )
+			TrackDataV36::TrackDataV36( const TrackDataV36& p_other )
 				: name( p_other.name )
 				, curveKeys( p_other.curveKeys )
 				, flagKeys( p_other.flagKeys )
@@ -219,7 +219,7 @@ namespace gw2f {
 				, type( p_other.type ) {
 			}
 
-			TrackDataV33& TrackDataV33::operator=( const TrackDataV33& p_other ) {
+			TrackDataV36& TrackDataV36::operator=( const TrackDataV36& p_other ) {
 				name = p_other.name;
 				curveKeys = p_other.curveKeys;
 				flagKeys = p_other.flagKeys;
@@ -228,7 +228,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TrackDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* TrackDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, curveKeys );
 				p_data = helpers::read( p_data, p_size, flagKeys );
@@ -238,21 +238,21 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      TrackGroupDataV33
+			//      TrackGroupDataV36
 			//============================================================================/
 
-			TrackGroupDataV33::TrackGroupDataV33( )
+			TrackGroupDataV36::TrackGroupDataV36( )
 				: name( 0 )
 				, flags( 0 )
 				, type( 0 ) {
 			}
 
-			TrackGroupDataV33::TrackGroupDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TrackGroupDataV36::TrackGroupDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TrackGroupDataV33::TrackGroupDataV33( const TrackGroupDataV33& p_other )
+			TrackGroupDataV36::TrackGroupDataV36( const TrackGroupDataV36& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, props( p_other.props )
@@ -260,7 +260,7 @@ namespace gw2f {
 				, type( p_other.type ) {
 			}
 
-			TrackGroupDataV33& TrackGroupDataV33::operator=( const TrackGroupDataV33& p_other ) {
+			TrackGroupDataV36& TrackGroupDataV36::operator=( const TrackGroupDataV36& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				props = p_other.props;
@@ -269,7 +269,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TrackGroupDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* TrackGroupDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, props );
@@ -279,10 +279,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      SequenceDataV33
+			//      SequenceDataV36
 			//============================================================================/
 
-			SequenceDataV33::SequenceDataV33( )
+			SequenceDataV36::SequenceDataV36( )
 				: name( 0 )
 				, playScript( 0 )
 				, updateScript( 0 )
@@ -290,12 +290,12 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			SequenceDataV33::SequenceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			SequenceDataV36::SequenceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			SequenceDataV33::SequenceDataV33( const SequenceDataV33& p_other )
+			SequenceDataV36::SequenceDataV36( const SequenceDataV36& p_other )
 				: name( p_other.name )
 				, playScript( p_other.playScript )
 				, updateScript( p_other.updateScript )
@@ -307,7 +307,7 @@ namespace gw2f {
 				, trackGroups( p_other.trackGroups ) {
 			}
 
-			SequenceDataV33& SequenceDataV33::operator=( const SequenceDataV33& p_other ) {
+			SequenceDataV36& SequenceDataV36::operator=( const SequenceDataV36& p_other ) {
 				name = p_other.name;
 				playScript = p_other.playScript;
 				updateScript = p_other.updateScript;
@@ -320,7 +320,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* SequenceDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* SequenceDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, playScript );
 				p_data = helpers::read( p_data, p_size, updateScript );
@@ -334,49 +334,49 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ColorDefDataV33
+			//      ColorDefDataV36
 			//============================================================================/
 
-			ColorDefDataV33::ColorDefDataV33( )
+			ColorDefDataV36::ColorDefDataV36( )
 				: intensity( 0 ) {
 			}
 
-			ColorDefDataV33::ColorDefDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ColorDefDataV36::ColorDefDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ColorDefDataV33::ColorDefDataV33( const ColorDefDataV33& p_other )
+			ColorDefDataV36::ColorDefDataV36( const ColorDefDataV36& p_other )
 				: intensity( p_other.intensity )
 				, color( p_other.color ) {
 			}
 
-			ColorDefDataV33& ColorDefDataV33::operator=( const ColorDefDataV33& p_other ) {
+			ColorDefDataV36& ColorDefDataV36::operator=( const ColorDefDataV36& p_other ) {
 				intensity = p_other.intensity;
 				color = p_other.color;
 				return *this;
 			}
 
-			const byte* ColorDefDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* ColorDefDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, intensity );
 				p_data = helpers::read( p_data, p_size, color );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      AmbientLightDataV33
+			//      AmbientLightDataV36
 			//============================================================================/
 
-			AmbientLightDataV33::AmbientLightDataV33( )
+			AmbientLightDataV36::AmbientLightDataV36( )
 				: name( 0 ) {
 			}
 
-			AmbientLightDataV33::AmbientLightDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			AmbientLightDataV36::AmbientLightDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			AmbientLightDataV33::AmbientLightDataV33( const AmbientLightDataV33& p_other )
+			AmbientLightDataV36::AmbientLightDataV36( const AmbientLightDataV36& p_other )
 				: ambientGroundColor( p_other.ambientGroundColor )
 				, ambientSkyColor( p_other.ambientSkyColor )
 				, fillColor( p_other.fillColor )
@@ -384,7 +384,7 @@ namespace gw2f {
 				, name( p_other.name ) {
 			}
 
-			AmbientLightDataV33& AmbientLightDataV33::operator=( const AmbientLightDataV33& p_other ) {
+			AmbientLightDataV36& AmbientLightDataV36::operator=( const AmbientLightDataV36& p_other ) {
 				ambientGroundColor = p_other.ambientGroundColor;
 				ambientSkyColor = p_other.ambientSkyColor;
 				fillColor = p_other.fillColor;
@@ -393,7 +393,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* AmbientLightDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* AmbientLightDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, ambientGroundColor );
 				p_data = helpers::read( p_data, p_size, ambientSkyColor );
 				p_data = helpers::read( p_data, p_size, fillColor );
@@ -403,118 +403,118 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      FileNameRefDataV33
+			//      FileNameRefDataV36
 			//============================================================================/
 
-			FileNameRefDataV33::FileNameRefDataV33( )
+			FileNameRefDataV36::FileNameRefDataV36( )
 				: name( 0 ) {
 			}
 
-			FileNameRefDataV33::FileNameRefDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			FileNameRefDataV36::FileNameRefDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			FileNameRefDataV33::FileNameRefDataV33( const FileNameRefDataV33& p_other )
+			FileNameRefDataV36::FileNameRefDataV36( const FileNameRefDataV36& p_other )
 				: name( p_other.name )
 				, fileName( p_other.fileName ) {
 			}
 
-			FileNameRefDataV33& FileNameRefDataV33::operator=( const FileNameRefDataV33& p_other ) {
+			FileNameRefDataV36& FileNameRefDataV36::operator=( const FileNameRefDataV36& p_other ) {
 				name = p_other.name;
 				fileName = p_other.fileName;
 				return *this;
 			}
 
-			const byte* FileNameRefDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* FileNameRefDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, fileName );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ScriptDataV33
+			//      ScriptDataV36
 			//============================================================================/
 
-			ScriptDataV33::ScriptDataV33( )
+			ScriptDataV36::ScriptDataV36( )
 				: name( 0 ) {
 			}
 
-			ScriptDataV33::ScriptDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ScriptDataV36::ScriptDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ScriptDataV33::ScriptDataV33( const ScriptDataV33& p_other )
+			ScriptDataV36::ScriptDataV36( const ScriptDataV36& p_other )
 				: name( p_other.name )
 				, byteCode( p_other.byteCode ) {
 			}
 
-			ScriptDataV33& ScriptDataV33::operator=( const ScriptDataV33& p_other ) {
+			ScriptDataV36& ScriptDataV36::operator=( const ScriptDataV36& p_other ) {
 				name = p_other.name;
 				byteCode = p_other.byteCode;
 				return *this;
 			}
 
-			const byte* ScriptDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* ScriptDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, byteCode );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      TextEntryDataV33
+			//      TextEntryDataV36
 			//============================================================================/
 
-			TextEntryDataV33::TextEntryDataV33( )
+			TextEntryDataV36::TextEntryDataV36( )
 				: language( 0 ) {
 			}
 
-			TextEntryDataV33::TextEntryDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TextEntryDataV36::TextEntryDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TextEntryDataV33::TextEntryDataV33( const TextEntryDataV33& p_other )
+			TextEntryDataV36::TextEntryDataV36( const TextEntryDataV36& p_other )
 				: text( p_other.text )
 				, language( p_other.language ) {
 			}
 
-			TextEntryDataV33& TextEntryDataV33::operator=( const TextEntryDataV33& p_other ) {
+			TextEntryDataV36& TextEntryDataV36::operator=( const TextEntryDataV36& p_other ) {
 				text = p_other.text;
 				language = p_other.language;
 				return *this;
 			}
 
-			const byte* TextEntryDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* TextEntryDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, text );
 				p_data = helpers::read( p_data, p_size, language );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      TextResourceDataV33
+			//      TextResourceDataV36
 			//============================================================================/
 
-			TextResourceDataV33::TextResourceDataV33( )
+			TextResourceDataV36::TextResourceDataV36( )
 				: name( 0 )
 				, index( 0 )
 				, voiceId( 0 ) {
 			}
 
-			TextResourceDataV33::TextResourceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TextResourceDataV36::TextResourceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TextResourceDataV33::TextResourceDataV33( const TextResourceDataV33& p_other )
+			TextResourceDataV36::TextResourceDataV36( const TextResourceDataV36& p_other )
 				: name( p_other.name )
 				, index( p_other.index )
 				, voiceId( p_other.voiceId )
 				, textEntries( p_other.textEntries ) {
 			}
 
-			TextResourceDataV33& TextResourceDataV33::operator=( const TextResourceDataV33& p_other ) {
+			TextResourceDataV36& TextResourceDataV36::operator=( const TextResourceDataV36& p_other ) {
 				name = p_other.name;
 				index = p_other.index;
 				voiceId = p_other.voiceId;
@@ -522,7 +522,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TextResourceDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* TextResourceDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, index );
 				p_data = helpers::read( p_data, p_size, voiceId );
@@ -531,65 +531,99 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ResourceDataV33
+			//      SpeciesResourceDataV36
 			//============================================================================/
 
-			ResourceDataV33::ResourceDataV33( )
-				: crc( 0 ) {
+			SpeciesResourceDataV36::SpeciesResourceDataV36( ) {
 			}
 
-			ResourceDataV33::ResourceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			SpeciesResourceDataV36::SpeciesResourceDataV36( const byte* p_data, uint32 p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ResourceDataV33::ResourceDataV33( const ResourceDataV33& p_other )
-				: crc( p_other.crc )
-				, ambientLightResources( p_other.ambientLightResources )
-				, fileNameRefs( p_other.fileNameRefs )
-				, scripts( p_other.scripts )
-				, textResources( p_other.textResources ) {
+			SpeciesResourceDataV36::SpeciesResourceDataV36( const SpeciesResourceDataV36& p_other )
+				: speciesId( p_other.speciesId )
+				, name( p_other.name )
+				, modelId( p_other.modelId )
+				, modelVariant( p_other.modelVariant ) {
 			}
 
-			ResourceDataV33& ResourceDataV33::operator=( const ResourceDataV33& p_other ) {
-				crc = p_other.crc;
-				ambientLightResources = p_other.ambientLightResources;
-				fileNameRefs = p_other.fileNameRefs;
-				scripts = p_other.scripts;
-				textResources = p_other.textResources;
+			SpeciesResourceDataV36& SpeciesResourceDataV36::operator=( const SpeciesResourceDataV36& p_other ) {
+				speciesId = p_other.speciesId;
+				name = p_other.name;
+				modelId = p_other.modelId;
+				modelVariant = p_other.modelVariant;
 				return *this;
 			}
 
-			const byte* ResourceDataV33::assign( const byte* p_data, size_t p_size ) {
-				p_data = helpers::read( p_data, p_size, crc );
-				p_data = helpers::read( p_data, p_size, ambientLightResources );
-				p_data = helpers::read( p_data, p_size, fileNameRefs );
-				p_data = helpers::read( p_data, p_size, scripts );
-				p_data = helpers::read( p_data, p_size, textResources );
+			const byte* SpeciesResourceDataV36::assign( const byte* p_data, uint32 p_size ) {
+				p_data = helpers::read( p_data, p_size, speciesId );
+				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, modelId );
+				p_data = helpers::read( p_data, p_size, modelVariant );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      SceneDataV33
+			//      ResourceDataV36
 			//============================================================================/
 
-			SceneDataV33::SceneDataV33( )
-				: startingSequence( 0 ) {
+			ResourceDataV36::ResourceDataV36( ) {
 			}
 
-			SceneDataV33::SceneDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ResourceDataV36::ResourceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			SceneDataV33::SceneDataV33( const SceneDataV33& p_other )
+			ResourceDataV36::ResourceDataV36( const ResourceDataV36& p_other )
+				: ambientLightResources( p_other.ambientLightResources )
+				, fileNameRefs( p_other.fileNameRefs )
+				, scripts( p_other.scripts )
+				, textResources( p_other.textResources )
+				, speciesResource( p_other.speciesResource ) {
+			}
+
+			ResourceDataV36& ResourceDataV36::operator=( const ResourceDataV36& p_other ) {
+				ambientLightResources = p_other.ambientLightResources;
+				fileNameRefs = p_other.fileNameRefs;
+				scripts = p_other.scripts;
+				textResources = p_other.textResources;
+				speciesResource = p_other.speciesResource;
+				return *this;
+			}
+
+			const byte* ResourceDataV36::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, ambientLightResources );
+				p_data = helpers::read( p_data, p_size, fileNameRefs );
+				p_data = helpers::read( p_data, p_size, scripts );
+				p_data = helpers::read( p_data, p_size, textResources );
+				p_data = helpers::read( p_data, p_size, speciesResource );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      SceneDataV36
+			//============================================================================/
+
+			SceneDataV36::SceneDataV36( )
+				: startingSequence( 0 ) {
+			}
+
+			SceneDataV36::SceneDataV36( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			SceneDataV36::SceneDataV36( const SceneDataV36& p_other )
 				: startingSequence( p_other.startingSequence )
 				, sequences( p_other.sequences )
 				, resources( p_other.resources )
 				, trackGroups( p_other.trackGroups ) {
 			}
 
-			SceneDataV33& SceneDataV33::operator=( const SceneDataV33& p_other ) {
+			SceneDataV36& SceneDataV36::operator=( const SceneDataV36& p_other ) {
 				startingSequence = p_other.startingSequence;
 				sequences = p_other.sequences;
 				resources = p_other.resources;
@@ -597,7 +631,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* SceneDataV33::assign( const byte* p_data, size_t p_size ) {
+			const byte* SceneDataV36::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, startingSequence );
 				p_data = helpers::read( p_data, p_size, sequences );
 				p_data = helpers::read( p_data, p_size, resources );

@@ -1,7 +1,7 @@
 // File: pf/chunks/cmpc/PackComposite.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,25 +27,25 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackCompositeBlitRectSetV14
+			//      PackCompositeBlitRectSetV18
 			//============================================================================/
 
-			PackCompositeBlitRectSetV14::PackCompositeBlitRectSetV14( ) {
+			PackCompositeBlitRectSetV18::PackCompositeBlitRectSetV18( ) {
 			}
 
-			PackCompositeBlitRectSetV14::PackCompositeBlitRectSetV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeBlitRectSetV18::PackCompositeBlitRectSetV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeBlitRectSetV14::PackCompositeBlitRectSetV14( const PackCompositeBlitRectSetV14& p_other )
+			PackCompositeBlitRectSetV18::PackCompositeBlitRectSetV18( const PackCompositeBlitRectSetV18& p_other )
 				: name( p_other.name )
 				, size( p_other.size )
 				, rectIndex( p_other.rectIndex )
 				, rectArray( p_other.rectArray ) {
 			}
 
-			PackCompositeBlitRectSetV14& PackCompositeBlitRectSetV14::operator=( const PackCompositeBlitRectSetV14& p_other ) {
+			PackCompositeBlitRectSetV18& PackCompositeBlitRectSetV18::operator=( const PackCompositeBlitRectSetV18& p_other ) {
 				name = p_other.name;
 				size = p_other.size;
 				rectIndex = p_other.rectIndex;
@@ -53,7 +53,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeBlitRectSetV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeBlitRectSetV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, size );
 				p_data = helpers::read( p_data, p_size, rectIndex );
@@ -62,22 +62,22 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeBoneScaleParamV14
+			//      PackCompositeBoneScaleParamV18
 			//============================================================================/
 
-			PackCompositeBoneScaleParamV14::PackCompositeBoneScaleParamV14( )
+			PackCompositeBoneScaleParamV18::PackCompositeBoneScaleParamV18( )
 				: name( 0 )
 				, flags( 0 )
 				, max( 0 )
 				, min( 0 ) {
 			}
 
-			PackCompositeBoneScaleParamV14::PackCompositeBoneScaleParamV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeBoneScaleParamV18::PackCompositeBoneScaleParamV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeBoneScaleParamV14::PackCompositeBoneScaleParamV14( const PackCompositeBoneScaleParamV14& p_other )
+			PackCompositeBoneScaleParamV18::PackCompositeBoneScaleParamV18( const PackCompositeBoneScaleParamV18& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, max( p_other.max )
@@ -87,7 +87,7 @@ namespace gw2f {
 				, translate( p_other.translate ) {
 			}
 
-			PackCompositeBoneScaleParamV14& PackCompositeBoneScaleParamV14::operator=( const PackCompositeBoneScaleParamV14& p_other ) {
+			PackCompositeBoneScaleParamV18& PackCompositeBoneScaleParamV18::operator=( const PackCompositeBoneScaleParamV18& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				max = p_other.max;
@@ -98,7 +98,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeBoneScaleParamV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeBoneScaleParamV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, max );
@@ -110,33 +110,33 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeBoneScaleRegionV14
+			//      PackCompositeBoneScaleRegionV18
 			//============================================================================/
 
-			PackCompositeBoneScaleRegionV14::PackCompositeBoneScaleRegionV14( )
+			PackCompositeBoneScaleRegionV18::PackCompositeBoneScaleRegionV18( )
 				: name( 0 )
 				, value( 0 ) {
 			}
 
-			PackCompositeBoneScaleRegionV14::PackCompositeBoneScaleRegionV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeBoneScaleRegionV18::PackCompositeBoneScaleRegionV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeBoneScaleRegionV14::PackCompositeBoneScaleRegionV14( const PackCompositeBoneScaleRegionV14& p_other )
+			PackCompositeBoneScaleRegionV18::PackCompositeBoneScaleRegionV18( const PackCompositeBoneScaleRegionV18& p_other )
 				: name( p_other.name )
 				, value( p_other.value )
 				, bone( p_other.bone ) {
 			}
 
-			PackCompositeBoneScaleRegionV14& PackCompositeBoneScaleRegionV14::operator=( const PackCompositeBoneScaleRegionV14& p_other ) {
+			PackCompositeBoneScaleRegionV18& PackCompositeBoneScaleRegionV18::operator=( const PackCompositeBoneScaleRegionV18& p_other ) {
 				name = p_other.name;
 				value = p_other.value;
 				bone = p_other.bone;
 				return *this;
 			}
 
-			const byte* PackCompositeBoneScaleRegionV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeBoneScaleRegionV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, value );
 				p_data = helpers::read( p_data, p_size, bone );
@@ -144,96 +144,96 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeMorphWeightV14
+			//      PackCompositeMorphWeightV18
 			//============================================================================/
 
-			PackCompositeMorphWeightV14::PackCompositeMorphWeightV14( )
+			PackCompositeMorphWeightV18::PackCompositeMorphWeightV18( )
 				: name( 0 )
 				, value( 0 ) {
 			}
 
-			PackCompositeMorphWeightV14::PackCompositeMorphWeightV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeMorphWeightV18::PackCompositeMorphWeightV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeMorphWeightV14::PackCompositeMorphWeightV14( const PackCompositeMorphWeightV14& p_other )
+			PackCompositeMorphWeightV18::PackCompositeMorphWeightV18( const PackCompositeMorphWeightV18& p_other )
 				: name( p_other.name )
 				, value( p_other.value ) {
 			}
 
-			PackCompositeMorphWeightV14& PackCompositeMorphWeightV14::operator=( const PackCompositeMorphWeightV14& p_other ) {
+			PackCompositeMorphWeightV18& PackCompositeMorphWeightV18::operator=( const PackCompositeMorphWeightV18& p_other ) {
 				name = p_other.name;
 				value = p_other.value;
 				return *this;
 			}
 
-			const byte* PackCompositeMorphWeightV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeMorphWeightV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, value );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackCompositeBoneScaleV14
+			//      PackCompositeBoneScaleV18
 			//============================================================================/
 
-			PackCompositeBoneScaleV14::PackCompositeBoneScaleV14( ) {
+			PackCompositeBoneScaleV18::PackCompositeBoneScaleV18( ) {
 			}
 
-			PackCompositeBoneScaleV14::PackCompositeBoneScaleV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeBoneScaleV18::PackCompositeBoneScaleV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeBoneScaleV14::PackCompositeBoneScaleV14( const PackCompositeBoneScaleV14& p_other )
+			PackCompositeBoneScaleV18::PackCompositeBoneScaleV18( const PackCompositeBoneScaleV18& p_other )
 				: bodyRegion( p_other.bodyRegion )
 				, morphWeight( p_other.morphWeight ) {
 			}
 
-			PackCompositeBoneScaleV14& PackCompositeBoneScaleV14::operator=( const PackCompositeBoneScaleV14& p_other ) {
+			PackCompositeBoneScaleV18& PackCompositeBoneScaleV18::operator=( const PackCompositeBoneScaleV18& p_other ) {
 				bodyRegion = p_other.bodyRegion;
 				morphWeight = p_other.morphWeight;
 				return *this;
 			}
 
-			const byte* PackCompositeBoneScaleV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeBoneScaleV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bodyRegion );
 				p_data = helpers::read( p_data, p_size, morphWeight );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackCompositeBoneScaleFileV14
+			//      PackCompositeBoneScaleFileV18
 			//============================================================================/
 
-			PackCompositeBoneScaleFileV14::PackCompositeBoneScaleFileV14( ) {
+			PackCompositeBoneScaleFileV18::PackCompositeBoneScaleFileV18( ) {
 			}
 
-			PackCompositeBoneScaleFileV14::PackCompositeBoneScaleFileV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeBoneScaleFileV18::PackCompositeBoneScaleFileV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeBoneScaleFileV14::PackCompositeBoneScaleFileV14( const PackCompositeBoneScaleFileV14& p_other )
+			PackCompositeBoneScaleFileV18::PackCompositeBoneScaleFileV18( const PackCompositeBoneScaleFileV18& p_other )
 				: fileName( p_other.fileName ) {
 			}
 
-			PackCompositeBoneScaleFileV14& PackCompositeBoneScaleFileV14::operator=( const PackCompositeBoneScaleFileV14& p_other ) {
+			PackCompositeBoneScaleFileV18& PackCompositeBoneScaleFileV18::operator=( const PackCompositeBoneScaleFileV18& p_other ) {
 				fileName = p_other.fileName;
 				return *this;
 			}
 
-			const byte* PackCompositeBoneScaleFileV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeBoneScaleFileV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, fileName );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackCompositeFileDataV14
+			//      PackCompositeFileDataV18
 			//============================================================================/
 
-			PackCompositeFileDataV14::PackCompositeFileDataV14( )
+			PackCompositeFileDataV18::PackCompositeFileDataV18( )
 				: name( 0 )
 				, type( 0 )
 				, flags( 0 )
@@ -243,15 +243,16 @@ namespace gw2f {
 				, blitRectIndex( 0 ) {
 			}
 
-			PackCompositeFileDataV14::PackCompositeFileDataV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeFileDataV18::PackCompositeFileDataV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeFileDataV14::PackCompositeFileDataV14( const PackCompositeFileDataV14& p_other )
+			PackCompositeFileDataV18::PackCompositeFileDataV18( const PackCompositeFileDataV18& p_other )
 				: name( p_other.name )
 				, type( p_other.type )
 				, flags( p_other.flags )
+				, animRoleOverride( p_other.animRoleOverride )
 				, meshBase( p_other.meshBase )
 				, meshOverlap( p_other.meshOverlap )
 				, maskDye1( p_other.maskDye1 )
@@ -267,10 +268,11 @@ namespace gw2f {
 				, blitRectIndex( p_other.blitRectIndex ) {
 			}
 
-			PackCompositeFileDataV14& PackCompositeFileDataV14::operator=( const PackCompositeFileDataV14& p_other ) {
+			PackCompositeFileDataV18& PackCompositeFileDataV18::operator=( const PackCompositeFileDataV18& p_other ) {
 				name = p_other.name;
 				type = p_other.type;
 				flags = p_other.flags;
+				animRoleOverride = p_other.animRoleOverride;
 				meshBase = p_other.meshBase;
 				meshOverlap = p_other.meshOverlap;
 				maskDye1 = p_other.maskDye1;
@@ -287,10 +289,11 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeFileDataV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeFileDataV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, animRoleOverride );
 				p_data = helpers::read( p_data, p_size, meshBase );
 				p_data = helpers::read( p_data, p_size, meshOverlap );
 				p_data = helpers::read( p_data, p_size, maskDye1 );
@@ -308,18 +311,18 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeSkinPatternV14
+			//      PackCompositeSkinPatternV18
 			//============================================================================/
 
-			PackCompositeSkinPatternV14::PackCompositeSkinPatternV14( ) {
+			PackCompositeSkinPatternV18::PackCompositeSkinPatternV18( ) {
 			}
 
-			PackCompositeSkinPatternV14::PackCompositeSkinPatternV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeSkinPatternV18::PackCompositeSkinPatternV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeSkinPatternV14::PackCompositeSkinPatternV14( const PackCompositeSkinPatternV14& p_other )
+			PackCompositeSkinPatternV18::PackCompositeSkinPatternV18( const PackCompositeSkinPatternV18& p_other )
 				: chest( p_other.chest )
 				, face( p_other.face )
 				, feet( p_other.feet )
@@ -328,7 +331,7 @@ namespace gw2f {
 				, ears( p_other.ears ) {
 			}
 
-			PackCompositeSkinPatternV14& PackCompositeSkinPatternV14::operator=( const PackCompositeSkinPatternV14& p_other ) {
+			PackCompositeSkinPatternV18& PackCompositeSkinPatternV18::operator=( const PackCompositeSkinPatternV18& p_other ) {
 				chest = p_other.chest;
 				face = p_other.face;
 				feet = p_other.feet;
@@ -338,7 +341,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeSkinPatternV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeSkinPatternV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, chest );
 				p_data = helpers::read( p_data, p_size, face );
 				p_data = helpers::read( p_data, p_size, feet );
@@ -349,10 +352,45 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeColorV14
+			//      PackCompositeSkinStyleV18
 			//============================================================================/
 
-			PackCompositeColorV14::PackCompositeColorV14( )
+			PackCompositeSkinStyleV18::PackCompositeSkinStyleV18( ) {
+			}
+
+			PackCompositeSkinStyleV18::PackCompositeSkinStyleV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackCompositeSkinStyleV18::PackCompositeSkinStyleV18( const PackCompositeSkinStyleV18& p_other )
+				: chest( p_other.chest )
+				, feet( p_other.feet )
+				, hands( p_other.hands )
+				, legs( p_other.legs ) {
+			}
+
+			PackCompositeSkinStyleV18& PackCompositeSkinStyleV18::operator=( const PackCompositeSkinStyleV18& p_other ) {
+				chest = p_other.chest;
+				feet = p_other.feet;
+				hands = p_other.hands;
+				legs = p_other.legs;
+				return *this;
+			}
+
+			const byte* PackCompositeSkinStyleV18::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, chest );
+				p_data = helpers::read( p_data, p_size, feet );
+				p_data = helpers::read( p_data, p_size, hands );
+				p_data = helpers::read( p_data, p_size, legs );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackCompositeColorV18
+			//============================================================================/
+
+			PackCompositeColorV18::PackCompositeColorV18( )
 				: brightness( 0 )
 				, contrast( 0 )
 				, hue( 0 )
@@ -360,12 +398,12 @@ namespace gw2f {
 				, lightness( 0 ) {
 			}
 
-			PackCompositeColorV14::PackCompositeColorV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeColorV18::PackCompositeColorV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeColorV14::PackCompositeColorV14( const PackCompositeColorV14& p_other )
+			PackCompositeColorV18::PackCompositeColorV18( const PackCompositeColorV18& p_other )
 				: brightness( p_other.brightness )
 				, contrast( p_other.contrast )
 				, hue( p_other.hue )
@@ -373,7 +411,7 @@ namespace gw2f {
 				, lightness( p_other.lightness ) {
 			}
 
-			PackCompositeColorV14& PackCompositeColorV14::operator=( const PackCompositeColorV14& p_other ) {
+			PackCompositeColorV18& PackCompositeColorV18::operator=( const PackCompositeColorV18& p_other ) {
 				brightness = p_other.brightness;
 				contrast = p_other.contrast;
 				hue = p_other.hue;
@@ -382,7 +420,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeColorV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeColorV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, brightness );
 				p_data = helpers::read( p_data, p_size, contrast );
 				p_data = helpers::read( p_data, p_size, hue );
@@ -392,19 +430,19 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeVariantComponentV14
+			//      PackCompositeVariantComponentV18
 			//============================================================================/
 
-			PackCompositeVariantComponentV14::PackCompositeVariantComponentV14( )
+			PackCompositeVariantComponentV18::PackCompositeVariantComponentV18( )
 				: nameToken( 0 ) {
 			}
 
-			PackCompositeVariantComponentV14::PackCompositeVariantComponentV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeVariantComponentV18::PackCompositeVariantComponentV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeVariantComponentV14::PackCompositeVariantComponentV14( const PackCompositeVariantComponentV14& p_other )
+			PackCompositeVariantComponentV18::PackCompositeVariantComponentV18( const PackCompositeVariantComponentV18& p_other )
 				: nameToken( p_other.nameToken )
 				, color0( p_other.color0 )
 				, color1( p_other.color1 )
@@ -412,7 +450,7 @@ namespace gw2f {
 				, color3( p_other.color3 ) {
 			}
 
-			PackCompositeVariantComponentV14& PackCompositeVariantComponentV14::operator=( const PackCompositeVariantComponentV14& p_other ) {
+			PackCompositeVariantComponentV18& PackCompositeVariantComponentV18::operator=( const PackCompositeVariantComponentV18& p_other ) {
 				nameToken = p_other.nameToken;
 				color0 = p_other.color0;
 				color1 = p_other.color1;
@@ -421,7 +459,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeVariantComponentV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeVariantComponentV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, nameToken );
 				p_data = helpers::read( p_data, p_size, color0 );
 				p_data = helpers::read( p_data, p_size, color1 );
@@ -431,21 +469,21 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeVariantV14
+			//      PackCompositeVariantV18
 			//============================================================================/
 
-			PackCompositeVariantV14::PackCompositeVariantV14( )
+			PackCompositeVariantV18::PackCompositeVariantV18( )
 				: token( 0 )
 				, boneScaleIndex( 0 )
 				, skinIndex( 0 ) {
 			}
 
-			PackCompositeVariantV14::PackCompositeVariantV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeVariantV18::PackCompositeVariantV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeVariantV14::PackCompositeVariantV14( const PackCompositeVariantV14& p_other )
+			PackCompositeVariantV18::PackCompositeVariantV18( const PackCompositeVariantV18& p_other )
 				: token( p_other.token )
 				, boneScaleIndex( p_other.boneScaleIndex )
 				, components( p_other.components )
@@ -457,7 +495,7 @@ namespace gw2f {
 				, skinIndex( p_other.skinIndex ) {
 			}
 
-			PackCompositeVariantV14& PackCompositeVariantV14::operator=( const PackCompositeVariantV14& p_other ) {
+			PackCompositeVariantV18& PackCompositeVariantV18::operator=( const PackCompositeVariantV18& p_other ) {
 				token = p_other.token;
 				boneScaleIndex = p_other.boneScaleIndex;
 				components = p_other.components;
@@ -470,7 +508,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeVariantV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeVariantV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, boneScaleIndex );
 				p_data = helpers::read( p_data, p_size, components );
@@ -484,24 +522,53 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackCompositeRaceDataV14
+			//      PackCompositeAnimOverrideV18
 			//============================================================================/
 
-			PackCompositeRaceDataV14::PackCompositeRaceDataV14( )
-				: nameToken( 0 )
-				, baseHeadToken( 0 )
-				, flags( 0 )
-				, skinStyleCount( 0 )
-				, type( 0 )
-				, variantRefRace( 0 ) {
+			PackCompositeAnimOverrideV18::PackCompositeAnimOverrideV18( ) {
 			}
 
-			PackCompositeRaceDataV14::PackCompositeRaceDataV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeAnimOverrideV18::PackCompositeAnimOverrideV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeRaceDataV14::PackCompositeRaceDataV14( const PackCompositeRaceDataV14& p_other )
+			PackCompositeAnimOverrideV18::PackCompositeAnimOverrideV18( const PackCompositeAnimOverrideV18& p_other )
+				: animRole( p_other.animRole )
+				, filepath( p_other.filepath ) {
+			}
+
+			PackCompositeAnimOverrideV18& PackCompositeAnimOverrideV18::operator=( const PackCompositeAnimOverrideV18& p_other ) {
+				animRole = p_other.animRole;
+				filepath = p_other.filepath;
+
+				return *this;
+			}
+
+			const byte* PackCompositeAnimOverrideV18::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, animRole );
+				p_data = helpers::read( p_data, p_size, filepath );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackCompositeRaceDataV18
+			//============================================================================/
+
+			PackCompositeRaceDataV18::PackCompositeRaceDataV18( )
+				: nameToken( 0 )
+				, baseHeadToken( 0 )
+				, flags( 0 )
+				, type( 0 )
+				, variantRefRace( 0 ) {
+			}
+
+			PackCompositeRaceDataV18::PackCompositeRaceDataV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackCompositeRaceDataV18::PackCompositeRaceDataV18( const PackCompositeRaceDataV18& p_other )
 				: name( p_other.name )
 				, nameToken( p_other.nameToken )
 				, baseHeadToken( p_other.baseHeadToken )
@@ -520,13 +587,14 @@ namespace gw2f {
 				, skinPatterns( p_other.skinPatterns )
 				, skinColorPalette( p_other.skinColorPalette )
 				, skinPatternPalette( p_other.skinPatternPalette )
-				, skinStyleCount( p_other.skinStyleCount )
+				, skinStyles( p_other.skinStyles )
 				, type( p_other.type )
 				, variantRefRace( p_other.variantRefRace )
-				, variants( p_other.variants ) {
+				, variants( p_other.variants ) 
+				, animOverrides( p_other.animOverrides ) {
 			}
 
-			PackCompositeRaceDataV14& PackCompositeRaceDataV14::operator=( const PackCompositeRaceDataV14& p_other ) {
+			PackCompositeRaceDataV18& PackCompositeRaceDataV18::operator=( const PackCompositeRaceDataV18& p_other ) {
 				name = p_other.name;
 				nameToken = p_other.nameToken;
 				baseHeadToken = p_other.baseHeadToken;
@@ -545,14 +613,15 @@ namespace gw2f {
 				skinPatterns = p_other.skinPatterns;
 				skinColorPalette = p_other.skinColorPalette;
 				skinPatternPalette = p_other.skinPatternPalette;
-				skinStyleCount = p_other.skinStyleCount;
+				skinStyles = p_other.skinStyles;
 				type = p_other.type;
 				variantRefRace = p_other.variantRefRace;
 				variants = p_other.variants;
+				animOverrides = p_other.animOverrides;
 				return *this;
 			}
 
-			const byte* PackCompositeRaceDataV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeRaceDataV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, nameToken );
 				p_data = helpers::read( p_data, p_size, baseHeadToken );
@@ -571,27 +640,28 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, skinPatterns );
 				p_data = helpers::read( p_data, p_size, skinColorPalette );
 				p_data = helpers::read( p_data, p_size, skinPatternPalette );
-				p_data = helpers::read( p_data, p_size, skinStyleCount );
+				p_data = helpers::read( p_data, p_size, skinStyles );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, variantRefRace );
 				p_data = helpers::read( p_data, p_size, variants );
+				p_data = helpers::read( p_data, p_size, animOverrides );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackCompositeV14
+			//      PackCompositeV18
 			//============================================================================/
 
-			PackCompositeV14::PackCompositeV14( )
+			PackCompositeV18::PackCompositeV18( )
 				: configVersion( 0 ) {
 			}
 
-			PackCompositeV14::PackCompositeV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackCompositeV18::PackCompositeV18( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackCompositeV14::PackCompositeV14( const PackCompositeV14& p_other )
+			PackCompositeV18::PackCompositeV18( const PackCompositeV18& p_other )
 				: armorColorIds( p_other.armorColorIds )
 				, blitRects( p_other.blitRects )
 				, boneScales( p_other.boneScales )
@@ -599,7 +669,7 @@ namespace gw2f {
 				, configVersion( p_other.configVersion ) {
 			}
 
-			PackCompositeV14& PackCompositeV14::operator=( const PackCompositeV14& p_other ) {
+			PackCompositeV18& PackCompositeV18::operator=( const PackCompositeV18& p_other ) {
 				armorColorIds = p_other.armorColorIds;
 				blitRects = p_other.blitRects;
 				boneScales = p_other.boneScales;
@@ -608,7 +678,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackCompositeV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackCompositeV18::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, armorColorIds );
 				p_data = helpers::read( p_data, p_size, blitRects );
 				p_data = helpers::read( p_data, p_size, boneScales );

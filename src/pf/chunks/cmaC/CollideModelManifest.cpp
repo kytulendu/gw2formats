@@ -1,7 +1,7 @@
 // File: pf/chunks/cmaC/CollideModelManifestPackFile.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,25 +27,25 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      CollideModelManifestFileV0
+			//      CollideModelManifestFile
 			//============================================================================/
 
-			CollideModelManifestFileV0::CollideModelManifestFileV0( ) {
+			CollideModelManifestFile::CollideModelManifestFile( ) {
 			}
 
-			CollideModelManifestFileV0::CollideModelManifestFileV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			CollideModelManifestFile::CollideModelManifestFile( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			CollideModelManifestFileV0::CollideModelManifestFileV0( const CollideModelManifestFileV0& p_other )
+			CollideModelManifestFile::CollideModelManifestFile( const CollideModelManifestFile& p_other )
 				: modelFileStr( p_other.modelFileStr )
 				, modelFile( p_other.modelFile )
 				, collisionFile( p_other.collisionFile )
 				, scales( p_other.scales ) {
 			}
 
-			CollideModelManifestFileV0& CollideModelManifestFileV0::operator=( const CollideModelManifestFileV0& p_other ) {
+			CollideModelManifestFile& CollideModelManifestFile::operator=( const CollideModelManifestFile& p_other ) {
 				modelFileStr = p_other.modelFileStr;
 				modelFile = p_other.modelFile;
 				collisionFile = p_other.collisionFile;
@@ -53,7 +53,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* CollideModelManifestFileV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* CollideModelManifestFile::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, modelFileStr );
 				p_data = helpers::read( p_data, p_size, modelFile );
 				p_data = helpers::read( p_data, p_size, collisionFile );
@@ -62,27 +62,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      CollideModelManifestV0
+			//      CollideModelManifest
 			//============================================================================/
 
-			CollideModelManifestV0::CollideModelManifestV0( ) {
+			CollideModelManifest::CollideModelManifest( ) {
 			}
 
-			CollideModelManifestV0::CollideModelManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			CollideModelManifest::CollideModelManifest( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			CollideModelManifestV0::CollideModelManifestV0( const CollideModelManifestV0& p_other )
+			CollideModelManifest::CollideModelManifest( const CollideModelManifest& p_other )
 				: files( p_other.files ) {
 			}
 
-			CollideModelManifestV0& CollideModelManifestV0::operator=( const CollideModelManifestV0& p_other ) {
+			CollideModelManifest& CollideModelManifest::operator=( const CollideModelManifest& p_other ) {
 				files = p_other.files;
 				return *this;
 			}
 
-			const byte* CollideModelManifestV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* CollideModelManifest::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, files );
 				return p_data;
 			}

@@ -1,7 +1,7 @@
 // File: pf/chunks/MODL/ModelFileAnimation.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -30,110 +30,113 @@ namespace gw2f {
 			//      PackGrannyAnimationType
 			//============================================================================/
 
-			PackGrannyAnimationType::PackGrannyAnimationType( ) {
+			PackGrannyAnimationTypeV1::PackGrannyAnimationTypeV1( ) {
 			}
 
-			PackGrannyAnimationType::PackGrannyAnimationType( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackGrannyAnimationTypeV1::PackGrannyAnimationTypeV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackGrannyAnimationType::PackGrannyAnimationType( const PackGrannyAnimationType& p_other )
-				: animation( p_other.animation ) {
+			PackGrannyAnimationTypeV1::PackGrannyAnimationTypeV1( const PackGrannyAnimationTypeV1& p_other )
+				: animation( p_other.animation )
+				, pointers( p_other.pointers ) {
 			}
 
-			PackGrannyAnimationType& PackGrannyAnimationType::operator=( const PackGrannyAnimationType& p_other ) {
+			PackGrannyAnimationTypeV1& PackGrannyAnimationTypeV1::operator=( const PackGrannyAnimationTypeV1& p_other ) {
 				animation = p_other.animation;
+				pointers = p_other.pointers;
 				return *this;
 			}
 
-			const byte* PackGrannyAnimationType::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackGrannyAnimationTypeV1::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, animation );
+				p_data = helpers::read( p_data, p_size, pointers );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelAnimationLodV24
+			//      ModelAnimationLodV25
 			//============================================================================/
 
-			ModelAnimationLodV24::ModelAnimationLodV24( ) {
+			ModelAnimationLodV25::ModelAnimationLodV25( ) {
 			}
 
-			ModelAnimationLodV24::ModelAnimationLodV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelAnimationLodV25::ModelAnimationLodV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelAnimationLodV24::ModelAnimationLodV24( const ModelAnimationLodV24& p_other )
+			ModelAnimationLodV25::ModelAnimationLodV25( const ModelAnimationLodV25& p_other )
 				: data( p_other.data )
 				, fileFull( p_other.fileFull ) {
 			}
 
-			ModelAnimationLodV24& ModelAnimationLodV24::operator=( const ModelAnimationLodV24& p_other ) {
+			ModelAnimationLodV25& ModelAnimationLodV25::operator=( const ModelAnimationLodV25& p_other ) {
 				data = p_other.data;
 				fileFull = p_other.fileFull;
 				return *this;
 			}
 
-			const byte* ModelAnimationLodV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelAnimationLodV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, data );
 				p_data = helpers::read( p_data, p_size, fileFull );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelVisTrackDataV32
+			//      ModelVisTrackDataV33
 			//============================================================================/
 
-			ModelVisTrackDataV32::ModelVisTrackDataV32( )
+			ModelVisTrackDataV33::ModelVisTrackDataV33( )
 				: boneToken( 0 ) {
 			}
 
-			ModelVisTrackDataV32::ModelVisTrackDataV32( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelVisTrackDataV33::ModelVisTrackDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelVisTrackDataV32::ModelVisTrackDataV32( const ModelVisTrackDataV32& p_other )
+			ModelVisTrackDataV33::ModelVisTrackDataV33( const ModelVisTrackDataV33& p_other )
 				: boneToken( p_other.boneToken )
 				, keys( p_other.keys ) {
 			}
 
-			ModelVisTrackDataV32& ModelVisTrackDataV32::operator=( const ModelVisTrackDataV32& p_other ) {
+			ModelVisTrackDataV33& ModelVisTrackDataV33::operator=( const ModelVisTrackDataV33& p_other ) {
 				boneToken = p_other.boneToken;
 				keys = p_other.keys;
 				return *this;
 			}
 
-			const byte* ModelVisTrackDataV32::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelVisTrackDataV33::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, boneToken );
 				p_data = helpers::read( p_data, p_size, keys );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelTrackTypeDataV24
+			//      ModelTrackTypeDataV25
 			//============================================================================/
 
-			ModelTrackTypeDataV24::ModelTrackTypeDataV24( )
+			ModelTrackTypeDataV25::ModelTrackTypeDataV25( )
 				: type( 0 )
 				, trackGroupIndex( 0 )
 				, vectorTrackIndex( 0 ) {
 			}
 
-			ModelTrackTypeDataV24::ModelTrackTypeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelTrackTypeDataV25::ModelTrackTypeDataV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelTrackTypeDataV24::ModelTrackTypeDataV24( const ModelTrackTypeDataV24& p_other )
+			ModelTrackTypeDataV25::ModelTrackTypeDataV25( const ModelTrackTypeDataV25& p_other )
 				: type( p_other.type )
 				, trackGroupIndex( p_other.trackGroupIndex )
 				, vectorTrackIndex( p_other.vectorTrackIndex )
 				, initialValue( p_other.initialValue ) {
 			}
 
-			ModelTrackTypeDataV24& ModelTrackTypeDataV24::operator=( const ModelTrackTypeDataV24& p_other ) {
+			ModelTrackTypeDataV25& ModelTrackTypeDataV25::operator=( const ModelTrackTypeDataV25& p_other ) {
 				type = p_other.type;
 				trackGroupIndex = p_other.trackGroupIndex;
 				vectorTrackIndex = p_other.vectorTrackIndex;
@@ -141,7 +144,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTrackTypeDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelTrackTypeDataV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, trackGroupIndex );
 				p_data = helpers::read( p_data, p_size, vectorTrackIndex );
@@ -150,82 +153,82 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelUVAnimationV24
+			//      ModelUVAnimationV25
 			//============================================================================/
 
-			ModelUVAnimationV24::ModelUVAnimationV24( )
+			ModelUVAnimationV25::ModelUVAnimationV25( )
 				: uvAnimId( 0 ) {
 			}
 
-			ModelUVAnimationV24::ModelUVAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelUVAnimationV25::ModelUVAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelUVAnimationV24::ModelUVAnimationV24( const ModelUVAnimationV24& p_other )
+			ModelUVAnimationV25::ModelUVAnimationV25( const ModelUVAnimationV25& p_other )
 				: uvAnimId( p_other.uvAnimId )
 				, uvTransformData( p_other.uvTransformData ) {
 			}
 
-			ModelUVAnimationV24& ModelUVAnimationV24::operator=( const ModelUVAnimationV24& p_other ) {
+			ModelUVAnimationV25& ModelUVAnimationV25::operator=( const ModelUVAnimationV25& p_other ) {
 				uvAnimId = p_other.uvAnimId;
 				uvTransformData = p_other.uvTransformData;
 				return *this;
 			}
 
-			const byte* ModelUVAnimationV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelUVAnimationV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, uvAnimId );
 				p_data = helpers::read( p_data, p_size, uvTransformData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelCloudAnimV24
+			//      ModelCloudAnimV25
 			//============================================================================/
 
-			ModelCloudAnimV24::ModelCloudAnimV24( )
+			ModelCloudAnimV25::ModelCloudAnimV25( )
 				: bone( 0 ) {
 			}
 
-			ModelCloudAnimV24::ModelCloudAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelCloudAnimV25::ModelCloudAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelCloudAnimV24::ModelCloudAnimV24( const ModelCloudAnimV24& p_other )
+			ModelCloudAnimV25::ModelCloudAnimV25( const ModelCloudAnimV25& p_other )
 				: bone( p_other.bone )
 				, cloudTrackData( p_other.cloudTrackData ) {
 			}
 
-			ModelCloudAnimV24& ModelCloudAnimV24::operator=( const ModelCloudAnimV24& p_other ) {
+			ModelCloudAnimV25& ModelCloudAnimV25::operator=( const ModelCloudAnimV25& p_other ) {
 				bone = p_other.bone;
 				cloudTrackData = p_other.cloudTrackData;
 				return *this;
 			}
 
-			const byte* ModelCloudAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelCloudAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, cloudTrackData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelMatConstAnimV24
+			//      ModelMatConstAnimV25
 			//============================================================================/
 
-			ModelMatConstAnimV24::ModelMatConstAnimV24( )
+			ModelMatConstAnimV25::ModelMatConstAnimV25( )
 				: materialId( 0 )
 				, constToken( 0 )
 				, trackGroupIndex( 0 )
 				, vectorTrackIndex( 0 ) {
 			}
 
-			ModelMatConstAnimV24::ModelMatConstAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelMatConstAnimV25::ModelMatConstAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelMatConstAnimV24::ModelMatConstAnimV24( const ModelMatConstAnimV24& p_other )
+			ModelMatConstAnimV25::ModelMatConstAnimV25( const ModelMatConstAnimV25& p_other )
 				: materialId( p_other.materialId )
 				, constToken( p_other.constToken )
 				, trackGroupIndex( p_other.trackGroupIndex )
@@ -233,7 +236,7 @@ namespace gw2f {
 				, initialValue( p_other.initialValue ) {
 			}
 
-			ModelMatConstAnimV24& ModelMatConstAnimV24::operator=( const ModelMatConstAnimV24& p_other ) {
+			ModelMatConstAnimV25& ModelMatConstAnimV25::operator=( const ModelMatConstAnimV25& p_other ) {
 				materialId = p_other.materialId;
 				constToken = p_other.constToken;
 				trackGroupIndex = p_other.trackGroupIndex;
@@ -242,7 +245,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelMatConstAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelMatConstAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, materialId );
 				p_data = helpers::read( p_data, p_size, constToken );
 				p_data = helpers::read( p_data, p_size, trackGroupIndex );
@@ -252,52 +255,52 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelLightAnimationV24
+			//      ModelLightAnimationV25
 			//============================================================================/
 
-			ModelLightAnimationV24::ModelLightAnimationV24( )
+			ModelLightAnimationV25::ModelLightAnimationV25( )
 				: bone( 0 ) {
 			}
 
-			ModelLightAnimationV24::ModelLightAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelLightAnimationV25::ModelLightAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelLightAnimationV24::ModelLightAnimationV24( const ModelLightAnimationV24& p_other )
+			ModelLightAnimationV25::ModelLightAnimationV25( const ModelLightAnimationV25& p_other )
 				: bone( p_other.bone )
 				, lightTrackData( p_other.lightTrackData ) {
 			}
 
-			ModelLightAnimationV24& ModelLightAnimationV24::operator=( const ModelLightAnimationV24& p_other ) {
+			ModelLightAnimationV25& ModelLightAnimationV25::operator=( const ModelLightAnimationV25& p_other ) {
 				bone = p_other.bone;
 				lightTrackData = p_other.lightTrackData;
 				return *this;
 			}
 
-			const byte* ModelLightAnimationV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelLightAnimationV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, lightTrackData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelAnimPropertyDataV24
+			//      ModelAnimPropertyDataV25
 			//============================================================================/
 
-			ModelAnimPropertyDataV24::ModelAnimPropertyDataV24( )
+			ModelAnimPropertyDataV25::ModelAnimPropertyDataV25( )
 				: id( 0 )
 				, type( 0 )
 				, time( 0 )
 				, val( 0 ) {
 			}
 
-			ModelAnimPropertyDataV24::ModelAnimPropertyDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelAnimPropertyDataV25::ModelAnimPropertyDataV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelAnimPropertyDataV24::ModelAnimPropertyDataV24( const ModelAnimPropertyDataV24& p_other )
+			ModelAnimPropertyDataV25::ModelAnimPropertyDataV25( const ModelAnimPropertyDataV25& p_other )
 				: id( p_other.id )
 				, type( p_other.type )
 				, time( p_other.time )
@@ -305,7 +308,7 @@ namespace gw2f {
 				, strVal( p_other.strVal ) {
 			}
 
-			ModelAnimPropertyDataV24& ModelAnimPropertyDataV24::operator=( const ModelAnimPropertyDataV24& p_other ) {
+			ModelAnimPropertyDataV25& ModelAnimPropertyDataV25::operator=( const ModelAnimPropertyDataV25& p_other ) {
 				id = p_other.id;
 				type = p_other.type;
 				time = p_other.time;
@@ -314,7 +317,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimPropertyDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelAnimPropertyDataV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, id );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, time );
@@ -324,28 +327,28 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelTokenMapAnimV24
+			//      ModelTokenMapAnimV25
 			//============================================================================/
 
-			ModelTokenMapAnimV24::ModelTokenMapAnimV24( )
+			ModelTokenMapAnimV25::ModelTokenMapAnimV25( )
 				: linkToken( 0 )
 				, trackGroupIndex( 0 )
 				, vectorTrackIndex( 0 ) {
 			}
 
-			ModelTokenMapAnimV24::ModelTokenMapAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelTokenMapAnimV25::ModelTokenMapAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelTokenMapAnimV24::ModelTokenMapAnimV24( const ModelTokenMapAnimV24& p_other )
+			ModelTokenMapAnimV25::ModelTokenMapAnimV25( const ModelTokenMapAnimV25& p_other )
 				: linkToken( p_other.linkToken )
 				, trackGroupIndex( p_other.trackGroupIndex )
 				, vectorTrackIndex( p_other.vectorTrackIndex )
 				, initialValue( p_other.initialValue ) {
 			}
 
-			ModelTokenMapAnimV24& ModelTokenMapAnimV24::operator=( const ModelTokenMapAnimV24& p_other ) {
+			ModelTokenMapAnimV25& ModelTokenMapAnimV25::operator=( const ModelTokenMapAnimV25& p_other ) {
 				linkToken = p_other.linkToken;
 				trackGroupIndex = p_other.trackGroupIndex;
 				vectorTrackIndex = p_other.vectorTrackIndex;
@@ -353,7 +356,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTokenMapAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelTokenMapAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, linkToken );
 				p_data = helpers::read( p_data, p_size, trackGroupIndex );
 				p_data = helpers::read( p_data, p_size, vectorTrackIndex );
@@ -362,160 +365,160 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelBoneConstraintAnimV24
+			//      ModelBoneConstraintAnimV25
 			//============================================================================/
 
-			ModelBoneConstraintAnimV24::ModelBoneConstraintAnimV24( )
+			ModelBoneConstraintAnimV25::ModelBoneConstraintAnimV25( )
 				: bone( 0 ) {
 			}
 
-			ModelBoneConstraintAnimV24::ModelBoneConstraintAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelBoneConstraintAnimV25::ModelBoneConstraintAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelBoneConstraintAnimV24::ModelBoneConstraintAnimV24( const ModelBoneConstraintAnimV24& p_other )
+			ModelBoneConstraintAnimV25::ModelBoneConstraintAnimV25( const ModelBoneConstraintAnimV25& p_other )
 				: bone( p_other.bone )
 				, bcTrackData( p_other.bcTrackData ) {
 			}
 
-			ModelBoneConstraintAnimV24& ModelBoneConstraintAnimV24::operator=( const ModelBoneConstraintAnimV24& p_other ) {
+			ModelBoneConstraintAnimV25& ModelBoneConstraintAnimV25::operator=( const ModelBoneConstraintAnimV25& p_other ) {
 				bone = p_other.bone;
 				bcTrackData = p_other.bcTrackData;
 				return *this;
 			}
 
-			const byte* ModelBoneConstraintAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelBoneConstraintAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, bcTrackData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelAnchorAnimV24
+			//      ModelAnchorAnimV25
 			//============================================================================/
 
-			ModelAnchorAnimV24::ModelAnchorAnimV24( )
+			ModelAnchorAnimV25::ModelAnchorAnimV25( )
 				: bone( 0 ) {
 			}
 
-			ModelAnchorAnimV24::ModelAnchorAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelAnchorAnimV25::ModelAnchorAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelAnchorAnimV24::ModelAnchorAnimV24( const ModelAnchorAnimV24& p_other )
+			ModelAnchorAnimV25::ModelAnchorAnimV25( const ModelAnchorAnimV25& p_other )
 				: bone( p_other.bone )
 				, anchorTrackData( p_other.anchorTrackData ) {
 			}
 
-			ModelAnchorAnimV24& ModelAnchorAnimV24::operator=( const ModelAnchorAnimV24& p_other ) {
+			ModelAnchorAnimV25& ModelAnchorAnimV25::operator=( const ModelAnchorAnimV25& p_other ) {
 				bone = p_other.bone;
 				anchorTrackData = p_other.anchorTrackData;
 				return *this;
 			}
 
-			const byte* ModelAnchorAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelAnchorAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, anchorTrackData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelStreakAnimV24
+			//      ModelStreakAnimV25
 			//============================================================================/
 
-			ModelStreakAnimV24::ModelStreakAnimV24( )
+			ModelStreakAnimV25::ModelStreakAnimV25( )
 				: bone( 0 ) {
 			}
 
-			ModelStreakAnimV24::ModelStreakAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelStreakAnimV25::ModelStreakAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelStreakAnimV24::ModelStreakAnimV24( const ModelStreakAnimV24& p_other )
+			ModelStreakAnimV25::ModelStreakAnimV25( const ModelStreakAnimV25& p_other )
 				: bone( p_other.bone )
 				, anchorAnim( p_other.anchorAnim ) {
 			}
 
-			ModelStreakAnimV24& ModelStreakAnimV24::operator=( const ModelStreakAnimV24& p_other ) {
+			ModelStreakAnimV25& ModelStreakAnimV25::operator=( const ModelStreakAnimV25& p_other ) {
 				bone = p_other.bone;
 				anchorAnim = p_other.anchorAnim;
 				return *this;
 			}
 
-			const byte* ModelStreakAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelStreakAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, anchorAnim );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelLightningAnimV24
+			//      ModelLightningAnimV25
 			//============================================================================/
 
-			ModelLightningAnimV24::ModelLightningAnimV24( )
+			ModelLightningAnimV25::ModelLightningAnimV25( )
 				: bone( 0 ) {
 			}
 
-			ModelLightningAnimV24::ModelLightningAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelLightningAnimV25::ModelLightningAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelLightningAnimV24::ModelLightningAnimV24( const ModelLightningAnimV24& p_other )
+			ModelLightningAnimV25::ModelLightningAnimV25( const ModelLightningAnimV25& p_other )
 				: bone( p_other.bone )
 				, lightningTrackData( p_other.lightningTrackData ) {
 			}
 
-			ModelLightningAnimV24& ModelLightningAnimV24::operator=( const ModelLightningAnimV24& p_other ) {
+			ModelLightningAnimV25& ModelLightningAnimV25::operator=( const ModelLightningAnimV25& p_other ) {
 				bone = p_other.bone;
 				lightningTrackData = p_other.lightningTrackData;
 				return *this;
 			}
 
-			const byte* ModelLightningAnimV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelLightningAnimV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, lightningTrackData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelWindAnimationV24
+			//      ModelWindAnimationV25
 			//============================================================================/
 
-			ModelWindAnimationV24::ModelWindAnimationV24( )
+			ModelWindAnimationV25::ModelWindAnimationV25( )
 				: bone( 0 ) {
 			}
 
-			ModelWindAnimationV24::ModelWindAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelWindAnimationV25::ModelWindAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelWindAnimationV24::ModelWindAnimationV24( const ModelWindAnimationV24& p_other )
+			ModelWindAnimationV25::ModelWindAnimationV25( const ModelWindAnimationV25& p_other )
 				: bone( p_other.bone )
 				, windTrackData( p_other.windTrackData ) {
 			}
 
-			ModelWindAnimationV24& ModelWindAnimationV24::operator=( const ModelWindAnimationV24& p_other ) {
+			ModelWindAnimationV25& ModelWindAnimationV25::operator=( const ModelWindAnimationV25& p_other ) {
 				bone = p_other.bone;
 				windTrackData = p_other.windTrackData;
 				return *this;
 			}
 
-			const byte* ModelWindAnimationV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelWindAnimationV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bone );
 				p_data = helpers::read( p_data, p_size, windTrackData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelAnimationDataV32
+			//      ModelAnimationDataV33
 			//============================================================================/
 
-			ModelAnimationDataV32::ModelAnimationDataV32( )
+			ModelAnimationDataV33::ModelAnimationDataV33( )
 				: token( 0 )
 				, moveSpeed( 0 )
 				, isAdditive( 0 )
@@ -523,12 +526,12 @@ namespace gw2f {
 				, radius( 0 ) {
 			}
 
-			ModelAnimationDataV32::ModelAnimationDataV32( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelAnimationDataV33::ModelAnimationDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelAnimationDataV32::ModelAnimationDataV32( const ModelAnimationDataV32& p_other )
+			ModelAnimationDataV33::ModelAnimationDataV33( const ModelAnimationDataV33& p_other )
 				: token( p_other.token )
 				, data( p_other.data )
 				, animLod( p_other.animLod )
@@ -554,7 +557,7 @@ namespace gw2f {
 				std::copy( p_other.variantIndices, p_other.variantIndices + 3, variantIndices );
 			}
 
-			ModelAnimationDataV32& ModelAnimationDataV32::operator=( const ModelAnimationDataV32& p_other ) {
+			ModelAnimationDataV33& ModelAnimationDataV33::operator=( const ModelAnimationDataV33& p_other ) {
 				token = p_other.token;
 				data = p_other.data;
 				animLod = p_other.animLod;
@@ -581,7 +584,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelAnimationDataV32::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelAnimationDataV33::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, data );
 				p_data = helpers::read( p_data, p_size, animLod );
@@ -609,29 +612,29 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelCompoundAnimationDataV24
+			//      ModelCompoundAnimationDataV25
 			//============================================================================/
 
-			ModelCompoundAnimationDataV24::ModelCompoundAnimationDataV24( )
+			ModelCompoundAnimationDataV25::ModelCompoundAnimationDataV25( )
 				: token( 0 )
 				, start( 0 )
 				, loop( 0 )
 				, end( 0 ) {
 			}
 
-			ModelCompoundAnimationDataV24::ModelCompoundAnimationDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelCompoundAnimationDataV25::ModelCompoundAnimationDataV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelCompoundAnimationDataV24::ModelCompoundAnimationDataV24( const ModelCompoundAnimationDataV24& p_other )
+			ModelCompoundAnimationDataV25::ModelCompoundAnimationDataV25( const ModelCompoundAnimationDataV25& p_other )
 				: token( p_other.token )
 				, start( p_other.start )
 				, loop( p_other.loop )
 				, end( p_other.end ) {
 			}
 
-			ModelCompoundAnimationDataV24& ModelCompoundAnimationDataV24::operator=( const ModelCompoundAnimationDataV24& p_other ) {
+			ModelCompoundAnimationDataV25& ModelCompoundAnimationDataV25::operator=( const ModelCompoundAnimationDataV25& p_other ) {
 				token = p_other.token;
 				start = p_other.start;
 				loop = p_other.loop;
@@ -639,7 +642,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelCompoundAnimationDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelCompoundAnimationDataV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, start );
 				p_data = helpers::read( p_data, p_size, loop );
@@ -648,85 +651,85 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelAnimationImportSequenceV24
+			//      ModelAnimationImportSequenceV25
 			//============================================================================/
 
-			ModelAnimationImportSequenceV24::ModelAnimationImportSequenceV24( )
+			ModelAnimationImportSequenceV25::ModelAnimationImportSequenceV25( )
 				: name( 0 )
 				, duration( 0 ) {
 			}
 
-			ModelAnimationImportSequenceV24::ModelAnimationImportSequenceV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelAnimationImportSequenceV25::ModelAnimationImportSequenceV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelAnimationImportSequenceV24::ModelAnimationImportSequenceV24( const ModelAnimationImportSequenceV24& p_other )
+			ModelAnimationImportSequenceV25::ModelAnimationImportSequenceV25( const ModelAnimationImportSequenceV25& p_other )
 				: name( p_other.name )
 				, duration( p_other.duration ) {
 			}
 
-			ModelAnimationImportSequenceV24& ModelAnimationImportSequenceV24::operator=( const ModelAnimationImportSequenceV24& p_other ) {
+			ModelAnimationImportSequenceV25& ModelAnimationImportSequenceV25::operator=( const ModelAnimationImportSequenceV25& p_other ) {
 				name = p_other.name;
 				duration = p_other.duration;
 				return *this;
 			}
 
-			const byte* ModelAnimationImportSequenceV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelAnimationImportSequenceV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, duration );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelAnimationImportDataV32
+			//      ModelAnimationImportDataV33
 			//============================================================================/
 
-			ModelAnimationImportDataV32::ModelAnimationImportDataV32( ) {
+			ModelAnimationImportDataV33::ModelAnimationImportDataV33( ) {
 			}
 
-			ModelAnimationImportDataV32::ModelAnimationImportDataV32( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelAnimationImportDataV33::ModelAnimationImportDataV33( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelAnimationImportDataV32::ModelAnimationImportDataV32( const ModelAnimationImportDataV32& p_other )
+			ModelAnimationImportDataV33::ModelAnimationImportDataV33( const ModelAnimationImportDataV33& p_other )
 				: filename( p_other.filename )
 				, sequences( p_other.sequences ) {
 			}
 
-			ModelAnimationImportDataV32& ModelAnimationImportDataV32::operator=( const ModelAnimationImportDataV32& p_other ) {
+			ModelAnimationImportDataV33& ModelAnimationImportDataV33::operator=( const ModelAnimationImportDataV33& p_other ) {
 				filename = p_other.filename;
 				sequences = p_other.sequences;
 				return *this;
 			}
 
-			const byte* ModelAnimationImportDataV32::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelAnimationImportDataV33::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, sequences );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ModelFileAnimationBankV24
+			//      ModelFileAnimationBankV25
 			//============================================================================/
 
-			ModelFileAnimationBankV24::ModelFileAnimationBankV24( ) {
+			ModelFileAnimationBankV25::ModelFileAnimationBankV25( ) {
 			}
 
-			ModelFileAnimationBankV24::ModelFileAnimationBankV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelFileAnimationBankV25::ModelFileAnimationBankV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelFileAnimationBankV24::ModelFileAnimationBankV24( const ModelFileAnimationBankV24& p_other )
+			ModelFileAnimationBankV25::ModelFileAnimationBankV25( const ModelFileAnimationBankV25& p_other )
 				: animations( p_other.animations )
 				, compoundAnimations( p_other.compoundAnimations )
 				, fallbacks( p_other.fallbacks )
 				, imports( p_other.imports ) {
 			}
 
-			ModelFileAnimationBankV24& ModelFileAnimationBankV24::operator=( const ModelFileAnimationBankV24& p_other ) {
+			ModelFileAnimationBankV25& ModelFileAnimationBankV25::operator=( const ModelFileAnimationBankV25& p_other ) {
 				animations = p_other.animations;
 				compoundAnimations = p_other.compoundAnimations;
 				fallbacks = p_other.fallbacks;
@@ -734,7 +737,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelFileAnimationBankV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelFileAnimationBankV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, animations );
 				p_data = helpers::read( p_data, p_size, compoundAnimations );
 				p_data = helpers::read( p_data, p_size, fallbacks );
@@ -743,29 +746,29 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelFileAnimationV24
+			//      ModelFileAnimationV25
 			//============================================================================/
 
-			ModelFileAnimationV24::ModelFileAnimationV24( ) {
+			ModelFileAnimationV25::ModelFileAnimationV25( ) {
 			}
 
-			ModelFileAnimationV24::ModelFileAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelFileAnimationV25::ModelFileAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelFileAnimationV24::ModelFileAnimationV24( const ModelFileAnimationV24& p_other )
+			ModelFileAnimationV25::ModelFileAnimationV25( const ModelFileAnimationV25& p_other )
 				: bank( p_other.bank )
 				, anim( p_other.anim ) {
 			}
 
-			ModelFileAnimationV24& ModelFileAnimationV24::operator=( const ModelFileAnimationV24& p_other ) {
+			ModelFileAnimationV25& ModelFileAnimationV25::operator=( const ModelFileAnimationV25& p_other ) {
 				bank = p_other.bank;
 				anim = p_other.anim;
 				return *this;
 			}
 
-			const byte* ModelFileAnimationV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelFileAnimationV25::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, bank );
 				p_data = helpers::read( p_data, p_size, anim );
 				return p_data;

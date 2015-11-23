@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/MODL/ModelFileAnimation.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -42,272 +42,273 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackGrannyAnimationType {
+			GW2FORMATS_API struct PackGrannyAnimationTypeV1 {
 				helpers::Array<byte> animation;
+				helpers::Array<dword> pointers;
 			public:
-				PackGrannyAnimationType( );
-				PackGrannyAnimationType( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackGrannyAnimationType( const PackGrannyAnimationType& p_other );
-				PackGrannyAnimationType& operator=( const PackGrannyAnimationType& p_other );
+				PackGrannyAnimationTypeV1( );
+				PackGrannyAnimationTypeV1( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackGrannyAnimationTypeV1( const PackGrannyAnimationTypeV1& p_other );
+				PackGrannyAnimationTypeV1& operator=( const PackGrannyAnimationTypeV1& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelAnimationLodV24 {
-				PackGrannyAnimationType data;
+			GW2FORMATS_API struct ModelAnimationLodV25 {
+				PackGrannyAnimationTypeV1 data;
 				helpers::FileName fileFull;
 			public:
-				ModelAnimationLodV24( );
-				ModelAnimationLodV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelAnimationLodV24( const ModelAnimationLodV24& p_other );
-				ModelAnimationLodV24& operator=( const ModelAnimationLodV24& p_other );
+				ModelAnimationLodV25( );
+				ModelAnimationLodV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelAnimationLodV25( const ModelAnimationLodV25& p_other );
+				ModelAnimationLodV25& operator=( const ModelAnimationLodV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelVisTrackDataV32 {
+			GW2FORMATS_API struct ModelVisTrackDataV33 {
 				qword boneToken;
 				helpers::Array<float> keys;
 			public:
-				ModelVisTrackDataV32( );
-				ModelVisTrackDataV32( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelVisTrackDataV32( const ModelVisTrackDataV32& p_other );
-				ModelVisTrackDataV32& operator=( const ModelVisTrackDataV32& p_other );
+				ModelVisTrackDataV33( );
+				ModelVisTrackDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelVisTrackDataV33( const ModelVisTrackDataV33& p_other );
+				ModelVisTrackDataV33& operator=( const ModelVisTrackDataV33& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelTrackTypeDataV24 {
+			GW2FORMATS_API struct ModelTrackTypeDataV25 {
 				byte type;
 				dword trackGroupIndex;
 				dword vectorTrackIndex;
 				float4 initialValue;
 			public:
-				ModelTrackTypeDataV24( );
-				ModelTrackTypeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelTrackTypeDataV24( const ModelTrackTypeDataV24& p_other );
-				ModelTrackTypeDataV24& operator=( const ModelTrackTypeDataV24& p_other );
+				ModelTrackTypeDataV25( );
+				ModelTrackTypeDataV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelTrackTypeDataV25( const ModelTrackTypeDataV25& p_other );
+				ModelTrackTypeDataV25& operator=( const ModelTrackTypeDataV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelUVAnimationV24 {
+			GW2FORMATS_API struct ModelUVAnimationV25 {
 				dword uvAnimId;
-				helpers::Array<ModelTrackTypeDataV24> uvTransformData;
+				helpers::Array<ModelTrackTypeDataV25> uvTransformData;
 			public:
-				ModelUVAnimationV24( );
-				ModelUVAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelUVAnimationV24( const ModelUVAnimationV24& p_other );
-				ModelUVAnimationV24& operator=( const ModelUVAnimationV24& p_other );
+				ModelUVAnimationV25( );
+				ModelUVAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelUVAnimationV25( const ModelUVAnimationV25& p_other );
+				ModelUVAnimationV25& operator=( const ModelUVAnimationV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelCloudAnimV24 {
+			GW2FORMATS_API struct ModelCloudAnimV25 {
 				qword bone;
-				helpers::Array<ModelTrackTypeDataV24> cloudTrackData;
+				helpers::Array<ModelTrackTypeDataV25> cloudTrackData;
 			public:
-				ModelCloudAnimV24( );
-				ModelCloudAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelCloudAnimV24( const ModelCloudAnimV24& p_other );
-				ModelCloudAnimV24& operator=( const ModelCloudAnimV24& p_other );
+				ModelCloudAnimV25( );
+				ModelCloudAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelCloudAnimV25( const ModelCloudAnimV25& p_other );
+				ModelCloudAnimV25& operator=( const ModelCloudAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelMatConstAnimV24 {
+			GW2FORMATS_API struct ModelMatConstAnimV25 {
 				dword materialId;
 				dword constToken;
 				dword trackGroupIndex;
 				dword vectorTrackIndex;
 				float4 initialValue;
 			public:
-				ModelMatConstAnimV24( );
-				ModelMatConstAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelMatConstAnimV24( const ModelMatConstAnimV24& p_other );
-				ModelMatConstAnimV24& operator=( const ModelMatConstAnimV24& p_other );
+				ModelMatConstAnimV25( );
+				ModelMatConstAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelMatConstAnimV25( const ModelMatConstAnimV25& p_other );
+				ModelMatConstAnimV25& operator=( const ModelMatConstAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelLightAnimationV24 {
+			GW2FORMATS_API struct ModelLightAnimationV25 {
 				qword bone;
-				helpers::Array<ModelTrackTypeDataV24> lightTrackData;
+				helpers::Array<ModelTrackTypeDataV25> lightTrackData;
 			public:
-				ModelLightAnimationV24( );
-				ModelLightAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelLightAnimationV24( const ModelLightAnimationV24& p_other );
-				ModelLightAnimationV24& operator=( const ModelLightAnimationV24& p_other );
+				ModelLightAnimationV25( );
+				ModelLightAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelLightAnimationV25( const ModelLightAnimationV25& p_other );
+				ModelLightAnimationV25& operator=( const ModelLightAnimationV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelAnimPropertyDataV24 {
+			GW2FORMATS_API struct ModelAnimPropertyDataV25 {
 				qword id;
 				dword type;
 				float time;
 				qword val;
 				helpers::FileName strVal;
 			public:
-				ModelAnimPropertyDataV24( );
-				ModelAnimPropertyDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelAnimPropertyDataV24( const ModelAnimPropertyDataV24& p_other );
-				ModelAnimPropertyDataV24& operator=( const ModelAnimPropertyDataV24& p_other );
+				ModelAnimPropertyDataV25( );
+				ModelAnimPropertyDataV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelAnimPropertyDataV25( const ModelAnimPropertyDataV25& p_other );
+				ModelAnimPropertyDataV25& operator=( const ModelAnimPropertyDataV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelTokenMapAnimV24 {
+			GW2FORMATS_API struct ModelTokenMapAnimV25 {
 				qword linkToken;
 				dword trackGroupIndex;
 				dword vectorTrackIndex;
 				float4 initialValue;
 			public:
-				ModelTokenMapAnimV24( );
-				ModelTokenMapAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelTokenMapAnimV24( const ModelTokenMapAnimV24& p_other );
-				ModelTokenMapAnimV24& operator=( const ModelTokenMapAnimV24& p_other );
+				ModelTokenMapAnimV25( );
+				ModelTokenMapAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelTokenMapAnimV25( const ModelTokenMapAnimV25& p_other );
+				ModelTokenMapAnimV25& operator=( const ModelTokenMapAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelBoneConstraintAnimV24 {
+			GW2FORMATS_API struct ModelBoneConstraintAnimV25 {
 				qword bone;
-				helpers::Array<ModelTrackTypeDataV24> bcTrackData;
+				helpers::Array<ModelTrackTypeDataV25> bcTrackData;
 			public:
-				ModelBoneConstraintAnimV24( );
-				ModelBoneConstraintAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelBoneConstraintAnimV24( const ModelBoneConstraintAnimV24& p_other );
-				ModelBoneConstraintAnimV24& operator=( const ModelBoneConstraintAnimV24& p_other );
+				ModelBoneConstraintAnimV25( );
+				ModelBoneConstraintAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelBoneConstraintAnimV25( const ModelBoneConstraintAnimV25& p_other );
+				ModelBoneConstraintAnimV25& operator=( const ModelBoneConstraintAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelAnchorAnimV24 {
+			GW2FORMATS_API struct ModelAnchorAnimV25 {
 				qword bone;
-				helpers::Array<ModelTrackTypeDataV24> anchorTrackData;
+				helpers::Array<ModelTrackTypeDataV25> anchorTrackData;
 			public:
-				ModelAnchorAnimV24( );
-				ModelAnchorAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelAnchorAnimV24( const ModelAnchorAnimV24& p_other );
-				ModelAnchorAnimV24& operator=( const ModelAnchorAnimV24& p_other );
+				ModelAnchorAnimV25( );
+				ModelAnchorAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelAnchorAnimV25( const ModelAnchorAnimV25& p_other );
+				ModelAnchorAnimV25& operator=( const ModelAnchorAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelStreakAnimV24 {
+			GW2FORMATS_API struct ModelStreakAnimV25 {
 				qword bone;
-				helpers::Array<ModelAnchorAnimV24> anchorAnim;
+				helpers::Array<ModelAnchorAnimV25> anchorAnim;
 			public:
-				ModelStreakAnimV24( );
-				ModelStreakAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelStreakAnimV24( const ModelStreakAnimV24& p_other );
-				ModelStreakAnimV24& operator=( const ModelStreakAnimV24& p_other );
+				ModelStreakAnimV25( );
+				ModelStreakAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelStreakAnimV25( const ModelStreakAnimV25& p_other );
+				ModelStreakAnimV25& operator=( const ModelStreakAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelLightningAnimV24 {
+			GW2FORMATS_API struct ModelLightningAnimV25 {
 				qword bone;
-				helpers::Array<ModelTrackTypeDataV24> lightningTrackData;
+				helpers::Array<ModelTrackTypeDataV25> lightningTrackData;
 			public:
-				ModelLightningAnimV24( );
-				ModelLightningAnimV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelLightningAnimV24( const ModelLightningAnimV24& p_other );
-				ModelLightningAnimV24& operator=( const ModelLightningAnimV24& p_other );
+				ModelLightningAnimV25( );
+				ModelLightningAnimV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelLightningAnimV25( const ModelLightningAnimV25& p_other );
+				ModelLightningAnimV25& operator=( const ModelLightningAnimV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelWindAnimationV24 {
+			GW2FORMATS_API struct ModelWindAnimationV25 {
 				qword bone;
-				helpers::Array<ModelTrackTypeDataV24> windTrackData;
+				helpers::Array<ModelTrackTypeDataV25> windTrackData;
 			public:
-				ModelWindAnimationV24( );
-				ModelWindAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelWindAnimationV24( const ModelWindAnimationV24& p_other );
-				ModelWindAnimationV24& operator=( const ModelWindAnimationV24& p_other );
+				ModelWindAnimationV25( );
+				ModelWindAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelWindAnimationV25( const ModelWindAnimationV25& p_other );
+				ModelWindAnimationV25& operator=( const ModelWindAnimationV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelAnimationDataV32 {
+			GW2FORMATS_API struct ModelAnimationDataV33 {
 				qword token;
-				PackGrannyAnimationType data;
-				helpers::Ptr<ModelAnimationLodV24> animLod;
+				PackGrannyAnimationTypeV1 data;
+				helpers::Ptr<ModelAnimationLodV25> animLod;
 				float moveSpeed;
-				helpers::Array<ModelVisTrackDataV32> visTrackData;
-				helpers::Array<ModelUVAnimationV24> uvAnimData;
-				helpers::Array<ModelCloudAnimV24> cloudAnim;
-				helpers::Array<ModelMatConstAnimV24> matConstAnim;
+				helpers::Array<ModelVisTrackDataV33> visTrackData;
+				helpers::Array<ModelUVAnimationV25> uvAnimData;
+				helpers::Array<ModelCloudAnimV25> cloudAnim;
+				helpers::Array<ModelMatConstAnimV25> matConstAnim;
 				helpers::Array<word> morphTrackGroups;
 				helpers::Array<float> triggerTimes;
 				helpers::Array<qword> triggerTokens;
-				helpers::Array<ModelLightAnimationV24> lightAnimData;
+				helpers::Array<ModelLightAnimationV25> lightAnimData;
 				dword isAdditive;
 				dword variantCount;
 				dword variantIndices[3];
-				helpers::Array<ModelAnimPropertyDataV24> properties;
+				helpers::Array<ModelAnimPropertyDataV25> properties;
 				float3 center;
 				float radius;
-				helpers::Array<ModelTokenMapAnimV24> tokenMapAnims;
-				helpers::Array<ModelBoneConstraintAnimV24> bcAnim;
-				helpers::Array<ModelStreakAnimV24> streakAnim;
-				helpers::Array<ModelLightningAnimV24> lightningAnim;
-				helpers::Array<ModelWindAnimationV24> windAnimData;
+				helpers::Array<ModelTokenMapAnimV25> tokenMapAnims;
+				helpers::Array<ModelBoneConstraintAnimV25> bcAnim;
+				helpers::Array<ModelStreakAnimV25> streakAnim;
+				helpers::Array<ModelLightningAnimV25> lightningAnim;
+				helpers::Array<ModelWindAnimationV25> windAnimData;
 			public:
-				ModelAnimationDataV32( );
-				ModelAnimationDataV32( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelAnimationDataV32( const ModelAnimationDataV32& p_other );
-				ModelAnimationDataV32& operator=( const ModelAnimationDataV32& p_other );
+				ModelAnimationDataV33( );
+				ModelAnimationDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelAnimationDataV33( const ModelAnimationDataV33& p_other );
+				ModelAnimationDataV33& operator=( const ModelAnimationDataV33& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelCompoundAnimationDataV24 {
+			GW2FORMATS_API struct ModelCompoundAnimationDataV25 {
 				qword token;
 				qword start;
 				qword loop;
 				qword end;
 			public:
-				ModelCompoundAnimationDataV24( );
-				ModelCompoundAnimationDataV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelCompoundAnimationDataV24( const ModelCompoundAnimationDataV24& p_other );
-				ModelCompoundAnimationDataV24& operator=( const ModelCompoundAnimationDataV24& p_other );
+				ModelCompoundAnimationDataV25( );
+				ModelCompoundAnimationDataV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelCompoundAnimationDataV25( const ModelCompoundAnimationDataV25& p_other );
+				ModelCompoundAnimationDataV25& operator=( const ModelCompoundAnimationDataV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelAnimationImportSequenceV24 {
+			GW2FORMATS_API struct ModelAnimationImportSequenceV25 {
 				qword name;
 				float duration;
 			public:
-				ModelAnimationImportSequenceV24( );
-				ModelAnimationImportSequenceV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelAnimationImportSequenceV24( const ModelAnimationImportSequenceV24& p_other );
-				ModelAnimationImportSequenceV24& operator=( const ModelAnimationImportSequenceV24& p_other );
+				ModelAnimationImportSequenceV25( );
+				ModelAnimationImportSequenceV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelAnimationImportSequenceV25( const ModelAnimationImportSequenceV25& p_other );
+				ModelAnimationImportSequenceV25& operator=( const ModelAnimationImportSequenceV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelAnimationImportDataV32 {
+			GW2FORMATS_API struct ModelAnimationImportDataV33 {
 				helpers::FileName filename;
-				helpers::Array<ModelAnimationImportSequenceV24> sequences;
+				helpers::Array<ModelAnimationImportSequenceV25> sequences;
 			public:
-				ModelAnimationImportDataV32( );
-				ModelAnimationImportDataV32( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelAnimationImportDataV32( const ModelAnimationImportDataV32& p_other );
-				ModelAnimationImportDataV32& operator=( const ModelAnimationImportDataV32& p_other );
+				ModelAnimationImportDataV33( );
+				ModelAnimationImportDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelAnimationImportDataV33( const ModelAnimationImportDataV33& p_other );
+				ModelAnimationImportDataV33& operator=( const ModelAnimationImportDataV33& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelFileAnimationBankV24 {
-				helpers::RefList<ModelAnimationDataV32> animations;
-				helpers::Array<ModelCompoundAnimationDataV24> compoundAnimations;
+			GW2FORMATS_API struct ModelFileAnimationBankV25 {
+				helpers::RefList<ModelAnimationDataV33> animations;
+				helpers::Array<ModelCompoundAnimationDataV25> compoundAnimations;
 				helpers::Array<qword> fallbacks;
-				helpers::Array<ModelAnimationImportDataV32> imports;
+				helpers::Array<ModelAnimationImportDataV33> imports;
 			public:
-				ModelFileAnimationBankV24( );
-				ModelFileAnimationBankV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelFileAnimationBankV24( const ModelFileAnimationBankV24& p_other );
-				ModelFileAnimationBankV24& operator=( const ModelFileAnimationBankV24& p_other );
+				ModelFileAnimationBankV25( );
+				ModelFileAnimationBankV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelFileAnimationBankV25( const ModelFileAnimationBankV25& p_other );
+				ModelFileAnimationBankV25& operator=( const ModelFileAnimationBankV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ModelFileAnimationV24 {
-				helpers::Ptr<ModelFileAnimationBankV24> bank;
-				PackGrannyAnimationType anim;
+			GW2FORMATS_API struct ModelFileAnimationV25 {
+				helpers::Ptr<ModelFileAnimationBankV25> bank;
+				PackGrannyAnimationTypeV1 anim;
 			public:
-				ModelFileAnimationV24( );
-				ModelFileAnimationV24( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ModelFileAnimationV24( const ModelFileAnimationV24& p_other );
-				ModelFileAnimationV24& operator=( const ModelFileAnimationV24& p_other );
+				ModelFileAnimationV25( );
+				ModelFileAnimationV25( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ModelFileAnimationV25( const ModelFileAnimationV25& p_other );
+				ModelFileAnimationV25& operator=( const ModelFileAnimationV25& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef ModelFileAnimationV24 ModelFileAnimation;
+			typedef ModelFileAnimationV25 ModelFileAnimation;
 
 		}; // namespace chunks
 

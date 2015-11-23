@@ -1,7 +1,7 @@
 // File: pf/chunks/MODL/ModelFileSkeleton.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,26 +27,26 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      ModelTransformDataV0
+			//      ModelTransformData
 			//============================================================================/
 
-			ModelTransformDataV0::ModelTransformDataV0( )
+			ModelTransformData::ModelTransformData( )
 				: flags( 0 ) {
 			}
 
-			ModelTransformDataV0::ModelTransformDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelTransformData::ModelTransformData( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelTransformDataV0::ModelTransformDataV0( const ModelTransformDataV0& p_other )
+			ModelTransformData::ModelTransformData( const ModelTransformData& p_other )
 				: flags( p_other.flags )
 				, position( p_other.position )
 				, orientation( p_other.orientation ) {
 				std::copy( p_other.scaleShear, p_other.scaleShear + 3, scaleShear );
 			}
 
-			ModelTransformDataV0& ModelTransformDataV0::operator=( const ModelTransformDataV0& p_other ) {
+			ModelTransformData& ModelTransformData::operator=( const ModelTransformData& p_other ) {
 				flags = p_other.flags;
 				position = p_other.position;
 				orientation = p_other.orientation;
@@ -54,7 +54,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelTransformDataV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelTransformData::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, orientation );
@@ -63,20 +63,20 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelBoneDataV0
+			//      ModelBoneData
 			//============================================================================/
 
-			ModelBoneDataV0::ModelBoneDataV0( )
+			ModelBoneData::ModelBoneData( )
 				: parentIndex( 0 )
 				, lodError( 0 ) {
 			}
 
-			ModelBoneDataV0::ModelBoneDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelBoneData::ModelBoneData( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelBoneDataV0::ModelBoneDataV0( const ModelBoneDataV0& p_other )
+			ModelBoneData::ModelBoneData( const ModelBoneData& p_other )
 				: name( p_other.name )
 				, parentIndex( p_other.parentIndex )
 				, localTransform( p_other.localTransform )
@@ -86,7 +86,7 @@ namespace gw2f {
 				std::copy( p_other.inverseWorld4x4, p_other.inverseWorld4x4 + 4, inverseWorld4x4 );
 			}
 
-			ModelBoneDataV0& ModelBoneDataV0::operator=( const ModelBoneDataV0& p_other ) {
+			ModelBoneData& ModelBoneData::operator=( const ModelBoneData& p_other ) {
 				name = p_other.name;
 				parentIndex = p_other.parentIndex;
 				localTransform = p_other.localTransform;
@@ -97,7 +97,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ModelBoneDataV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelBoneData::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, parentIndex );
 				p_data = helpers::read( p_data, p_size, localTransform );
@@ -148,27 +148,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ModelMeshBindingDataV0
+			//      ModelMeshBindingData
 			//============================================================================/
 
-			ModelMeshBindingDataV0::ModelMeshBindingDataV0( ) {
+			ModelMeshBindingData::ModelMeshBindingData( ) {
 			}
 
-			ModelMeshBindingDataV0::ModelMeshBindingDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ModelMeshBindingData::ModelMeshBindingData( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelMeshBindingDataV0::ModelMeshBindingDataV0( const ModelMeshBindingDataV0& p_other )
+			ModelMeshBindingData::ModelMeshBindingData( const ModelMeshBindingData& p_other )
 				: mesh( p_other.mesh ) {
 			}
 
-			ModelMeshBindingDataV0& ModelMeshBindingDataV0::operator=( const ModelMeshBindingDataV0& p_other ) {
+			ModelMeshBindingData& ModelMeshBindingData::operator=( const ModelMeshBindingData& p_other ) {
 				mesh = p_other.mesh;
 				return *this;
 			}
 
-			const byte* ModelMeshBindingDataV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* ModelMeshBindingData::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mesh );
 				return p_data;
 			}
@@ -359,53 +359,53 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackGrannyMirrorSpecTypeV0
+			//      PackGrannyMirrorSpecType
 			//============================================================================/
 
-			PackGrannyMirrorSpecTypeV0::PackGrannyMirrorSpecTypeV0( ) {
+			PackGrannyMirrorSpecType::PackGrannyMirrorSpecType( ) {
 			}
 
-			PackGrannyMirrorSpecTypeV0::PackGrannyMirrorSpecTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackGrannyMirrorSpecType::PackGrannyMirrorSpecType( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackGrannyMirrorSpecTypeV0::PackGrannyMirrorSpecTypeV0( const PackGrannyMirrorSpecTypeV0& p_other )
+			PackGrannyMirrorSpecType::PackGrannyMirrorSpecType( const PackGrannyMirrorSpecType& p_other )
 				: mirrorSpec( p_other.mirrorSpec ) {
 			}
 
-			PackGrannyMirrorSpecTypeV0& PackGrannyMirrorSpecTypeV0::operator=( const PackGrannyMirrorSpecTypeV0& p_other ) {
+			PackGrannyMirrorSpecType& PackGrannyMirrorSpecType::operator=( const PackGrannyMirrorSpecType& p_other ) {
 				mirrorSpec = p_other.mirrorSpec;
 				return *this;
 			}
 
-			const byte* PackGrannyMirrorSpecTypeV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackGrannyMirrorSpecType::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mirrorSpec );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackGrannyTrackMaskTypeV0
+			//      PackGrannyTrackMaskType
 			//============================================================================/
 
-			PackGrannyTrackMaskTypeV0::PackGrannyTrackMaskTypeV0( ) {
+			PackGrannyTrackMaskType::PackGrannyTrackMaskType( ) {
 			}
 
-			PackGrannyTrackMaskTypeV0::PackGrannyTrackMaskTypeV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackGrannyTrackMaskType::PackGrannyTrackMaskType( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackGrannyTrackMaskTypeV0::PackGrannyTrackMaskTypeV0( const PackGrannyTrackMaskTypeV0& p_other )
+			PackGrannyTrackMaskType::PackGrannyTrackMaskType( const PackGrannyTrackMaskType& p_other )
 				: trackMask( p_other.trackMask ) {
 			}
 
-			PackGrannyTrackMaskTypeV0& PackGrannyTrackMaskTypeV0::operator=( const PackGrannyTrackMaskTypeV0& p_other ) {
+			PackGrannyTrackMaskType& PackGrannyTrackMaskType::operator=( const PackGrannyTrackMaskType& p_other ) {
 				trackMask = p_other.trackMask;
 				return *this;
 			}
 
-			const byte* PackGrannyTrackMaskTypeV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackGrannyTrackMaskType::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, trackMask );
 				return p_data;
 			}

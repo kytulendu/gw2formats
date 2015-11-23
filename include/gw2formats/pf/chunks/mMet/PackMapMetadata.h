@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/mMet/PackMapMetadata.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -39,28 +39,28 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackMapMetadataMapV0 {
+			GW2FORMATS_API struct PackMapMetadataMap {
 				word mapId;
 				byte mapType;
 			public:
-				PackMapMetadataMapV0( );
-				PackMapMetadataMapV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapMetadataMapV0( const PackMapMetadataMapV0& p_other );
-				PackMapMetadataMapV0& operator=( const PackMapMetadataMapV0& p_other );
+				PackMapMetadataMap( );
+				PackMapMetadataMap( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapMetadataMap( const PackMapMetadataMap& p_other );
+				PackMapMetadataMap& operator=( const PackMapMetadataMap& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapMetadataV0 {
-				helpers::Array<PackMapMetadataMapV0> maps;
+			GW2FORMATS_API struct PackMapMetadata {
+				helpers::Array<PackMapMetadataMap> maps;
 			public:
-				PackMapMetadataV0( );
-				PackMapMetadataV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapMetadataV0( const PackMapMetadataV0& p_other );
-				PackMapMetadataV0& operator=( const PackMapMetadataV0& p_other );
+				PackMapMetadata( );
+				PackMapMetadata( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapMetadata( const PackMapMetadata& p_other );
+				PackMapMetadata& operator=( const PackMapMetadata& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackMapMetadataV0 PackMapMetadata;
+			typedef PackMapMetadata PackMapMetadata;
 
 		}; // namespace chunks
 

@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/CINP/SceneData.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -42,43 +42,43 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PropertyDataV33 {
+			GW2FORMATS_API struct PropertyDataV36 {
 				qword value;
 				helpers::FileName pathVal;
 				byte type;
 			public:
-				PropertyDataV33( );
-				PropertyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PropertyDataV33( const PropertyDataV33& p_other );
-				PropertyDataV33& operator=( const PropertyDataV33& p_other );
+				PropertyDataV36( );
+				PropertyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PropertyDataV36( const PropertyDataV36& p_other );
+				PropertyDataV36& operator=( const PropertyDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct CurveKeyDataV33 {
+			GW2FORMATS_API struct CurveKeyDataV36 {
 				float time;
 				float value;
 				float inTangent;
 				float outTangent;
 			public:
-				CurveKeyDataV33( );
-				CurveKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				CurveKeyDataV33( const CurveKeyDataV33& p_other );
-				CurveKeyDataV33& operator=( const CurveKeyDataV33& p_other );
+				CurveKeyDataV36( );
+				CurveKeyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				CurveKeyDataV36( const CurveKeyDataV36& p_other );
+				CurveKeyDataV36& operator=( const CurveKeyDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct FlagKeyDataV33 {
+			GW2FORMATS_API struct FlagKeyDataV36 {
 				float time;
 				float value;
 			public:
-				FlagKeyDataV33( );
-				FlagKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				FlagKeyDataV33( const FlagKeyDataV33& p_other );
-				FlagKeyDataV33& operator=( const FlagKeyDataV33& p_other );
+				FlagKeyDataV36( );
+				FlagKeyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				FlagKeyDataV36( const FlagKeyDataV36& p_other );
+				FlagKeyDataV36& operator=( const FlagKeyDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct TriggerKeyDataV33 {
+			GW2FORMATS_API struct TriggerKeyDataV36 {
 				float time;
 				byte flags1;
 				byte flags2;
@@ -91,42 +91,42 @@ namespace gw2f {
 				float value3;
 				float value4;
 			public:
-				TriggerKeyDataV33( );
-				TriggerKeyDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				TriggerKeyDataV33( const TriggerKeyDataV33& p_other );
-				TriggerKeyDataV33& operator=( const TriggerKeyDataV33& p_other );
+				TriggerKeyDataV36( );
+				TriggerKeyDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				TriggerKeyDataV36( const TriggerKeyDataV36& p_other );
+				TriggerKeyDataV36& operator=( const TriggerKeyDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct TrackDataV33 {
+			GW2FORMATS_API struct TrackDataV36 {
 				qword name;
-				helpers::Array<CurveKeyDataV33> curveKeys;
-				helpers::Array<FlagKeyDataV33> flagKeys;
-				helpers::Array<TriggerKeyDataV33> triggerKeys;
+				helpers::Array<CurveKeyDataV36> curveKeys;
+				helpers::Array<FlagKeyDataV36> flagKeys;
+				helpers::Array<TriggerKeyDataV36> triggerKeys;
 				byte type;
 			public:
-				TrackDataV33( );
-				TrackDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				TrackDataV33( const TrackDataV33& p_other );
-				TrackDataV33& operator=( const TrackDataV33& p_other );
+				TrackDataV36( );
+				TrackDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				TrackDataV36( const TrackDataV36& p_other );
+				TrackDataV36& operator=( const TrackDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct TrackGroupDataV33 {
+			GW2FORMATS_API struct TrackGroupDataV36 {
 				qword name;
 				dword flags;
-				helpers::Array<PropertyDataV33> props;
-				helpers::Array<TrackDataV33> tracks;
+				helpers::Array<PropertyDataV36> props;
+				helpers::Array<TrackDataV36> tracks;
 				byte type;
 			public:
-				TrackGroupDataV33( );
-				TrackGroupDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				TrackGroupDataV33( const TrackGroupDataV33& p_other );
-				TrackGroupDataV33& operator=( const TrackGroupDataV33& p_other );
+				TrackGroupDataV36( );
+				TrackGroupDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				TrackGroupDataV36( const TrackGroupDataV36& p_other );
+				TrackGroupDataV36& operator=( const TrackGroupDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct SequenceDataV33 {
+			GW2FORMATS_API struct SequenceDataV36 {
 				qword name;
 				qword playScript;
 				qword updateScript;
@@ -135,114 +135,127 @@ namespace gw2f {
 				helpers::WString clientMap;
 				float length;
 				dword flags;
-				helpers::Array<TrackGroupDataV33> trackGroups;
+				helpers::Array<TrackGroupDataV36> trackGroups;
 			public:
-				SequenceDataV33( );
-				SequenceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				SequenceDataV33( const SequenceDataV33& p_other );
-				SequenceDataV33& operator=( const SequenceDataV33& p_other );
+				SequenceDataV36( );
+				SequenceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				SequenceDataV36( const SequenceDataV36& p_other );
+				SequenceDataV36& operator=( const SequenceDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ColorDefDataV33 {
+			GW2FORMATS_API struct ColorDefDataV36 {
 				float intensity;
 				byte3 color;
 			public:
-				ColorDefDataV33( );
-				ColorDefDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ColorDefDataV33( const ColorDefDataV33& p_other );
-				ColorDefDataV33& operator=( const ColorDefDataV33& p_other );
+				ColorDefDataV36( );
+				ColorDefDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ColorDefDataV36( const ColorDefDataV36& p_other );
+				ColorDefDataV36& operator=( const ColorDefDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct AmbientLightDataV33 {
-				ColorDefDataV33 ambientGroundColor;
-				ColorDefDataV33 ambientSkyColor;
-				ColorDefDataV33 fillColor;
-				ColorDefDataV33 hemisphericalColor;
+			GW2FORMATS_API struct AmbientLightDataV36 {
+				ColorDefDataV36 ambientGroundColor;
+				ColorDefDataV36 ambientSkyColor;
+				ColorDefDataV36 fillColor;
+				ColorDefDataV36 hemisphericalColor;
 				qword name;
 			public:
-				AmbientLightDataV33( );
-				AmbientLightDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				AmbientLightDataV33( const AmbientLightDataV33& p_other );
-				AmbientLightDataV33& operator=( const AmbientLightDataV33& p_other );
+				AmbientLightDataV36( );
+				AmbientLightDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				AmbientLightDataV36( const AmbientLightDataV36& p_other );
+				AmbientLightDataV36& operator=( const AmbientLightDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct FileNameRefDataV33 {
+			GW2FORMATS_API struct FileNameRefDataV36 {
 				qword name;
 				helpers::FileName fileName;
 			public:
-				FileNameRefDataV33( );
-				FileNameRefDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				FileNameRefDataV33( const FileNameRefDataV33& p_other );
-				FileNameRefDataV33& operator=( const FileNameRefDataV33& p_other );
+				FileNameRefDataV36( );
+				FileNameRefDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				FileNameRefDataV36( const FileNameRefDataV36& p_other );
+				FileNameRefDataV36& operator=( const FileNameRefDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ScriptDataV33 {
+			GW2FORMATS_API struct ScriptDataV36 {
 				qword name;
 				helpers::Array<byte> byteCode;
 			public:
-				ScriptDataV33( );
-				ScriptDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ScriptDataV33( const ScriptDataV33& p_other );
-				ScriptDataV33& operator=( const ScriptDataV33& p_other );
+				ScriptDataV36( );
+				ScriptDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ScriptDataV36( const ScriptDataV36& p_other );
+				ScriptDataV36& operator=( const ScriptDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct TextEntryDataV33 {
+			GW2FORMATS_API struct TextEntryDataV36 {
 				helpers::WString text;
 				byte language;
 			public:
-				TextEntryDataV33( );
-				TextEntryDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				TextEntryDataV33( const TextEntryDataV33& p_other );
-				TextEntryDataV33& operator=( const TextEntryDataV33& p_other );
+				TextEntryDataV36( );
+				TextEntryDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				TextEntryDataV36( const TextEntryDataV36& p_other );
+				TextEntryDataV36& operator=( const TextEntryDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct TextResourceDataV33 {
+			GW2FORMATS_API struct TextResourceDataV36 {
 				qword name;
 				dword index;
 				dword voiceId;
-				helpers::Array<TextEntryDataV33> textEntries;
+				helpers::Array<TextEntryDataV36> textEntries;
 			public:
-				TextResourceDataV33( );
-				TextResourceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				TextResourceDataV33( const TextResourceDataV33& p_other );
-				TextResourceDataV33& operator=( const TextResourceDataV33& p_other );
+				TextResourceDataV36( );
+				TextResourceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				TextResourceDataV36( const TextResourceDataV36& p_other );
+				TextResourceDataV36& operator=( const TextResourceDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct ResourceDataV33 {
-				dword crc;
-				helpers::Array<AmbientLightDataV33> ambientLightResources;
-				helpers::Array<FileNameRefDataV33> fileNameRefs;
-				helpers::Array<ScriptDataV33> scripts;
-				helpers::Array<TextResourceDataV33> textResources;
+			GW2FORMATS_API struct SpeciesResourceDataV36 {
+				byte16 speciesId;
+				qword name;
+				qword modelId;
+				qword modelVariant;
 			public:
-				ResourceDataV33( );
-				ResourceDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				ResourceDataV33( const ResourceDataV33& p_other );
-				ResourceDataV33& operator=( const ResourceDataV33& p_other );
+				SpeciesResourceDataV36( );
+				SpeciesResourceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				SpeciesResourceDataV36( const SpeciesResourceDataV36& p_other );
+				SpeciesResourceDataV36& operator=( const SpeciesResourceDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct SceneDataV33 {
+			GW2FORMATS_API struct ResourceDataV36 {
+				helpers::Array<AmbientLightDataV36> ambientLightResources;
+				helpers::Array<FileNameRefDataV36> fileNameRefs;
+				helpers::Array<ScriptDataV36> scripts;
+				helpers::Array<TextResourceDataV36> textResources;
+				helpers::Array<SpeciesResourceDataV36> speciesResource;
+			public:
+				ResourceDataV36( );
+				ResourceDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				ResourceDataV36( const ResourceDataV36& p_other );
+				ResourceDataV36& operator=( const ResourceDataV36& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct SceneDataV36 {
 				qword startingSequence;
-				helpers::Array<SequenceDataV33> sequences;
-				ResourceDataV33 resources;
-				helpers::Ptr<TrackGroupDataV33> trackGroups;
+				helpers::Array<SequenceDataV36> sequences;
+				ResourceDataV36 resources;
+				helpers::Ptr<TrackGroupDataV36> trackGroups;
 			public:
-				SceneDataV33( );
-				SceneDataV33( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				SceneDataV33( const SceneDataV33& p_other );
-				SceneDataV33& operator=( const SceneDataV33& p_other );
+				SceneDataV36( );
+				SceneDataV36( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				SceneDataV36( const SceneDataV36& p_other );
+				SceneDataV36& operator=( const SceneDataV36& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef SceneDataV33 SceneData;
+			typedef SceneDataV36 SceneData;
 
 		}; // namespace chunks
 

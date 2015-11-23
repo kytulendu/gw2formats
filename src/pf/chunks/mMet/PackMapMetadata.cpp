@@ -1,7 +1,7 @@
 // File: pf/chunks/mMet/PackMapMetadata.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,58 +27,58 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapMetadataMapV0
+			//      PackMapMetadataMap
 			//============================================================================/
 
-			PackMapMetadataMapV0::PackMapMetadataMapV0( )
+			PackMapMetadataMap::PackMapMetadataMap( )
 				: mapId( 0 )
 				, mapType( 0 ) {
 			}
 
-			PackMapMetadataMapV0::PackMapMetadataMapV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapMetadataMap::PackMapMetadataMap( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapMetadataMapV0::PackMapMetadataMapV0( const PackMapMetadataMapV0& p_other )
+			PackMapMetadataMap::PackMapMetadataMap( const PackMapMetadataMap& p_other )
 				: mapId( p_other.mapId )
 				, mapType( p_other.mapType ) {
 			}
 
-			PackMapMetadataMapV0& PackMapMetadataMapV0::operator=( const PackMapMetadataMapV0& p_other ) {
+			PackMapMetadataMap& PackMapMetadataMap::operator=( const PackMapMetadataMap& p_other ) {
 				mapId = p_other.mapId;
 				mapType = p_other.mapType;
 				return *this;
 			}
 
-			const byte* PackMapMetadataMapV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapMetadataMap::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, mapId );
 				p_data = helpers::read( p_data, p_size, mapType );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapMetadataV0
+			//      PackMapMetadata
 			//============================================================================/
 
-			PackMapMetadataV0::PackMapMetadataV0( ) {
+			PackMapMetadata::PackMapMetadata( ) {
 			}
 
-			PackMapMetadataV0::PackMapMetadataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapMetadata::PackMapMetadata( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapMetadataV0::PackMapMetadataV0( const PackMapMetadataV0& p_other )
+			PackMapMetadata::PackMapMetadata( const PackMapMetadata& p_other )
 				: maps( p_other.maps ) {
 			}
 
-			PackMapMetadataV0& PackMapMetadataV0::operator=( const PackMapMetadataV0& p_other ) {
+			PackMapMetadata& PackMapMetadata::operator=( const PackMapMetadata& p_other ) {
 				maps = p_other.maps;
 				return *this;
 			}
 
-			const byte* PackMapMetadataV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapMetadata::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, maps );
 				return p_data;
 			}

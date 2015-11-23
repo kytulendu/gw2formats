@@ -1,7 +1,7 @@
 // File: pf/chunks/AMSP/ScriptFileData.cpp
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -27,33 +27,33 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      DspDataV24
+			//      DspDataV29
 			//============================================================================/
 
-			DspDataV24::DspDataV24( )
+			DspDataV29::DspDataV29( )
 				: type( 0 )
 				, flags( 0 ) {
 			}
 
-			DspDataV24::DspDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			DspDataV29::DspDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			DspDataV24::DspDataV24( const DspDataV24& p_other )
+			DspDataV29::DspDataV29( const DspDataV29& p_other )
 				: type( p_other.type )
 				, flags( p_other.flags )
 				, properties( p_other.properties ) {
 			}
 
-			DspDataV24& DspDataV24::operator=( const DspDataV24& p_other ) {
+			DspDataV29& DspDataV29::operator=( const DspDataV29& p_other ) {
 				type = p_other.type;
 				flags = p_other.flags;
 				properties = p_other.properties;
 				return *this;
 			}
 
-			const byte* DspDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* DspDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, properties );
@@ -61,28 +61,28 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      BussDynamicDataV24
+			//      BussDynamicDataV29
 			//============================================================================/
 
-			BussDynamicDataV24::BussDynamicDataV24( )
+			BussDynamicDataV29::BussDynamicDataV29( )
 				: name( 0 )
 				, flags( 0 )
 				, volume( 0 ) {
 			}
 
-			BussDynamicDataV24::BussDynamicDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			BussDynamicDataV29::BussDynamicDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			BussDynamicDataV24::BussDynamicDataV24( const BussDynamicDataV24& p_other )
+			BussDynamicDataV29::BussDynamicDataV29( const BussDynamicDataV29& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, volume( p_other.volume )
 				, dsp( p_other.dsp ) {
 			}
 
-			BussDynamicDataV24& BussDynamicDataV24::operator=( const BussDynamicDataV24& p_other ) {
+			BussDynamicDataV29& BussDynamicDataV29::operator=( const BussDynamicDataV29& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				volume = p_other.volume;
@@ -90,7 +90,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* BussDynamicDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* BussDynamicDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, volume );
@@ -99,102 +99,130 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      BussDataV24
+			//      BussDataV29
 			//============================================================================/
 
-			BussDataV24::BussDataV24( )
+			BussDataV29::BussDataV29( )
 				: name( 0 )
 				, flags( 0 )
-				, output( 0 ) {
+				, output( 0 )
+				, normalizeFadeTime( 0 )
+				, normalizeThreshold( 0 )
+				, normalizeMaxAmp( 0 )
+				, compressorThreshold( 0 )
+				, compressorAttack( 0 )
+				, compressorRelease( 0 )
+				, compressorGainMakeup( 0 ) {
 			}
 
-			BussDataV24::BussDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			BussDataV29::BussDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			BussDataV24::BussDataV24( const BussDataV24& p_other )
+			BussDataV29::BussDataV29( const BussDataV29& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, output( p_other.output )
+				, normalizeFadeTime( p_other.normalizeFadeTime )
+				, normalizeThreshold( p_other.normalizeThreshold )
+				, normalizeMaxAmp( p_other.normalizeMaxAmp )
+				, compressorThreshold( p_other.compressorThreshold )
+				, compressorAttack( p_other.compressorAttack )
+				, compressorRelease( p_other.compressorRelease )
+				, compressorGainMakeup( p_other.compressorGainMakeup )
 				, dynamicData( p_other.dynamicData ) {
 			}
 
-			BussDataV24& BussDataV24::operator=( const BussDataV24& p_other ) {
+			BussDataV29& BussDataV29::operator=( const BussDataV29& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				output = p_other.output;
+				normalizeFadeTime = p_other.normalizeFadeTime;
+				normalizeThreshold = p_other.normalizeThreshold;
+				normalizeMaxAmp = p_other.normalizeMaxAmp;
+				compressorThreshold = p_other.compressorThreshold;
+				compressorAttack = p_other.compressorAttack;
+				compressorRelease = p_other.compressorRelease;
+				compressorGainMakeup = p_other.compressorGainMakeup;
 				dynamicData = p_other.dynamicData;
 				return *this;
 			}
 
-			const byte* BussDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* BussDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, output );
+				p_data = helpers::read( p_data, p_size, normalizeFadeTime );
+				p_data = helpers::read( p_data, p_size, normalizeThreshold );
+				p_data = helpers::read( p_data, p_size, normalizeMaxAmp );
+				p_data = helpers::read( p_data, p_size, compressorThreshold );
+				p_data = helpers::read( p_data, p_size, compressorAttack );
+				p_data = helpers::read( p_data, p_size, compressorRelease );
+				p_data = helpers::read( p_data, p_size, compressorGainMakeup );
 				p_data = helpers::read( p_data, p_size, dynamicData );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      EnvelopePointDataV24
+			//      EnvelopePointDataV29
 			//============================================================================/
 
-			EnvelopePointDataV24::EnvelopePointDataV24( )
+			EnvelopePointDataV29::EnvelopePointDataV29( )
 				: offset( 0 )
 				, value( 0 ) {
 			}
 
-			EnvelopePointDataV24::EnvelopePointDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			EnvelopePointDataV29::EnvelopePointDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			EnvelopePointDataV24::EnvelopePointDataV24( const EnvelopePointDataV24& p_other )
+			EnvelopePointDataV29::EnvelopePointDataV29( const EnvelopePointDataV29& p_other )
 				: offset( p_other.offset )
 				, value( p_other.value ) {
 			}
 
-			EnvelopePointDataV24& EnvelopePointDataV24::operator=( const EnvelopePointDataV24& p_other ) {
+			EnvelopePointDataV29& EnvelopePointDataV29::operator=( const EnvelopePointDataV29& p_other ) {
 				offset = p_other.offset;
 				value = p_other.value;
 				return *this;
 			}
 
-			const byte* EnvelopePointDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* EnvelopePointDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, offset );
 				p_data = helpers::read( p_data, p_size, value );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      EnvelopeDataV24
+			//      EnvelopeDataV29
 			//============================================================================/
 
-			EnvelopeDataV24::EnvelopeDataV24( )
+			EnvelopeDataV29::EnvelopeDataV29( )
 				: offsetParameter( 0 )
 				, offsetType( 0 ) {
 			}
 
-			EnvelopeDataV24::EnvelopeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			EnvelopeDataV29::EnvelopeDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			EnvelopeDataV24::EnvelopeDataV24( const EnvelopeDataV24& p_other )
+			EnvelopeDataV29::EnvelopeDataV29( const EnvelopeDataV29& p_other )
 				: offsetParameter( p_other.offsetParameter )
 				, envelopePoints( p_other.envelopePoints )
 				, offsetType( p_other.offsetType ) {
 			}
 
-			EnvelopeDataV24& EnvelopeDataV24::operator=( const EnvelopeDataV24& p_other ) {
+			EnvelopeDataV29& EnvelopeDataV29::operator=( const EnvelopeDataV29& p_other ) {
 				offsetParameter = p_other.offsetParameter;
 				envelopePoints = p_other.envelopePoints;
 				offsetType = p_other.offsetType;
 				return *this;
 			}
 
-			const byte* EnvelopeDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* EnvelopeDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, offsetParameter );
 				p_data = helpers::read( p_data, p_size, envelopePoints );
 				p_data = helpers::read( p_data, p_size, offsetType );
@@ -202,34 +230,34 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      RangeDataV24
+			//      RangeDataV29
 			//============================================================================/
 
-			RangeDataV24::RangeDataV24( )
+			RangeDataV29::RangeDataV29( )
 				: max( 0 )
 				, minFloat( 0 )
 				, minByte( 0 ) {
 			}
 
-			RangeDataV24::RangeDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			RangeDataV29::RangeDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			RangeDataV24::RangeDataV24( const RangeDataV24& p_other )
+			RangeDataV29::RangeDataV29( const RangeDataV29& p_other )
 				: max( p_other.max )
 				, minFloat( p_other.minFloat )
 				, minByte( p_other.minByte ) {
 			}
 
-			RangeDataV24& RangeDataV24::operator=( const RangeDataV24& p_other ) {
+			RangeDataV29& RangeDataV29::operator=( const RangeDataV29& p_other ) {
 				max = p_other.max;
 				minFloat = p_other.minFloat;
 				minByte = p_other.minByte;
 				return *this;
 			}
 
-			const byte* RangeDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* RangeDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, max );
 				p_data = helpers::read( p_data, p_size, minFloat );
 				p_data = helpers::read( p_data, p_size, minByte );
@@ -237,56 +265,56 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      RandomParamDataV24
+			//      RandomParamDataV29
 			//============================================================================/
 
-			RandomParamDataV24::RandomParamDataV24( ) {
+			RandomParamDataV29::RandomParamDataV29( ) {
 			}
 
-			RandomParamDataV24::RandomParamDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			RandomParamDataV29::RandomParamDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			RandomParamDataV24::RandomParamDataV24( const RandomParamDataV24& p_other )
+			RandomParamDataV29::RandomParamDataV29( const RandomParamDataV29& p_other )
 				: time( p_other.time )
 				, value( p_other.value ) {
 			}
 
-			RandomParamDataV24& RandomParamDataV24::operator=( const RandomParamDataV24& p_other ) {
+			RandomParamDataV29& RandomParamDataV29::operator=( const RandomParamDataV29& p_other ) {
 				time = p_other.time;
 				value = p_other.value;
 				return *this;
 			}
 
-			const byte* RandomParamDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* RandomParamDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, time );
 				p_data = helpers::read( p_data, p_size, value );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      DynamicParamDataV24
+			//      DynamicParamDataV29
 			//============================================================================/
 
-			DynamicParamDataV24::DynamicParamDataV24( )
+			DynamicParamDataV29::DynamicParamDataV29( )
 				: value( 0 )
 				, type( 0 ) {
 			}
 
-			DynamicParamDataV24::DynamicParamDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			DynamicParamDataV29::DynamicParamDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			DynamicParamDataV24::DynamicParamDataV24( const DynamicParamDataV24& p_other )
+			DynamicParamDataV29::DynamicParamDataV29( const DynamicParamDataV29& p_other )
 				: envelopeData( p_other.envelopeData )
 				, randomParamData( p_other.randomParamData )
 				, value( p_other.value )
 				, type( p_other.type ) {
 			}
 
-			DynamicParamDataV24& DynamicParamDataV24::operator=( const DynamicParamDataV24& p_other ) {
+			DynamicParamDataV29& DynamicParamDataV29::operator=( const DynamicParamDataV29& p_other ) {
 				envelopeData = p_other.envelopeData;
 				randomParamData = p_other.randomParamData;
 				value = p_other.value;
@@ -294,7 +322,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* DynamicParamDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* DynamicParamDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, envelopeData );
 				p_data = helpers::read( p_data, p_size, randomParamData );
 				p_data = helpers::read( p_data, p_size, value );
@@ -303,19 +331,19 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      AttenuationDataV24
+			//      AttenuationDataV29
 			//============================================================================/
 
-			AttenuationDataV24::AttenuationDataV24( )
+			AttenuationDataV29::AttenuationDataV29( )
 				: doppler( 0 ) {
 			}
 
-			AttenuationDataV24::AttenuationDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			AttenuationDataV29::AttenuationDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			AttenuationDataV24::AttenuationDataV24( const AttenuationDataV24& p_other )
+			AttenuationDataV29::AttenuationDataV29( const AttenuationDataV29& p_other )
 				: doppler( p_other.doppler )
 				, lowPass( p_other.lowPass )
 				, highPass( p_other.highPass )
@@ -323,10 +351,11 @@ namespace gw2f {
 				, reverb( p_other.reverb )
 				, spread3D( p_other.spread3D )
 				, volumeA( p_other.volumeA )
-				, volumeB( p_other.volumeB ) {
+				, volumeB( p_other.volumeB )
+				, lfe( p_other.lfe ) {
 			}
 
-			AttenuationDataV24& AttenuationDataV24::operator=( const AttenuationDataV24& p_other ) {
+			AttenuationDataV29& AttenuationDataV29::operator=( const AttenuationDataV29& p_other ) {
 				doppler = p_other.doppler;
 				lowPass = p_other.lowPass;
 				highPass = p_other.highPass;
@@ -335,10 +364,11 @@ namespace gw2f {
 				spread3D = p_other.spread3D;
 				volumeA = p_other.volumeA;
 				volumeB = p_other.volumeB;
+				lfe = p_other.lfe;
 				return *this;
 			}
 
-			const byte* AttenuationDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* AttenuationDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, doppler );
 				p_data = helpers::read( p_data, p_size, lowPass );
 				p_data = helpers::read( p_data, p_size, highPass );
@@ -347,14 +377,15 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, spread3D );
 				p_data = helpers::read( p_data, p_size, volumeA );
 				p_data = helpers::read( p_data, p_size, volumeB );
+				p_data = helpers::read( p_data, p_size, lfe );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      CategoryDynamicDataV24
+			//      CategoryDynamicDataV29
 			//============================================================================/
 
-			CategoryDynamicDataV24::CategoryDynamicDataV24( )
+			CategoryDynamicDataV29::CategoryDynamicDataV29( )
 				: name( 0 )
 				, volume( 0 )
 				, nonFocusGain( 0 )
@@ -362,15 +393,18 @@ namespace gw2f {
 				, highPass( 0 )
 				, reverbDirect( 0 )
 				, reverbRoom( 0 )
-				, flags( 0 ) {
+				, flags( 0 )
+				, minAudible( 0 )
+				, maxAudibleLQ( 0 )
+				, maxAudibleHG( 0 ) {
 			}
 
-			CategoryDynamicDataV24::CategoryDynamicDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			CategoryDynamicDataV29::CategoryDynamicDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			CategoryDynamicDataV24::CategoryDynamicDataV24( const CategoryDynamicDataV24& p_other )
+			CategoryDynamicDataV29::CategoryDynamicDataV29( const CategoryDynamicDataV29& p_other )
 				: name( p_other.name )
 				, volume( p_other.volume )
 				, nonFocusGain( p_other.nonFocusGain )
@@ -378,10 +412,13 @@ namespace gw2f {
 				, highPass( p_other.highPass )
 				, reverbDirect( p_other.reverbDirect )
 				, reverbRoom( p_other.reverbRoom )
-				, flags( p_other.flags ) {
+				, flags( p_other.flags )
+				, minAudible( p_other.minAudible )
+				, maxAudibleLQ( p_other.maxAudibleLQ )
+				, maxAudibleHG( p_other.maxAudibleHG ) {
 			}
 
-			CategoryDynamicDataV24& CategoryDynamicDataV24::operator=( const CategoryDynamicDataV24& p_other ) {
+			CategoryDynamicDataV29& CategoryDynamicDataV29::operator=( const CategoryDynamicDataV29& p_other ) {
 				name = p_other.name;
 				volume = p_other.volume;
 				nonFocusGain = p_other.nonFocusGain;
@@ -390,10 +427,13 @@ namespace gw2f {
 				reverbDirect = p_other.reverbDirect;
 				reverbRoom = p_other.reverbRoom;
 				flags = p_other.flags;
+				minAudible = p_other.minAudible;
+				maxAudibleLQ = p_other.maxAudibleLQ;
+				maxAudibleHG = p_other.maxAudibleHG;
 				return *this;
 			}
 
-			const byte* CategoryDynamicDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* CategoryDynamicDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, volume );
 				p_data = helpers::read( p_data, p_size, nonFocusGain );
@@ -406,91 +446,144 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      CategoryDataV24
+			//      CategoryDataV29
 			//============================================================================/
 
-			CategoryDataV24::CategoryDataV24( )
+			CategoryDataV29::CategoryDataV29( )
 				: name( 0 )
 				, volumeGroupName( 0 )
 				, outputBussName( 0 )
+				, focusReserve( 0 )
 				, muteFadeTime( 0 )
 				, flags( 0 )
 				, maxAudible( 0 )
-				, maxAudibleBehavior( 0 ) {
+				, maxAudibleBehavior( 0 )
+				, priority( 0 ) {
 			}
 
-			CategoryDataV24::CategoryDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			CategoryDataV29::CategoryDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			CategoryDataV24::CategoryDataV24( const CategoryDataV24& p_other )
+			CategoryDataV29::CategoryDataV29( const CategoryDataV29& p_other )
 				: name( p_other.name )
 				, volumeGroupName( p_other.volumeGroupName )
 				, outputBussName( p_other.outputBussName )
 				, attenuation( p_other.attenuation )
 				, dynamicData( p_other.dynamicData )
+				, focusReserve( p_other.focusReserve )
 				, muteFadeTime( p_other.muteFadeTime )
 				, flags( p_other.flags )
 				, maxAudible( p_other.maxAudible )
-				, maxAudibleBehavior( p_other.maxAudibleBehavior ) {
+				, maxAudibleBehavior( p_other.maxAudibleBehavior )
+				, priority( p_other.priority ) {
 			}
 
-			CategoryDataV24& CategoryDataV24::operator=( const CategoryDataV24& p_other ) {
+			CategoryDataV29& CategoryDataV29::operator=( const CategoryDataV29& p_other ) {
 				name = p_other.name;
 				volumeGroupName = p_other.volumeGroupName;
 				outputBussName = p_other.outputBussName;
 				attenuation = p_other.attenuation;
 				dynamicData = p_other.dynamicData;
+				focusReserve = p_other.focusReserve;
 				muteFadeTime = p_other.muteFadeTime;
 				flags = p_other.flags;
 				maxAudible = p_other.maxAudible;
 				maxAudibleBehavior = p_other.maxAudibleBehavior;
+				priority = p_other.priority;
 				return *this;
 			}
 
-			const byte* CategoryDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* CategoryDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, volumeGroupName );
 				p_data = helpers::read( p_data, p_size, outputBussName );
 				p_data = helpers::read( p_data, p_size, attenuation );
 				p_data = helpers::read( p_data, p_size, dynamicData );
+				p_data = helpers::read( p_data, p_size, focusReserve );
 				p_data = helpers::read( p_data, p_size, muteFadeTime );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, maxAudible );
 				p_data = helpers::read( p_data, p_size, maxAudibleBehavior );
+				p_data = helpers::read( p_data, p_size, priority );
 				return p_data;
 			}
 
-
 			//============================================================================/
-			//      MusicConditionDataV24
+			//      MaterialDataV29
 			//============================================================================/
 
-			MusicConditionDataV24::MusicConditionDataV24( )
+			MaterialDataV29::MaterialDataV29( )
 				: name( 0 )
-				, flags( 0 ) {
+				, flags( 0 )
+				, absorptionLF( 0 )
+				, absorptionMF( 0 )
+				, absorptionHF( 0 )
+				, occlusion( 0 ) {
 			}
 
-			MusicConditionDataV24::MusicConditionDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MaterialDataV29::MaterialDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MusicConditionDataV24::MusicConditionDataV24( const MusicConditionDataV24& p_other )
+			MaterialDataV29::MaterialDataV29( const MaterialDataV29& p_other )
+				: name( p_other.name )
+				, flags( p_other.flags )
+				, absorptionLF( p_other.absorptionLF )
+				, absorptionMF( p_other.absorptionMF )
+				, absorptionHF( p_other.absorptionHF )
+				, occlusion( p_other.occlusion ) {
+			}
+
+			MaterialDataV29& MaterialDataV29::operator=( const MaterialDataV29& p_other ) {
+				name = p_other.name;
+				flags = p_other.flags;
+				absorptionLF = p_other.absorptionLF;
+				absorptionMF = p_other.absorptionMF;
+				absorptionHF = p_other.absorptionHF;
+				occlusion = p_other.occlusion;
+				return *this;
+			}
+
+			const byte* MaterialDataV29::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, absorptionLF );
+				p_data = helpers::read( p_data, p_size, absorptionMF );
+				p_data = helpers::read( p_data, p_size, absorptionHF );
+				p_data = helpers::read( p_data, p_size, occlusion );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      MusicConditionDataV29
+			//============================================================================/
+
+			MusicConditionDataV29::MusicConditionDataV29( )
+				: name( 0 )
+				, flags( 0 ) {
+			}
+
+			MusicConditionDataV29::MusicConditionDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			MusicConditionDataV29::MusicConditionDataV29( const MusicConditionDataV29& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, byteCode( p_other.byteCode ) {
 			}
 
-			MusicConditionDataV24& MusicConditionDataV24::operator=( const MusicConditionDataV24& p_other ) {
+			MusicConditionDataV29& MusicConditionDataV29::operator=( const MusicConditionDataV29& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				byteCode = p_other.byteCode;
 				return *this;
 			}
 
-			const byte* MusicConditionDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* MusicConditionDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, byteCode );
@@ -498,10 +591,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      FileNameDataV24
+			//      FileNameDataV29
 			//============================================================================/
 
-			FileNameDataV24::FileNameDataV24( )
+			FileNameDataV29::FileNameDataV29( )
 				: condition( 0 )
 				, language( 0 )
 				, volume( 0 )
@@ -512,12 +605,12 @@ namespace gw2f {
 				, noteMax( 0 ) {
 			}
 
-			FileNameDataV24::FileNameDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			FileNameDataV29::FileNameDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			FileNameDataV24::FileNameDataV24( const FileNameDataV24& p_other )
+			FileNameDataV29::FileNameDataV29( const FileNameDataV29& p_other )
 				: condition( p_other.condition )
 				, language( p_other.language )
 				, volume( p_other.volume )
@@ -529,7 +622,7 @@ namespace gw2f {
 				, noteMax( p_other.noteMax ) {
 			}
 
-			FileNameDataV24& FileNameDataV24::operator=( const FileNameDataV24& p_other ) {
+			FileNameDataV29& FileNameDataV29::operator=( const FileNameDataV29& p_other ) {
 				condition = p_other.condition;
 				language = p_other.language;
 				volume = p_other.volume;
@@ -542,7 +635,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* FileNameDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* FileNameDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, condition );
 				p_data = helpers::read( p_data, p_size, language );
 				p_data = helpers::read( p_data, p_size, volume );
@@ -556,10 +649,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MusicPlaylistDataV24
+			//      MusicPlaylistDataV29
 			//============================================================================/
 
-			MusicPlaylistDataV24::MusicPlaylistDataV24( )
+			MusicPlaylistDataV29::MusicPlaylistDataV29( )
 				: category( 0 )
 				, name( 0 )
 				, primaryPlaylistId( 0 )
@@ -570,12 +663,12 @@ namespace gw2f {
 				, fileIterateMode( 0 ) {
 			}
 
-			MusicPlaylistDataV24::MusicPlaylistDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MusicPlaylistDataV29::MusicPlaylistDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MusicPlaylistDataV24::MusicPlaylistDataV24( const MusicPlaylistDataV24& p_other )
+			MusicPlaylistDataV29::MusicPlaylistDataV29( const MusicPlaylistDataV29& p_other )
 				: category( p_other.category )
 				, name( p_other.name )
 				, primaryPlaylistId( p_other.primaryPlaylistId )
@@ -591,7 +684,7 @@ namespace gw2f {
 				, fileIterateMode( p_other.fileIterateMode ) {
 			}
 
-			MusicPlaylistDataV24& MusicPlaylistDataV24::operator=( const MusicPlaylistDataV24& p_other ) {
+			MusicPlaylistDataV29& MusicPlaylistDataV29::operator=( const MusicPlaylistDataV29& p_other ) {
 				category = p_other.category;
 				name = p_other.name;
 				primaryPlaylistId = p_other.primaryPlaylistId;
@@ -608,7 +701,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MusicPlaylistDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* MusicPlaylistDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, category );
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, primaryPlaylistId );
@@ -626,10 +719,45 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ReverbDataV24
+			//      PropertyDataV29
 			//============================================================================/
 
-			ReverbDataV24::ReverbDataV24( )
+			PropertyDataV29::PropertyDataV29( )
+				: name( 0 )
+				, tokenValue( 0 )
+				, floatValue( 0 ) {
+			}
+
+			PropertyDataV29::PropertyDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PropertyDataV29::PropertyDataV29( const PropertyDataV29& p_other )
+				: name( p_other.name )
+				, tokenValue( p_other.tokenValue )
+				, floatValue( p_other.floatValue ) {
+			}
+
+			PropertyDataV29& PropertyDataV29::operator=( const PropertyDataV29& p_other ) {
+				name = p_other.name;
+				tokenValue = p_other.tokenValue;
+				floatValue = p_other.floatValue;
+				return *this;
+			}
+
+			const byte* PropertyDataV29::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, tokenValue );
+				p_data = helpers::read( p_data, p_size, floatValue );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      ReverbDataV29
+			//============================================================================/
+
+			ReverbDataV29::ReverbDataV29( )
 				: name( 0 )
 				, flags( 0 )
 				, room( 0 )
@@ -651,12 +779,12 @@ namespace gw2f {
 				, echoDryMix( 0 ) {
 			}
 
-			ReverbDataV24::ReverbDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ReverbDataV29::ReverbDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ReverbDataV24::ReverbDataV24( const ReverbDataV24& p_other )
+			ReverbDataV29::ReverbDataV29( const ReverbDataV29& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, room( p_other.room )
@@ -678,7 +806,7 @@ namespace gw2f {
 				, echoDryMix( p_other.echoDryMix ) {
 			}
 
-			ReverbDataV24& ReverbDataV24::operator=( const ReverbDataV24& p_other ) {
+			ReverbDataV29& ReverbDataV29::operator=( const ReverbDataV29& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				room = p_other.room;
@@ -701,7 +829,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* ReverbDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ReverbDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, room );
@@ -725,10 +853,40 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      SnapshotDataV24
+			//      ScriptRefDataV29
 			//============================================================================/
 
-			SnapshotDataV24::SnapshotDataV24( )
+			ScriptRefDataV29::ScriptRefDataV29( )
+				: name( 0 ) {
+			}
+
+			ScriptRefDataV29::ScriptRefDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			ScriptRefDataV29::ScriptRefDataV29( const ScriptRefDataV29& p_other )
+				: name( p_other.name )
+				, fileName( p_other.fileName ) {
+			}
+
+			ScriptRefDataV29& ScriptRefDataV29::operator=( const ScriptRefDataV29& p_other ) {
+				name = p_other.name;
+				fileName = p_other.fileName;
+				return *this;
+			}
+
+			const byte* ScriptRefDataV29::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, fileName );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      SnapshotDataV29
+			//============================================================================/
+
+			SnapshotDataV29::SnapshotDataV29( )
 				: name( 0 )
 				, blendInTime( 0 )
 				, blendOutTime( 0 )
@@ -736,12 +894,12 @@ namespace gw2f {
 				, priority( 0 ) {
 			}
 
-			SnapshotDataV24::SnapshotDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			SnapshotDataV29::SnapshotDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			SnapshotDataV24::SnapshotDataV24( const SnapshotDataV24& p_other )
+			SnapshotDataV29::SnapshotDataV29( const SnapshotDataV29& p_other )
 				: name( p_other.name )
 				, blendInTime( p_other.blendInTime )
 				, blendOutTime( p_other.blendOutTime )
@@ -751,7 +909,7 @@ namespace gw2f {
 				, priority( p_other.priority ) {
 			}
 
-			SnapshotDataV24& SnapshotDataV24::operator=( const SnapshotDataV24& p_other ) {
+			SnapshotDataV29& SnapshotDataV29::operator=( const SnapshotDataV29& p_other ) {
 				name = p_other.name;
 				blendInTime = p_other.blendInTime;
 				blendOutTime = p_other.blendOutTime;
@@ -762,7 +920,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* SnapshotDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* SnapshotDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, blendInTime );
 				p_data = helpers::read( p_data, p_size, blendOutTime );
@@ -774,103 +932,164 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      AudioSettingsDataV24
+			//      MusicExternalDataV29
 			//============================================================================/
 
-			AudioSettingsDataV24::AudioSettingsDataV24( )
-				: defaultSnapshot( 0 )
-				, effectsBuss( 0 )
-				, distanceScale( 0 )
-				, dopplerScale( 0 )
-				, focusTransition( 0 ) {
+			MusicExternalDataV29::MusicExternalDataV29( ) {
 			}
 
-			AudioSettingsDataV24::AudioSettingsDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MusicExternalDataV29::MusicExternalDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			AudioSettingsDataV24::AudioSettingsDataV24( const AudioSettingsDataV24& p_other )
-				: defaultSnapshot( p_other.defaultSnapshot )
-				, effectsBuss( p_other.effectsBuss )
-				, distanceScale( p_other.distanceScale )
-				, dopplerScale( p_other.dopplerScale )
-				, focusTransition( p_other.focusTransition )
-				, busses( p_other.busses )
-				, categories( p_other.categories )
-				, musicConditions( p_other.musicConditions )
-				, musicPlaylists( p_other.musicPlaylists )
-				, reverbs( p_other.reverbs )
-				, snapshots( p_other.snapshots )
-				, bankIndexFileName( p_other.bankIndexFileName )
-				, bankScriptFileName( p_other.bankScriptFileName )
-				, musicScriptFileName( p_other.musicScriptFileName ) {
+			MusicExternalDataV29::MusicExternalDataV29( const MusicExternalDataV29& p_other )
+				: name( p_other.name )
+				, externalPlaylist( p_other.externalPlaylist ) {
 			}
 
-			AudioSettingsDataV24& AudioSettingsDataV24::operator=( const AudioSettingsDataV24& p_other ) {
-				defaultSnapshot = p_other.defaultSnapshot;
-				effectsBuss = p_other.effectsBuss;
-				distanceScale = p_other.distanceScale;
-				dopplerScale = p_other.dopplerScale;
-				focusTransition = p_other.focusTransition;
-				busses = p_other.busses;
-				categories = p_other.categories;
-				musicConditions = p_other.musicConditions;
-				musicPlaylists = p_other.musicPlaylists;
-				reverbs = p_other.reverbs;
-				snapshots = p_other.snapshots;
-				bankIndexFileName = p_other.bankIndexFileName;
-				bankScriptFileName = p_other.bankScriptFileName;
-				musicScriptFileName = p_other.musicScriptFileName;
+			MusicExternalDataV29& MusicExternalDataV29::operator=( const MusicExternalDataV29& p_other ) {
+				name = p_other.name;
+				externalPlaylist = p_other.externalPlaylist;
 				return *this;
 			}
 
-			const byte* AudioSettingsDataV24::assign( const byte* p_data, size_t p_size ) {
-				p_data = helpers::read( p_data, p_size, defaultSnapshot );
-				p_data = helpers::read( p_data, p_size, effectsBuss );
-				p_data = helpers::read( p_data, p_size, distanceScale );
-				p_data = helpers::read( p_data, p_size, dopplerScale );
-				p_data = helpers::read( p_data, p_size, focusTransition );
-				p_data = helpers::read( p_data, p_size, busses );
-				p_data = helpers::read( p_data, p_size, categories );
-				p_data = helpers::read( p_data, p_size, musicConditions );
-				p_data = helpers::read( p_data, p_size, musicPlaylists );
-				p_data = helpers::read( p_data, p_size, reverbs );
-				p_data = helpers::read( p_data, p_size, snapshots );
-				p_data = helpers::read( p_data, p_size, bankIndexFileName );
-				p_data = helpers::read( p_data, p_size, bankScriptFileName );
-				p_data = helpers::read( p_data, p_size, musicScriptFileName );
+			const byte* MusicExternalDataV29::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, externalPlaylist );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      HandlerDataV24
+			//      AudioSettingsDataV29
 			//============================================================================/
 
-			HandlerDataV24::HandlerDataV24( )
-				: name( 0 )
-				, flags( 0 ) {
+			AudioSettingsDataV29::AudioSettingsDataV29( )
+				: defaultSnapshot( 0 )
+				, effectsBuss( 0 )
+				, distanceScale( 0 )
+				, dopplerScale( 0 )
+				, echoLevel( 0 )
+				, focusTransition( 0 )
+				, memoryPool( 0 )
+				, reverbLevel( 0 )
+				, minChannelsLQ( 0 )
+				, maxChannelsLQ( 0 ) {
 			}
 
-			HandlerDataV24::HandlerDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			AudioSettingsDataV29::AudioSettingsDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			HandlerDataV24::HandlerDataV24( const HandlerDataV24& p_other )
+			AudioSettingsDataV29::AudioSettingsDataV29( const AudioSettingsDataV29& p_other )
+				: defaultSnapshot( p_other.defaultSnapshot )
+				, effectsBuss( p_other.effectsBuss )
+				, distanceScale( p_other.distanceScale )
+				, dopplerScale( p_other.dopplerScale )
+				, echoLevel( p_other.echoLevel )
+				, focusTransition( p_other.focusTransition )
+				, memoryPool( p_other.memoryPool )
+				, reverbLevel( p_other.reverbLevel )
+				, minChannelsLQ( p_other.minChannelsLQ )
+				, maxChannelsLQ( p_other.maxChannelsLQ )
+				, busses( p_other.busses )
+				, categories( p_other.categories )
+				, material( p_other.material )
+				, musicConditions( p_other.musicConditions )
+				, musicPlaylists( p_other.musicPlaylists )
+				, property( p_other.property )
+				, reverbs( p_other.reverbs )
+				, scriptRef( p_other.scriptRef )
+				, snapshots( p_other.snapshots )
+				, bankIndexFileName( p_other.bankIndexFileName )
+				, bankScriptFileName( p_other.bankScriptFileName )
+				, musicScriptFileName( p_other.musicScriptFileName )
+				, musicExternal( p_other.musicExternal ) {
+			}
+
+			AudioSettingsDataV29& AudioSettingsDataV29::operator=( const AudioSettingsDataV29& p_other ) {
+				defaultSnapshot = p_other.defaultSnapshot;
+				effectsBuss = p_other.effectsBuss;
+				distanceScale = p_other.distanceScale;
+				dopplerScale = p_other.dopplerScale;
+				echoLevel = p_other.echoLevel;
+				focusTransition = p_other.focusTransition;
+				memoryPool = p_other.memoryPool;
+				reverbLevel = p_other.reverbLevel;
+				minChannelsLQ = p_other.minChannelsLQ;
+				maxChannelsLQ = p_other.maxChannelsLQ;
+				busses = p_other.busses;
+				categories = p_other.categories;
+				material = p_other.material;
+				musicConditions = p_other.musicConditions;
+				musicPlaylists = p_other.musicPlaylists;
+				property = p_other.property;
+				reverbs = p_other.reverbs;
+				scriptRef = p_other.scriptRef;
+				snapshots = p_other.snapshots;
+				bankIndexFileName = p_other.bankIndexFileName;
+				bankScriptFileName = p_other.bankScriptFileName;
+				musicScriptFileName = p_other.musicScriptFileName;
+				musicExternal = p_other.musicExternal;
+				return *this;
+			}
+
+			const byte* AudioSettingsDataV29::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, defaultSnapshot );
+				p_data = helpers::read( p_data, p_size, effectsBuss );
+				p_data = helpers::read( p_data, p_size, distanceScale );
+				p_data = helpers::read( p_data, p_size, dopplerScale );
+				p_data = helpers::read( p_data, p_size, echoLevel );
+				p_data = helpers::read( p_data, p_size, focusTransition );
+				p_data = helpers::read( p_data, p_size, memoryPool );
+				p_data = helpers::read( p_data, p_size, reverbLevel );
+				p_data = helpers::read( p_data, p_size, minChannelsLQ );
+				p_data = helpers::read( p_data, p_size, maxChannelsLQ );
+				p_data = helpers::read( p_data, p_size, busses );
+				p_data = helpers::read( p_data, p_size, categories );
+				p_data = helpers::read( p_data, p_size, material );
+				p_data = helpers::read( p_data, p_size, musicConditions );
+				p_data = helpers::read( p_data, p_size, musicPlaylists );
+				p_data = helpers::read( p_data, p_size, property );
+				p_data = helpers::read( p_data, p_size, reverbs );
+				p_data = helpers::read( p_data, p_size, scriptRef );
+				p_data = helpers::read( p_data, p_size, snapshots );
+				p_data = helpers::read( p_data, p_size, bankIndexFileName );
+				p_data = helpers::read( p_data, p_size, bankScriptFileName );
+				p_data = helpers::read( p_data, p_size, musicScriptFileName );
+				p_data = helpers::read( p_data, p_size, musicExternal );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      HandlerDataV29
+			//============================================================================/
+
+			HandlerDataV29::HandlerDataV29( )
+				: name( 0 )
+				, flags( 0 ) {
+			}
+
+			HandlerDataV29::HandlerDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			HandlerDataV29::HandlerDataV29( const HandlerDataV29& p_other )
 				: name( p_other.name )
 				, flags( p_other.flags )
 				, byteCode( p_other.byteCode ) {
 			}
 
-			HandlerDataV24& HandlerDataV24::operator=( const HandlerDataV24& p_other ) {
+			HandlerDataV29& HandlerDataV29::operator=( const HandlerDataV29& p_other ) {
 				name = p_other.name;
 				flags = p_other.flags;
 				byteCode = p_other.byteCode;
 				return *this;
 			}
 
-			const byte* HandlerDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* HandlerDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, byteCode );
@@ -878,10 +1097,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MetaSoundDataV24
+			//      MetaSoundDataV29
 			//============================================================================/
 
-			MetaSoundDataV24::MetaSoundDataV24( )
+			MetaSoundDataV29::MetaSoundDataV29( )
 				: category( 0 )
 				, endCue( 0 )
 				, name( 0 )
@@ -905,12 +1124,12 @@ namespace gw2f {
 				, repeatTimeFrom( 0 ) {
 			}
 
-			MetaSoundDataV24::MetaSoundDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MetaSoundDataV29::MetaSoundDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MetaSoundDataV24::MetaSoundDataV24( const MetaSoundDataV24& p_other )
+			MetaSoundDataV29::MetaSoundDataV29( const MetaSoundDataV29& p_other )
 				: category( p_other.category )
 				, endCue( p_other.endCue )
 				, name( p_other.name )
@@ -940,6 +1159,7 @@ namespace gw2f {
 				, positionRange( p_other.positionRange )
 				, repeatCount( p_other.repeatCount )
 				, repeatTime( p_other.repeatTime )
+				, replayDelay( p_other.replayDelay )
 				, startTimeOffset( p_other.startTimeOffset )
 				, channelMode( p_other.channelMode )
 				, channelPriority( p_other.channelPriority )
@@ -951,7 +1171,7 @@ namespace gw2f {
 				, repeatTimeFrom( p_other.repeatTimeFrom ) {
 			}
 
-			MetaSoundDataV24& MetaSoundDataV24::operator=( const MetaSoundDataV24& p_other ) {
+			MetaSoundDataV29& MetaSoundDataV29::operator=( const MetaSoundDataV29& p_other ) {
 				category = p_other.category;
 				endCue = p_other.endCue;
 				name = p_other.name;
@@ -981,6 +1201,7 @@ namespace gw2f {
 				positionRange = p_other.positionRange;
 				repeatCount = p_other.repeatCount;
 				repeatTime = p_other.repeatTime;
+				replayDelay = p_other.replayDelay;
 				startTimeOffset = p_other.startTimeOffset;
 				channelMode = p_other.channelMode;
 				channelPriority = p_other.channelPriority;
@@ -993,7 +1214,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MetaSoundDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* MetaSoundDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, category );
 				p_data = helpers::read( p_data, p_size, endCue );
 				p_data = helpers::read( p_data, p_size, name );
@@ -1023,6 +1244,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, positionRange );
 				p_data = helpers::read( p_data, p_size, repeatCount );
 				p_data = helpers::read( p_data, p_size, repeatTime );
+				p_data = helpers::read( p_data, p_size, replayDelay );
 				p_data = helpers::read( p_data, p_size, startTimeOffset );
 				p_data = helpers::read( p_data, p_size, channelMode );
 				p_data = helpers::read( p_data, p_size, channelPriority );
@@ -1036,59 +1258,29 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      ScriptRefDataV24
+			//      TriggerMarkerDataV29
 			//============================================================================/
 
-			ScriptRefDataV24::ScriptRefDataV24( )
-				: name( 0 ) {
-			}
-
-			ScriptRefDataV24::ScriptRefDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
-				auto pointer = assign( p_data, p_size );
-				if ( po_pointer ) { *po_pointer = pointer; }
-			}
-
-			ScriptRefDataV24::ScriptRefDataV24( const ScriptRefDataV24& p_other )
-				: name( p_other.name )
-				, fileName( p_other.fileName ) {
-			}
-
-			ScriptRefDataV24& ScriptRefDataV24::operator=( const ScriptRefDataV24& p_other ) {
-				name = p_other.name;
-				fileName = p_other.fileName;
-				return *this;
-			}
-
-			const byte* ScriptRefDataV24::assign( const byte* p_data, size_t p_size ) {
-				p_data = helpers::read( p_data, p_size, name );
-				p_data = helpers::read( p_data, p_size, fileName );
-				return p_data;
-			}
-
-			//============================================================================/
-			//      TriggerMarkerDataV24
-			//============================================================================/
-
-			TriggerMarkerDataV24::TriggerMarkerDataV24( )
+			TriggerMarkerDataV29::TriggerMarkerDataV29( )
 				: cue( 0 )
 				, end( 0 )
 				, time( 0 )
 				, type( 0 ) {
 			}
 
-			TriggerMarkerDataV24::TriggerMarkerDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TriggerMarkerDataV29::TriggerMarkerDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TriggerMarkerDataV24::TriggerMarkerDataV24( const TriggerMarkerDataV24& p_other )
+			TriggerMarkerDataV29::TriggerMarkerDataV29( const TriggerMarkerDataV29& p_other )
 				: cue( p_other.cue )
 				, end( p_other.end )
 				, time( p_other.time )
 				, type( p_other.type ) {
 			}
 
-			TriggerMarkerDataV24& TriggerMarkerDataV24::operator=( const TriggerMarkerDataV24& p_other ) {
+			TriggerMarkerDataV29& TriggerMarkerDataV29::operator=( const TriggerMarkerDataV29& p_other ) {
 				cue = p_other.cue;
 				end = p_other.end;
 				time = p_other.time;
@@ -1096,7 +1288,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* TriggerMarkerDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* TriggerMarkerDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, cue );
 				p_data = helpers::read( p_data, p_size, end );
 				p_data = helpers::read( p_data, p_size, time );
@@ -1105,40 +1297,40 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      TriggerKeyDataV24
+			//     TriggerKeyDataV29
 			//============================================================================/
 
-			TriggerKeyDataV24::TriggerKeyDataV24( )
+			TriggerKeyDataV29::TriggerKeyDataV29( )
 				: name( 0 ) {
 			}
 
-			TriggerKeyDataV24::TriggerKeyDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			TriggerKeyDataV29::TriggerKeyDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			TriggerKeyDataV24::TriggerKeyDataV24( const TriggerKeyDataV24& p_other )
+			TriggerKeyDataV29::TriggerKeyDataV29( const TriggerKeyDataV29& p_other )
 				: name( p_other.name )
 				, triggerMarkers( p_other.triggerMarkers ) {
 			}
 
-			TriggerKeyDataV24& TriggerKeyDataV24::operator=( const TriggerKeyDataV24& p_other ) {
+			TriggerKeyDataV29& TriggerKeyDataV29::operator=( const TriggerKeyDataV29& p_other ) {
 				name = p_other.name;
 				triggerMarkers = p_other.triggerMarkers;
 				return *this;
 			}
 
-			const byte* TriggerKeyDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* TriggerKeyDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, triggerMarkers );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      ScriptFileDataV24
+			//      ScriptFileDataV29
 			//============================================================================/
 
-			ScriptFileDataV24::ScriptFileDataV24( )
+			ScriptFileDataV29::ScriptFileDataV29( )
 				: musicCue( 0 )
 				, reverbOverride( 0 )
 				, snapshot( 0 )
@@ -1148,15 +1340,16 @@ namespace gw2f {
 				, soundPoolDelay( 0 )
 				, volume( 0 )
 				, musicCuePriority( 0 )
-				, musicMutePriority( 0 ) {
+				, musicMutePriority( 0 )
+				, soundPoolMode( 0 ) {
 			}
 
-			ScriptFileDataV24::ScriptFileDataV24( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			ScriptFileDataV29::ScriptFileDataV29( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ScriptFileDataV24::ScriptFileDataV24( const ScriptFileDataV24& p_other )
+			ScriptFileDataV29::ScriptFileDataV29( const ScriptFileDataV29& p_other )
 				: musicCue( p_other.musicCue )
 				, reverbOverride( p_other.reverbOverride )
 				, snapshot( p_other.snapshot )
@@ -1165,16 +1358,18 @@ namespace gw2f {
 				, metaSounds( p_other.metaSounds )
 				, scriptRefs( p_other.scriptRefs )
 				, triggerKeys( p_other.triggerKeys )
+				, property( p_other.property )
 				, flags( p_other.flags )
 				, soundPoolCount( p_other.soundPoolCount )
 				, fadeInTime( p_other.fadeInTime )
 				, soundPoolDelay( p_other.soundPoolDelay )
 				, volume( p_other.volume )
 				, musicCuePriority( p_other.musicCuePriority )
-				, musicMutePriority( p_other.musicMutePriority ) {
+				, musicMutePriority( p_other.musicMutePriority )
+				, soundPoolMode( p_other.soundPoolMode ) {
 			}
 
-			ScriptFileDataV24& ScriptFileDataV24::operator=( const ScriptFileDataV24& p_other ) {
+			ScriptFileDataV29& ScriptFileDataV29::operator=( const ScriptFileDataV29& p_other ) {
 				musicCue = p_other.musicCue;
 				reverbOverride = p_other.reverbOverride;
 				snapshot = p_other.snapshot;
@@ -1183,6 +1378,7 @@ namespace gw2f {
 				metaSounds = p_other.metaSounds;
 				scriptRefs = p_other.scriptRefs;
 				triggerKeys = p_other.triggerKeys;
+				property = p_other.property;
 				flags = p_other.flags;
 				soundPoolCount = p_other.soundPoolCount;
 				fadeInTime = p_other.fadeInTime;
@@ -1190,10 +1386,11 @@ namespace gw2f {
 				volume = p_other.volume;
 				musicCuePriority = p_other.musicCuePriority;
 				musicMutePriority = p_other.musicMutePriority;
+				soundPoolMode = p_other.soundPoolMode;
 				return *this;
 			}
 
-			const byte* ScriptFileDataV24::assign( const byte* p_data, size_t p_size ) {
+			const byte* ScriptFileDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, musicCue );
 				p_data = helpers::read( p_data, p_size, reverbOverride );
 				p_data = helpers::read( p_data, p_size, snapshot );
@@ -1202,6 +1399,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, metaSounds );
 				p_data = helpers::read( p_data, p_size, scriptRefs );
 				p_data = helpers::read( p_data, p_size, triggerKeys );
+				p_data = helpers::read( p_data, p_size, property );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, soundPoolCount );
 				p_data = helpers::read( p_data, p_size, fadeInTime );
@@ -1209,6 +1407,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, volume );
 				p_data = helpers::read( p_data, p_size, musicCuePriority );
 				p_data = helpers::read( p_data, p_size, musicMutePriority );
+				p_data = helpers::read( p_data, p_size, soundPoolMode );
 				return p_data;
 			}
 

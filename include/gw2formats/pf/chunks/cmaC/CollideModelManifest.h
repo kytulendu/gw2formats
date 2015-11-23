@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/cmaC/CollideModelManifest.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2015 Khral Steelforge <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
@@ -40,30 +40,30 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct CollideModelManifestFileV0 {
+			GW2FORMATS_API struct CollideModelManifestFile {
 				helpers::WString modelFileStr;
 				helpers::FileName modelFile;
 				helpers::FileName collisionFile;
 				helpers::Array<float> scales;
 			public:
-				CollideModelManifestFileV0( );
-				CollideModelManifestFileV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				CollideModelManifestFileV0( const CollideModelManifestFileV0& p_other );
-				CollideModelManifestFileV0& operator=( const CollideModelManifestFileV0& p_other );
+				CollideModelManifestFile( );
+				CollideModelManifestFile( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				CollideModelManifestFile( const CollideModelManifestFile& p_other );
+				CollideModelManifestFile& operator=( const CollideModelManifestFile& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct CollideModelManifestV0 {
-				helpers::Array<CollideModelManifestFileV0> files;
+			GW2FORMATS_API struct CollideModelManifest {
+				helpers::Array<CollideModelManifestFile> files;
 			public:
-				CollideModelManifestV0( );
-				CollideModelManifestV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				CollideModelManifestV0( const CollideModelManifestV0& p_other );
-				CollideModelManifestV0& operator=( const CollideModelManifestV0& p_other );
+				CollideModelManifest( );
+				CollideModelManifest( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				CollideModelManifest( const CollideModelManifest& p_other );
+				CollideModelManifest& operator=( const CollideModelManifest& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef CollideModelManifestV0 CollideModelManifest;
+			typedef CollideModelManifest CollideModelManifest;
 
 		}; // namespace chunks
 
