@@ -76,7 +76,7 @@ namespace gw2f {
 					return m_data->data( );
 				}
 
-				uint32 length( ) const {
+				size_t length( ) const {
 					return m_data->size( );
 				}
 
