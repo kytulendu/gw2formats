@@ -55,8 +55,8 @@ namespace gw2f {
 			*  \return         const byte* Pointer to the first byte beyond the read data. */
 			template <typename T, size_t TSize>
 			const byte* read( const byte* p_data, size_t& po_size, T( &po_output )[TSize] ) {
-				for ( auto it = std::begin( po_output ); it != std::end( po_output ); it++ ) {
-					p_data = read( p_data, po_size, *it );
+				for ( auto& it : po_output ) {
+					p_data = read( p_data, po_size, it );
 				}
 				return p_data;
 			}

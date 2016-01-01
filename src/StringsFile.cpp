@@ -126,8 +126,8 @@ namespace gw2f {
 	}
 
 	StringsFile::~StringsFile( ) {
-		for ( auto it = std::begin( m_entries ); it != std::end( m_entries ); it++ ) {
-			delete *it;
+		for ( auto& it : m_entries ) {
+			delete it;
 		}
 	}
 
@@ -184,8 +184,8 @@ namespace gw2f {
 
 	void StringsFile::clear( ) {
 		m_language = language::English;
-		for ( auto it = std::begin( m_entries ); it != std::end( m_entries ); it++ ) {
-			delete *it;
+		for ( auto& it : m_entries ) {
+			delete it;
 		}
 		m_entries.clear( );
 	}

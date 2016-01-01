@@ -126,8 +126,8 @@ namespace gw2f {
 	}
 
 	TextureFile::~TextureFile( ) {
-		for ( auto it = std::begin( m_data ); it != std::end( m_data ); it++ ) {
-			delete *it;
+		for ( auto& it : m_data ) {
+			delete it;
 		}
 	}
 
@@ -182,8 +182,8 @@ namespace gw2f {
 	}
 
 	void TextureFile::clear( ) {
-		for ( auto it = std::begin( m_data ); it != std::end( m_data ); it++ ) {
-			delete *it;
+		for ( auto& it : m_data ) {
+			delete it;
 		}
 		m_data.clear( );
 	}
