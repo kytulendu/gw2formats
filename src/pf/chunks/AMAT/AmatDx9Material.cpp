@@ -225,13 +225,15 @@ namespace gw2f {
 			AmatDx9MaterialV11::AmatDx9MaterialV11( const AmatDx9MaterialV11& p_other )
 				: samplers( p_other.samplers )
 				, shaders( p_other.shaders )
-				, techniques( p_other.techniques ) {
+				, techniques( p_other.techniques )
+				, useLegacyBindTextures( p_other.useLegacyBindTextures ) {
 			}
 
 			AmatDx9MaterialV11& AmatDx9MaterialV11::operator=( const AmatDx9MaterialV11& p_other ) {
 				samplers = p_other.samplers;
 				shaders = p_other.shaders;
 				techniques = p_other.techniques;
+				useLegacyBindTextures = p_other.useLegacyBindTextures;
 				return *this;
 			}
 
@@ -239,6 +241,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, samplers );
 				p_data = helpers::read( p_data, p_size, shaders );
 				p_data = helpers::read( p_data, p_size, techniques );
+				p_data = helpers::read( p_data, p_size, useLegacyBindTextures );
 				return p_data;
 			}
 
