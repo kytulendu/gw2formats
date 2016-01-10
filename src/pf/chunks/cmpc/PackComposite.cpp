@@ -237,6 +237,7 @@ namespace gw2f {
 				: name( 0 )
 				, type( 0 )
 				, flags( 0 )
+				, animRoleOverride( 0 )
 				, dyeFlags( 0 )
 				, hideFlags( 0 )
 				, skinFlags( 0 )

@@ -31,7 +31,8 @@ namespace gw2f {
 			//============================================================================/
 
 			AmatDx9SamplerV11::AmatDx9SamplerV11( )
-				: textureIndex( 0 ) {
+				: textureIndex( 0 )
+				, usesBindTexture( 0 ) {
 			}
 
 			AmatDx9SamplerV11::AmatDx9SamplerV11( const byte* p_data, size_t p_size, const byte** po_pointer ) {

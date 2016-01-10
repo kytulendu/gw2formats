@@ -77,14 +77,14 @@ namespace gw2f {
 #elif defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5))
 	typedef char16_t				char16;		/**< UTF-16 character. */
 	typedef char32_t				char32;		/**< UTF-32 character. */
-#  define GW2F_U16(x)				u##x
-#  define GW2F_U32(x)				U##x
+#	define GW2F_U16(x)				u##x
+#	define GW2F_U32(x)				U##x
 #else
 #	if defined(WCHAR_MAX) && (WCHAR_MAX == 0xffff)
 	typedef wchar_t					char16;		/**< UTF-16 character. */
-#    define GW2F_U16(x)				L##x
+#	define GW2F_U16(x)				L##x
 #	else
-     typedef uint16					char16;		/**< UTF-16 character. */
+	typedef uint16					char16;		/**< UTF-16 character. */
 #	endif
 #	if defined(WCHAR_MAX) && (WCHAR_MAX == 0xffffffff)
 	typedef wchar_t					char32;		/**< UTF-32 character. */

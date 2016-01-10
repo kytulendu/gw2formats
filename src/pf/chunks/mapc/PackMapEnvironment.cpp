@@ -731,8 +731,11 @@ namespace gw2f {
 			PackMapEnvLensFlareAtomV46::PackMapEnvLensFlareAtomV46( )
 				: rows( 0 )
 				, columns( 0 )
+				, start( 0 )
+				, fps( 0 )
 				, baseRotation( 0 )
-				, cameraRotation( 0 ) {
+				, cameraRotation( 0 )
+				, flags( 0 ) {
 			}
 
 			PackMapEnvLensFlareAtomV46::PackMapEnvLensFlareAtomV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
@@ -1016,7 +1019,8 @@ namespace gw2f {
 			//============================================================================/
 
 			PackEnvDataSkyCardAnimationV46::PackEnvDataSkyCardAnimationV46( )
-				: textureAnimRotation( 0 ) {
+				: textureAnimRotation( 0 )
+				, texCoords( 0 ) {
 			}
 
 			PackEnvDataSkyCardAnimationV46::PackEnvDataSkyCardAnimationV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
@@ -1180,6 +1184,7 @@ namespace gw2f {
 				, night( p_other.night )
 				, flags( p_other.flags )
 				, name( p_other.name )
+				, location( p_other.location )
 				, material( p_other.material )
 				, ext( p_other.ext ) {
 			}
@@ -1189,6 +1194,7 @@ namespace gw2f {
 				night = p_other.night;
 				flags = p_other.flags;
 				name = p_other.name;
+				location = p_other.location;
 				material = p_other.material;
 				ext = p_other.ext;
 				return *this;
@@ -1199,6 +1205,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, night );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, location );
 				p_data = helpers::read( p_data, p_size, material );
 				p_data = helpers::read( p_data, p_size, ext );
 				return p_data;
@@ -1723,6 +1730,7 @@ namespace gw2f {
 
 			PackMapEnvDataLocalV75::PackMapEnvDataLocalV75( )
 				: bindTarget( 0 )
+				, flags( 0 )
 				, type( 0 )
 				, guid( 0 ) {
 			}
@@ -1846,7 +1854,8 @@ namespace gw2f {
 			//============================================================================/
 
 			PackMapEnvDataGlobalV75::PackMapEnvDataGlobalV75( )
-				: bindTarget( 0 ) {
+				: bindTarget( 0 )
+				, flags( 0 ) {
 			}
 
 			PackMapEnvDataGlobalV75::PackMapEnvDataGlobalV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {

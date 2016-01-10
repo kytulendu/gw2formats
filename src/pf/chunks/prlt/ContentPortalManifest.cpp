@@ -69,7 +69,8 @@ namespace gw2f {
 
 			ContentMapModel::ContentMapModel( )
 				: flags( 0 )
-				, type( 0 ) {
+				, type( 0 )
+				, permutation( 0 ) {
 			}
 
 			ContentMapModel::ContentMapModel( const byte* p_data, size_t p_size, const byte** po_pointer ) {
