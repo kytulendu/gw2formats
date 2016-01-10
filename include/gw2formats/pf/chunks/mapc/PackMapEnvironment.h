@@ -43,32 +43,32 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackMapEnvDataLightV74 {
+			GW2FORMATS_API struct PackMapEnvDataLightV75 {
 				byte3 color;
 				float intensity;
 				float3 direction;
 			public:
-				PackMapEnvDataLightV74( );
-				PackMapEnvDataLightV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLightV74( const PackMapEnvDataLightV74& p_other );
-				PackMapEnvDataLightV74& operator=( const PackMapEnvDataLightV74& p_other );
+				PackMapEnvDataLightV75( );
+				PackMapEnvDataLightV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLightV75( const PackMapEnvDataLightV75& p_other );
+				PackMapEnvDataLightV75& operator=( const PackMapEnvDataLightV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataLightingV74 {
-				helpers::RefList<PackMapEnvDataLightV74> lights;
+			GW2FORMATS_API struct PackMapEnvDataLightingV75 {
+				helpers::RefList<PackMapEnvDataLightV75> lights;
 				float shadowInfluence;
 				byte3 backlightColor;
 				float backlightIntensity;
 			public:
-				PackMapEnvDataLightingV74( );
-				PackMapEnvDataLightingV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLightingV74( const PackMapEnvDataLightingV74& p_other );
-				PackMapEnvDataLightingV74& operator=( const PackMapEnvDataLightingV74& p_other );
+				PackMapEnvDataLightingV75( );
+				PackMapEnvDataLightingV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLightingV75( const PackMapEnvDataLightingV75& p_other );
+				PackMapEnvDataLightingV75& operator=( const PackMapEnvDataLightingV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataLightingCharV45 {
+			GW2FORMATS_API struct PackMapEnvDataLightingCharV46 {
 				float sunScale;
 				float saturation;
 				float sunFill;
@@ -76,24 +76,24 @@ namespace gw2f {
 				float ambFill;
 				byte flags;
 			public:
-				PackMapEnvDataLightingCharV45( );
-				PackMapEnvDataLightingCharV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLightingCharV45( const PackMapEnvDataLightingCharV45& p_other );
-				PackMapEnvDataLightingCharV45& operator=( const PackMapEnvDataLightingCharV45& p_other );
+				PackMapEnvDataLightingCharV46( );
+				PackMapEnvDataLightingCharV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLightingCharV46( const PackMapEnvDataLightingCharV46& p_other );
+				PackMapEnvDataLightingCharV46& operator=( const PackMapEnvDataLightingCharV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataLightingCharGroupV45 {
-				helpers::Array<PackMapEnvDataLightingCharV45> lightingChar;
+			GW2FORMATS_API struct PackMapEnvDataLightingCharGroupV46 {
+				helpers::Array<PackMapEnvDataLightingCharV46> lightingChar;
 			public:
-				PackMapEnvDataLightingCharGroupV45( );
-				PackMapEnvDataLightingCharGroupV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLightingCharGroupV45( const PackMapEnvDataLightingCharGroupV45& p_other );
-				PackMapEnvDataLightingCharGroupV45& operator=( const PackMapEnvDataLightingCharGroupV45& p_other );
+				PackMapEnvDataLightingCharGroupV46( );
+				PackMapEnvDataLightingCharGroupV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLightingCharGroupV46( const PackMapEnvDataLightingCharGroupV46& p_other );
+				PackMapEnvDataLightingCharGroupV46& operator=( const PackMapEnvDataLightingCharGroupV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataLayerAttributesV74 {
+			GW2FORMATS_API struct PackMapEnvDataLayerAttributesV75 {
 				float brightness;
 				float density;
 				float haze;
@@ -103,55 +103,65 @@ namespace gw2f {
 				float fadeEnd;
 				dword reserved;
 			public:
-				PackMapEnvDataLayerAttributesV74( );
-				PackMapEnvDataLayerAttributesV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLayerAttributesV74( const PackMapEnvDataLayerAttributesV74& p_other );
-				PackMapEnvDataLayerAttributesV74& operator=( const PackMapEnvDataLayerAttributesV74& p_other );
+				PackMapEnvDataLayerAttributesV75( );
+				PackMapEnvDataLayerAttributesV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLayerAttributesV75( const PackMapEnvDataLayerAttributesV75& p_other );
+				PackMapEnvDataLayerAttributesV75& operator=( const PackMapEnvDataLayerAttributesV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataLayerV74 {
+			GW2FORMATS_API struct PackMapEnvDataLayerV75 {
 				float altitude;
 				float cutOut;
 				float depth;
 				float extent;
 				float scale;
 				helpers::FileName texture;
-				helpers::Array<PackMapEnvDataLayerAttributesV74> attributes;
+				helpers::Array<PackMapEnvDataLayerAttributesV75> attributes;
 				helpers::WString name;
 				dword reserved;
 			public:
-				PackMapEnvDataLayerV74( );
-				PackMapEnvDataLayerV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLayerV74( const PackMapEnvDataLayerV74& p_other );
-				PackMapEnvDataLayerV74& operator=( const PackMapEnvDataLayerV74& p_other );
+				PackMapEnvDataLayerV75( );
+				PackMapEnvDataLayerV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLayerV75( const PackMapEnvDataLayerV75& p_other );
+				PackMapEnvDataLayerV75& operator=( const PackMapEnvDataLayerV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataCloudsV74 {
-				helpers::Array<PackMapEnvDataLayerV74> layers;
+			GW2FORMATS_API struct PackMapEnvDataCloudsV75 {
+				helpers::Array<PackMapEnvDataLayerV75> layers;
 			public:
-				PackMapEnvDataCloudsV74( );
-				PackMapEnvDataCloudsV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataCloudsV74( const PackMapEnvDataCloudsV74& p_other );
-				PackMapEnvDataCloudsV74& operator=( const PackMapEnvDataCloudsV74& p_other );
+				PackMapEnvDataCloudsV75( );
+				PackMapEnvDataCloudsV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataCloudsV75( const PackMapEnvDataCloudsV75& p_other );
+				PackMapEnvDataCloudsV75& operator=( const PackMapEnvDataCloudsV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataColoredLightRingsV45 {
+			GW2FORMATS_API struct PackMapEnvDataColoredLightRingsV46 {
 				float2 range;
 				float distances[6];
 				byte4 lightColors[6];
 				byte4 shadowColors[6];
 			public:
-				PackMapEnvDataColoredLightRingsV45( );
-				PackMapEnvDataColoredLightRingsV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataColoredLightRingsV45( const PackMapEnvDataColoredLightRingsV45& p_other );
-				PackMapEnvDataColoredLightRingsV45& operator=( const PackMapEnvDataColoredLightRingsV45& p_other );
+				PackMapEnvDataColoredLightRingsV46( );
+				PackMapEnvDataColoredLightRingsV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataColoredLightRingsV46( const PackMapEnvDataColoredLightRingsV46& p_other );
+				PackMapEnvDataColoredLightRingsV46& operator=( const PackMapEnvDataColoredLightRingsV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataEffectV74 {
+			GW2FORMATS_API struct PackMapEnvDataEffectExV46 {
+				dword dummy;
+			public:
+				PackMapEnvDataEffectExV46( );
+				PackMapEnvDataEffectExV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataEffectExV46( const PackMapEnvDataEffectExV46& p_other );
+				PackMapEnvDataEffectExV46& operator=( const PackMapEnvDataEffectExV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataEffectV75 {
 				byte4 glow;
 				byte4 tintColor;
 				byte4 tintTargetColor;
@@ -162,17 +172,23 @@ namespace gw2f {
 				float glowAmplify;
 				float focalDepth;
 				float focalRange;
-				float2 flatteningRange;
-				float2 flatteningCharacterRange;
+
+				float ssaoAmount;
+				float ssaoBrighten;
+				float ssaoContrast;
+				float ssaoSunScale;
+				dword flags;
+				helpers::FileName clutTexturePath;
+				helpers::Ptr<PackMapEnvDataEffectExV46> ext;
 			public:
-				PackMapEnvDataEffectV74( );
-				PackMapEnvDataEffectV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataEffectV74( const PackMapEnvDataEffectV74& p_other );
-				PackMapEnvDataEffectV74& operator=( const PackMapEnvDataEffectV74& p_other );
+				PackMapEnvDataEffectV75( );
+				PackMapEnvDataEffectV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataEffectV75( const PackMapEnvDataEffectV75& p_other );
+				PackMapEnvDataEffectV75& operator=( const PackMapEnvDataEffectV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataHazeV74 {
+			GW2FORMATS_API struct PackMapEnvDataHazeV75 {
 				byte4 nearColor;
 				byte4 farColor;
 				float2 distRange;
@@ -181,14 +197,14 @@ namespace gw2f {
 				float depthCue;
 				float2 sunDirRange;
 			public:
-				PackMapEnvDataHazeV74( );
-				PackMapEnvDataHazeV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataHazeV74( const PackMapEnvDataHazeV74& p_other );
-				PackMapEnvDataHazeV74& operator=( const PackMapEnvDataHazeV74& p_other );
+				PackMapEnvDataHazeV75( );
+				PackMapEnvDataHazeV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataHazeV75( const PackMapEnvDataHazeV75& p_other );
+				PackMapEnvDataHazeV75& operator=( const PackMapEnvDataHazeV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataPFieldV74 {
+			GW2FORMATS_API struct PackMapEnvDataPFieldV75 {
 				float altitude;
 				float2 angle;
 				word clusterCount;
@@ -216,27 +232,27 @@ namespace gw2f {
 				helpers::WString name;
 				dword reserved;
 			public:
-				PackMapEnvDataPFieldV74( );
-				PackMapEnvDataPFieldV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataPFieldV74( const PackMapEnvDataPFieldV74& p_other );
-				PackMapEnvDataPFieldV74& operator=( const PackMapEnvDataPFieldV74& p_other );
+				PackMapEnvDataPFieldV75( );
+				PackMapEnvDataPFieldV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataPFieldV75( const PackMapEnvDataPFieldV75& p_other );
+				PackMapEnvDataPFieldV75& operator=( const PackMapEnvDataPFieldV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataPFieldCutoutV45 {
+			GW2FORMATS_API struct PackMapEnvDataPFieldCutoutV46 {
 				helpers::WString name;
 				float4 x;
 				float4 y;
 				float4 z;
 			public:
-				PackMapEnvDataPFieldCutoutV45( );
-				PackMapEnvDataPFieldCutoutV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataPFieldCutoutV45( const PackMapEnvDataPFieldCutoutV45& p_other );
-				PackMapEnvDataPFieldCutoutV45& operator=( const PackMapEnvDataPFieldCutoutV45& p_other );
+				PackMapEnvDataPFieldCutoutV46( );
+				PackMapEnvDataPFieldCutoutV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataPFieldCutoutV46( const PackMapEnvDataPFieldCutoutV46& p_other );
+				PackMapEnvDataPFieldCutoutV46& operator=( const PackMapEnvDataPFieldCutoutV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSkyV74 {
+			GW2FORMATS_API struct PackMapEnvDataSkyV75 {
 				byte flags;
 				float dayBrightness;
 				float dayHazeBottom;
@@ -252,14 +268,81 @@ namespace gw2f {
 				float nightStarDensity;
 				float verticalOffset;
 			public:
-				PackMapEnvDataSkyV74( );
-				PackMapEnvDataSkyV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSkyV74( const PackMapEnvDataSkyV74& p_other );
-				PackMapEnvDataSkyV74& operator=( const PackMapEnvDataSkyV74& p_other );
+				PackMapEnvDataSkyV75( );
+				PackMapEnvDataSkyV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyV75( const PackMapEnvDataSkyV75& p_other );
+				PackMapEnvDataSkyV75& operator=( const PackMapEnvDataSkyV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSkyCardAttributesV74 {
+			GW2FORMATS_API struct PackMapEnvLensFlareAtomV46 {
+				dword rows;
+				dword columns;
+				dword start;
+				float fps;
+				byte4 color;
+				float2 offset;
+				float2 scale;
+				float baseRotation;
+				float cameraRotation;
+				byte flags;
+			public:
+				PackMapEnvLensFlareAtomV46( );
+				PackMapEnvLensFlareAtomV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvLensFlareAtomV46( const PackMapEnvLensFlareAtomV46& p_other );
+				PackMapEnvLensFlareAtomV46& operator=( const PackMapEnvLensFlareAtomV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvLensFlareTextureV46 {
+				helpers::FileName texture;
+			public:
+				PackMapEnvLensFlareTextureV46( );
+				PackMapEnvLensFlareTextureV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvLensFlareTextureV46( const PackMapEnvLensFlareTextureV46& p_other );
+				PackMapEnvLensFlareTextureV46& operator=( const PackMapEnvLensFlareTextureV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataShaderConstantV46 {
+				dword token;
+				float4 value;
+			public:
+				PackMapEnvDataShaderConstantV46( );
+				PackMapEnvDataShaderConstantV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataShaderConstantV46( const PackMapEnvDataShaderConstantV46& p_other );
+				PackMapEnvDataShaderConstantV46& operator=( const PackMapEnvDataShaderConstantV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvLensFlareV46 {
+				helpers::Array<PackMapEnvLensFlareAtomV46> atoms;
+				helpers::Array<PackMapEnvLensFlareTextureV46> textures;
+				helpers::FileName material;
+				float2 fadeBand;
+				float2 reverseFadeBand;
+				float opacityCoeff;
+				byte flags;
+				helpers::Array<PackMapEnvDataShaderConstantV46> constants;
+			public:
+				PackMapEnvLensFlareV46( );
+				PackMapEnvLensFlareV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvLensFlareV46( const PackMapEnvLensFlareV46& p_other );
+				PackMapEnvLensFlareV46& operator=( const PackMapEnvLensFlareV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataSkyCardAttributesExV46 {
+				dword dummy;
+			public:
+				PackMapEnvDataSkyCardAttributesExV46( );
+				PackMapEnvDataSkyCardAttributesExV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyCardAttributesExV46( const PackMapEnvDataSkyCardAttributesExV46& p_other );
+				PackMapEnvDataSkyCardAttributesExV46& operator=( const PackMapEnvDataSkyCardAttributesExV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataSkyCardAttributesV75 {
 				float azimuth;
 				float density;
 				float hazeDensity;
@@ -271,38 +354,107 @@ namespace gw2f {
 				helpers::FileName texture;
 				float4 textureUV;
 				float brightness;
+				helpers::Ptr<PackMapEnvLensFlareV46> lensFlare;
+				helpers::Ptr<PackMapEnvDataSkyCardAttributesExV46> ext;
 			public:
-				PackMapEnvDataSkyCardAttributesV74( );
-				PackMapEnvDataSkyCardAttributesV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSkyCardAttributesV74( const PackMapEnvDataSkyCardAttributesV74& p_other );
-				PackMapEnvDataSkyCardAttributesV74& operator=( const PackMapEnvDataSkyCardAttributesV74& p_other );
+				PackMapEnvDataSkyCardAttributesV75( );
+				PackMapEnvDataSkyCardAttributesV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyCardAttributesV75( const PackMapEnvDataSkyCardAttributesV75& p_other );
+				PackMapEnvDataSkyCardAttributesV75& operator=( const PackMapEnvDataSkyCardAttributesV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSkyCardV74 {
-				PackMapEnvDataSkyCardAttributesV74 day;
-				PackMapEnvDataSkyCardAttributesV74 night;
+			GW2FORMATS_API struct PackMapEnvDataShaderTextureV46 {
+				helpers::FileName filename;
+				float4 textureUV;
+			public:
+				PackMapEnvDataShaderTextureV46( );
+				PackMapEnvDataShaderTextureV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataShaderTextureV46( const PackMapEnvDataShaderTextureV46& p_other );
+				PackMapEnvDataShaderTextureV46& operator=( const PackMapEnvDataShaderTextureV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackEnvDataSkyCardAnimationV46 {
+				float2 textureAnimTranslation;
+				float2 textureAnimScaleRangeX;
+				float2 textureAnimScaleRangeY;
+				float2 textureAnimScaleSpeed;
+				float textureAnimRotation;
+				dword texCoords;
+			public:
+				PackEnvDataSkyCardAnimationV46( );
+				PackEnvDataSkyCardAnimationV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackEnvDataSkyCardAnimationV46( const PackEnvDataSkyCardAnimationV46& p_other );
+				PackEnvDataSkyCardAnimationV46& operator=( const PackEnvDataSkyCardAnimationV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataSkycardFlipbookV46 {
+				dword rows;
+				dword columns;
+				dword start;
+				dword count;
+				float fps;
+			public:
+				PackMapEnvDataSkycardFlipbookV46( );
+				PackMapEnvDataSkycardFlipbookV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkycardFlipbookV46( const PackMapEnvDataSkycardFlipbookV46& p_other );
+				PackMapEnvDataSkycardFlipbookV46& operator=( const PackMapEnvDataSkycardFlipbookV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataSkyCardMaterialV46 {
+				helpers::FileName filename;
+				helpers::Array<PackMapEnvDataShaderConstantV46> constants;
+				helpers::Array<PackMapEnvDataShaderTextureV46> textures;
+				PackEnvDataSkyCardAnimationV46 textureAnimation;
+				PackMapEnvDataSkycardFlipbookV46 flipbook;
+			public:
+				PackMapEnvDataSkyCardMaterialV46( );
+				PackMapEnvDataSkyCardMaterialV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyCardMaterialV46( const PackMapEnvDataSkyCardMaterialV46& p_other );
+				PackMapEnvDataSkyCardMaterialV46& operator=( const PackMapEnvDataSkyCardMaterialV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataSkyCardExV46 {
+				dword dummy;
+			public:
+				PackMapEnvDataSkyCardExV46( );
+				PackMapEnvDataSkyCardExV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyCardExV46( const PackMapEnvDataSkyCardExV46& p_other );
+				PackMapEnvDataSkyCardExV46& operator=( const PackMapEnvDataSkyCardExV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataSkyCardV75 {
+				PackMapEnvDataSkyCardAttributesV75 day;
+				PackMapEnvDataSkyCardAttributesV75 night;
 				dword flags;
 				helpers::WString name;
+				float3 location;
+				helpers::Ptr<PackMapEnvDataSkyCardMaterialV46> material;
+				helpers::Ptr<PackMapEnvDataSkyCardExV46> ext;
 			public:
-				PackMapEnvDataSkyCardV74( );
-				PackMapEnvDataSkyCardV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSkyCardV74( const PackMapEnvDataSkyCardV74& p_other );
-				PackMapEnvDataSkyCardV74& operator=( const PackMapEnvDataSkyCardV74& p_other );
+				PackMapEnvDataSkyCardV75( );
+				PackMapEnvDataSkyCardV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyCardV75( const PackMapEnvDataSkyCardV75& p_other );
+				PackMapEnvDataSkyCardV75& operator=( const PackMapEnvDataSkyCardV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSkyCardsV74 {
-				helpers::Array<PackMapEnvDataSkyCardV74> cards;
+			GW2FORMATS_API struct PackMapEnvDataSkyCardsV75 {
+				helpers::Array<PackMapEnvDataSkyCardV75> cards;
 			public:
-				PackMapEnvDataSkyCardsV74( );
-				PackMapEnvDataSkyCardsV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSkyCardsV74( const PackMapEnvDataSkyCardsV74& p_other );
-				PackMapEnvDataSkyCardsV74& operator=( const PackMapEnvDataSkyCardsV74& p_other );
+				PackMapEnvDataSkyCardsV75( );
+				PackMapEnvDataSkyCardsV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyCardsV75( const PackMapEnvDataSkyCardsV75& p_other );
+				PackMapEnvDataSkyCardsV75& operator=( const PackMapEnvDataSkyCardsV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSpawnModelDataV45 {
+			GW2FORMATS_API struct PackMapEnvDataSpawnModelDataV46 {
 				dword2 spawnRange;
 				dword2 lifeSpan;
 				float2 scaleRange;
@@ -317,35 +469,35 @@ namespace gw2f {
 				helpers::FileName modelFile;
 				word maxConcurrent;
 			public:
-				PackMapEnvDataSpawnModelDataV45( );
-				PackMapEnvDataSpawnModelDataV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSpawnModelDataV45( const PackMapEnvDataSpawnModelDataV45& p_other );
-				PackMapEnvDataSpawnModelDataV45& operator=( const PackMapEnvDataSpawnModelDataV45& p_other );
+				PackMapEnvDataSpawnModelDataV46( );
+				PackMapEnvDataSpawnModelDataV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSpawnModelDataV46( const PackMapEnvDataSpawnModelDataV46& p_other );
+				PackMapEnvDataSpawnModelDataV46& operator=( const PackMapEnvDataSpawnModelDataV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSpawnListV45 {
-				helpers::Array<PackMapEnvDataSpawnModelDataV45> spawns;
+			GW2FORMATS_API struct PackMapEnvDataSpawnListV46 {
+				helpers::Array<PackMapEnvDataSpawnModelDataV46> spawns;
 			public:
-				PackMapEnvDataSpawnListV45( );
-				PackMapEnvDataSpawnListV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSpawnListV45( const PackMapEnvDataSpawnListV45& p_other );
-				PackMapEnvDataSpawnListV45& operator=( const PackMapEnvDataSpawnListV45& p_other );
+				PackMapEnvDataSpawnListV46( );
+				PackMapEnvDataSpawnListV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSpawnListV46( const PackMapEnvDataSpawnListV46& p_other );
+				PackMapEnvDataSpawnListV46& operator=( const PackMapEnvDataSpawnListV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSpawnGroupsV45 {
-				helpers::Array<PackMapEnvDataSpawnListV45> spawnGroups;
+			GW2FORMATS_API struct PackMapEnvDataSpawnGroupsV46 {
+				helpers::Array<PackMapEnvDataSpawnListV46> spawnGroups;
 				helpers::Array<qword> targets;
 			public:
-				PackMapEnvDataSpawnGroupsV45( );
-				PackMapEnvDataSpawnGroupsV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSpawnGroupsV45( const PackMapEnvDataSpawnGroupsV45& p_other );
-				PackMapEnvDataSpawnGroupsV45& operator=( const PackMapEnvDataSpawnGroupsV45& p_other );
+				PackMapEnvDataSpawnGroupsV46( );
+				PackMapEnvDataSpawnGroupsV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSpawnGroupsV46( const PackMapEnvDataSpawnGroupsV46& p_other );
+				PackMapEnvDataSpawnGroupsV46& operator=( const PackMapEnvDataSpawnGroupsV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataWaterV74 {
+			GW2FORMATS_API struct PackMapEnvDataWaterV75 {
 				dword waterFlags;
 				float animAmplitude;
 				float animChoppiness;
@@ -379,14 +531,14 @@ namespace gw2f {
 				byte4 foamColor0;
 				byte4 foamColor1;
 			public:
-				PackMapEnvDataWaterV74( );
-				PackMapEnvDataWaterV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataWaterV74( const PackMapEnvDataWaterV74& p_other );
-				PackMapEnvDataWaterV74& operator=( const PackMapEnvDataWaterV74& p_other );
+				PackMapEnvDataWaterV75( );
+				PackMapEnvDataWaterV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataWaterV75( const PackMapEnvDataWaterV75& p_other );
+				PackMapEnvDataWaterV75& operator=( const PackMapEnvDataWaterV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataWindV74 {
+			GW2FORMATS_API struct PackMapEnvDataWindV75 {
 				byte azimuth;
 				byte elevation;
 				byte noise;
@@ -395,24 +547,56 @@ namespace gw2f {
 				byte gustFreq;
 				byte gustSpeed;
 			public:
-				PackMapEnvDataWindV74( );
-				PackMapEnvDataWindV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataWindV74( const PackMapEnvDataWindV74& p_other );
-				PackMapEnvDataWindV74& operator=( const PackMapEnvDataWindV74& p_other );
+				PackMapEnvDataWindV75( );
+				PackMapEnvDataWindV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataWindV75( const PackMapEnvDataWindV75& p_other );
+				PackMapEnvDataWindV75& operator=( const PackMapEnvDataWindV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataAudioV45 {
+			GW2FORMATS_API struct PackMapEnvDataAudioV46 {
 				qword token;
 			public:
-				PackMapEnvDataAudioV45( );
-				PackMapEnvDataAudioV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataAudioV45( const PackMapEnvDataAudioV45& p_other );
-				PackMapEnvDataAudioV45& operator=( const PackMapEnvDataAudioV45& p_other );
+				PackMapEnvDataAudioV46( );
+				PackMapEnvDataAudioV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataAudioV46( const PackMapEnvDataAudioV46& p_other );
+				PackMapEnvDataAudioV46& operator=( const PackMapEnvDataAudioV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataShapeV45 {
+
+			GW2FORMATS_API struct PackMapEnvDataBaseEx2V46 {
+				dword dummy;
+			public:
+				PackMapEnvDataBaseEx2V46( );
+				PackMapEnvDataBaseEx2V46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataBaseEx2V46( const PackMapEnvDataBaseEx2V46& p_other );
+				PackMapEnvDataBaseEx2V46& operator=( const PackMapEnvDataBaseEx2V46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataBaseExV46 {
+				helpers::Ptr<PackMapEnvDataBaseEx2V46> ext2;
+				float brightTime;
+				float dimTime;
+				float darkCoeff;
+				float darkExp;
+				float darkMin;
+				float darkMax;
+				float brightMin;
+				float brightMax;
+				float brightScale;
+				float darkScale;
+				float4 waterReflectionParams;
+			public:
+				PackMapEnvDataBaseExV46( );
+				PackMapEnvDataBaseExV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataBaseExV46( const PackMapEnvDataBaseExV46& p_other );
+				PackMapEnvDataBaseExV46& operator=( const PackMapEnvDataBaseExV46& p_other );
+				const byte* assign( const byte* p_data, size_t p_size );
+			};
+
+			GW2FORMATS_API struct PackMapEnvDataShapeV46 {
 				float3 center;
 				float height;
 				float fadeHorizInner;
@@ -421,96 +605,98 @@ namespace gw2f {
 				helpers::Array<float2> vertexArray;
 				byte shapeType;
 			public:
-				PackMapEnvDataShapeV45( );
-				PackMapEnvDataShapeV45( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataShapeV45( const PackMapEnvDataShapeV45& p_other );
-				PackMapEnvDataShapeV45& operator=( const PackMapEnvDataShapeV45& p_other );
+				PackMapEnvDataShapeV46( );
+				PackMapEnvDataShapeV46( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataShapeV46( const PackMapEnvDataShapeV46& p_other );
+				PackMapEnvDataShapeV46& operator=( const PackMapEnvDataShapeV46& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataLocalV74 {
-				helpers::Array<PackMapEnvDataLightingV74> lighting;
-				helpers::Array<PackMapEnvDataLightingCharGroupV45> lightingCharGroups;
-				helpers::Ptr<PackMapEnvDataCloudsV74> clouds;
-				helpers::RefList<PackMapEnvDataColoredLightRingsV45> coloredLightRings;
-				helpers::RefList<PackMapEnvDataEffectV74> effect;
-				helpers::RefList<PackMapEnvDataHazeV74> haze;
-				helpers::RefList<PackMapEnvDataPFieldV74> particleFields;
-				helpers::Array<PackMapEnvDataPFieldCutoutV45> particleFieldCutouts;
-				helpers::Ptr<PackMapEnvDataSkyV74> sky;
-				helpers::Ptr<PackMapEnvDataSkyCardsV74> skyCards;
-				helpers::Ptr<PackMapEnvDataSpawnGroupsV45> spawns;
-				helpers::RefList<PackMapEnvDataWaterV74> water;
-				helpers::RefList<PackMapEnvDataWindV74> wind;
-				helpers::RefList<PackMapEnvDataAudioV45> audio;
+			GW2FORMATS_API struct PackMapEnvDataLocalV75 {
+				helpers::Array<PackMapEnvDataLightingV75> lighting;
+				helpers::Array<PackMapEnvDataLightingCharGroupV46> lightingCharGroups;
+				helpers::Ptr<PackMapEnvDataCloudsV75> clouds;
+				helpers::RefList<PackMapEnvDataColoredLightRingsV46> coloredLightRings;
+				helpers::RefList<PackMapEnvDataEffectV75> effect;
+				helpers::RefList<PackMapEnvDataHazeV75> haze;
+				helpers::RefList<PackMapEnvDataPFieldV75> particleFields;
+				helpers::Array<PackMapEnvDataPFieldCutoutV46> particleFieldCutouts;
+				helpers::Ptr<PackMapEnvDataSkyV75> sky;
+				helpers::Ptr<PackMapEnvDataSkyCardsV75> skyCards;
+				helpers::Ptr<PackMapEnvDataSpawnGroupsV46> spawns;
+				helpers::RefList<PackMapEnvDataWaterV75> water;
+				helpers::RefList<PackMapEnvDataWindV75> wind;
+				helpers::RefList<PackMapEnvDataAudioV46> audio;
 				helpers::WString name;
 				helpers::Array<byte> nightMods;
 				qword bindTarget;
-				helpers::WString reserved;
+				dword flags;
+				helpers::Ptr<PackMapEnvDataBaseExV46> ext;
 				byte type;
 				qword guid;
-				helpers::Array<PackMapEnvDataShapeV45> shapeArray;
+				helpers::Array<PackMapEnvDataShapeV46> shapeArray;
 			public:
-				PackMapEnvDataLocalV74( );
-				PackMapEnvDataLocalV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataLocalV74( const PackMapEnvDataLocalV74& p_other );
-				PackMapEnvDataLocalV74& operator=( const PackMapEnvDataLocalV74& p_other );
+				PackMapEnvDataLocalV75( );
+				PackMapEnvDataLocalV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataLocalV75( const PackMapEnvDataLocalV75& p_other );
+				PackMapEnvDataLocalV75& operator=( const PackMapEnvDataLocalV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataSkyModeTexV74 {
+			GW2FORMATS_API struct PackMapEnvDataSkyModeTexV75 {
 				helpers::FileName texPathNE;
 				helpers::FileName texPathSW;
 				helpers::FileName texPathT;
 			public:
-				PackMapEnvDataSkyModeTexV74( );
-				PackMapEnvDataSkyModeTexV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataSkyModeTexV74( const PackMapEnvDataSkyModeTexV74& p_other );
-				PackMapEnvDataSkyModeTexV74& operator=( const PackMapEnvDataSkyModeTexV74& p_other );
+				PackMapEnvDataSkyModeTexV75( );
+				PackMapEnvDataSkyModeTexV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataSkyModeTexV75( const PackMapEnvDataSkyModeTexV75& p_other );
+				PackMapEnvDataSkyModeTexV75& operator=( const PackMapEnvDataSkyModeTexV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvDataGlobalV74 {
-				helpers::Array<PackMapEnvDataLightingV74> lighting;
-				helpers::Array<PackMapEnvDataLightingCharGroupV45> lightingCharGroups;
-				helpers::Ptr<PackMapEnvDataCloudsV74> clouds;
-				helpers::RefList<PackMapEnvDataColoredLightRingsV45> coloredLightRings;
-				helpers::RefList<PackMapEnvDataEffectV74> effect;
-				helpers::RefList<PackMapEnvDataHazeV74> haze;
-				helpers::RefList<PackMapEnvDataPFieldV74> particleFields;
-				helpers::Array<PackMapEnvDataPFieldCutoutV45> particleFieldCutouts;
-				helpers::Ptr<PackMapEnvDataSkyV74> sky;
-				helpers::Ptr<PackMapEnvDataSkyCardsV74> skyCards;
-				helpers::Ptr<PackMapEnvDataSpawnGroupsV45> spawns;
-				helpers::RefList<PackMapEnvDataWaterV74> water;
-				helpers::RefList<PackMapEnvDataWindV74> wind;
-				helpers::RefList<PackMapEnvDataAudioV45> audio;
+			GW2FORMATS_API struct PackMapEnvDataGlobalV75 {
+				helpers::Array<PackMapEnvDataLightingV75> lighting;
+				helpers::Array<PackMapEnvDataLightingCharGroupV46> lightingCharGroups;
+				helpers::Ptr<PackMapEnvDataCloudsV75> clouds;
+				helpers::RefList<PackMapEnvDataColoredLightRingsV46> coloredLightRings;
+				helpers::RefList<PackMapEnvDataEffectV75> effect;
+				helpers::RefList<PackMapEnvDataHazeV75> haze;
+				helpers::RefList<PackMapEnvDataPFieldV75> particleFields;
+				helpers::Array<PackMapEnvDataPFieldCutoutV46> particleFieldCutouts;
+				helpers::Ptr<PackMapEnvDataSkyV75> sky;
+				helpers::Ptr<PackMapEnvDataSkyCardsV75> skyCards;
+				helpers::Ptr<PackMapEnvDataSpawnGroupsV46> spawns;
+				helpers::RefList<PackMapEnvDataWaterV75> water;
+				helpers::RefList<PackMapEnvDataWindV75> wind;
+				helpers::RefList<PackMapEnvDataAudioV46> audio;
 				helpers::WString name;
 				helpers::Array<byte> nightMods;
 				qword bindTarget;
-				helpers::WString reserved;
-				helpers::Array<PackMapEnvDataSkyModeTexV74> skyModeTex;
+				dword flags;
+				helpers::Ptr<PackMapEnvDataBaseExV46> ext;
+				helpers::Array<PackMapEnvDataSkyModeTexV75> skyModeTex;
 				helpers::FileName starFile;
 			public:
-				PackMapEnvDataGlobalV74( );
-				PackMapEnvDataGlobalV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvDataGlobalV74( const PackMapEnvDataGlobalV74& p_other );
-				PackMapEnvDataGlobalV74& operator=( const PackMapEnvDataGlobalV74& p_other );
+				PackMapEnvDataGlobalV75( );
+				PackMapEnvDataGlobalV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvDataGlobalV75( const PackMapEnvDataGlobalV75& p_other );
+				PackMapEnvDataGlobalV75& operator=( const PackMapEnvDataGlobalV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapEnvironmentV74 {
-				helpers::Array<PackMapEnvDataLocalV74> dataLocalArray;
-				helpers::Ptr<PackMapEnvDataGlobalV74> dataGlobal;
+			GW2FORMATS_API struct PackMapEnvironmentV75 {
+				helpers::Array<PackMapEnvDataLocalV75> dataLocalArray;
+				helpers::Ptr<PackMapEnvDataGlobalV75> dataGlobal;
 			public:
-				PackMapEnvironmentV74( );
-				PackMapEnvironmentV74( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapEnvironmentV74( const PackMapEnvironmentV74& p_other );
-				PackMapEnvironmentV74& operator=( const PackMapEnvironmentV74& p_other );
+				PackMapEnvironmentV75( );
+				PackMapEnvironmentV75( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapEnvironmentV75( const PackMapEnvironmentV75& p_other );
+				PackMapEnvironmentV75& operator=( const PackMapEnvironmentV75& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackMapEnvironmentV74 PackMapEnvironment;
+			typedef PackMapEnvironmentV75 PackMapEnvironment;
 
 		}; // namespace chunks
 

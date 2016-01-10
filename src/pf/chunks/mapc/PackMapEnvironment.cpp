@@ -27,32 +27,32 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapEnvDataLightV74
+			//      PackMapEnvDataLightV75
 			//============================================================================/
 
-			PackMapEnvDataLightV74::PackMapEnvDataLightV74( )
+			PackMapEnvDataLightV75::PackMapEnvDataLightV75( )
 				: intensity( 0 ) {
 			}
 
-			PackMapEnvDataLightV74::PackMapEnvDataLightV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLightV75::PackMapEnvDataLightV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLightV74::PackMapEnvDataLightV74( const PackMapEnvDataLightV74& p_other )
+			PackMapEnvDataLightV75::PackMapEnvDataLightV75( const PackMapEnvDataLightV75& p_other )
 				: color( p_other.color )
 				, intensity( p_other.intensity )
 				, direction( p_other.direction ) {
 			}
 
-			PackMapEnvDataLightV74& PackMapEnvDataLightV74::operator=( const PackMapEnvDataLightV74& p_other ) {
+			PackMapEnvDataLightV75& PackMapEnvDataLightV75::operator=( const PackMapEnvDataLightV75& p_other ) {
 				color = p_other.color;
 				intensity = p_other.intensity;
 				direction = p_other.direction;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLightV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLightV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, color );
 				p_data = helpers::read( p_data, p_size, intensity );
 				p_data = helpers::read( p_data, p_size, direction );
@@ -60,27 +60,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataLightingV74
+			//      PackMapEnvDataLightingV75
 			//============================================================================/
 
-			PackMapEnvDataLightingV74::PackMapEnvDataLightingV74( )
+			PackMapEnvDataLightingV75::PackMapEnvDataLightingV75( )
 				: shadowInfluence( 0 )
 				, backlightIntensity( 0 ) {
 			}
 
-			PackMapEnvDataLightingV74::PackMapEnvDataLightingV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLightingV75::PackMapEnvDataLightingV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLightingV74::PackMapEnvDataLightingV74( const PackMapEnvDataLightingV74& p_other )
+			PackMapEnvDataLightingV75::PackMapEnvDataLightingV75( const PackMapEnvDataLightingV75& p_other )
 				: lights( p_other.lights )
 				, shadowInfluence( p_other.shadowInfluence )
 				, backlightColor( p_other.backlightColor )
 				, backlightIntensity( p_other.backlightIntensity ) {
 			}
 
-			PackMapEnvDataLightingV74& PackMapEnvDataLightingV74::operator=( const PackMapEnvDataLightingV74& p_other ) {
+			PackMapEnvDataLightingV75& PackMapEnvDataLightingV75::operator=( const PackMapEnvDataLightingV75& p_other ) {
 				lights = p_other.lights;
 				shadowInfluence = p_other.shadowInfluence;
 				backlightColor = p_other.backlightColor;
@@ -88,7 +88,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLightingV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLightingV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, lights );
 				p_data = helpers::read( p_data, p_size, shadowInfluence );
 				p_data = helpers::read( p_data, p_size, backlightColor );
@@ -97,10 +97,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataLightingCharV45
+			//      PackMapEnvDataLightingCharV46
 			//============================================================================/
 
-			PackMapEnvDataLightingCharV45::PackMapEnvDataLightingCharV45( )
+			PackMapEnvDataLightingCharV46::PackMapEnvDataLightingCharV46( )
 				: sunScale( 0 )
 				, saturation( 0 )
 				, sunFill( 0 )
@@ -109,12 +109,12 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackMapEnvDataLightingCharV45::PackMapEnvDataLightingCharV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLightingCharV46::PackMapEnvDataLightingCharV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLightingCharV45::PackMapEnvDataLightingCharV45( const PackMapEnvDataLightingCharV45& p_other )
+			PackMapEnvDataLightingCharV46::PackMapEnvDataLightingCharV46( const PackMapEnvDataLightingCharV46& p_other )
 				: sunScale( p_other.sunScale )
 				, saturation( p_other.saturation )
 				, sunFill( p_other.sunFill )
@@ -123,7 +123,7 @@ namespace gw2f {
 				, flags( p_other.flags ) {
 			}
 
-			PackMapEnvDataLightingCharV45& PackMapEnvDataLightingCharV45::operator=( const PackMapEnvDataLightingCharV45& p_other ) {
+			PackMapEnvDataLightingCharV46& PackMapEnvDataLightingCharV46::operator=( const PackMapEnvDataLightingCharV46& p_other ) {
 				sunScale = p_other.sunScale;
 				saturation = p_other.saturation;
 				sunFill = p_other.sunFill;
@@ -133,7 +133,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLightingCharV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLightingCharV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sunScale );
 				p_data = helpers::read( p_data, p_size, saturation );
 				p_data = helpers::read( p_data, p_size, sunFill );
@@ -144,36 +144,36 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataLightingCharGroupV45
+			//      PackMapEnvDataLightingCharGroupV46
 			//============================================================================/
 
-			PackMapEnvDataLightingCharGroupV45::PackMapEnvDataLightingCharGroupV45( ) {
+			PackMapEnvDataLightingCharGroupV46::PackMapEnvDataLightingCharGroupV46( ) {
 			}
 
-			PackMapEnvDataLightingCharGroupV45::PackMapEnvDataLightingCharGroupV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLightingCharGroupV46::PackMapEnvDataLightingCharGroupV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLightingCharGroupV45::PackMapEnvDataLightingCharGroupV45( const PackMapEnvDataLightingCharGroupV45& p_other )
+			PackMapEnvDataLightingCharGroupV46::PackMapEnvDataLightingCharGroupV46( const PackMapEnvDataLightingCharGroupV46& p_other )
 				: lightingChar( p_other.lightingChar ) {
 			}
 
-			PackMapEnvDataLightingCharGroupV45& PackMapEnvDataLightingCharGroupV45::operator=( const PackMapEnvDataLightingCharGroupV45& p_other ) {
+			PackMapEnvDataLightingCharGroupV46& PackMapEnvDataLightingCharGroupV46::operator=( const PackMapEnvDataLightingCharGroupV46& p_other ) {
 				lightingChar = p_other.lightingChar;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLightingCharGroupV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLightingCharGroupV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, lightingChar );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataLayerAttributesV74
+			//      PackMapEnvDataLayerAttributesV75
 			//============================================================================/
 
-			PackMapEnvDataLayerAttributesV74::PackMapEnvDataLayerAttributesV74( )
+			PackMapEnvDataLayerAttributesV75::PackMapEnvDataLayerAttributesV75( )
 				: brightness( 0 )
 				, density( 0 )
 				, haze( 0 )
@@ -183,12 +183,12 @@ namespace gw2f {
 				, reserved( 0 ) {
 			}
 
-			PackMapEnvDataLayerAttributesV74::PackMapEnvDataLayerAttributesV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLayerAttributesV75::PackMapEnvDataLayerAttributesV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLayerAttributesV74::PackMapEnvDataLayerAttributesV74( const PackMapEnvDataLayerAttributesV74& p_other )
+			PackMapEnvDataLayerAttributesV75::PackMapEnvDataLayerAttributesV75( const PackMapEnvDataLayerAttributesV75& p_other )
 				: brightness( p_other.brightness )
 				, density( p_other.density )
 				, haze( p_other.haze )
@@ -199,7 +199,7 @@ namespace gw2f {
 				, reserved( p_other.reserved ) {
 			}
 
-			PackMapEnvDataLayerAttributesV74& PackMapEnvDataLayerAttributesV74::operator=( const PackMapEnvDataLayerAttributesV74& p_other ) {
+			PackMapEnvDataLayerAttributesV75& PackMapEnvDataLayerAttributesV75::operator=( const PackMapEnvDataLayerAttributesV75& p_other ) {
 				brightness = p_other.brightness;
 				density = p_other.density;
 				haze = p_other.haze;
@@ -211,7 +211,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLayerAttributesV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLayerAttributesV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, brightness );
 				p_data = helpers::read( p_data, p_size, density );
 				p_data = helpers::read( p_data, p_size, haze );
@@ -224,10 +224,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataLayerV74
+			//      PackMapEnvDataLayerV75
 			//============================================================================/
 
-			PackMapEnvDataLayerV74::PackMapEnvDataLayerV74( )
+			PackMapEnvDataLayerV75::PackMapEnvDataLayerV75( )
 				: altitude( 0 )
 				, cutOut( 0 )
 				, depth( 0 )
@@ -236,12 +236,12 @@ namespace gw2f {
 				, reserved( 0 ) {
 			}
 
-			PackMapEnvDataLayerV74::PackMapEnvDataLayerV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLayerV75::PackMapEnvDataLayerV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLayerV74::PackMapEnvDataLayerV74( const PackMapEnvDataLayerV74& p_other )
+			PackMapEnvDataLayerV75::PackMapEnvDataLayerV75( const PackMapEnvDataLayerV75& p_other )
 				: altitude( p_other.altitude )
 				, cutOut( p_other.cutOut )
 				, depth( p_other.depth )
@@ -253,7 +253,7 @@ namespace gw2f {
 				, reserved( p_other.reserved ) {
 			}
 
-			PackMapEnvDataLayerV74& PackMapEnvDataLayerV74::operator=( const PackMapEnvDataLayerV74& p_other ) {
+			PackMapEnvDataLayerV75& PackMapEnvDataLayerV75::operator=( const PackMapEnvDataLayerV75& p_other ) {
 				altitude = p_other.altitude;
 				cutOut = p_other.cutOut;
 				depth = p_other.depth;
@@ -266,7 +266,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLayerV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLayerV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, altitude );
 				p_data = helpers::read( p_data, p_size, cutOut );
 				p_data = helpers::read( p_data, p_size, depth );
@@ -280,51 +280,51 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataCloudsV74
+			//      PackMapEnvDataCloudsV75
 			//============================================================================/
 
-			PackMapEnvDataCloudsV74::PackMapEnvDataCloudsV74( ) {
+			PackMapEnvDataCloudsV75::PackMapEnvDataCloudsV75( ) {
 			}
 
-			PackMapEnvDataCloudsV74::PackMapEnvDataCloudsV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataCloudsV75::PackMapEnvDataCloudsV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataCloudsV74::PackMapEnvDataCloudsV74( const PackMapEnvDataCloudsV74& p_other )
+			PackMapEnvDataCloudsV75::PackMapEnvDataCloudsV75( const PackMapEnvDataCloudsV75& p_other )
 				: layers( p_other.layers ) {
 			}
 
-			PackMapEnvDataCloudsV74& PackMapEnvDataCloudsV74::operator=( const PackMapEnvDataCloudsV74& p_other ) {
+			PackMapEnvDataCloudsV75& PackMapEnvDataCloudsV75::operator=( const PackMapEnvDataCloudsV75& p_other ) {
 				layers = p_other.layers;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataCloudsV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataCloudsV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, layers );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataColoredLightRingsV45
+			//      PackMapEnvDataColoredLightRingsV46
 			//============================================================================/
 
-			PackMapEnvDataColoredLightRingsV45::PackMapEnvDataColoredLightRingsV45( ) {
+			PackMapEnvDataColoredLightRingsV46::PackMapEnvDataColoredLightRingsV46( ) {
 			}
 
-			PackMapEnvDataColoredLightRingsV45::PackMapEnvDataColoredLightRingsV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataColoredLightRingsV46::PackMapEnvDataColoredLightRingsV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataColoredLightRingsV45::PackMapEnvDataColoredLightRingsV45( const PackMapEnvDataColoredLightRingsV45& p_other )
+			PackMapEnvDataColoredLightRingsV46::PackMapEnvDataColoredLightRingsV46( const PackMapEnvDataColoredLightRingsV46& p_other )
 				: range( p_other.range ) {
 				std::copy( p_other.distances, p_other.distances + 6, distances );
 				std::copy( p_other.lightColors, p_other.lightColors + 6, lightColors );
 				std::copy( p_other.shadowColors, p_other.shadowColors + 6, shadowColors );
 			}
 
-			PackMapEnvDataColoredLightRingsV45& PackMapEnvDataColoredLightRingsV45::operator=( const PackMapEnvDataColoredLightRingsV45& p_other ) {
+			PackMapEnvDataColoredLightRingsV46& PackMapEnvDataColoredLightRingsV46::operator=( const PackMapEnvDataColoredLightRingsV46& p_other ) {
 				range = p_other.range;
 				std::copy( p_other.distances, p_other.distances + 6, distances );
 				std::copy( p_other.lightColors, p_other.lightColors + 6, lightColors );
@@ -332,7 +332,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataColoredLightRingsV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataColoredLightRingsV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, range );
 				p_data = helpers::read( p_data, p_size, distances );
 				p_data = helpers::read( p_data, p_size, lightColors );
@@ -341,24 +341,56 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataEffectV74
+			//      PackMapEnvDataEffectExV46
 			//============================================================================/
 
-			PackMapEnvDataEffectV74::PackMapEnvDataEffectV74( )
+			PackMapEnvDataEffectExV46::PackMapEnvDataEffectExV46( )
+				: dummy( 0 ) {
+			}
+
+			PackMapEnvDataEffectExV46::PackMapEnvDataEffectExV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataEffectExV46::PackMapEnvDataEffectExV46( const PackMapEnvDataEffectExV46& p_other )
+				: dummy( p_other.dummy ) {
+			}
+
+			PackMapEnvDataEffectExV46& PackMapEnvDataEffectExV46::operator=( const PackMapEnvDataEffectExV46& p_other ) {
+				dummy = p_other.dummy;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataEffectExV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, dummy );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataEffectV75
+			//============================================================================/
+
+			PackMapEnvDataEffectV75::PackMapEnvDataEffectV75( )
 				: saturation( 0 )
 				, tintAmount( 0 )
 				, tintFocus( 0 )
 				, glowAmplify( 0 )
 				, focalDepth( 0 )
-				, focalRange( 0 ) {
+				, focalRange( 0 ) 
+				, ssaoAmount( 0 )
+				, ssaoBrighten( 0 )
+				, ssaoContrast( 0 )
+				, ssaoSunScale( 0 )
+				, flags( 0 ) {
 			}
 
-			PackMapEnvDataEffectV74::PackMapEnvDataEffectV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataEffectV75::PackMapEnvDataEffectV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataEffectV74::PackMapEnvDataEffectV74( const PackMapEnvDataEffectV74& p_other )
+			PackMapEnvDataEffectV75::PackMapEnvDataEffectV75( const PackMapEnvDataEffectV75& p_other )
 				: glow( p_other.glow )
 				, tintColor( p_other.tintColor )
 				, tintTargetColor( p_other.tintTargetColor )
@@ -369,11 +401,16 @@ namespace gw2f {
 				, glowAmplify( p_other.glowAmplify )
 				, focalDepth( p_other.focalDepth )
 				, focalRange( p_other.focalRange )
-				, flatteningRange( p_other.flatteningRange )
-				, flatteningCharacterRange( p_other.flatteningCharacterRange ) {
+				, ssaoAmount( p_other.ssaoAmount )
+				, ssaoBrighten( p_other.ssaoBrighten )
+				, ssaoContrast( p_other.ssaoContrast )
+				, ssaoSunScale( p_other.ssaoSunScale )
+				, flags( p_other.flags )
+				, clutTexturePath( p_other.clutTexturePath )
+				, ext( p_other.ext ) {
 			}
 
-			PackMapEnvDataEffectV74& PackMapEnvDataEffectV74::operator=( const PackMapEnvDataEffectV74& p_other ) {
+			PackMapEnvDataEffectV75& PackMapEnvDataEffectV75::operator=( const PackMapEnvDataEffectV75& p_other ) {
 				glow = p_other.glow;
 				tintColor = p_other.tintColor;
 				tintTargetColor = p_other.tintTargetColor;
@@ -384,12 +421,17 @@ namespace gw2f {
 				glowAmplify = p_other.glowAmplify;
 				focalDepth = p_other.focalDepth;
 				focalRange = p_other.focalRange;
-				flatteningRange = p_other.flatteningRange;
-				flatteningCharacterRange = p_other.flatteningCharacterRange;
+				ssaoAmount = p_other.ssaoAmount;
+				ssaoBrighten = p_other.ssaoBrighten;
+				ssaoContrast = p_other.ssaoContrast;
+				ssaoSunScale = p_other.ssaoSunScale;
+				flags = p_other.flags;
+				clutTexturePath = p_other.clutTexturePath;
+				ext = p_other.ext;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataEffectV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataEffectV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, glow );
 				p_data = helpers::read( p_data, p_size, tintColor );
 				p_data = helpers::read( p_data, p_size, tintTargetColor );
@@ -400,25 +442,30 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, glowAmplify );
 				p_data = helpers::read( p_data, p_size, focalDepth );
 				p_data = helpers::read( p_data, p_size, focalRange );
-				p_data = helpers::read( p_data, p_size, flatteningRange );
-				p_data = helpers::read( p_data, p_size, flatteningCharacterRange );
+				p_data = helpers::read( p_data, p_size, ssaoAmount );
+				p_data = helpers::read( p_data, p_size, ssaoBrighten );
+				p_data = helpers::read( p_data, p_size, ssaoContrast );
+				p_data = helpers::read( p_data, p_size, ssaoSunScale );
+				p_data = helpers::read( p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, clutTexturePath );
+				p_data = helpers::read( p_data, p_size, ext );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataHazeV74
+			//      PackMapEnvDataHazeV75
 			//============================================================================/
 
-			PackMapEnvDataHazeV74::PackMapEnvDataHazeV74( )
+			PackMapEnvDataHazeV75::PackMapEnvDataHazeV75( )
 				: depthCue( 0 ) {
 			}
 
-			PackMapEnvDataHazeV74::PackMapEnvDataHazeV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataHazeV75::PackMapEnvDataHazeV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataHazeV74::PackMapEnvDataHazeV74( const PackMapEnvDataHazeV74& p_other )
+			PackMapEnvDataHazeV75::PackMapEnvDataHazeV75( const PackMapEnvDataHazeV75& p_other )
 				: nearColor( p_other.nearColor )
 				, farColor( p_other.farColor )
 				, distRange( p_other.distRange )
@@ -428,7 +475,7 @@ namespace gw2f {
 				, sunDirRange( p_other.sunDirRange ) {
 			}
 
-			PackMapEnvDataHazeV74& PackMapEnvDataHazeV74::operator=( const PackMapEnvDataHazeV74& p_other ) {
+			PackMapEnvDataHazeV75& PackMapEnvDataHazeV75::operator=( const PackMapEnvDataHazeV75& p_other ) {
 				nearColor = p_other.nearColor;
 				farColor = p_other.farColor;
 				distRange = p_other.distRange;
@@ -439,7 +486,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataHazeV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataHazeV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, nearColor );
 				p_data = helpers::read( p_data, p_size, farColor );
 				p_data = helpers::read( p_data, p_size, distRange );
@@ -451,10 +498,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataPFieldV74
+			//      PackMapEnvDataPFieldV75
 			//============================================================================/
 
-			PackMapEnvDataPFieldV74::PackMapEnvDataPFieldV74( )
+			PackMapEnvDataPFieldV75::PackMapEnvDataPFieldV75( )
 				: altitude( 0 )
 				, clusterCount( 0 )
 				, depth( 0 )
@@ -469,12 +516,12 @@ namespace gw2f {
 				, reserved( 0 ) {
 			}
 
-			PackMapEnvDataPFieldV74::PackMapEnvDataPFieldV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataPFieldV75::PackMapEnvDataPFieldV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataPFieldV74::PackMapEnvDataPFieldV74( const PackMapEnvDataPFieldV74& p_other )
+			PackMapEnvDataPFieldV75::PackMapEnvDataPFieldV75( const PackMapEnvDataPFieldV75& p_other )
 				: altitude( p_other.altitude )
 				, angle( p_other.angle )
 				, clusterCount( p_other.clusterCount )
@@ -503,7 +550,7 @@ namespace gw2f {
 				, reserved( p_other.reserved ) {
 			}
 
-			PackMapEnvDataPFieldV74& PackMapEnvDataPFieldV74::operator=( const PackMapEnvDataPFieldV74& p_other ) {
+			PackMapEnvDataPFieldV75& PackMapEnvDataPFieldV75::operator=( const PackMapEnvDataPFieldV75& p_other ) {
 				altitude = p_other.altitude;
 				angle = p_other.angle;
 				clusterCount = p_other.clusterCount;
@@ -533,7 +580,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataPFieldV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataPFieldV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, altitude );
 				p_data = helpers::read( p_data, p_size, angle );
 				p_data = helpers::read( p_data, p_size, clusterCount );
@@ -564,25 +611,25 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataPFieldCutoutV45
+			//      PackMapEnvDataPFieldCutoutV46
 			//============================================================================/
 
-			PackMapEnvDataPFieldCutoutV45::PackMapEnvDataPFieldCutoutV45( ) {
+			PackMapEnvDataPFieldCutoutV46::PackMapEnvDataPFieldCutoutV46( ) {
 			}
 
-			PackMapEnvDataPFieldCutoutV45::PackMapEnvDataPFieldCutoutV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataPFieldCutoutV46::PackMapEnvDataPFieldCutoutV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataPFieldCutoutV45::PackMapEnvDataPFieldCutoutV45( const PackMapEnvDataPFieldCutoutV45& p_other )
+			PackMapEnvDataPFieldCutoutV46::PackMapEnvDataPFieldCutoutV46( const PackMapEnvDataPFieldCutoutV46& p_other )
 				: name( p_other.name )
 				, x( p_other.x )
 				, y( p_other.y )
 				, z( p_other.z ) {
 			}
 
-			PackMapEnvDataPFieldCutoutV45& PackMapEnvDataPFieldCutoutV45::operator=( const PackMapEnvDataPFieldCutoutV45& p_other ) {
+			PackMapEnvDataPFieldCutoutV46& PackMapEnvDataPFieldCutoutV46::operator=( const PackMapEnvDataPFieldCutoutV46& p_other ) {
 				name = p_other.name;
 				x = p_other.x;
 				y = p_other.y;
@@ -590,7 +637,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataPFieldCutoutV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataPFieldCutoutV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, x );
 				p_data = helpers::read( p_data, p_size, y );
@@ -599,10 +646,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSkyV74
+			//      PackMapEnvDataSkyV75
 			//============================================================================/
 
-			PackMapEnvDataSkyV74::PackMapEnvDataSkyV74( )
+			PackMapEnvDataSkyV75::PackMapEnvDataSkyV75( )
 				: flags( 0 )
 				, dayBrightness( 0 )
 				, dayHazeBottom( 0 )
@@ -619,12 +666,12 @@ namespace gw2f {
 				, verticalOffset( 0 ) {
 			}
 
-			PackMapEnvDataSkyV74::PackMapEnvDataSkyV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSkyV75::PackMapEnvDataSkyV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSkyV74::PackMapEnvDataSkyV74( const PackMapEnvDataSkyV74& p_other )
+			PackMapEnvDataSkyV75::PackMapEnvDataSkyV75( const PackMapEnvDataSkyV75& p_other )
 				: flags( p_other.flags )
 				, dayBrightness( p_other.dayBrightness )
 				, dayHazeBottom( p_other.dayHazeBottom )
@@ -641,7 +688,7 @@ namespace gw2f {
 				, verticalOffset( p_other.verticalOffset ) {
 			}
 
-			PackMapEnvDataSkyV74& PackMapEnvDataSkyV74::operator=( const PackMapEnvDataSkyV74& p_other ) {
+			PackMapEnvDataSkyV75& PackMapEnvDataSkyV75::operator=( const PackMapEnvDataSkyV75& p_other ) {
 				flags = p_other.flags;
 				dayBrightness = p_other.dayBrightness;
 				dayHazeBottom = p_other.dayHazeBottom;
@@ -659,7 +706,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSkyV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSkyV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, dayBrightness );
 				p_data = helpers::read( p_data, p_size, dayHazeBottom );
@@ -678,10 +725,197 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSkyCardAttributesV74
+			//      PackMapEnvLensFlareAtomV46
 			//============================================================================/
 
-			PackMapEnvDataSkyCardAttributesV74::PackMapEnvDataSkyCardAttributesV74( )
+			PackMapEnvLensFlareAtomV46::PackMapEnvLensFlareAtomV46( )
+				: rows( 0 )
+				, columns( 0 )
+				, baseRotation( 0 )
+				, cameraRotation( 0 ) {
+			}
+
+			PackMapEnvLensFlareAtomV46::PackMapEnvLensFlareAtomV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvLensFlareAtomV46::PackMapEnvLensFlareAtomV46( const PackMapEnvLensFlareAtomV46& p_other )
+				: rows( p_other.rows )
+				, columns( p_other.columns )
+				, start( p_other.start )
+				, fps( p_other.fps )
+				, color( p_other.color )
+				, offset( p_other.offset )
+				, scale( p_other.scale )
+				, baseRotation( p_other.baseRotation )
+				, cameraRotation( p_other.cameraRotation )
+				, flags( p_other.flags ) {
+			}
+
+			PackMapEnvLensFlareAtomV46& PackMapEnvLensFlareAtomV46::operator=( const PackMapEnvLensFlareAtomV46& p_other ) {
+				rows = p_other.rows;
+				columns = p_other.columns;
+				start = p_other.start;
+				fps = p_other.fps;
+				color = p_other.color;
+				offset = p_other.offset;
+				scale = p_other.scale;
+				baseRotation = p_other.baseRotation;
+				cameraRotation = p_other.cameraRotation;
+				flags = p_other.flags;
+				return *this;
+			}
+
+			const byte* PackMapEnvLensFlareAtomV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, rows );
+				p_data = helpers::read( p_data, p_size, columns );
+				p_data = helpers::read( p_data, p_size, start );
+				p_data = helpers::read( p_data, p_size, fps );
+				p_data = helpers::read( p_data, p_size, color );
+				p_data = helpers::read( p_data, p_size, offset );
+				p_data = helpers::read( p_data, p_size, scale );
+				p_data = helpers::read( p_data, p_size, baseRotation );
+				p_data = helpers::read( p_data, p_size, cameraRotation );
+				p_data = helpers::read( p_data, p_size, flags );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvLensFlareTextureV46
+			//============================================================================/
+
+			PackMapEnvLensFlareTextureV46::PackMapEnvLensFlareTextureV46( )
+			{
+			}
+
+			PackMapEnvLensFlareTextureV46::PackMapEnvLensFlareTextureV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvLensFlareTextureV46::PackMapEnvLensFlareTextureV46( const PackMapEnvLensFlareTextureV46& p_other )
+				: texture( p_other.texture ) {
+			}
+
+			PackMapEnvLensFlareTextureV46& PackMapEnvLensFlareTextureV46::operator=( const PackMapEnvLensFlareTextureV46& p_other ) {
+				texture = p_other.texture;
+				return *this;
+			}
+
+			const byte* PackMapEnvLensFlareTextureV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, texture );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataShaderConstantV46
+			//============================================================================/
+
+			PackMapEnvDataShaderConstantV46::PackMapEnvDataShaderConstantV46( )
+			{
+			}
+
+			PackMapEnvDataShaderConstantV46::PackMapEnvDataShaderConstantV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataShaderConstantV46::PackMapEnvDataShaderConstantV46( const PackMapEnvDataShaderConstantV46& p_other )
+				: token( p_other.token )
+				, value( p_other.value ) {
+			}
+
+			PackMapEnvDataShaderConstantV46& PackMapEnvDataShaderConstantV46::operator=( const PackMapEnvDataShaderConstantV46& p_other ) {
+				token = p_other.token;
+				value = p_other.value;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataShaderConstantV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, token );
+				p_data = helpers::read( p_data, p_size, value );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvLensFlareV46
+			//============================================================================/
+
+			PackMapEnvLensFlareV46::PackMapEnvLensFlareV46( ) {
+			}
+
+			PackMapEnvLensFlareV46::PackMapEnvLensFlareV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvLensFlareV46::PackMapEnvLensFlareV46( const PackMapEnvLensFlareV46& p_other )
+				: atoms( p_other.atoms )
+				, textures( p_other.textures )
+				, material( p_other.material )
+				, fadeBand( p_other.fadeBand )
+				, reverseFadeBand( p_other.reverseFadeBand )
+				, opacityCoeff( p_other.opacityCoeff )
+				, flags( p_other.flags )
+				, constants( p_other.constants ) {
+			}
+
+			PackMapEnvLensFlareV46& PackMapEnvLensFlareV46::operator=( const PackMapEnvLensFlareV46& p_other ) {
+				atoms = p_other.atoms;
+				textures = p_other.textures;
+				material = p_other.material;
+				fadeBand = p_other.fadeBand;
+				reverseFadeBand = p_other.reverseFadeBand;
+				opacityCoeff = p_other.opacityCoeff;
+				flags = p_other.flags;
+				constants = p_other.constants;
+				return *this;
+			}
+
+			const byte* PackMapEnvLensFlareV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, atoms );
+				p_data = helpers::read( p_data, p_size, textures );
+				p_data = helpers::read( p_data, p_size, material );
+				p_data = helpers::read( p_data, p_size, fadeBand );
+				p_data = helpers::read( p_data, p_size, reverseFadeBand );
+				p_data = helpers::read( p_data, p_size, opacityCoeff );
+				p_data = helpers::read( p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, constants );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataSkyCardAttributesExV46
+			//============================================================================/
+
+			PackMapEnvDataSkyCardAttributesExV46::PackMapEnvDataSkyCardAttributesExV46( ) {
+			}
+
+			PackMapEnvDataSkyCardAttributesExV46::PackMapEnvDataSkyCardAttributesExV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataSkyCardAttributesExV46::PackMapEnvDataSkyCardAttributesExV46( const PackMapEnvDataSkyCardAttributesExV46& p_other )
+				: dummy( p_other.dummy ) {
+			}
+
+			PackMapEnvDataSkyCardAttributesExV46& PackMapEnvDataSkyCardAttributesExV46::operator=( const PackMapEnvDataSkyCardAttributesExV46& p_other ) {
+				dummy = p_other.dummy;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataSkyCardAttributesExV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, dummy );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataSkyCardAttributesV75
+			//============================================================================/
+
+			PackMapEnvDataSkyCardAttributesV75::PackMapEnvDataSkyCardAttributesV75( )
 				: azimuth( 0 )
 				, density( 0 )
 				, hazeDensity( 0 )
@@ -692,12 +926,12 @@ namespace gw2f {
 				, brightness( 0 ) {
 			}
 
-			PackMapEnvDataSkyCardAttributesV74::PackMapEnvDataSkyCardAttributesV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSkyCardAttributesV75::PackMapEnvDataSkyCardAttributesV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSkyCardAttributesV74::PackMapEnvDataSkyCardAttributesV74( const PackMapEnvDataSkyCardAttributesV74& p_other )
+			PackMapEnvDataSkyCardAttributesV75::PackMapEnvDataSkyCardAttributesV75( const PackMapEnvDataSkyCardAttributesV75& p_other )
 				: azimuth( p_other.azimuth )
 				, density( p_other.density )
 				, hazeDensity( p_other.hazeDensity )
@@ -708,10 +942,12 @@ namespace gw2f {
 				, speed( p_other.speed )
 				, texture( p_other.texture )
 				, textureUV( p_other.textureUV )
-				, brightness( p_other.brightness ) {
+				, brightness( p_other.brightness )
+				, lensFlare( p_other.lensFlare )
+				, ext( p_other.ext ) {
 			}
 
-			PackMapEnvDataSkyCardAttributesV74& PackMapEnvDataSkyCardAttributesV74::operator=( const PackMapEnvDataSkyCardAttributesV74& p_other ) {
+			PackMapEnvDataSkyCardAttributesV75& PackMapEnvDataSkyCardAttributesV75::operator=( const PackMapEnvDataSkyCardAttributesV75& p_other ) {
 				azimuth = p_other.azimuth;
 				density = p_other.density;
 				hazeDensity = p_other.hazeDensity;
@@ -723,10 +959,12 @@ namespace gw2f {
 				texture = p_other.texture;
 				textureUV = p_other.textureUV;
 				brightness = p_other.brightness;
+				lensFlare = p_other.lensFlare;
+				ext = p_other.ext;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSkyCardAttributesV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSkyCardAttributesV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, azimuth );
 				p_data = helpers::read( p_data, p_size, density );
 				p_data = helpers::read( p_data, p_size, hazeDensity );
@@ -738,76 +976,265 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, texture );
 				p_data = helpers::read( p_data, p_size, textureUV );
 				p_data = helpers::read( p_data, p_size, brightness );
+				p_data = helpers::read( p_data, p_size, lensFlare );
+				p_data = helpers::read( p_data, p_size, ext );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSkyCardV74
+			//      PackMapEnvDataShaderTextureV46
 			//============================================================================/
 
-			PackMapEnvDataSkyCardV74::PackMapEnvDataSkyCardV74( )
-				: flags( 0 ) {
+			PackMapEnvDataShaderTextureV46::PackMapEnvDataShaderTextureV46( )
+			{
 			}
 
-			PackMapEnvDataSkyCardV74::PackMapEnvDataSkyCardV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataShaderTextureV46::PackMapEnvDataShaderTextureV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSkyCardV74::PackMapEnvDataSkyCardV74( const PackMapEnvDataSkyCardV74& p_other )
+			PackMapEnvDataShaderTextureV46::PackMapEnvDataShaderTextureV46( const PackMapEnvDataShaderTextureV46& p_other )
+				: filename( p_other.filename )
+				, textureUV( p_other.textureUV ) {
+			}
+
+			PackMapEnvDataShaderTextureV46& PackMapEnvDataShaderTextureV46::operator=( const PackMapEnvDataShaderTextureV46& p_other ) {
+				filename = p_other.filename;
+				textureUV = p_other.textureUV;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataShaderTextureV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, filename );
+				p_data = helpers::read( p_data, p_size, textureUV );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackEnvDataSkyCardAnimationV46
+			//============================================================================/
+
+			PackEnvDataSkyCardAnimationV46::PackEnvDataSkyCardAnimationV46( )
+				: textureAnimRotation( 0 ) {
+			}
+
+			PackEnvDataSkyCardAnimationV46::PackEnvDataSkyCardAnimationV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackEnvDataSkyCardAnimationV46::PackEnvDataSkyCardAnimationV46( const PackEnvDataSkyCardAnimationV46& p_other )
+				: textureAnimTranslation( p_other.textureAnimTranslation )
+				, textureAnimScaleRangeX( p_other.textureAnimScaleRangeX )
+				, textureAnimScaleRangeY( p_other.textureAnimScaleRangeY )
+				, textureAnimScaleSpeed( p_other.textureAnimScaleSpeed )
+				, textureAnimRotation( p_other.textureAnimRotation )
+				, texCoords( p_other.texCoords ) {
+			}
+
+			PackEnvDataSkyCardAnimationV46& PackEnvDataSkyCardAnimationV46::operator=( const PackEnvDataSkyCardAnimationV46& p_other ) {
+				textureAnimTranslation = p_other.textureAnimTranslation;
+				textureAnimScaleRangeX = p_other.textureAnimScaleRangeX;
+				textureAnimScaleRangeY = p_other.textureAnimScaleRangeY;
+				textureAnimScaleSpeed = p_other.textureAnimScaleSpeed;
+				textureAnimRotation = p_other.textureAnimRotation;
+				texCoords = p_other.texCoords;
+				return *this;
+			}
+
+			const byte* PackEnvDataSkyCardAnimationV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, textureAnimTranslation );
+				p_data = helpers::read( p_data, p_size, textureAnimScaleRangeX );
+				p_data = helpers::read( p_data, p_size, textureAnimScaleRangeY );
+				p_data = helpers::read( p_data, p_size, textureAnimScaleSpeed );
+				p_data = helpers::read( p_data, p_size, textureAnimRotation );
+				p_data = helpers::read( p_data, p_size, texCoords );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataSkycardFlipbookV46
+			//============================================================================/
+
+			PackMapEnvDataSkycardFlipbookV46::PackMapEnvDataSkycardFlipbookV46( )
+				: rows( 0 )
+				, columns( 0 )
+				, start( 0 )
+				, count( 0 )
+				, fps( 0 ) {
+			}
+
+			PackMapEnvDataSkycardFlipbookV46::PackMapEnvDataSkycardFlipbookV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataSkycardFlipbookV46::PackMapEnvDataSkycardFlipbookV46( const PackMapEnvDataSkycardFlipbookV46& p_other )
+				: rows( p_other.rows )
+				, columns( p_other.columns )
+				, start( p_other.start )
+				, count( p_other.count )
+				, fps( p_other.fps ) {
+			}
+
+			PackMapEnvDataSkycardFlipbookV46& PackMapEnvDataSkycardFlipbookV46::operator=( const PackMapEnvDataSkycardFlipbookV46& p_other ) {
+				rows = p_other.rows;
+				columns = p_other.columns;
+				start = p_other.start;
+				count = p_other.count;
+				fps = p_other.fps;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataSkycardFlipbookV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, rows );
+				p_data = helpers::read( p_data, p_size, columns );
+				p_data = helpers::read( p_data, p_size, start );
+				p_data = helpers::read( p_data, p_size, count );
+				p_data = helpers::read( p_data, p_size, fps );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataSkyCardMaterialV46
+			//============================================================================/
+
+			PackMapEnvDataSkyCardMaterialV46::PackMapEnvDataSkyCardMaterialV46( )
+			{
+			}
+
+			PackMapEnvDataSkyCardMaterialV46::PackMapEnvDataSkyCardMaterialV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataSkyCardMaterialV46::PackMapEnvDataSkyCardMaterialV46( const PackMapEnvDataSkyCardMaterialV46& p_other )
+				: filename( p_other.filename )
+				, constants( p_other.constants )
+				, textures( p_other.textures )
+				, textureAnimation( p_other.textureAnimation )
+				, flipbook( p_other.flipbook ) {
+			}
+
+			PackMapEnvDataSkyCardMaterialV46& PackMapEnvDataSkyCardMaterialV46::operator=( const PackMapEnvDataSkyCardMaterialV46& p_other ) {
+				filename = p_other.filename;
+				constants = p_other.constants;
+				textures = p_other.textures;
+				textureAnimation = p_other.textureAnimation;
+				flipbook = p_other.flipbook;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataSkyCardMaterialV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, filename );
+				p_data = helpers::read( p_data, p_size, constants );
+				p_data = helpers::read( p_data, p_size, textures );
+				p_data = helpers::read( p_data, p_size, textureAnimation );
+				p_data = helpers::read( p_data, p_size, flipbook );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataSkyCardExV46
+			//============================================================================/
+
+			PackMapEnvDataSkyCardExV46::PackMapEnvDataSkyCardExV46( )
+				: dummy( 0 ) {
+			}
+
+			PackMapEnvDataSkyCardExV46::PackMapEnvDataSkyCardExV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataSkyCardExV46::PackMapEnvDataSkyCardExV46( const PackMapEnvDataSkyCardExV46& p_other )
+				: dummy( p_other.dummy ) {
+			}
+
+			PackMapEnvDataSkyCardExV46& PackMapEnvDataSkyCardExV46::operator=( const PackMapEnvDataSkyCardExV46& p_other ) {
+				dummy = p_other.dummy;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataSkyCardExV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, dummy );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataSkyCardV75
+			//============================================================================/
+
+			PackMapEnvDataSkyCardV75::PackMapEnvDataSkyCardV75( )
+				: flags( 0 ) {
+			}
+
+			PackMapEnvDataSkyCardV75::PackMapEnvDataSkyCardV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataSkyCardV75::PackMapEnvDataSkyCardV75( const PackMapEnvDataSkyCardV75& p_other )
 				: day( p_other.day )
 				, night( p_other.night )
 				, flags( p_other.flags )
-				, name( p_other.name ) {
+				, name( p_other.name )
+				, material( p_other.material )
+				, ext( p_other.ext ) {
 			}
 
-			PackMapEnvDataSkyCardV74& PackMapEnvDataSkyCardV74::operator=( const PackMapEnvDataSkyCardV74& p_other ) {
+			PackMapEnvDataSkyCardV75& PackMapEnvDataSkyCardV75::operator=( const PackMapEnvDataSkyCardV75& p_other ) {
 				day = p_other.day;
 				night = p_other.night;
 				flags = p_other.flags;
 				name = p_other.name;
+				material = p_other.material;
+				ext = p_other.ext;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSkyCardV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSkyCardV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, day );
 				p_data = helpers::read( p_data, p_size, night );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, material );
+				p_data = helpers::read( p_data, p_size, ext );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSkyCardsV74
+			//      PackMapEnvDataSkyCardsV75
 			//============================================================================/
 
-			PackMapEnvDataSkyCardsV74::PackMapEnvDataSkyCardsV74( ) {
+			PackMapEnvDataSkyCardsV75::PackMapEnvDataSkyCardsV75( ) {
 			}
 
-			PackMapEnvDataSkyCardsV74::PackMapEnvDataSkyCardsV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSkyCardsV75::PackMapEnvDataSkyCardsV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSkyCardsV74::PackMapEnvDataSkyCardsV74( const PackMapEnvDataSkyCardsV74& p_other )
+			PackMapEnvDataSkyCardsV75::PackMapEnvDataSkyCardsV75( const PackMapEnvDataSkyCardsV75& p_other )
 				: cards( p_other.cards ) {
 			}
 
-			PackMapEnvDataSkyCardsV74& PackMapEnvDataSkyCardsV74::operator=( const PackMapEnvDataSkyCardsV74& p_other ) {
+			PackMapEnvDataSkyCardsV75& PackMapEnvDataSkyCardsV75::operator=( const PackMapEnvDataSkyCardsV75& p_other ) {
 				cards = p_other.cards;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSkyCardsV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSkyCardsV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, cards );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSpawnModelDataV45
+			//      PackMapEnvDataSpawnModelDataV46
 			//============================================================================/
 
-			PackMapEnvDataSpawnModelDataV45::PackMapEnvDataSpawnModelDataV45( )
+			PackMapEnvDataSpawnModelDataV46::PackMapEnvDataSpawnModelDataV46( )
 				: probability( 0 )
 				, delay( 0 )
 				, flags( 0 )
@@ -815,12 +1242,12 @@ namespace gw2f {
 				, maxConcurrent( 0 ) {
 			}
 
-			PackMapEnvDataSpawnModelDataV45::PackMapEnvDataSpawnModelDataV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSpawnModelDataV46::PackMapEnvDataSpawnModelDataV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSpawnModelDataV45::PackMapEnvDataSpawnModelDataV45( const PackMapEnvDataSpawnModelDataV45& p_other )
+			PackMapEnvDataSpawnModelDataV46::PackMapEnvDataSpawnModelDataV46( const PackMapEnvDataSpawnModelDataV46& p_other )
 				: spawnRange( p_other.spawnRange )
 				, lifeSpan( p_other.lifeSpan )
 				, scaleRange( p_other.scaleRange )
@@ -836,7 +1263,7 @@ namespace gw2f {
 				, maxConcurrent( p_other.maxConcurrent ) {
 			}
 
-			PackMapEnvDataSpawnModelDataV45& PackMapEnvDataSpawnModelDataV45::operator=( const PackMapEnvDataSpawnModelDataV45& p_other ) {
+			PackMapEnvDataSpawnModelDataV46& PackMapEnvDataSpawnModelDataV46::operator=( const PackMapEnvDataSpawnModelDataV46& p_other ) {
 				spawnRange = p_other.spawnRange;
 				lifeSpan = p_other.lifeSpan;
 				scaleRange = p_other.scaleRange;
@@ -853,7 +1280,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSpawnModelDataV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSpawnModelDataV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, spawnRange );
 				p_data = helpers::read( p_data, p_size, lifeSpan );
 				p_data = helpers::read( p_data, p_size, scaleRange );
@@ -871,65 +1298,65 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSpawnListV45
+			//      PackMapEnvDataSpawnListV46
 			//============================================================================/
 
-			PackMapEnvDataSpawnListV45::PackMapEnvDataSpawnListV45( ) {
+			PackMapEnvDataSpawnListV46::PackMapEnvDataSpawnListV46( ) {
 			}
 
-			PackMapEnvDataSpawnListV45::PackMapEnvDataSpawnListV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSpawnListV46::PackMapEnvDataSpawnListV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSpawnListV45::PackMapEnvDataSpawnListV45( const PackMapEnvDataSpawnListV45& p_other )
+			PackMapEnvDataSpawnListV46::PackMapEnvDataSpawnListV46( const PackMapEnvDataSpawnListV46& p_other )
 				: spawns( p_other.spawns ) {
 			}
 
-			PackMapEnvDataSpawnListV45& PackMapEnvDataSpawnListV45::operator=( const PackMapEnvDataSpawnListV45& p_other ) {
+			PackMapEnvDataSpawnListV46& PackMapEnvDataSpawnListV46::operator=( const PackMapEnvDataSpawnListV46& p_other ) {
 				spawns = p_other.spawns;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSpawnListV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSpawnListV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, spawns );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSpawnGroupsV45
+			//      PackMapEnvDataSpawnGroupsV46
 			//============================================================================/
 
-			PackMapEnvDataSpawnGroupsV45::PackMapEnvDataSpawnGroupsV45( ) {
+			PackMapEnvDataSpawnGroupsV46::PackMapEnvDataSpawnGroupsV46( ) {
 			}
 
-			PackMapEnvDataSpawnGroupsV45::PackMapEnvDataSpawnGroupsV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSpawnGroupsV46::PackMapEnvDataSpawnGroupsV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSpawnGroupsV45::PackMapEnvDataSpawnGroupsV45( const PackMapEnvDataSpawnGroupsV45& p_other )
+			PackMapEnvDataSpawnGroupsV46::PackMapEnvDataSpawnGroupsV46( const PackMapEnvDataSpawnGroupsV46& p_other )
 				: spawnGroups( p_other.spawnGroups )
 				, targets( p_other.targets ) {
 			}
 
-			PackMapEnvDataSpawnGroupsV45& PackMapEnvDataSpawnGroupsV45::operator=( const PackMapEnvDataSpawnGroupsV45& p_other ) {
+			PackMapEnvDataSpawnGroupsV46& PackMapEnvDataSpawnGroupsV46::operator=( const PackMapEnvDataSpawnGroupsV46& p_other ) {
 				spawnGroups = p_other.spawnGroups;
 				targets = p_other.targets;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSpawnGroupsV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSpawnGroupsV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, spawnGroups );
 				p_data = helpers::read( p_data, p_size, targets );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataWaterV74
+			//      PackMapEnvDataWaterV75
 			//============================================================================/
 
-			PackMapEnvDataWaterV74::PackMapEnvDataWaterV74( )
+			PackMapEnvDataWaterV75::PackMapEnvDataWaterV75( )
 				: waterFlags( 0 )
 				, animAmplitude( 0 )
 				, animChoppiness( 0 )
@@ -954,12 +1381,12 @@ namespace gw2f {
 				, foamDepthAttenuation( 0 ) {
 			}
 
-			PackMapEnvDataWaterV74::PackMapEnvDataWaterV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataWaterV75::PackMapEnvDataWaterV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataWaterV74::PackMapEnvDataWaterV74( const PackMapEnvDataWaterV74& p_other )
+			PackMapEnvDataWaterV75::PackMapEnvDataWaterV75( const PackMapEnvDataWaterV75& p_other )
 				: waterFlags( p_other.waterFlags )
 				, animAmplitude( p_other.animAmplitude )
 				, animChoppiness( p_other.animChoppiness )
@@ -994,7 +1421,7 @@ namespace gw2f {
 				, foamColor1( p_other.foamColor1 ) {
 			}
 
-			PackMapEnvDataWaterV74& PackMapEnvDataWaterV74::operator=( const PackMapEnvDataWaterV74& p_other ) {
+			PackMapEnvDataWaterV75& PackMapEnvDataWaterV75::operator=( const PackMapEnvDataWaterV75& p_other ) {
 				waterFlags = p_other.waterFlags;
 				animAmplitude = p_other.animAmplitude;
 				animChoppiness = p_other.animChoppiness;
@@ -1030,7 +1457,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataWaterV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataWaterV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, waterFlags );
 				p_data = helpers::read( p_data, p_size, animAmplitude );
 				p_data = helpers::read( p_data, p_size, animChoppiness );
@@ -1067,10 +1494,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataWindV74
+			//      PackMapEnvDataWindV75
 			//============================================================================/
 
-			PackMapEnvDataWindV74::PackMapEnvDataWindV74( )
+			PackMapEnvDataWindV75::PackMapEnvDataWindV75( )
 				: azimuth( 0 )
 				, elevation( 0 )
 				, noise( 0 )
@@ -1080,12 +1507,12 @@ namespace gw2f {
 				, gustSpeed( 0 ) {
 			}
 
-			PackMapEnvDataWindV74::PackMapEnvDataWindV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataWindV75::PackMapEnvDataWindV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataWindV74::PackMapEnvDataWindV74( const PackMapEnvDataWindV74& p_other )
+			PackMapEnvDataWindV75::PackMapEnvDataWindV75( const PackMapEnvDataWindV75& p_other )
 				: azimuth( p_other.azimuth )
 				, elevation( p_other.elevation )
 				, noise( p_other.noise )
@@ -1095,7 +1522,7 @@ namespace gw2f {
 				, gustSpeed( p_other.gustSpeed ) {
 			}
 
-			PackMapEnvDataWindV74& PackMapEnvDataWindV74::operator=( const PackMapEnvDataWindV74& p_other ) {
+			PackMapEnvDataWindV75& PackMapEnvDataWindV75::operator=( const PackMapEnvDataWindV75& p_other ) {
 				azimuth = p_other.azimuth;
 				elevation = p_other.elevation;
 				noise = p_other.noise;
@@ -1106,7 +1533,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataWindV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataWindV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, azimuth );
 				p_data = helpers::read( p_data, p_size, elevation );
 				p_data = helpers::read( p_data, p_size, noise );
@@ -1118,37 +1545,134 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataAudioV45
+			//      PackMapEnvDataAudioV46
 			//============================================================================/
 
-			PackMapEnvDataAudioV45::PackMapEnvDataAudioV45( )
+			PackMapEnvDataAudioV46::PackMapEnvDataAudioV46( )
 				: token( 0 ) {
 			}
 
-			PackMapEnvDataAudioV45::PackMapEnvDataAudioV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataAudioV46::PackMapEnvDataAudioV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataAudioV45::PackMapEnvDataAudioV45( const PackMapEnvDataAudioV45& p_other )
+			PackMapEnvDataAudioV46::PackMapEnvDataAudioV46( const PackMapEnvDataAudioV46& p_other )
 				: token( p_other.token ) {
 			}
 
-			PackMapEnvDataAudioV45& PackMapEnvDataAudioV45::operator=( const PackMapEnvDataAudioV45& p_other ) {
+			PackMapEnvDataAudioV46& PackMapEnvDataAudioV46::operator=( const PackMapEnvDataAudioV46& p_other ) {
 				token = p_other.token;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataAudioV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataAudioV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataShapeV45
+			//      PackMapEnvDataBaseEx2V46
 			//============================================================================/
 
-			PackMapEnvDataShapeV45::PackMapEnvDataShapeV45( )
+			PackMapEnvDataBaseEx2V46::PackMapEnvDataBaseEx2V46( )
+				: dummy( 0 ) {
+			}
+
+			PackMapEnvDataBaseEx2V46::PackMapEnvDataBaseEx2V46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataBaseEx2V46::PackMapEnvDataBaseEx2V46( const PackMapEnvDataBaseEx2V46& p_other )
+				: dummy( p_other.dummy ) {
+			}
+
+			PackMapEnvDataBaseEx2V46& PackMapEnvDataBaseEx2V46::operator=( const PackMapEnvDataBaseEx2V46& p_other ) {
+				dummy = p_other.dummy;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataBaseEx2V46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, dummy );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapEnvDataBaseExV46
+			//============================================================================/
+
+			PackMapEnvDataBaseExV46::PackMapEnvDataBaseExV46( )
+				: brightTime( 0 )
+				, dimTime( 0 )
+				, darkCoeff( 0 )
+				, darkExp( 0 )
+				, darkMin( 0 )
+				, darkMax( 0 )
+				, brightMin( 0 )
+				, brightMax( 0 )
+				, brightScale( 0 )
+				, darkScale( 0 ) {
+			}
+
+			PackMapEnvDataBaseExV46::PackMapEnvDataBaseExV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapEnvDataBaseExV46::PackMapEnvDataBaseExV46( const PackMapEnvDataBaseExV46& p_other )
+				: ext2( p_other.ext2 )
+				, brightTime( p_other.brightTime )
+				, dimTime( p_other.dimTime )
+				, darkCoeff( p_other.darkCoeff )
+				, darkExp( p_other.darkExp )
+				, darkMin( p_other.darkMin )
+				, darkMax( p_other.darkMax )
+				, brightMin( p_other.brightMin )
+				, brightMax( p_other.brightMax )
+				, brightScale( p_other.brightScale )
+				, darkScale( p_other.darkScale )
+				, waterReflectionParams( p_other.waterReflectionParams ) {
+			}
+
+			PackMapEnvDataBaseExV46& PackMapEnvDataBaseExV46::operator=( const PackMapEnvDataBaseExV46& p_other ) {
+				ext2 = p_other.ext2;
+				brightTime = p_other.brightTime;
+				dimTime = p_other.dimTime;
+				darkCoeff = p_other.darkCoeff;
+				darkExp = p_other.darkExp;
+				darkMin = p_other.darkMin;
+				darkMax = p_other.darkMax;
+				brightMin = p_other.brightMin;
+				brightMax = p_other.brightMax;
+				brightScale = p_other.brightScale;
+				darkScale = p_other.darkScale;
+				waterReflectionParams = p_other.waterReflectionParams;
+				return *this;
+			}
+
+			const byte* PackMapEnvDataBaseExV46::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, ext2 );
+				p_data = helpers::read( p_data, p_size, brightTime );
+				p_data = helpers::read( p_data, p_size, dimTime );
+				p_data = helpers::read( p_data, p_size, darkCoeff );
+				p_data = helpers::read( p_data, p_size, darkExp );
+				p_data = helpers::read( p_data, p_size, darkMin );
+				p_data = helpers::read( p_data, p_size, darkMax );
+				p_data = helpers::read( p_data, p_size, brightMin );
+				p_data = helpers::read( p_data, p_size, brightMax );
+				p_data = helpers::read( p_data, p_size, brightScale );
+				p_data = helpers::read( p_data, p_size, darkScale );
+				p_data = helpers::read( p_data, p_size, waterReflectionParams );
+				return p_data;
+			}
+
+
+			//============================================================================/
+			//      PackMapEnvDataShapeV46
+			//============================================================================/
+
+			PackMapEnvDataShapeV46::PackMapEnvDataShapeV46( )
 				: height( 0 )
 				, fadeHorizInner( 0 )
 				, fadeHorizOuter( 0 )
@@ -1156,12 +1680,12 @@ namespace gw2f {
 				, shapeType( 0 ) {
 			}
 
-			PackMapEnvDataShapeV45::PackMapEnvDataShapeV45( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataShapeV46::PackMapEnvDataShapeV46( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataShapeV45::PackMapEnvDataShapeV45( const PackMapEnvDataShapeV45& p_other )
+			PackMapEnvDataShapeV46::PackMapEnvDataShapeV46( const PackMapEnvDataShapeV46& p_other )
 				: center( p_other.center )
 				, height( p_other.height )
 				, fadeHorizInner( p_other.fadeHorizInner )
@@ -1171,7 +1695,7 @@ namespace gw2f {
 				, shapeType( p_other.shapeType ) {
 			}
 
-			PackMapEnvDataShapeV45& PackMapEnvDataShapeV45::operator=( const PackMapEnvDataShapeV45& p_other ) {
+			PackMapEnvDataShapeV46& PackMapEnvDataShapeV46::operator=( const PackMapEnvDataShapeV46& p_other ) {
 				center = p_other.center;
 				height = p_other.height;
 				fadeHorizInner = p_other.fadeHorizInner;
@@ -1182,7 +1706,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapEnvDataShapeV45::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataShapeV46::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, center );
 				p_data = helpers::read( p_data, p_size, height );
 				p_data = helpers::read( p_data, p_size, fadeHorizInner );
@@ -1194,21 +1718,21 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataLocalV74
+			//      PackMapEnvDataLocalV75
 			//============================================================================/
 
-			PackMapEnvDataLocalV74::PackMapEnvDataLocalV74( )
+			PackMapEnvDataLocalV75::PackMapEnvDataLocalV75( )
 				: bindTarget( 0 )
 				, type( 0 )
 				, guid( 0 ) {
 			}
 
-			PackMapEnvDataLocalV74::PackMapEnvDataLocalV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataLocalV75::PackMapEnvDataLocalV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataLocalV74::PackMapEnvDataLocalV74( const PackMapEnvDataLocalV74& p_other )
+			PackMapEnvDataLocalV75::PackMapEnvDataLocalV75( const PackMapEnvDataLocalV75& p_other )
 				: lighting( p_other.lighting )
 				, lightingCharGroups( p_other.lightingCharGroups )
 				, clouds( p_other.clouds )
@@ -1226,13 +1750,14 @@ namespace gw2f {
 				, name( p_other.name )
 				, nightMods( p_other.nightMods )
 				, bindTarget( p_other.bindTarget )
-				, reserved( p_other.reserved )
+				, flags( p_other.flags )
+				, ext( p_other.ext )
 				, type( p_other.type )
 				, guid( p_other.guid )
 				, shapeArray( p_other.shapeArray ) {
 			}
 
-			PackMapEnvDataLocalV74& PackMapEnvDataLocalV74::operator=( const PackMapEnvDataLocalV74& p_other ) {
+			PackMapEnvDataLocalV75& PackMapEnvDataLocalV75::operator=( const PackMapEnvDataLocalV75& p_other ) {
 				lighting = p_other.lighting;
 				lightingCharGroups = p_other.lightingCharGroups;
 				clouds = p_other.clouds;
@@ -1250,14 +1775,15 @@ namespace gw2f {
 				name = p_other.name;
 				nightMods = p_other.nightMods;
 				bindTarget = p_other.bindTarget;
-				reserved = p_other.reserved;
+				flags = p_other.flags;
+				ext = p_other.ext;
 				type = p_other.type;
 				guid = p_other.guid;
 				shapeArray = p_other.shapeArray;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataLocalV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataLocalV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, lighting );
 				p_data = helpers::read( p_data, p_size, lightingCharGroups );
 				p_data = helpers::read( p_data, p_size, clouds );
@@ -1275,7 +1801,8 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, nightMods );
 				p_data = helpers::read( p_data, p_size, bindTarget );
-				p_data = helpers::read( p_data, p_size, reserved );
+				p_data = helpers::read( p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, ext );
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, shapeArray );
@@ -1283,31 +1810,31 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataSkyModeTexV74
+			//      PackMapEnvDataSkyModeTexV75
 			//============================================================================/
 
-			PackMapEnvDataSkyModeTexV74::PackMapEnvDataSkyModeTexV74( ) {
+			PackMapEnvDataSkyModeTexV75::PackMapEnvDataSkyModeTexV75( ) {
 			}
 
-			PackMapEnvDataSkyModeTexV74::PackMapEnvDataSkyModeTexV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataSkyModeTexV75::PackMapEnvDataSkyModeTexV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataSkyModeTexV74::PackMapEnvDataSkyModeTexV74( const PackMapEnvDataSkyModeTexV74& p_other )
+			PackMapEnvDataSkyModeTexV75::PackMapEnvDataSkyModeTexV75( const PackMapEnvDataSkyModeTexV75& p_other )
 				: texPathNE( p_other.texPathNE )
 				, texPathSW( p_other.texPathSW )
 				, texPathT( p_other.texPathT ) {
 			}
 
-			PackMapEnvDataSkyModeTexV74& PackMapEnvDataSkyModeTexV74::operator=( const PackMapEnvDataSkyModeTexV74& p_other ) {
+			PackMapEnvDataSkyModeTexV75& PackMapEnvDataSkyModeTexV75::operator=( const PackMapEnvDataSkyModeTexV75& p_other ) {
 				texPathNE = p_other.texPathNE;
 				texPathSW = p_other.texPathSW;
 				texPathT = p_other.texPathT;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataSkyModeTexV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataSkyModeTexV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, texPathNE );
 				p_data = helpers::read( p_data, p_size, texPathSW );
 				p_data = helpers::read( p_data, p_size, texPathT );
@@ -1315,19 +1842,19 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapEnvDataGlobalV74
+			//      PackMapEnvDataGlobalV75
 			//============================================================================/
 
-			PackMapEnvDataGlobalV74::PackMapEnvDataGlobalV74( )
+			PackMapEnvDataGlobalV75::PackMapEnvDataGlobalV75( )
 				: bindTarget( 0 ) {
 			}
 
-			PackMapEnvDataGlobalV74::PackMapEnvDataGlobalV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvDataGlobalV75::PackMapEnvDataGlobalV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvDataGlobalV74::PackMapEnvDataGlobalV74( const PackMapEnvDataGlobalV74& p_other )
+			PackMapEnvDataGlobalV75::PackMapEnvDataGlobalV75( const PackMapEnvDataGlobalV75& p_other )
 				: lighting( p_other.lighting )
 				, lightingCharGroups( p_other.lightingCharGroups )
 				, clouds( p_other.clouds )
@@ -1345,12 +1872,13 @@ namespace gw2f {
 				, name( p_other.name )
 				, nightMods( p_other.nightMods )
 				, bindTarget( p_other.bindTarget )
-				, reserved( p_other.reserved )
+				, flags( p_other.flags )
+				, ext( p_other.ext )
 				, skyModeTex( p_other.skyModeTex )
 				, starFile( p_other.starFile ) {
 			}
 
-			PackMapEnvDataGlobalV74& PackMapEnvDataGlobalV74::operator=( const PackMapEnvDataGlobalV74& p_other ) {
+			PackMapEnvDataGlobalV75& PackMapEnvDataGlobalV75::operator=( const PackMapEnvDataGlobalV75& p_other ) {
 				lighting = p_other.lighting;
 				lightingCharGroups = p_other.lightingCharGroups;
 				clouds = p_other.clouds;
@@ -1368,13 +1896,14 @@ namespace gw2f {
 				name = p_other.name;
 				nightMods = p_other.nightMods;
 				bindTarget = p_other.bindTarget;
-				reserved = p_other.reserved;
+				flags = p_other.flags;
+				ext = p_other.ext;
 				skyModeTex = p_other.skyModeTex;
 				starFile = p_other.starFile;
 				return *this;
 			}
 
-			const byte* PackMapEnvDataGlobalV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvDataGlobalV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, lighting );
 				p_data = helpers::read( p_data, p_size, lightingCharGroups );
 				p_data = helpers::read( p_data, p_size, clouds );
@@ -1392,36 +1921,37 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, nightMods );
 				p_data = helpers::read( p_data, p_size, bindTarget );
-				p_data = helpers::read( p_data, p_size, reserved );
+				p_data = helpers::read( p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, ext );
 				p_data = helpers::read( p_data, p_size, skyModeTex );
 				p_data = helpers::read( p_data, p_size, starFile );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapEnvironmentV74
+			//      PackMapEnvironmentV75
 			//============================================================================/
 
-			PackMapEnvironmentV74::PackMapEnvironmentV74( ) {
+			PackMapEnvironmentV75::PackMapEnvironmentV75( ) {
 			}
 
-			PackMapEnvironmentV74::PackMapEnvironmentV74( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapEnvironmentV75::PackMapEnvironmentV75( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapEnvironmentV74::PackMapEnvironmentV74( const PackMapEnvironmentV74& p_other )
+			PackMapEnvironmentV75::PackMapEnvironmentV75( const PackMapEnvironmentV75& p_other )
 				: dataLocalArray( p_other.dataLocalArray )
 				, dataGlobal( p_other.dataGlobal ) {
 			}
 
-			PackMapEnvironmentV74& PackMapEnvironmentV74::operator=( const PackMapEnvironmentV74& p_other ) {
+			PackMapEnvironmentV75& PackMapEnvironmentV75::operator=( const PackMapEnvironmentV75& p_other ) {
 				dataLocalArray = p_other.dataLocalArray;
 				dataGlobal = p_other.dataGlobal;
 				return *this;
 			}
 
-			const byte* PackMapEnvironmentV74::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapEnvironmentV75::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, dataLocalArray );
 				p_data = helpers::read( p_data, p_size, dataGlobal );
 				return p_data;
