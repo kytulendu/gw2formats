@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\gw2formats\base.h" />
+    <ClInclude Include="..\include\gw2formats\exception\Exception.h" />
     <ClInclude Include="..\include\gw2formats\fcc.h" />
     <ClInclude Include="..\include\gw2formats\language.h" />
     <ClInclude Include="..\include\gw2formats\pf\AnimSequencesPackFile.h" />
@@ -106,6 +107,7 @@
     <ClInclude Include="..\include\gw2formats\TextureFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\exception\Exception.cpp" />
     <ClCompile Include="..\src\pf\chunks\ABIX\BankIndexData.cpp" />
     <ClCompile Include="..\src\pf\chunks\ABNK\BankFileData.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMAT\AmatDx9Material.cpp" />

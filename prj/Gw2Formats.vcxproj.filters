@@ -163,6 +163,12 @@
     <Filter Include="Source Files\pf\chunks\prlt">
       <UniqueIdentifier>{017dbd82-cf71-4e4d-81b1-8c4cd055d7b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\exception">
+      <UniqueIdentifier>{66c771f2-c9d0-498c-8bce-c25d1f0e7657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\exception">
+      <UniqueIdentifier>{64f5a305-f573-480c-8949-89cd7f57e79e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\gw2formats\pf\PackFile.h">
@@ -420,6 +426,9 @@
     <ClInclude Include="..\include\gw2formats\TextureFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\gw2formats\exception\Exception.h">
+      <Filter>Header Files\exception</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\pf\helpers\FileReference.cpp">
@@ -568,6 +577,9 @@
     </ClCompile>
     <ClCompile Include="..\src\TextureFile.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\exception\Exception.cpp">
+      <Filter>Source Files\exception</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

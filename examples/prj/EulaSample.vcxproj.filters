@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\samples\texture-dump.cpp">
+    <ClCompile Include="..\src\eula.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
