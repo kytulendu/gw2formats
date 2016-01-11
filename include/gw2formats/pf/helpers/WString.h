@@ -37,7 +37,14 @@ namespace gw2f {
 			typedef StringBase<char16> WString;
 
 			template<> inline size_t StringBase<char16>::strlen( const char16* p_string ) const {
+#if defined(_MSC_VER)
 				return std::wcslen( p_string );
+#elif defined(__GNUC__) || defined(__GNUG__)
+				return std::char_traits<char16>::length( p_string );
+// NOTE: UNTESTED!
+#else
+                return std::wcslen( p_string );
+#endif
 			}
 
 		}; // namespace helpers

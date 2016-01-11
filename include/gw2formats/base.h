@@ -64,21 +64,17 @@ namespace gw2f {
 
 	typedef char					char8;		/**< 8-bit character. */
 
-// Unicode chars (NOTE: UNTESTED FOR ANYTHING BUT MSVC)
-#ifdef _MSC_VER
+// Unicode chars
+#if defined(_MSC_VER)
 	typedef wchar_t					char16;		/**< UTF-16 character. */
 	typedef uint32					char32;		/**< UTF-32 character. */
 #	define GW2F_U16(x)				L##x
-#elif defined(__has_feature) && __has_feature(cxx_unicode_literals)
+#elif defined(__GNUC__) || defined(__GNUG__) || defined(__clang__)
 	typedef char16_t				char16;		/**< UTF-16 character. */
 	typedef char32_t				char32;		/**< UTF-32 character. */
 #	define GW2F_U16(x)				u##x
 #	define GW2F_U32(x)				U##x
-#elif defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5))
-	typedef char16_t				char16;		/**< UTF-16 character. */
-	typedef char32_t				char32;		/**< UTF-32 character. */
-#	define GW2F_U16(x)				u##x
-#	define GW2F_U32(x)				U##x
+// NOTE: UNTESTED!
 #else
 #	if defined(WCHAR_MAX) && (WCHAR_MAX == 0xffff)
 	typedef wchar_t					char16;		/**< UTF-16 character. */
