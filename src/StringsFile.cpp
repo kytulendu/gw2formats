@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <fstream>
 
 #include <gw2formats/fcc.h>
+#include <gw2formats/exception/Exception.h>
 
 namespace gw2f {
 
@@ -95,7 +96,7 @@ namespace gw2f {
 			if ( !isEncrypted( ) ) {
 				retval.assign( reinterpret_cast<const char16*>( m_data.data( ) + 6 ), ( m_data.size( ) - 6 ) >> 1 );
 			} else {
-				throw std::exception( "String is encrypted." );
+				throw exception::Exception( "String is encrypted." );
 			}
 
 			return retval;

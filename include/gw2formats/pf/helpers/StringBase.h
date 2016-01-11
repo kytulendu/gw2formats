@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <gw2formats/base.h>
 #include <gw2formats/pf/helpers/Ptr.h>
+#include <gw2formats/exception/Exception.h>
 
 namespace gw2f {
 	namespace pf {
@@ -82,7 +83,7 @@ namespace gw2f {
 
 			private:
 				size_t strlen( const TChar* p_string ) const {
-					throw std::exception( "Unimplemented StringBase<TChar>::strlen method." );
+					throw exception::Exception( "Unimplemented StringBase<TChar>::strlen method." );
 				}
 			};
 

@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdexcept>
 
 #include <gw2formats/fcc.h>
+#include <gw2formats/exception/Exception.h>
 
 namespace gw2f {
 	namespace {
@@ -104,7 +105,7 @@ namespace gw2f {
 			case fcc::_3DCX:
 				return numBlocks * 16;
 			default:
-				throw std::exception( "Unsupported format." );
+				throw exception::Exception( "Unsupported format." );
 			}
 		}
 
