@@ -25,6 +25,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef GW2FORMATS_PF_HELPERS_FILEREFERENCE_H_INCLUDED
 #define GW2FORMATS_PF_HELPERS_FILEREFERENCE_H_INCLUDED
 
+#include <cstring>
+
 #include <gw2formats/base.h>
 
 namespace gw2f {

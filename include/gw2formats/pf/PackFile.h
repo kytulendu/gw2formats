@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <memory>
 #include <vector>
 #include <cstring>
+#include <cstddef>
 
 #include <gw2formats/base.h>
 #include <gw2formats/pf/ChunkFactory.h>

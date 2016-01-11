@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <vector>
 
 #include <gw2formats/base.h>
-#include <gw2formats/language.h>
+#include <gw2formats/Language.h>
 
 namespace gw2f {
 

@@ -23,8 +23,8 @@ See the samples folder for other examples.
 Restrictions
 ------------
 
-Gw2formats uses C++11 features available in modern compilers. While it should compile under both 
-GCC and clang, neither has been tested. It does however compile perfectly well under MSVC10+.
+Gw2formats uses C++11 features available in modern compilers. It have been tested compile with
+TDM-GCC64 5.1.0 and Visual Studio 2013 on Windows, and GCC 5.2.1 on Xubuntu.
 
 Contributing
 ------------
