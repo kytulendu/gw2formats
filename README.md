@@ -23,10 +23,10 @@ See the samples folder for other examples.
 Restrictions
 ------------
 
-Gw2formats uses C++11 features available in modern compilers. It have been tested compile with
+Gw2formats uses C++11 features available in modern compilers. It have been tested with
 TDM-GCC64 5.1.0 and Visual Studio 2013 on Windows, and GCC 5.2.1 on Xubuntu.
 
 Contributing
 ------------
 
-For contributions, please go to [this project's page on GitHub](https://github.com/rhoot/gw2formats).
+For contributions, please go to [this project's page on GitHub](https://github.com/kytulendu/gw2formats).
