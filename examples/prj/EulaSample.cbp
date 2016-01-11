@@ -12,8 +12,13 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="../../include" />
 				</Compiler>
+				<Linker>
+					<Add library="..\..\bin\Debug\libgw2formats.a" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="../../bin/Release/EulaSample" prefix_auto="1" extension_auto="1" />
@@ -22,9 +27,12 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="..\..\bin\Release\libgw2formats.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -32,6 +40,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../src/eula.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
