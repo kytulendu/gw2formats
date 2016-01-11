@@ -25,6 +25,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
+#include <locale>
+#include <codecvt>
 
 #include <gw2formats/StringsFile.h>
 
@@ -35,14 +37,14 @@ int main( int argc, char** argv ) {
 	}
 
 	// Characters below 128 are the same as for ANSI
-	auto isAbove127 = [] ( gw2f::char16 c ) { return ( c >= 0x80 ); };
+	auto isAbove127 = []( gw2f::char16 c ) { return ( c >= 0x80 ); };
 
-	gw2f::StringsFile file( argv[1] );
-	for ( size_t i = 0; i < file.entryCount( ); i++ ) {
-		auto& entry = file.entry( i );
+	gw2f::StringsFile stringFile( argv[1] );
+	for ( size_t i = 0; i < stringFile.entryCount( ); i++ ) {
+		auto& entry = stringFile.entry( i );
 
 		// Under windows, this poses the same problem as the Eula sample. When
-		// it encounters a character that the console cannot output, any 
+		// it encounters a character that the console cannot output, any
 		// subsequent characters sent to the stream are discarded. To prevent
 		// this, I am replacing all potentially invalid characters with a
 		// question mark.
@@ -52,10 +54,19 @@ int main( int argc, char** argv ) {
 			str = GW2F_U16( "Encrypted string" );
 		} else {
 			str = entry.get( );
+			if ( str.empty( ) ) {
+				str = GW2F_U16( "Empty string" );
+			}
 			std::replace_if( std::begin( str ), std::end( str ), isAbove127, '?' );
 		}
+#if defined(_MSC_VER)
+		std::wcout << i << L";\"" << str << L"\"" << std::endl;
+#elif defined(__GNUC__) || defined(__GNUG__)
+		std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> temp;
+		std::string mbs = temp.to_bytes( str );
 
-		std::wcout << std::setfill( L' ' ) << std::setw( 4 ) << i << L": " << str << std::endl;
+		std::cout << i << ";\"" << mbs.c_str( ) << "\"" << std::endl;
+#endif
 	}
 
 	return 0;
