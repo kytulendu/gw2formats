@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="gw2formats.cbp" />
+		<Project filename="../examples/prj/EnumStrings.cbp" />
+		<Project filename="../examples/prj/EulaSample.cbp" />
+		<Project filename="../examples/prj/TextureDump.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

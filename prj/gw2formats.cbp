@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="gw2formats" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../bin/Debug/gw2formats" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Debug/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DGW2FORMATS_EXPORT" />
+					<Add directory="../include" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="../bin/Release/gw2formats" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Release/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add option="-Wall" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DGW2FORMATS_EXPORT" />
+					<Add directory="../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="user32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../include/gw2formats/Language.h" />
+		<Unit filename="../include/gw2formats/StringsFile.h" />
+		<Unit filename="../include/gw2formats/TextureFile.h" />
+		<Unit filename="../include/gw2formats/base.h" />
+		<Unit filename="../include/gw2formats/fcc.h" />
+		<Unit filename="../include/gw2formats/pf/AnimSequencesPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/AudioPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/BankIndexPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/BankPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/ChunkFactory.h" />
+		<Unit filename="../include/gw2formats/pf/CollideModelManifestPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/CompositePackFile.h" />
+		<Unit filename="../include/gw2formats/pf/ContentManifestPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/EmoteAnimPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/EulaPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/HavokPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/MapMetadataPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/MapPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/MapShadowPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/MaterialPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/ModelPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/PackFile.h" />
+		<Unit filename="../include/gw2formats/pf/PagedImagePackFile.h" />
+		<Unit filename="../include/gw2formats/pf/PortalManifestPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/ScenePackFile.h" />
+		<Unit filename="../include/gw2formats/pf/ScriptPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/TextManifestPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/TextVariantPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/TextVoicePackFile.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/ABIX/BankIndexData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/ABNK/BankFileData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatDx9Material.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatGr.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/AMSP/ScriptFileData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/ASND/WaveformData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/CINP/SceneData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileAnimation.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileGeometry.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileProperties.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileRootMotion.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileSkeleton.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/common.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/PIMG/PagedImageTableData.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/anic/PackAnimSequences.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/cmaC/CollideModelManifest.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/cmpc/PackComposite.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/cntc/PackContent.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/emoc/PackEmoteAnimations.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/eula/PackEula.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/hvkC/PackMapCollide.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mMet/PackMapMetadata.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/MapAudio.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/MapMission.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/MapParam.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/MapShore.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/MapSurfaces.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/MapTerrainImg.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapAreas.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapCollide.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapCubeMap.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapDecals.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapEnvironment.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapLights.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapProp.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapRivers.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapShadowExt.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapTerrain.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapZones.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/common.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mpsd/PackMapShadow.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/prlt/ContentPortalManifest.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/txtV/TextPackVariants.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/txtm/TextPackManifest.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/txtv_/TextPackVoices.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/Array.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/FileName.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/FileReference.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/Ptr.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/RefList.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/String.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/StringBase.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/Vector.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/WString.h" />
+		<Unit filename="../include/gw2formats/pf/helpers/read.h" />
+		<Unit filename="../src/StringsFile.cpp" />
+		<Unit filename="../src/TextureFile.cpp" />
+		<Unit filename="../src/pf/chunks/ABIX/BankIndexData.cpp" />
+		<Unit filename="../src/pf/chunks/ABNK/BankFileData.cpp" />
+		<Unit filename="../src/pf/chunks/AMAT/AmatDx9Material.cpp" />
+		<Unit filename="../src/pf/chunks/AMAT/AmatGr.cpp" />
+		<Unit filename="../src/pf/chunks/AMSP/ScriptFileData.cpp" />
+		<Unit filename="../src/pf/chunks/ASND/WaveformData.cpp" />
+		<Unit filename="../src/pf/chunks/CINP/SceneData.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileAnimation.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileData.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileGeometry.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileProperties.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileRootMotion.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileSkeleton.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/common.cpp" />
+		<Unit filename="../src/pf/chunks/PIMG/PagedImageTableData.cpp" />
+		<Unit filename="../src/pf/chunks/anic/PackAnimSequences.cpp" />
+		<Unit filename="../src/pf/chunks/cmaC/CollideModelManifest.cpp" />
+		<Unit filename="../src/pf/chunks/cmpc/PackComposite.cpp" />
+		<Unit filename="../src/pf/chunks/cntc/PackContent.cpp" />
+		<Unit filename="../src/pf/chunks/emoc/PackEmoteAnimations.cpp" />
+		<Unit filename="../src/pf/chunks/eula/PackEula.cpp" />
+		<Unit filename="../src/pf/chunks/hvkC/PackMapCollide.cpp" />
+		<Unit filename="../src/pf/chunks/mMet/PackMapMetadata.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/MapAudio.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/MapMission.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/MapParam.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/MapShore.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/MapSurfaces.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/MapTerrainImg.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapAreas.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapCubeMap.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapDecals.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapEnvironment.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapLights.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapProp.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapRivers.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapShadowExt.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapTerrain.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapZones.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/common.cpp" />
+		<Unit filename="../src/pf/chunks/mpsd/PackMapShadow.cpp" />
+		<Unit filename="../src/pf/chunks/prlt/ContentPortalManifest.cpp" />
+		<Unit filename="../src/pf/chunks/txtV/TextPackVariants.cpp" />
+		<Unit filename="../src/pf/chunks/txtm/TextPackManifest.cpp" />
+		<Unit filename="../src/pf/chunks/txtv_/TextPackVoices.cpp" />
+		<Unit filename="../src/pf/helpers/FileName.cpp" />
+		<Unit filename="../src/pf/helpers/FileReference.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
