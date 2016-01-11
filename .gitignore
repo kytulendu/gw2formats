@@ -2,7 +2,10 @@ bin
 build
 lib
 ipch
+obj
 *.user
 *.opensdf
 *.sdf
 *.suo
+*.depend
+*.layout
