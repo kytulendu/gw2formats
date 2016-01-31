@@ -170,7 +170,7 @@ namespace gw2f {
 		auto height = *reinterpret_cast<const uint16*>( p_data + 10 );
 
 		auto pos = p_data + 12;
-		auto end = p_data + p_size;
+		auto end = p_data + ( p_size - 12 );
 
 		while ( pos < end ) {
 			auto size = *reinterpret_cast<const uint32*>( pos );
