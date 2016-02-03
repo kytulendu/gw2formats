@@ -32,6 +32,7 @@ namespace gw2f {
 			French = 2,
 			German = 3,
 			Spanish = 4,
+			Chinese = 5,
 		}; // enum Type
 	}; // namespace Language
 
