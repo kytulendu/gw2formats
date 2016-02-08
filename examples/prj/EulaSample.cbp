@@ -17,7 +17,7 @@
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
-					<Add library="..\..\bin\Debug\libgw2formats.a" />
+					<Add library="..\..\lib\Debug\libgw2formats.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -32,7 +32,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="..\..\bin\Release\libgw2formats.a" />
+					<Add library="..\..\lib\Release\libgw2formats.a" />
 				</Linker>
 			</Target>
 		</Build>

@@ -18,8 +18,8 @@
 					<Add directory="../../include" />
 				</Compiler>
 				<Linker>
-					<Add library="..\..\bin\Debug\libgw2formats.a" />
-					<Add library="..\..\..\gw2DatTools\bin\Debug\libgw2DatTools.a" />
+					<Add library="..\..\lib\Debug\libgw2formats.a" />
+					<Add library="..\..\..\gw2DatTools\lib\Debug\libgw2DatTools.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -35,8 +35,8 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="..\..\bin\Release\libgw2formats.a" />
-					<Add library="..\..\..\gw2DatTools\bin\Release\libgw2DatTools.a" />
+					<Add library="..\..\lib\Release\libgw2formats.a" />
+					<Add library="..\..\..\gw2DatTools\lib\Release\libgw2DatTools.a" />
 				</Linker>
 			</Target>
 		</Build>
