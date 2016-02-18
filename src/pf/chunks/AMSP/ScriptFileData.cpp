@@ -549,6 +549,7 @@ namespace gw2f {
 
 			const byte* MaterialDataV29::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
+				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, absorptionLF );
 				p_data = helpers::read( p_data, p_size, absorptionMF );
 				p_data = helpers::read( p_data, p_size, absorptionHF );
