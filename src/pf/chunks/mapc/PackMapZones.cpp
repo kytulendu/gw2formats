@@ -32,7 +32,8 @@ namespace gw2f {
 
 			PackMapZoneModelV22::PackMapZoneModelV22( )
 				: probability( 0 )
-				, flags( 0 ) {
+				, flags( 0 )
+				, zOffsets{ 0, 0 } {
 			}
 
 			PackMapZoneModelV22::PackMapZoneModelV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {

@@ -893,6 +893,7 @@ namespace gw2f {
 
 			ModelEffectLightV65::ModelEffectLightV65( )
 				: bone( 0 )
+				, color{ 0, 0, 0 }
 				, farDistance( 0 )
 				, intensity( 0 )
 				, nearDistance( 0 ) {
@@ -1352,6 +1353,8 @@ namespace gw2f {
 
 			ModelLightningBoltV65::ModelLightningBoltV65( )
 				: bone( 0 )
+				, colorBegin{ 0, 0, 0 }
+				, colorEnd{ 0, 0, 0 }
 				, colorPeriod( 0 )
 				, flags( 0 )
 				, fps( 0 )
