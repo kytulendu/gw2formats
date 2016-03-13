@@ -197,13 +197,13 @@ namespace gw2f {
 				auto end = m_data->data( ) + m_data->size( );
 
 				while ( pointer < end ) {
-					auto remaining = ( end - pointer );
+					size_t remaining = ( end - pointer );
 					if ( remaining < sizeof( ChunkHeader ) ) { break; }
 
 					auto chunkHead = reinterpret_cast<const ChunkHeader*>( pointer );
 					auto chunkSize = chunkHead->nextChunkOffset + offsetof( ChunkHeader, nextChunkOffset ) + sizeof( chunkHead->nextChunkOffset );
 
-					if ( chunkHead->magic == p_identifier ) {
+					if ( chunkHead->magic == static_cast<uint32>( p_identifier ) ) {
 						po_size = chunkSize - chunkHead->headerSize;
 						return pointer + sizeof( *chunkHead );
 					}
