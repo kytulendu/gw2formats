@@ -40,8 +40,8 @@ namespace gw2f {
 			uint32 m_format;
 			std::vector<byte> m_data;
 		public:
-			MipMapData( uint16 p_width, uint16 p_height, uint32 p_format, const byte* p_data, size_t p_size );
-			MipMapData( const IMipMapData& p_other );
+			explicit MipMapData( uint16 p_width, uint16 p_height, uint32 p_format, const byte* p_data, size_t p_size );
+			explicit MipMapData( const IMipMapData& p_other );
 			virtual ~MipMapData( );
 			virtual uint16 width( ) const override;
 			virtual uint16 height( ) const override;

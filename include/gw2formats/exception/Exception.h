@@ -13,7 +13,7 @@ namespace gw2f {
 		private:
 			std::string errorMessage;
 		public:
-			Exception( const char* iReason );
+			explicit Exception( const char* iReason );
 			virtual ~Exception( );
 			// overriden what() method from exception class
 			virtual const char *what( ) const throw( );

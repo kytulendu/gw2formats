@@ -64,12 +64,12 @@ namespace gw2f {
 		*  claimed, it still needs to be freed by the caller.
 		*  \param[in]  p_data  Data to assign.
 		*  \param[in]  p_size  Size of the given data. */
-		StringsFile( const byte* p_data, size_t p_size );
+		explicit StringsFile( const byte* p_data, size_t p_size );
 		/** Constructor. Loads data from the given file.
 		*  \param[in]  p_filename  Name of the file to load. */
-		StringsFile( const std::string& p_filename );
+		explicit StringsFile( const std::string& p_filename );
 		/** Copy constructor. */
-		StringsFile( const StringsFile& p_other );
+		explicit StringsFile( const StringsFile& p_other );
 		/** Destructor. */
 		~StringsFile( );
 

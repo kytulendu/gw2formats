@@ -63,12 +63,12 @@ namespace gw2f {
 		*  claimed, it still needs to be freed by the caller.
 		*  \param[in]  p_data  Data to assign.
 		*  \param[in]  p_size  Size of the given data. */
-		TextureFile( const byte* p_data, size_t p_size );
+		explicit TextureFile( const byte* p_data, size_t p_size );
 		/** Constructor. Loads data from the given file.
 		*  \param[in]  p_filename  Name of the file to load. */
-		TextureFile( const std::string& p_filename );
+		explicit TextureFile( const std::string& p_filename );
 		/** Copy constructor. */
-		TextureFile( const TextureFile& p_other );
+		explicit TextureFile( const TextureFile& p_other );
 		/** Destructor. */
 		~TextureFile( );
 

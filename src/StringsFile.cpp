@@ -38,8 +38,8 @@ namespace gw2f {
 			: public IStringsFileEntry {
 			std::vector<byte> m_data;
 		public:
-			StringsFileEntry( const byte* p_data, size_t p_size );
-			StringsFileEntry( const IStringsFileEntry& p_other );
+			explicit StringsFileEntry( const byte* p_data, size_t p_size );
+			explicit StringsFileEntry( const IStringsFileEntry& p_other );
 			virtual ~StringsFileEntry( );
 			virtual const byte* data( ) const override;
 			virtual size_t size( ) const override;
