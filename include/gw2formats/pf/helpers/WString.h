@@ -41,9 +41,9 @@ namespace gw2f {
 				return std::wcslen( p_string );
 #elif defined(__GNUC__) || defined(__GNUG__)
 				return std::char_traits<char16>::length( p_string );
-// NOTE: UNTESTED!
 #else
-                return std::wcslen( p_string );
+				// NOTE: UNTESTED!
+				return std::wcslen( p_string );
 #endif
 			}
 
