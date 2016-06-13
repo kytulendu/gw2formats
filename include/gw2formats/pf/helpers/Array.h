@@ -92,14 +92,14 @@ namespace gw2f {
 					// check the safety of that without providing yet *another* parameter.
 					// ... I'll probably add that at some point, for now I trust GW2 files.
 
-					auto count = *reinterpret_cast<const uint*>( p_data );
-					auto offset = *reinterpret_cast<const int*>( p_data + sizeof( count ) );
+					auto count = *reinterpret_cast<const uint32*>( p_data );
+					auto offset = *reinterpret_cast<const int32*>( p_data + sizeof( count ) );
 					p_size -= sizeof( count ) + sizeof( offset );
 					p_data += sizeof( count ) + sizeof( offset );
 
 					auto pointer = p_data - sizeof( offset ) + offset;
 					auto end = p_data + p_size;
-					size_t size = p_size - ( pointer - p_data );
+					auto size = p_size - ( pointer - p_data );
 
 					m_data.reset( new std::vector<T> );
 					m_data->resize( count );
