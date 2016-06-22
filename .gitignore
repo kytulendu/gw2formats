@@ -9,3 +9,4 @@ obj
 *.suo
 *.depend
 *.layout
+*.db
