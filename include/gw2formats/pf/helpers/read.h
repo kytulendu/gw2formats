@@ -42,7 +42,7 @@ namespace gw2f {
 			template <typename T>
 			const byte* read( const byte* p_data, size_t& po_size, T& po_output ) {
 				auto pointer = po_output.assign( p_data, po_size );
-				po_size -= ( pointer - p_data );
+				po_size -= ( reinterpret_cast<const byte*>( pointer ) - p_data );
 				return pointer;
 			}
 

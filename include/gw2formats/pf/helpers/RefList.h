@@ -78,7 +78,7 @@ namespace gw2f {
 					m_data.reset( new std::vector<T>( offsets.size( ) ) );
 
 					auto pointer = p_data - sizeof( int32 );
-					auto offset = *reinterpret_cast<const int*>( pointer );
+					auto offset = *reinterpret_cast<const int32*>( pointer );
 					pointer += offset;
 
 					for ( uint i = 0; i < m_data->size( ); i++ ) {
