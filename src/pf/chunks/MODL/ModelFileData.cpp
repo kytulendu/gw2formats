@@ -183,7 +183,8 @@ namespace gw2f {
 				, rows( 0 )
 				, count( 0 )
 				, fps( 0 )
-				, rotate( 0 ) {
+				, rotate1( 0 )
+				, rotate2( 0 ) {
 			}
 
 			ModelMaterialTexTransformV65::ModelMaterialTexTransformV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {
@@ -202,7 +203,8 @@ namespace gw2f {
 				, scrollFreq( p_other.scrollFreq )
 				, scale( p_other.scale )
 				, scaleFreq( p_other.scaleFreq )
-				, rotate( p_other.rotate ) {
+				, rotate1( p_other.rotate1 )
+				, rotate2( p_other.rotate2 ) {
 			}
 
 			ModelMaterialTexTransformV65& ModelMaterialTexTransformV65::operator=( const ModelMaterialTexTransformV65& p_other ) {
@@ -216,7 +218,8 @@ namespace gw2f {
 				scrollFreq = p_other.scrollFreq;
 				scale = p_other.scale;
 				scaleFreq = p_other.scaleFreq;
-				rotate = p_other.rotate;
+				rotate1 = p_other.rotate1;
+				rotate2 = p_other.rotate2;
 				return *this;
 			}
 
@@ -231,7 +234,8 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, scrollFreq );
 				p_data = helpers::read( p_data, p_size, scale );
 				p_data = helpers::read( p_data, p_size, scaleFreq );
-				p_data = helpers::read( p_data, p_size, rotate );
+				p_data = helpers::read( p_data, p_size, rotate1 );
+				p_data = helpers::read( p_data, p_size, rotate2 );
 				return p_data;
 			}
 

@@ -106,7 +106,8 @@ namespace gw2f {
 				float2 scrollFreq;
 				float2 scale;
 				float2 scaleFreq;
-				float rotate;
+				float rotate1;
+				float rotate2;
 			public:
 				ModelMaterialTexTransformV65( );
 				ModelMaterialTexTransformV65( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
