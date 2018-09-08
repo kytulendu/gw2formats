@@ -14,7 +14,6 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
-					<Add option="-std=c++11" />
 					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-DBUILD_DLL" />
@@ -34,7 +33,6 @@
 				<Option createDefFile="1" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="-std=c++11" />
 					<Add option="-Wall" />
 					<Add option="-DBUILD_DLL" />
 					<Add option="-DGW2FORMATS_EXPORT" />
