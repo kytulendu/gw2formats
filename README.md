@@ -23,8 +23,9 @@ See the samples folder for other examples.
 Restrictions
 ------------
 
-Gw2formats uses C++11 features available in modern compilers. It have been tested with
-TDM-GCC64 5.1.0 and Visual Studio 2013 on Windows, and GCC 5.2.1 on Xubuntu.
+This library use some of C++11 feature, it need C++11 capable compiler in order to compile it.
+
+It have been tested with GCC 7.3.0 and Visual Studio 2017.
 
 Contributing
 ------------
