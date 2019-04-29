@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <gw2formats/TextureFile.h>
 
-#include <gw2DatTools/compression/inflateTextureFileBuffer.h>
+#include <gw2dattools/compression/inflateTextureFileBuffer.h>
 
 
 namespace {
