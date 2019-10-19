@@ -194,16 +194,18 @@ endif()
 
 # installation - spefify files to package
 install(TARGETS gw2formats EXPORT libgw2formatsTargets
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
-    INCLUDES DESTINATION include
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    PRIVATE_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 install(DIRECTORY ${LIBGW2FORMATS_INCLUDE_DIR}/ DESTINATION include FILES_MATCHING PATTERN "*.h")
+
 if(MSVC)
     install(FILES $<TARGET_FILE_DIR:gw2formats>/gw2formatsd.pdb DESTINATION bin CONFIGURATIONS Debug)
 endif()
+
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     ${CMAKE_BINARY_DIR}/cmake/libgw2formatsVersion.cmake
@@ -225,12 +227,12 @@ configure_package_config_file(${PROJECT_SOURCE_DIR}/libgw2formatsConfig.cmake.in
 )
 install(EXPORT libgw2formatsTargets
     FILE libgw2formatsTargets.cmake
-    DESTINATION "cmake"
+    DESTINATION "lib/cmake/libgw2formats"
 )
 install(FILES
     ${CMAKE_BINARY_DIR}/cmake/libgw2formatsConfig.cmake
     ${CMAKE_BINARY_DIR}/cmake/libgw2formatsVersion.cmake
-    DESTINATION "cmake"
+    DESTINATION "lib/cmake/libgw2formats"
 )
 
 if(NOT TARGET uninstall)
