@@ -99,6 +99,8 @@ namespace gw2f {
 
 					auto pointer = p_data - sizeof( offset ) + offset;
 					auto end = p_data + p_size;
+					if ((pointer - p_data) > 0 && ((unsigned) (pointer - p_data)) > p_size) { throw std::out_of_range("read data were larger than remaining size."); }
+					
 					auto size = p_size - ( pointer - p_data );
 
 					m_data.reset( new std::vector<T> );
