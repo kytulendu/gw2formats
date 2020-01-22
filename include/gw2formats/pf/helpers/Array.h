@@ -102,6 +102,7 @@ namespace gw2f {
 					if ((pointer - p_data) > 0 && ((unsigned) (pointer - p_data)) > p_size) { throw std::out_of_range("read data were larger than remaining size."); }
 					
 					auto size = p_size - ( pointer - p_data );
+					if (count > size) { throw std::out_of_range("size is too low for requested data to be read."); }
 
 					m_data.reset( new std::vector<T> );
 					m_data->resize( count );
