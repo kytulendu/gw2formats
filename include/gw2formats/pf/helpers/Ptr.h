@@ -67,6 +67,9 @@ namespace gw2f {
 					if ( offset != 0 ) {
 						auto pointer = p_data + offset;
 						auto end = p_data + p_size;
+						if (offset < 0) {
+							throw std::out_of_range("negative offset in Ptr.");
+						}
 						size_t size = ( end - pointer );
 
 						if ( pointer >= end ) { throw std::out_of_range( "pointer went past the end of the buffer." ); }
