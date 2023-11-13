@@ -1,7 +1,7 @@
 // File: pf/chunks/cmpc/PackComposite.cpp
 
 /*
-Copyright (C) 2014-2017 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014-2017 Khralkatorrix <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.

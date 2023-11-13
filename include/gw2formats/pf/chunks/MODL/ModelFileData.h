@@ -1,7 +1,7 @@
 // File: gw2formats/pf/chunks/MODL/ModelFileData.h
 
 /*
-Copyright (C) 2014 Khral Steelforge <https://github.com/kytulendu>
+Copyright (C) 2014 Khralkatorrix <https://github.com/kytulendu>
 Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
 This file is part of gw2formats.
