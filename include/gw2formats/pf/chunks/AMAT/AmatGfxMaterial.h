@@ -31,7 +31,6 @@
 #include <gw2formats/pf/ChunkFactory.h>
 #include <gw2formats/pf/helpers/Array.h>
 #include <gw2formats/pf/helpers/RefList.h>
-#include <gw2formats/pf/helpers/String.h>
 
 namespace gw2f {
     namespace pf {
