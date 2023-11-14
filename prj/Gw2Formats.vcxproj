@@ -31,6 +31,7 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\ABIX\BankIndexData.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\ABNK\BankFileData.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatDx9Material.h" />
+    <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatGfxMaterial.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatGr.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMSP\ScriptFileData.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\anic\PackAnimSequences.h" />
@@ -72,6 +73,7 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\PIMG\PagedImageTableData.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\prlt\ContentPortalManifest.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtm\TextPackManifest.h" />
+    <ClInclude Include="..\include\gw2formats\pf\chunks\txtp\TextPackPasswords.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtV\TextPackVariants.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtv_\TextPackVoices.h" />
     <ClInclude Include="..\include\gw2formats\pf\CollideModelManifestPackFile.h" />
@@ -101,6 +103,7 @@
     <ClInclude Include="..\include\gw2formats\pf\ScenePackFile.h" />
     <ClInclude Include="..\include\gw2formats\pf\ScriptPackFile.h" />
     <ClInclude Include="..\include\gw2formats\pf\TextManifestPackFile.h" />
+    <ClInclude Include="..\include\gw2formats\pf\TextPackPasswordsFile.h" />
     <ClInclude Include="..\include\gw2formats\pf\TextVariantPackFile.h" />
     <ClInclude Include="..\include\gw2formats\pf\TextVoicePackFile.h" />
     <ClInclude Include="..\include\gw2formats\StringsFile.h" />
@@ -111,6 +114,7 @@
     <ClCompile Include="..\src\pf\chunks\ABIX\BankIndexData.cpp" />
     <ClCompile Include="..\src\pf\chunks\ABNK\BankFileData.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMAT\AmatDx9Material.cpp" />
+    <ClCompile Include="..\src\pf\chunks\AMAT\AmatGfxMaterial.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMAT\AmatGr.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMSP\ScriptFileData.cpp" />
     <ClCompile Include="..\src\pf\chunks\anic\PackAnimSequences.cpp" />
@@ -151,6 +155,7 @@
     <ClCompile Include="..\src\pf\chunks\PIMG\PagedImageTableData.cpp" />
     <ClCompile Include="..\src\pf\chunks\prlt\ContentPortalManifest.cpp" />
     <ClCompile Include="..\src\pf\chunks\txtm\TextPackManifest.cpp" />
+    <ClCompile Include="..\src\pf\chunks\txtp\TextPackPasswords.cpp" />
     <ClCompile Include="..\src\pf\chunks\txtV\TextPackVariants.cpp" />
     <ClCompile Include="..\src\pf\chunks\txtv_\TextPackVoices.cpp" />
     <ClCompile Include="..\src\pf\helpers\FileName.cpp" />

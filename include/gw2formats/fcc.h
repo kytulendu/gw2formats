@@ -1,6 +1,7 @@
 // File: gw2formats/fcc.h
 
-/*	Copyright (C) 2012 Rhoot <https://github.com/rhoot>
+/*	Copyright (C) 2023 Khralkatorrix <https://github.com/kytulendu>
+    Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
     This file is part of gw2formats.
 
@@ -44,6 +45,7 @@ namespace gw2f {
 			ATEX = 0x58455441,
 			ATTX = 0x58545441,
 			audi = 0x69647561,
+			BGFX = 0x58464742,
 			BIDX = 0x58444942,
 			BKCK = 0x4b434b42,
 			CINP = 0x504e4943,
@@ -97,6 +99,7 @@ namespace gw2f {
 			trn = 0x006e7274,
 			trni = 0x696e7274,
 			txtm = 0x6d747874,
+			txtp = 0x70747874,
 			txtV = 0x56747874,
 			txtv = 0x76747874,
 			vari = 0x69726176,

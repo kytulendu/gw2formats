@@ -1,23 +1,22 @@
 // File: pf/chunks/hvkC/PackMapCollide.cpp
 
-/*
-Copyright (C) 2014 Khralkatorrix <https://github.com/kytulendu>
-Copyright (C) 2012 Rhoot <https://github.com/rhoot>
+/*  Copyright (C) 2014-2023 Khralkatorrix <https://github.com/kytulendu>
+	Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
-This file is part of gw2formats.
+	This file is part of gw2formats.
 
-gw2formats is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+	gw2formats is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include <gw2formats/pf/chunks/hvkC/PackMapCollide.h>
@@ -53,25 +52,25 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCollideCollisionV14
+			//      PackMapCollideCollisionV16
 			//============================================================================/
 
-			PackMapCollideCollisionV14::PackMapCollideCollisionV14( ) {
+			PackMapCollideCollisionV16::PackMapCollideCollisionV16( ) {
 			}
 
-			PackMapCollideCollisionV14::PackMapCollideCollisionV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideCollisionV16::PackMapCollideCollisionV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideCollisionV14::PackMapCollideCollisionV14( const PackMapCollideCollisionV14& p_other )
+			PackMapCollideCollisionV16::PackMapCollideCollisionV16( const PackMapCollideCollisionV16& p_other )
 				: indices( p_other.indices )
 				, vertices( p_other.vertices )
 				, surfaces( p_other.surfaces )
 				, moppCodeData( p_other.moppCodeData ) {
 			}
 
-			PackMapCollideCollisionV14& PackMapCollideCollisionV14::operator=( const PackMapCollideCollisionV14& p_other ) {
+			PackMapCollideCollisionV16& PackMapCollideCollisionV16::operator=( const PackMapCollideCollisionV16& p_other ) {
 				indices = p_other.indices;
 				vertices = p_other.vertices;
 				surfaces = p_other.surfaces;
@@ -79,7 +78,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideCollisionV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideCollisionV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, indices );
 				p_data = helpers::read( p_data, p_size, vertices );
 				p_data = helpers::read( p_data, p_size, surfaces );
@@ -88,90 +87,58 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCollideBlockerV14
+			//      PackMapCollideBlockerV16
 			//============================================================================/
 
-			PackMapCollideBlockerV14::PackMapCollideBlockerV14( ) {
+			PackMapCollideBlockerV16::PackMapCollideBlockerV16( ) {
 			}
 
-			PackMapCollideBlockerV14::PackMapCollideBlockerV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideBlockerV16::PackMapCollideBlockerV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideBlockerV14::PackMapCollideBlockerV14( const PackMapCollideBlockerV14& p_other )
+			PackMapCollideBlockerV16::PackMapCollideBlockerV16( const PackMapCollideBlockerV16& p_other )
 				: vertices( p_other.vertices ) {
 			}
 
-			PackMapCollideBlockerV14& PackMapCollideBlockerV14::operator=( const PackMapCollideBlockerV14& p_other ) {
+			PackMapCollideBlockerV16& PackMapCollideBlockerV16::operator=( const PackMapCollideBlockerV16& p_other ) {
 				vertices = p_other.vertices;
 				return *this;
 			}
 
-			const byte* PackMapCollideBlockerV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideBlockerV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, vertices );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapCollideNavMeshV14
+			//      PackMapCollideAnimationV16
 			//============================================================================/
 
-			PackMapCollideNavMeshV14::PackMapCollideNavMeshV14( ) {
-			}
-
-			PackMapCollideNavMeshV14::PackMapCollideNavMeshV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
-				auto pointer = assign( p_data, p_size );
-				if ( po_pointer ) { *po_pointer = pointer; }
-			}
-
-			PackMapCollideNavMeshV14::PackMapCollideNavMeshV14( const PackMapCollideNavMeshV14& p_other )
-				: navMesh( p_other.navMesh )
-				, graph( p_other.graph )
-				, mediator( p_other.mediator ) {
-			}
-
-			PackMapCollideNavMeshV14& PackMapCollideNavMeshV14::operator=( const PackMapCollideNavMeshV14& p_other ) {
-				navMesh = p_other.navMesh;
-				graph = p_other.graph;
-				mediator = p_other.mediator;
-				return *this;
-			}
-
-			const byte* PackMapCollideNavMeshV14::assign( const byte* p_data, size_t p_size ) {
-				p_data = helpers::read( p_data, p_size, navMesh );
-				p_data = helpers::read( p_data, p_size, graph );
-				p_data = helpers::read( p_data, p_size, mediator );
-				return p_data;
-			}
-
-			//============================================================================/
-			//      PackMapCollideAnimationV14
-			//============================================================================/
-
-			PackMapCollideAnimationV14::PackMapCollideAnimationV14( )
+			PackMapCollideAnimationV16::PackMapCollideAnimationV16( )
 				: sequence( 0 ) {
 			}
 
-			PackMapCollideAnimationV14::PackMapCollideAnimationV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideAnimationV16::PackMapCollideAnimationV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideAnimationV14::PackMapCollideAnimationV14( const PackMapCollideAnimationV14& p_other )
+			PackMapCollideAnimationV16::PackMapCollideAnimationV16( const PackMapCollideAnimationV16& p_other )
 				: sequence( p_other.sequence )
 				, collisionIndices( p_other.collisionIndices )
 				, blockerIndices( p_other.blockerIndices ) {
 			}
 
-			PackMapCollideAnimationV14& PackMapCollideAnimationV14::operator=( const PackMapCollideAnimationV14& p_other ) {
+			PackMapCollideAnimationV16& PackMapCollideAnimationV16::operator=( const PackMapCollideAnimationV16& p_other ) {
 				sequence = p_other.sequence;
 				collisionIndices = p_other.collisionIndices;
 				blockerIndices = p_other.blockerIndices;
 				return *this;
 			}
 
-			const byte* PackMapCollideAnimationV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideAnimationV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sequence );
 				p_data = helpers::read( p_data, p_size, collisionIndices );
 				p_data = helpers::read( p_data, p_size, blockerIndices );
@@ -179,33 +146,33 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCollideGeometryV14
+			//      PackMapCollideGeometryV16
 			//============================================================================/
 
-			PackMapCollideGeometryV14::PackMapCollideGeometryV14( )
+			PackMapCollideGeometryV16::PackMapCollideGeometryV16( )
 				: quantizedExtents( 0 )
 				, navMeshIndex( 0 ) {
 			}
 
-			PackMapCollideGeometryV14::PackMapCollideGeometryV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideGeometryV16::PackMapCollideGeometryV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideGeometryV14::PackMapCollideGeometryV14( const PackMapCollideGeometryV14& p_other )
+			PackMapCollideGeometryV16::PackMapCollideGeometryV16( const PackMapCollideGeometryV16& p_other )
 				: quantizedExtents( p_other.quantizedExtents )
 				, animations( p_other.animations )
 				, navMeshIndex( p_other.navMeshIndex ) {
 			}
 
-			PackMapCollideGeometryV14& PackMapCollideGeometryV14::operator=( const PackMapCollideGeometryV14& p_other ) {
+			PackMapCollideGeometryV16& PackMapCollideGeometryV16::operator=( const PackMapCollideGeometryV16& p_other ) {
 				quantizedExtents = p_other.quantizedExtents;
 				animations = p_other.animations;
 				navMeshIndex = p_other.navMeshIndex;
 				return *this;
 			}
 
-			const byte* PackMapCollideGeometryV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideGeometryV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, quantizedExtents );
 				p_data = helpers::read( p_data, p_size, animations );
 				p_data = helpers::read( p_data, p_size, navMeshIndex );
@@ -213,52 +180,52 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCollideModelObsV14
+			//      PackMapCollideModelObsV16
 			//============================================================================/
 
-			PackMapCollideModelObsV14::PackMapCollideModelObsV14( )
+			PackMapCollideModelObsV16::PackMapCollideModelObsV16( )
 				: geometryIndex( 0 ) {
 			}
 
-			PackMapCollideModelObsV14::PackMapCollideModelObsV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideModelObsV16::PackMapCollideModelObsV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideModelObsV14::PackMapCollideModelObsV14( const PackMapCollideModelObsV14& p_other )
+			PackMapCollideModelObsV16::PackMapCollideModelObsV16( const PackMapCollideModelObsV16& p_other )
 				: translate( p_other.translate )
 				, geometryIndex( p_other.geometryIndex ) {
 			}
 
-			PackMapCollideModelObsV14& PackMapCollideModelObsV14::operator=( const PackMapCollideModelObsV14& p_other ) {
+			PackMapCollideModelObsV16& PackMapCollideModelObsV16::operator=( const PackMapCollideModelObsV16& p_other ) {
 				translate = p_other.translate;
 				geometryIndex = p_other.geometryIndex;
 				return *this;
 			}
 
-			const byte* PackMapCollideModelObsV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideModelObsV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, translate );
 				p_data = helpers::read( p_data, p_size, geometryIndex );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapCollideModelPropV14
+			//      PackMapCollideModelPropV16
 			//============================================================================/
 
-			PackMapCollideModelPropV14::PackMapCollideModelPropV14( )
+			PackMapCollideModelPropV16::PackMapCollideModelPropV16( )
 				: token( 0 )
 				, sequence( 0 )
 				, scale( 0 )
 				, geometryIndex( 0 ) {
 			}
 
-			PackMapCollideModelPropV14::PackMapCollideModelPropV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideModelPropV16::PackMapCollideModelPropV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideModelPropV14::PackMapCollideModelPropV14( const PackMapCollideModelPropV14& p_other )
+			PackMapCollideModelPropV16::PackMapCollideModelPropV16( const PackMapCollideModelPropV16& p_other )
 				: token( p_other.token )
 				, sequence( p_other.sequence )
 				, scale( p_other.scale )
@@ -267,7 +234,7 @@ namespace gw2f {
 				, geometryIndex( p_other.geometryIndex ) {
 			}
 
-			PackMapCollideModelPropV14& PackMapCollideModelPropV14::operator=( const PackMapCollideModelPropV14& p_other ) {
+			PackMapCollideModelPropV16& PackMapCollideModelPropV16::operator=( const PackMapCollideModelPropV16& p_other ) {
 				token = p_other.token;
 				sequence = p_other.sequence;
 				scale = p_other.scale;
@@ -277,7 +244,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideModelPropV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideModelPropV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, sequence );
 				p_data = helpers::read( p_data, p_size, scale );
@@ -288,27 +255,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCollideModelZoneV14
+			//      PackMapCollideModelZoneV16
 			//============================================================================/
 
-			PackMapCollideModelZoneV14::PackMapCollideModelZoneV14( )
+			PackMapCollideModelZoneV16::PackMapCollideModelZoneV16( )
 				: scale( 0 )
 				, geometryIndex( 0 ) {
 			}
 
-			PackMapCollideModelZoneV14::PackMapCollideModelZoneV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideModelZoneV16::PackMapCollideModelZoneV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideModelZoneV14::PackMapCollideModelZoneV14( const PackMapCollideModelZoneV14& p_other )
+			PackMapCollideModelZoneV16::PackMapCollideModelZoneV16( const PackMapCollideModelZoneV16& p_other )
 				: scale( p_other.scale )
 				, translate( p_other.translate )
 				, rotate( p_other.rotate )
 				, geometryIndex( p_other.geometryIndex ) {
 			}
 
-			PackMapCollideModelZoneV14& PackMapCollideModelZoneV14::operator=( const PackMapCollideModelZoneV14& p_other ) {
+			PackMapCollideModelZoneV16& PackMapCollideModelZoneV16::operator=( const PackMapCollideModelZoneV16& p_other ) {
 				scale = p_other.scale;
 				translate = p_other.translate;
 				rotate = p_other.rotate;
@@ -316,7 +283,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCollideModelZoneV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideModelZoneV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, scale );
 				p_data = helpers::read( p_data, p_size, translate );
 				p_data = helpers::read( p_data, p_size, rotate );
@@ -325,55 +292,101 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCollideV14
+			//      PackMapCollideWaterVolumeV16
 			//============================================================================/
 
-			PackMapCollideV14::PackMapCollideV14( ) {
+			PackMapCollideWaterVolumeV16::PackMapCollideWaterVolumeV16()
+				: guid(0)
+				, flags(0) {
 			}
 
-			PackMapCollideV14::PackMapCollideV14( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCollideWaterVolumeV16::PackMapCollideWaterVolumeV16(const byte* p_data, size_t p_size, const byte** po_pointer) {
+				auto pointer = assign(p_data, p_size);
+				if (po_pointer) { *po_pointer = pointer; }
+			}
+
+			PackMapCollideWaterVolumeV16::PackMapCollideWaterVolumeV16(const PackMapCollideWaterVolumeV16& p_other)
+				: guid(p_other.guid)
+				, name(p_other.name)
+				, flags(p_other.flags)
+				, verticalRange(p_other.verticalRange)
+				, vertices(p_other.vertices) {
+			}
+
+			PackMapCollideWaterVolumeV16& PackMapCollideWaterVolumeV16::operator=(const PackMapCollideWaterVolumeV16& p_other) {
+				guid = p_other.guid;
+				name = p_other.name;
+				flags = p_other.flags;
+				verticalRange = p_other.verticalRange;
+				vertices = p_other.vertices;
+				return *this;
+			}
+
+			const byte* PackMapCollideWaterVolumeV16::assign(const byte* p_data, size_t p_size) {
+				p_data = helpers::read(p_data, p_size, guid);
+				p_data = helpers::read(p_data, p_size, name);
+				p_data = helpers::read(p_data, p_size, flags);
+				p_data = helpers::read(p_data, p_size, verticalRange);
+				p_data = helpers::read(p_data, p_size, vertices);
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapCollideV16
+			//============================================================================/
+
+			PackMapCollideV16::PackMapCollideV16( ) {
+			}
+
+			PackMapCollideV16::PackMapCollideV16( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCollideV14::PackMapCollideV14( const PackMapCollideV14& p_other )
+			PackMapCollideV16::PackMapCollideV16( const PackMapCollideV16& p_other )
 				: boundsMin( p_other.boundsMin )
 				, boundsMax( p_other.boundsMax )
+				, flags( p_other.flags )
+				, waterSurfaceZ( p_other.waterSurfaceZ )
 				, collisions( p_other.collisions )
 				, blockers( p_other.blockers )
-				, navMeshes( p_other.navMeshes )
 				, animations( p_other.animations )
 				, geometries( p_other.geometries )
 				, obsModels( p_other.obsModels )
 				, propModels( p_other.propModels )
-				, zoneModels( p_other.zoneModels ) {
+				, zoneModels( p_other.zoneModels )
+				, waterVolumes( p_other.waterVolumes) {
 			}
 
-			PackMapCollideV14& PackMapCollideV14::operator=( const PackMapCollideV14& p_other ) {
+			PackMapCollideV16& PackMapCollideV16::operator=( const PackMapCollideV16& p_other ) {
 				boundsMin = p_other.boundsMin;
 				boundsMax = p_other.boundsMax;
+				flags = p_other.flags;
+				waterSurfaceZ = p_other.waterSurfaceZ;
 				collisions = p_other.collisions;
 				blockers = p_other.blockers;
-				navMeshes = p_other.navMeshes;
 				animations = p_other.animations;
 				geometries = p_other.geometries;
 				obsModels = p_other.obsModels;
 				propModels = p_other.propModels;
 				zoneModels = p_other.zoneModels;
+				waterVolumes = p_other.waterVolumes;
 				return *this;
 			}
 
-			const byte* PackMapCollideV14::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCollideV16::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, boundsMin );
 				p_data = helpers::read( p_data, p_size, boundsMax );
+				p_data = helpers::read (p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, waterSurfaceZ);
 				p_data = helpers::read( p_data, p_size, collisions );
 				p_data = helpers::read( p_data, p_size, blockers );
-				p_data = helpers::read( p_data, p_size, navMeshes );
 				p_data = helpers::read( p_data, p_size, animations );
 				p_data = helpers::read( p_data, p_size, geometries );
 				p_data = helpers::read( p_data, p_size, obsModels );
 				p_data = helpers::read( p_data, p_size, propModels );
 				p_data = helpers::read( p_data, p_size, zoneModels );
+				p_data = helpers::read( p_data, p_size, waterVolumes );
 				return p_data;
 			}
 

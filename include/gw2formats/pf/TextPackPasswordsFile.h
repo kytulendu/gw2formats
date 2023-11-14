@@ -1,7 +1,6 @@
-// File: gw2formats/pf/MaterialPackFile.h
+// File: gw2formats/pf/TextPackPasswordsFile.h
 
 /*  Copyright (C) 2023 Khralkatorrix <https://github.com/kytulendu>
-    Copyright (C) 2012 Rhoot <https://github.com/rhoot>
 
     This file is part of gw2formats.
 
@@ -21,33 +20,28 @@
 
 #pragma once
 
-#ifndef GW2FORMATS_PF_MATERIALPACKFILE_H_INCLUDED
-#define GW2FORMATS_PF_MATERIALPACKFILE_H_INCLUDED
+#ifndef GW2FORMATS_PF_TEXTPACKPASSWORDS_H_INCLUDED
+#define GW2FORMATS_PF_TEXTPACKPASSWORDS_H_INCLUDED
 
 #include <gw2formats/fcc.h>
 #include <gw2formats/pf/PackFile.h>
 
-#include <gw2formats/pf/chunks/AMAT/AmatGr.h>
-#include <gw2formats/pf/chunks/AMAT/AmatDx9Material.h>
-#include <gw2formats/pf/chunks/AMAT/AmatGfxMaterial.h>
+#include <gw2formats/pf/chunks/txtp/TextPackPasswords.h>
 
 namespace gw2f {
     namespace pf {
 
-        typedef PackFile<fcc::AMAT> AmatPackFile;
-        typedef PackFile<fcc::AMAT> MaterialPackFile;
+        typedef PackFile<fcc::txtp> TxtpPackFile;
+        typedef PackFile<fcc::txtp> TextPackPasswordsFile;
 
-        namespace MaterialChunks {
+        namespace TextPasswordsChunks {
             enum {
-                GRMT = fcc::GRMT,
-                GrannyMaterial = fcc::GRMT,
-                DX9S = fcc::DX9S,
-                Dx9Shader = fcc::DX9S,
-                BGFX = fcc::BGFX,
+                txtp = fcc::txtp,
+                TextPasswords = fcc::txtp,
             }; // anon enum
-        }; // namespace MaterialChunks
+        }; // namespace TextPasswordsChunks
 
     }; // namespace pf
 }; // namespace gw2formats
 
-#endif // GW2FORMATS_PF_MATERIALPACKFILE_H_INCLUDED
+#endif // GW2FORMATS_PF_TEXTPACKPASSWORDS_H_INCLUDED

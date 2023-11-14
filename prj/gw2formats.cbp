@@ -72,11 +72,13 @@
 		<Unit filename="../include/gw2formats/pf/ScenePackFile.h" />
 		<Unit filename="../include/gw2formats/pf/ScriptPackFile.h" />
 		<Unit filename="../include/gw2formats/pf/TextManifestPackFile.h" />
+		<Unit filename="../include/gw2formats/pf/TextPackPasswordsFile.h" />
 		<Unit filename="../include/gw2formats/pf/TextVariantPackFile.h" />
 		<Unit filename="../include/gw2formats/pf/TextVoicePackFile.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/ABIX/BankIndexData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/ABNK/BankFileData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatDx9Material.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatGfxMaterial.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatGr.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/AMSP/ScriptFileData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/ASND/WaveformData.h" />
@@ -119,6 +121,7 @@
 		<Unit filename="../include/gw2formats/pf/chunks/prlt/ContentPortalManifest.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/txtV/TextPackVariants.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/txtm/TextPackManifest.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/txtp/TextPackPasswords.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/txtv_/TextPackVoices.h" />
 		<Unit filename="../include/gw2formats/pf/helpers/Array.h" />
 		<Unit filename="../include/gw2formats/pf/helpers/FileName.h" />
@@ -136,6 +139,7 @@
 		<Unit filename="../src/pf/chunks/ABIX/BankIndexData.cpp" />
 		<Unit filename="../src/pf/chunks/ABNK/BankFileData.cpp" />
 		<Unit filename="../src/pf/chunks/AMAT/AmatDx9Material.cpp" />
+		<Unit filename="../src/pf/chunks/AMAT/AmatGfxMaterial.cpp" />
 		<Unit filename="../src/pf/chunks/AMAT/AmatGr.cpp" />
 		<Unit filename="../src/pf/chunks/AMSP/ScriptFileData.cpp" />
 		<Unit filename="../src/pf/chunks/ASND/WaveformData.cpp" />
@@ -177,6 +181,7 @@
 		<Unit filename="../src/pf/chunks/prlt/ContentPortalManifest.cpp" />
 		<Unit filename="../src/pf/chunks/txtV/TextPackVariants.cpp" />
 		<Unit filename="../src/pf/chunks/txtm/TextPackManifest.cpp" />
+		<Unit filename="../src/pf/chunks/txtp/TextPackPasswords.cpp" />
 		<Unit filename="../src/pf/chunks/txtv_/TextPackVoices.cpp" />
 		<Unit filename="../src/pf/helpers/FileName.cpp" />
 		<Unit filename="../src/pf/helpers/FileReference.cpp" />

@@ -169,6 +169,12 @@
     <Filter Include="Header Files\exception">
       <UniqueIdentifier>{64f5a305-f573-480c-8949-89cd7f57e79e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pf\chunks\txtp">
+      <UniqueIdentifier>{3e754d1b-0e16-4710-9f97-634e66ee8e75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pf\chunks\txtp">
+      <UniqueIdentifier>{a3fdaff9-6f8e-46e3-8db0-010e5f9e6dc1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\gw2formats\pf\PackFile.h">
@@ -429,6 +435,15 @@
     <ClInclude Include="..\include\gw2formats\exception\Exception.h">
       <Filter>Header Files\exception</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatGfxMaterial.h">
+      <Filter>Header Files\pf\chunks\AMAT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gw2formats\pf\TextPackPasswordsFile.h">
+      <Filter>Header Files\pf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\gw2formats\pf\chunks\txtp\TextPackPasswords.h">
+      <Filter>Header Files\pf\chunks\txtp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\pf\helpers\FileReference.cpp">
@@ -580,6 +595,12 @@
     </ClCompile>
     <ClCompile Include="..\src\exception\Exception.cpp">
       <Filter>Source Files\exception</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pf\chunks\AMAT\AmatGfxMaterial.cpp">
+      <Filter>Source Files\pf\chunks\AMAT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pf\chunks\txtp\TextPackPasswords.cpp">
+      <Filter>Source Files\pf\chunks\txtp</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
