@@ -96,6 +96,7 @@ namespace gw2f {
 			SKEL = 0x4c454b53,
 			strs = 0x73727473,
 			surf = 0x66727573,
+			TOOL = 0x4c4f4f54,
 			trn = 0x006e7274,
 			trni = 0x696e7274,
 			txtm = 0x6d747874,

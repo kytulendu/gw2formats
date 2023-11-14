@@ -80,6 +80,7 @@
 		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatDx9Material.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatGfxMaterial.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatGr.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/AMAT/AmatToolParams.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/AMSP/ScriptFileData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/ASND/WaveformData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/CINP/SceneData.h" />
@@ -141,6 +142,7 @@
 		<Unit filename="../src/pf/chunks/AMAT/AmatDx9Material.cpp" />
 		<Unit filename="../src/pf/chunks/AMAT/AmatGfxMaterial.cpp" />
 		<Unit filename="../src/pf/chunks/AMAT/AmatGr.cpp" />
+		<Unit filename="../src/pf/chunks/AMAT/AmatToolParams.cpp" />
 		<Unit filename="../src/pf/chunks/AMSP/ScriptFileData.cpp" />
 		<Unit filename="../src/pf/chunks/ASND/WaveformData.cpp" />
 		<Unit filename="../src/pf/chunks/CINP/SceneData.cpp" />
