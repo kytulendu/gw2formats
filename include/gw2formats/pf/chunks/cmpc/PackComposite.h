@@ -41,20 +41,20 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackCompositeBlitRectSetV19 {
+			GW2FORMATS_API struct PackCompositeBlitRectSetV20 {
 				helpers::WString name;
 				dword2 size;
 				helpers::Array<byte> rectIndex;
 				helpers::Array<dword4> rectArray;
 			public:
-				PackCompositeBlitRectSetV19( );
-				PackCompositeBlitRectSetV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBlitRectSetV19( const PackCompositeBlitRectSetV19& p_other );
-				PackCompositeBlitRectSetV19& operator=( const PackCompositeBlitRectSetV19& p_other );
+				PackCompositeBlitRectSetV20( );
+				PackCompositeBlitRectSetV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBlitRectSetV20( const PackCompositeBlitRectSetV20& p_other );
+				PackCompositeBlitRectSetV20& operator=( const PackCompositeBlitRectSetV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleParamV19 {
+			GW2FORMATS_API struct PackCompositeBoneScaleParamV20 {
 				qword name;
 				byte flags;
 				float max;
@@ -63,58 +63,58 @@ namespace gw2f {
 				float3 scale;
 				float3 translate;
 			public:
-				PackCompositeBoneScaleParamV19( );
-				PackCompositeBoneScaleParamV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleParamV19( const PackCompositeBoneScaleParamV19& p_other );
-				PackCompositeBoneScaleParamV19& operator=( const PackCompositeBoneScaleParamV19& p_other );
+				PackCompositeBoneScaleParamV20( );
+				PackCompositeBoneScaleParamV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleParamV20( const PackCompositeBoneScaleParamV20& p_other );
+				PackCompositeBoneScaleParamV20& operator=( const PackCompositeBoneScaleParamV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleRegionV19 {
+			GW2FORMATS_API struct PackCompositeBoneScaleRegionV20 {
 				qword name;
 				float value;
-				helpers::Array<PackCompositeBoneScaleParamV19> bone;
+				helpers::Array<PackCompositeBoneScaleParamV20> bone;
 			public:
-				PackCompositeBoneScaleRegionV19( );
-				PackCompositeBoneScaleRegionV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleRegionV19( const PackCompositeBoneScaleRegionV19& p_other );
-				PackCompositeBoneScaleRegionV19& operator=( const PackCompositeBoneScaleRegionV19& p_other );
+				PackCompositeBoneScaleRegionV20( );
+				PackCompositeBoneScaleRegionV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleRegionV20( const PackCompositeBoneScaleRegionV20& p_other );
+				PackCompositeBoneScaleRegionV20& operator=( const PackCompositeBoneScaleRegionV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeMorphWeightV19 {
+			GW2FORMATS_API struct PackCompositeMorphWeightV20 {
 				qword name;
 				float value;
 			public:
-				PackCompositeMorphWeightV19( );
-				PackCompositeMorphWeightV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeMorphWeightV19( const PackCompositeMorphWeightV19& p_other );
-				PackCompositeMorphWeightV19& operator=( const PackCompositeMorphWeightV19& p_other );
+				PackCompositeMorphWeightV20( );
+				PackCompositeMorphWeightV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeMorphWeightV20( const PackCompositeMorphWeightV20& p_other );
+				PackCompositeMorphWeightV20& operator=( const PackCompositeMorphWeightV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleV19 {
-				helpers::Array<PackCompositeBoneScaleRegionV19> bodyRegion;
-				helpers::Array<PackCompositeMorphWeightV19> morphWeight;
+			GW2FORMATS_API struct PackCompositeBoneScaleV20 {
+				helpers::Array<PackCompositeBoneScaleRegionV20> bodyRegion;
+				helpers::Array<PackCompositeMorphWeightV20> morphWeight;
 			public:
-				PackCompositeBoneScaleV19( );
-				PackCompositeBoneScaleV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleV19( const PackCompositeBoneScaleV19& p_other );
-				PackCompositeBoneScaleV19& operator=( const PackCompositeBoneScaleV19& p_other );
+				PackCompositeBoneScaleV20( );
+				PackCompositeBoneScaleV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleV20( const PackCompositeBoneScaleV20& p_other );
+				PackCompositeBoneScaleV20& operator=( const PackCompositeBoneScaleV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeBoneScaleFileV19 {
+			GW2FORMATS_API struct PackCompositeBoneScaleFileV20 {
 				helpers::WString fileName;
 			public:
-				PackCompositeBoneScaleFileV19( );
-				PackCompositeBoneScaleFileV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeBoneScaleFileV19( const PackCompositeBoneScaleFileV19& p_other );
-				PackCompositeBoneScaleFileV19& operator=( const PackCompositeBoneScaleFileV19& p_other );
+				PackCompositeBoneScaleFileV20( );
+				PackCompositeBoneScaleFileV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeBoneScaleFileV20( const PackCompositeBoneScaleFileV20& p_other );
+				PackCompositeBoneScaleFileV20& operator=( const PackCompositeBoneScaleFileV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeFileDataV19 {
+			GW2FORMATS_API struct PackCompositeFileDataV20 {
 				qword name;
 				byte type;
 				byte flags;
@@ -133,14 +133,14 @@ namespace gw2f {
 				dword skinFlags;
 				byte blitRectIndex;
 			public:
-				PackCompositeFileDataV19( );
-				PackCompositeFileDataV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeFileDataV19( const PackCompositeFileDataV19& p_other );
-				PackCompositeFileDataV19& operator=( const PackCompositeFileDataV19& p_other );
+				PackCompositeFileDataV20( );
+				PackCompositeFileDataV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeFileDataV20( const PackCompositeFileDataV20& p_other );
+				PackCompositeFileDataV20& operator=( const PackCompositeFileDataV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeSkinPatternV19 {
+			GW2FORMATS_API struct PackCompositeSkinPatternV20 {
 				helpers::FileName chest;
 				helpers::FileName face;
 				helpers::FileName feet;
@@ -148,131 +148,131 @@ namespace gw2f {
 				helpers::FileName legs;
 				helpers::FileName ears;
 			public:
-				PackCompositeSkinPatternV19( );
-				PackCompositeSkinPatternV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeSkinPatternV19( const PackCompositeSkinPatternV19& p_other );
-				PackCompositeSkinPatternV19& operator=( const PackCompositeSkinPatternV19& p_other );
+				PackCompositeSkinPatternV20( );
+				PackCompositeSkinPatternV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeSkinPatternV20( const PackCompositeSkinPatternV20& p_other );
+				PackCompositeSkinPatternV20& operator=( const PackCompositeSkinPatternV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeSkinStyleV19 {
+			GW2FORMATS_API struct PackCompositeSkinStyleV20 {
 				qword chest;
 				qword feet;
 				qword hands;
 				qword legs;
 			public:
-				PackCompositeSkinStyleV19( );
-				PackCompositeSkinStyleV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeSkinStyleV19( const PackCompositeSkinStyleV19& p_other );
-				PackCompositeSkinStyleV19& operator=( const PackCompositeSkinStyleV19& p_other );
+				PackCompositeSkinStyleV20( );
+				PackCompositeSkinStyleV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeSkinStyleV20( const PackCompositeSkinStyleV20& p_other );
+				PackCompositeSkinStyleV20& operator=( const PackCompositeSkinStyleV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeColorV19 {
+			GW2FORMATS_API struct PackCompositeColorV20 {
 				byte brightness;
 				byte contrast;
 				byte hue;
 				byte saturation;
 				byte lightness;
 			public:
-				PackCompositeColorV19( );
-				PackCompositeColorV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeColorV19( const PackCompositeColorV19& p_other );
-				PackCompositeColorV19& operator=( const PackCompositeColorV19& p_other );
+				PackCompositeColorV20( );
+				PackCompositeColorV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeColorV20( const PackCompositeColorV20& p_other );
+				PackCompositeColorV20& operator=( const PackCompositeColorV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeVariantComponentV19 {
+			GW2FORMATS_API struct PackCompositeVariantComponentV20 {
 				qword nameToken;
-				PackCompositeColorV19 color0;
-				PackCompositeColorV19 color1;
-				PackCompositeColorV19 color2;
-				PackCompositeColorV19 color3;
+				PackCompositeColorV20 color0;
+				PackCompositeColorV20 color1;
+				PackCompositeColorV20 color2;
+				PackCompositeColorV20 color3;
 			public:
-				PackCompositeVariantComponentV19( );
-				PackCompositeVariantComponentV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeVariantComponentV19( const PackCompositeVariantComponentV19& p_other );
-				PackCompositeVariantComponentV19& operator=( const PackCompositeVariantComponentV19& p_other );
+				PackCompositeVariantComponentV20( );
+				PackCompositeVariantComponentV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeVariantComponentV20( const PackCompositeVariantComponentV20& p_other );
+				PackCompositeVariantComponentV20& operator=( const PackCompositeVariantComponentV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeVariantV19 {
+			GW2FORMATS_API struct PackCompositeVariantV20 {
 				qword token;
 				dword boneScaleIndex;
-				helpers::Array<PackCompositeVariantComponentV19> components;
-				PackCompositeColorV19 eyeColor;
-				PackCompositeColorV19 hairColor;
-				PackCompositeColorV19 hairColor2;
-				PackCompositeColorV19 patternColor;
-				PackCompositeColorV19 skinColor;
+				helpers::Array<PackCompositeVariantComponentV20> components;
+				PackCompositeColorV20 eyeColor;
+				PackCompositeColorV20 hairColor;
+				PackCompositeColorV20 hairColor2;
+				PackCompositeColorV20 patternColor;
+				PackCompositeColorV20 skinColor;
 				dword skinIndex;
 				dword skinStyle;
 			public:
-				PackCompositeVariantV19( );
-				PackCompositeVariantV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeVariantV19( const PackCompositeVariantV19& p_other );
-				PackCompositeVariantV19& operator=( const PackCompositeVariantV19& p_other );
+				PackCompositeVariantV20( );
+				PackCompositeVariantV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeVariantV20( const PackCompositeVariantV20& p_other );
+				PackCompositeVariantV20& operator=( const PackCompositeVariantV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeAnimOverrideV19 {
+			GW2FORMATS_API struct PackCompositeAnimOverrideV20 {
 				qword animRole;
 				helpers::FileName filepath;
 			public:
-				PackCompositeAnimOverrideV19( );
-				PackCompositeAnimOverrideV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeAnimOverrideV19( const PackCompositeAnimOverrideV19& p_other );
-				PackCompositeAnimOverrideV19& operator=( const PackCompositeAnimOverrideV19& p_other );
+				PackCompositeAnimOverrideV20( );
+				PackCompositeAnimOverrideV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeAnimOverrideV20( const PackCompositeAnimOverrideV20& p_other );
+				PackCompositeAnimOverrideV20& operator=( const PackCompositeAnimOverrideV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeRaceDataV19 {
+			GW2FORMATS_API struct PackCompositeRaceDataV20 {
 				helpers::WString name;
 				qword nameToken;
 				qword baseHeadToken;
 				helpers::Array<qword> beard;
-				helpers::Array<PackCompositeBoneScaleV19> bodyBoneScales;
-				helpers::Array<PackCompositeBoneScaleFileV19> bodyBoneScaleFiles;
+				helpers::Array<PackCompositeBoneScaleV20> bodyBoneScales;
+				helpers::Array<PackCompositeBoneScaleFileV20> bodyBoneScaleFiles;
 				helpers::Array<qword> ears;
 				helpers::WString eyeColorPalette;
-				helpers::Array<PackCompositeBoneScaleV19> faceBoneScales;
+				helpers::Array<PackCompositeBoneScaleV20> faceBoneScales;
 				helpers::Array<qword> faces;
-				helpers::Array<PackCompositeFileDataV19> fileData;
+				helpers::Array<PackCompositeFileDataV20> fileData;
 				dword flags;
 				helpers::Array<qword> hairStyles;
 				helpers::WString hairColorPalette;
 				helpers::FileName skeletonFile;
-				helpers::Array<PackCompositeSkinPatternV19> skinPatterns;
+				helpers::Array<PackCompositeSkinPatternV20> skinPatterns;
 				helpers::WString skinColorPalette;
 				helpers::WString skinPatternPalette;
-				helpers::Array<PackCompositeSkinStyleV19> skinStyles;
+				helpers::Array<PackCompositeSkinStyleV20> skinStyles;
 				dword type;
 				qword variantRefRace;
-				helpers::Array<PackCompositeVariantV19> variants;
-				helpers::Array<PackCompositeAnimOverrideV19> animOverrides;
+				helpers::Array<PackCompositeVariantV20> variants;
+				helpers::Array<PackCompositeAnimOverrideV20> animOverrides;
 			public:
-				PackCompositeRaceDataV19( );
-				PackCompositeRaceDataV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeRaceDataV19( const PackCompositeRaceDataV19& p_other );
-				PackCompositeRaceDataV19& operator=( const PackCompositeRaceDataV19& p_other );
+				PackCompositeRaceDataV20( );
+				PackCompositeRaceDataV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeRaceDataV20( const PackCompositeRaceDataV20& p_other );
+				PackCompositeRaceDataV20& operator=( const PackCompositeRaceDataV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackCompositeV19 {
+			GW2FORMATS_API struct PackCompositeV20 {
 				helpers::Array<dword> armorColorIds;
-				helpers::Array<PackCompositeBlitRectSetV19> blitRects;
-				helpers::Array<PackCompositeBoneScaleV19> boneScales;
-				helpers::Array<PackCompositeRaceDataV19> raceSexData;
+				helpers::Array<PackCompositeBlitRectSetV20> blitRects;
+				helpers::Array<PackCompositeBoneScaleV20> boneScales;
+				helpers::Array<PackCompositeRaceDataV20> raceSexData;
 				word configVersion;
 			public:
-				PackCompositeV19( );
-				PackCompositeV19( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackCompositeV19( const PackCompositeV19& p_other );
-				PackCompositeV19& operator=( const PackCompositeV19& p_other );
+				PackCompositeV20( );
+				PackCompositeV20( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackCompositeV20( const PackCompositeV20& p_other );
+				PackCompositeV20& operator=( const PackCompositeV20& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackCompositeV19 PackComposite;
+			typedef PackCompositeV20 PackComposite;
 
 		}; // namespace chunks
 
