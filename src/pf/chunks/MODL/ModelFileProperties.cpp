@@ -118,12 +118,12 @@ namespace gw2f {
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			ModelFilePropertiesV0::ModelFilePropertiesV0( const ModelFileProperties& p_other )
+			ModelFilePropertiesV0::ModelFilePropertiesV0( const ModelFilePropertiesV0& p_other )
 				: fixedOffsetData( p_other.fixedOffsetData )
 				, properties( p_other.properties ) {
 			}
 
-			ModelFilePropertiesV0& ModelFilePropertiesV0::operator=( const ModelFileProperties& p_other ) {
+			ModelFilePropertiesV0& ModelFilePropertiesV0::operator=( const ModelFilePropertiesV0& p_other ) {
 				fixedOffsetData = p_other.fixedOffsetData;
 				properties = p_other.properties;
 				return *this;
