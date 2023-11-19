@@ -39,43 +39,44 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackEmoteTimingV2 {
+			GW2FORMATS_API struct PackEmoteTimingV3 {
 				helpers::FileName modelFile;
 				float blendIn;
 				float blendOut;
 				dword introDuration;
 				dword loopDuration;
 				dword outroDuration;
+				dword StartOffset;
 			public:
-				PackEmoteTimingV2( );
-				PackEmoteTimingV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackEmoteTimingV2( const PackEmoteTimingV2& p_other );
-				PackEmoteTimingV2& operator=( const PackEmoteTimingV2& p_other );
+				PackEmoteTimingV3( );
+				PackEmoteTimingV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackEmoteTimingV3( const PackEmoteTimingV3& p_other );
+				PackEmoteTimingV3& operator=( const PackEmoteTimingV3& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackEmoteAnimationV2 {
+			GW2FORMATS_API struct PackEmoteAnimationV3 {
 				qword token;
-				helpers::Array<PackEmoteTimingV2> timings;
+				helpers::Array<PackEmoteTimingV3> timings;
 			public:
-				PackEmoteAnimationV2( );
-				PackEmoteAnimationV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackEmoteAnimationV2( const PackEmoteAnimationV2& p_other );
-				PackEmoteAnimationV2& operator=( const PackEmoteAnimationV2& p_other );
+				PackEmoteAnimationV3( );
+				PackEmoteAnimationV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackEmoteAnimationV3( const PackEmoteAnimationV3& p_other );
+				PackEmoteAnimationV3& operator=( const PackEmoteAnimationV3& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackEmoteAnimationsV2 {
-				helpers::Array<PackEmoteAnimationV2> animations;
+			GW2FORMATS_API struct PackEmoteAnimationsV3 {
+				helpers::Array<PackEmoteAnimationV3> animations;
 			public:
-				PackEmoteAnimationsV2( );
-				PackEmoteAnimationsV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackEmoteAnimationsV2( const PackEmoteAnimationsV2& p_other );
-				PackEmoteAnimationsV2& operator=( const PackEmoteAnimationsV2& p_other );
+				PackEmoteAnimationsV3( );
+				PackEmoteAnimationsV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackEmoteAnimationsV3( const PackEmoteAnimationsV3& p_other );
+				PackEmoteAnimationsV3& operator=( const PackEmoteAnimationsV3& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackEmoteAnimationsV2 PackEmoteAnimations;
+			typedef PackEmoteAnimationsV3 PackEmoteAnimations;
 
 		}; // namespace chunks
 
