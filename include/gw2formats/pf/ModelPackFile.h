@@ -27,6 +27,7 @@
 #include <gw2formats/pf/PackFile.h>
 
 #include <gw2formats/pf/chunks/MODL/ModelFileAnimation.h>
+#include <gw2formats/pf/chunks/MODL/ModelFileCollision.h>
 #include <gw2formats/pf/chunks/MODL/ModelFileData.h>
 #include <gw2formats/pf/chunks/MODL/ModelFileGeometry.h>
 #include <gw2formats/pf/chunks/MODL/ModelFileProperties.h>
@@ -43,6 +44,8 @@ namespace gw2f {
 			enum {
 				ANIM = fcc::ANIM,
 				Animation = fcc::ANIM,
+				COLL = fcc::COLL,
+				Collision = fcc::COLL,
 				MODL = fcc::MODL,
 				Model = fcc::MODL,
 				GEOM = fcc::GEOM,

@@ -52,6 +52,7 @@ namespace gw2f {
 			cmaC = 0x43616d63,
 			cmpc = 0x63706d63,
 			cntc = 0x63746e63,
+			COLL = 0x4c4c4f43,
 			comp = 0x706d6f63,
 			CSCN = 0x4e435343,
 			cube = 0x65627563,

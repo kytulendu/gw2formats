@@ -65,6 +65,7 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\mMet\PackMapMetadata.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\common.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileAnimation.h" />
+    <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileCollision.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileData.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileGeometry.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\ModelFileProperties.h" />
@@ -148,6 +149,7 @@
     <ClCompile Include="..\src\pf\chunks\mMet\PackMapMetadata.cpp" />
     <ClCompile Include="..\src\pf\chunks\MODL\common.cpp" />
     <ClCompile Include="..\src\pf\chunks\MODL\ModelFileAnimation.cpp" />
+    <ClCompile Include="..\src\pf\chunks\MODL\ModelFileCollision.cpp" />
     <ClCompile Include="..\src\pf\chunks\MODL\ModelFileData.cpp" />
     <ClCompile Include="..\src\pf\chunks\MODL\ModelFileGeometry.cpp" />
     <ClCompile Include="..\src\pf\chunks\MODL\ModelFileProperties.cpp" />

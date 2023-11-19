@@ -85,6 +85,7 @@
 		<Unit filename="../include/gw2formats/pf/chunks/ASND/WaveformData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/CINP/SceneData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileAnimation.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileCollision.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileData.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileGeometry.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/MODL/ModelFileProperties.h" />
@@ -147,6 +148,7 @@
 		<Unit filename="../src/pf/chunks/ASND/WaveformData.cpp" />
 		<Unit filename="../src/pf/chunks/CINP/SceneData.cpp" />
 		<Unit filename="../src/pf/chunks/MODL/ModelFileAnimation.cpp" />
+		<Unit filename="../src/pf/chunks/MODL/ModelFileCollision.cpp" />
 		<Unit filename="../src/pf/chunks/MODL/ModelFileData.cpp" />
 		<Unit filename="../src/pf/chunks/MODL/ModelFileGeometry.cpp" />
 		<Unit filename="../src/pf/chunks/MODL/ModelFileProperties.cpp" />
