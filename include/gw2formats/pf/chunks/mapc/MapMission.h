@@ -40,29 +40,29 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackMapInterestPointV0 {
+			GW2FORMATS_API struct PackMapInterestPointV2 {
 				float3 position;
 				float3 forward;
 				helpers::WString description;
 			public:
-				PackMapInterestPointV0( );
-				PackMapInterestPointV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapInterestPointV0( const PackMapInterestPointV0& p_other );
-				PackMapInterestPointV0& operator=( const PackMapInterestPointV0& p_other );
+				PackMapInterestPointV2( );
+				PackMapInterestPointV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapInterestPointV2( const PackMapInterestPointV2& p_other );
+				PackMapInterestPointV2& operator=( const PackMapInterestPointV2& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct MapMissionV0 {
-				helpers::Array<PackMapInterestPointV0> interestPoints;
+			GW2FORMATS_API struct MapMissionV2 {
+				helpers::Array<PackMapInterestPointV2> interestPoints;
 			public:
-				MapMissionV0( );
-				MapMissionV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				MapMissionV0( const MapMissionV0& p_other );
-				MapMissionV0& operator=( const MapMissionV0& p_other );
+				MapMissionV2( );
+				MapMissionV2( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				MapMissionV2( const MapMissionV2& p_other );
+				MapMissionV2& operator=( const MapMissionV2& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef MapMissionV0 MapMission;
+			typedef MapMissionV2 MapMission;
 
 		}; // namespace chunks
 

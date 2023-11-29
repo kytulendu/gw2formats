@@ -27,10 +27,10 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapAudioRegionV0
+			//      PackMapAudioRegionV8
 			//============================================================================/
 
-			PackMapAudioRegionV0::PackMapAudioRegionV0( )
+			PackMapAudioRegionV8::PackMapAudioRegionV8( )
 				: regionType( 0 )
 				, overrideMode( 0 )
 				, exteriorVolume( 0 )
@@ -42,12 +42,12 @@ namespace gw2f {
 				, flags( 0 ) {
 			}
 
-			PackMapAudioRegionV0::PackMapAudioRegionV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapAudioRegionV8::PackMapAudioRegionV8( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapAudioRegionV0::PackMapAudioRegionV0( const PackMapAudioRegionV0& p_other )
+			PackMapAudioRegionV8::PackMapAudioRegionV8( const PackMapAudioRegionV8& p_other )
 				: regionType( p_other.regionType )
 				, overrideMode( p_other.overrideMode )
 				, filenameSourceDay( p_other.filenameSourceDay )
@@ -67,7 +67,7 @@ namespace gw2f {
 				, flags( p_other.flags ) {
 			}
 
-			PackMapAudioRegionV0& PackMapAudioRegionV0::operator=( const PackMapAudioRegionV0& p_other ) {
+			PackMapAudioRegionV8& PackMapAudioRegionV8::operator=( const PackMapAudioRegionV8& p_other ) {
 				regionType = p_other.regionType;
 				overrideMode = p_other.overrideMode;
 				filenameSourceDay = p_other.filenameSourceDay;
@@ -88,7 +88,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapAudioRegionV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapAudioRegionV8::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, regionType );
 				p_data = helpers::read( p_data, p_size, overrideMode );
 				p_data = helpers::read( p_data, p_size, filenameSourceDay );
@@ -110,74 +110,74 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapAudioRegionToolV0
+			//      PackMapAudioRegionToolV8
 			//============================================================================/
 
-			PackMapAudioRegionToolV0::PackMapAudioRegionToolV0( ) {
+			PackMapAudioRegionToolV8::PackMapAudioRegionToolV8( ) {
 			}
 
-			PackMapAudioRegionToolV0::PackMapAudioRegionToolV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapAudioRegionToolV8::PackMapAudioRegionToolV8( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapAudioRegionToolV0::PackMapAudioRegionToolV0( const PackMapAudioRegionToolV0& p_other )
+			PackMapAudioRegionToolV8::PackMapAudioRegionToolV8( const PackMapAudioRegionToolV8& p_other )
 				: annotation( p_other.annotation ) {
 			}
 
-			PackMapAudioRegionToolV0& PackMapAudioRegionToolV0::operator=( const PackMapAudioRegionToolV0& p_other ) {
+			PackMapAudioRegionToolV8& PackMapAudioRegionToolV8::operator=( const PackMapAudioRegionToolV8& p_other ) {
 				annotation = p_other.annotation;
 				return *this;
 			}
 
-			const byte* PackMapAudioRegionToolV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapAudioRegionToolV8::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, annotation );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapAudioDepV0
+			//      PackMapAudioDepV8
 			//============================================================================/
 
-			PackMapAudioDepV0::PackMapAudioDepV0( )
+			PackMapAudioDepV8::PackMapAudioDepV8( )
 				: flags( 0 ) {
 			}
 
-			PackMapAudioDepV0::PackMapAudioDepV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapAudioDepV8::PackMapAudioDepV8( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapAudioDepV0::PackMapAudioDepV0( const PackMapAudioDepV0& p_other )
+			PackMapAudioDepV8::PackMapAudioDepV8( const PackMapAudioDepV8& p_other )
 				: dependency( p_other.dependency )
 				, flags( p_other.flags ) {
 			}
 
-			PackMapAudioDepV0& PackMapAudioDepV0::operator=( const PackMapAudioDepV0& p_other ) {
+			PackMapAudioDepV8& PackMapAudioDepV8::operator=( const PackMapAudioDepV8& p_other ) {
 				dependency = p_other.dependency;
 				flags = p_other.flags;
 				return *this;
 			}
 
-			const byte* PackMapAudioDepV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapAudioDepV8::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, dependency );
 				p_data = helpers::read( p_data, p_size, flags );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      MapAudioV0
+			//      MapAudioV8
 			//============================================================================/
 
-			MapAudioV0::MapAudioV0( ) {
+			MapAudioV8::MapAudioV8( ) {
 			}
 
-			MapAudioV0::MapAudioV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapAudioV8::MapAudioV8( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapAudioV0::MapAudioV0( const MapAudioV0& p_other )
+			MapAudioV8::MapAudioV8( const MapAudioV8& p_other )
 				: filenameAmbientDaySurface( p_other.filenameAmbientDaySurface )
 				, filenameAmbientDayUnderwater( p_other.filenameAmbientDayUnderwater )
 				, filenameAmbientNightSurface( p_other.filenameAmbientNightSurface )
@@ -187,7 +187,7 @@ namespace gw2f {
 				, audioDepArray( p_other.audioDepArray ) {
 			}
 
-			MapAudioV0& MapAudioV0::operator=( const MapAudioV0& p_other ) {
+			MapAudioV8& MapAudioV8::operator=( const MapAudioV8& p_other ) {
 				filenameAmbientDaySurface = p_other.filenameAmbientDaySurface;
 				filenameAmbientDayUnderwater = p_other.filenameAmbientDayUnderwater;
 				filenameAmbientNightSurface = p_other.filenameAmbientNightSurface;
@@ -198,7 +198,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapAudioV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapAudioV8::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filenameAmbientDaySurface );
 				p_data = helpers::read( p_data, p_size, filenameAmbientDayUnderwater );
 				p_data = helpers::read( p_data, p_size, filenameAmbientNightSurface );

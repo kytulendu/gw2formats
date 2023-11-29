@@ -26,34 +26,34 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      MapSurfaceAttributeV0
+			//      MapSurfaceAttributeV2
 			//============================================================================/
 
-			MapSurfaceAttributeV0::MapSurfaceAttributeV0( )
+			MapSurfaceAttributeV2::MapSurfaceAttributeV2( )
 				: id( 0 )
 				, sound( 0 )
 				, flags( 0 ) {
 			}
 
-			MapSurfaceAttributeV0::MapSurfaceAttributeV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapSurfaceAttributeV2::MapSurfaceAttributeV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapSurfaceAttributeV0::MapSurfaceAttributeV0( const MapSurfaceAttributeV0& p_other )
+			MapSurfaceAttributeV2::MapSurfaceAttributeV2( const MapSurfaceAttributeV2& p_other )
 				: id( p_other.id )
 				, sound( p_other.sound )
 				, flags( p_other.flags ) {
 			}
 
-			MapSurfaceAttributeV0& MapSurfaceAttributeV0::operator=( const MapSurfaceAttributeV0& p_other ) {
+			MapSurfaceAttributeV2& MapSurfaceAttributeV2::operator=( const MapSurfaceAttributeV2& p_other ) {
 				id = p_other.id;
 				sound = p_other.sound;
 				flags = p_other.flags;
 				return *this;
 			}
 
-			const byte* MapSurfaceAttributeV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapSurfaceAttributeV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, id );
 				p_data = helpers::read( p_data, p_size, sound );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -61,31 +61,31 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MapSurfaceAttributeToolV0
+			//      MapSurfaceAttributeToolV2
 			//============================================================================/
 
-			MapSurfaceAttributeToolV0::MapSurfaceAttributeToolV0( ) {
+			MapSurfaceAttributeToolV2::MapSurfaceAttributeToolV2( ) {
 			}
 
-			MapSurfaceAttributeToolV0::MapSurfaceAttributeToolV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapSurfaceAttributeToolV2::MapSurfaceAttributeToolV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapSurfaceAttributeToolV0::MapSurfaceAttributeToolV0( const MapSurfaceAttributeToolV0& p_other )
+			MapSurfaceAttributeToolV2::MapSurfaceAttributeToolV2( const MapSurfaceAttributeToolV2& p_other )
 				: name( p_other.name )
 				, category( p_other.category )
 				, color( p_other.color ) {
 			}
 
-			MapSurfaceAttributeToolV0& MapSurfaceAttributeToolV0::operator=( const MapSurfaceAttributeToolV0& p_other ) {
+			MapSurfaceAttributeToolV2& MapSurfaceAttributeToolV2::operator=( const MapSurfaceAttributeToolV2& p_other ) {
 				name = p_other.name;
 				category = p_other.category;
 				color = p_other.color;
 				return *this;
 			}
 
-			const byte* MapSurfaceAttributeToolV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapSurfaceAttributeToolV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, name );
 				p_data = helpers::read( p_data, p_size, category );
 				p_data = helpers::read( p_data, p_size, color );
@@ -93,114 +93,114 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MapSurfaceOverrideV0
+			//      MapSurfaceOverrideV2
 			//============================================================================/
 
-			MapSurfaceOverrideV0::MapSurfaceOverrideV0( )
+			MapSurfaceOverrideV2::MapSurfaceOverrideV2( )
 				: surfaceId( 0 ) {
 			}
 
-			MapSurfaceOverrideV0::MapSurfaceOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapSurfaceOverrideV2::MapSurfaceOverrideV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapSurfaceOverrideV0::MapSurfaceOverrideV0( const MapSurfaceOverrideV0& p_other )
+			MapSurfaceOverrideV2::MapSurfaceOverrideV2( const MapSurfaceOverrideV2& p_other )
 				: surfaceId( p_other.surfaceId )
 				, bitArray( p_other.bitArray ) {
 			}
 
-			MapSurfaceOverrideV0& MapSurfaceOverrideV0::operator=( const MapSurfaceOverrideV0& p_other ) {
+			MapSurfaceOverrideV2& MapSurfaceOverrideV2::operator=( const MapSurfaceOverrideV2& p_other ) {
 				surfaceId = p_other.surfaceId;
 				bitArray = p_other.bitArray;
 				return *this;
 			}
 
-			const byte* MapSurfaceOverrideV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapSurfaceOverrideV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, surfaceId );
 				p_data = helpers::read( p_data, p_size, bitArray );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      MapSurfaceTerrainOverrideV0
+			//      MapSurfaceTerrainOverrideV2
 			//============================================================================/
 
-			MapSurfaceTerrainOverrideV0::MapSurfaceTerrainOverrideV0( ) {
+			MapSurfaceTerrainOverrideV2::MapSurfaceTerrainOverrideV2( ) {
 			}
 
-			MapSurfaceTerrainOverrideV0::MapSurfaceTerrainOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapSurfaceTerrainOverrideV2::MapSurfaceTerrainOverrideV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapSurfaceTerrainOverrideV0::MapSurfaceTerrainOverrideV0( const MapSurfaceTerrainOverrideV0& p_other )
+			MapSurfaceTerrainOverrideV2::MapSurfaceTerrainOverrideV2( const MapSurfaceTerrainOverrideV2& p_other )
 				: chunkCoord( p_other.chunkCoord )
 				, overrideArray( p_other.overrideArray ) {
 			}
 
-			MapSurfaceTerrainOverrideV0& MapSurfaceTerrainOverrideV0::operator=( const MapSurfaceTerrainOverrideV0& p_other ) {
+			MapSurfaceTerrainOverrideV2& MapSurfaceTerrainOverrideV2::operator=( const MapSurfaceTerrainOverrideV2& p_other ) {
 				chunkCoord = p_other.chunkCoord;
 				overrideArray = p_other.overrideArray;
 				return *this;
 			}
 
-			const byte* MapSurfaceTerrainOverrideV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapSurfaceTerrainOverrideV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, chunkCoord );
 				p_data = helpers::read( p_data, p_size, overrideArray );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      MapSurfacePropOverrideV0
+			//      MapSurfacePropOverrideV2
 			//============================================================================/
 
-			MapSurfacePropOverrideV0::MapSurfacePropOverrideV0( )
+			MapSurfacePropOverrideV2::MapSurfacePropOverrideV2( )
 				: propId( 0 ) {
 			}
 
-			MapSurfacePropOverrideV0::MapSurfacePropOverrideV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapSurfacePropOverrideV2::MapSurfacePropOverrideV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapSurfacePropOverrideV0::MapSurfacePropOverrideV0( const MapSurfacePropOverrideV0& p_other )
+			MapSurfacePropOverrideV2::MapSurfacePropOverrideV2( const MapSurfacePropOverrideV2& p_other )
 				: propId( p_other.propId )
 				, overrideArray( p_other.overrideArray ) {
 			}
 
-			MapSurfacePropOverrideV0& MapSurfacePropOverrideV0::operator=( const MapSurfacePropOverrideV0& p_other ) {
+			MapSurfacePropOverrideV2& MapSurfacePropOverrideV2::operator=( const MapSurfacePropOverrideV2& p_other ) {
 				propId = p_other.propId;
 				overrideArray = p_other.overrideArray;
 				return *this;
 			}
 
-			const byte* MapSurfacePropOverrideV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapSurfacePropOverrideV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, propId );
 				p_data = helpers::read( p_data, p_size, overrideArray );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      MapSurfacesV0
+			//      MapSurfacesV2
 			//============================================================================/
 
-			MapSurfacesV0::MapSurfacesV0( ) {
+			MapSurfacesV2::MapSurfacesV2( ) {
 			}
 
-			MapSurfacesV0::MapSurfacesV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapSurfacesV2::MapSurfacesV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapSurfacesV0::MapSurfacesV0( const MapSurfacesV0& p_other )
+			MapSurfacesV2::MapSurfacesV2( const MapSurfacesV2& p_other )
 				: attributeData( p_other.attributeData )
 				, toolData( p_other.toolData )
 				, terrainArray( p_other.terrainArray )
 				, propArray( p_other.propArray ) {
 			}
 
-			MapSurfacesV0& MapSurfacesV0::operator=( const MapSurfacesV0& p_other ) {
+			MapSurfacesV2& MapSurfacesV2::operator=( const MapSurfacesV2& p_other ) {
 				attributeData = p_other.attributeData;
 				toolData = p_other.toolData;
 				terrainArray = p_other.terrainArray;
@@ -208,7 +208,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapSurfacesV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapSurfacesV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, attributeData );
 				p_data = helpers::read( p_data, p_size, toolData );
 				p_data = helpers::read( p_data, p_size, terrainArray );

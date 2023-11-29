@@ -27,31 +27,31 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapInterestPointV0
+			//      PackMapInterestPointV2
 			//============================================================================/
 
-			PackMapInterestPointV0::PackMapInterestPointV0( ) {
+			PackMapInterestPointV2::PackMapInterestPointV2( ) {
 			}
 
-			PackMapInterestPointV0::PackMapInterestPointV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapInterestPointV2::PackMapInterestPointV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapInterestPointV0::PackMapInterestPointV0( const PackMapInterestPointV0& p_other )
+			PackMapInterestPointV2::PackMapInterestPointV2( const PackMapInterestPointV2& p_other )
 				: position( p_other.position )
 				, forward( p_other.forward )
 				, description( p_other.description ) {
 			}
 
-			PackMapInterestPointV0& PackMapInterestPointV0::operator=( const PackMapInterestPointV0& p_other ) {
+			PackMapInterestPointV2& PackMapInterestPointV2::operator=( const PackMapInterestPointV2& p_other ) {
 				position = p_other.position;
 				forward = p_other.forward;
 				description = p_other.description;
 				return *this;
 			}
 
-			const byte* PackMapInterestPointV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapInterestPointV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, forward );
 				p_data = helpers::read( p_data, p_size, description );
@@ -59,27 +59,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MapMissionV0
+			//      MapMissionV2
 			//============================================================================/
 
-			MapMissionV0::MapMissionV0( ) {
+			MapMissionV2::MapMissionV2( ) {
 			}
 
-			MapMissionV0::MapMissionV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapMissionV2::MapMissionV2( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapMissionV0::MapMissionV0( const MapMissionV0& p_other )
+			MapMissionV2::MapMissionV2( const MapMissionV2& p_other )
 				: interestPoints( p_other.interestPoints ) {
 			}
 
-			MapMissionV0& MapMissionV0::operator=( const MapMissionV0& p_other ) {
+			MapMissionV2& MapMissionV2::operator=( const MapMissionV2& p_other ) {
 				interestPoints = p_other.interestPoints;
 				return *this;
 			}
 
-			const byte* MapMissionV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapMissionV2::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, interestPoints );
 				return p_data;
 			}

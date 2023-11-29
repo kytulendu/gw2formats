@@ -27,10 +27,10 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      MapShoreChainV0
+			//      MapShoreChainV3
 			//============================================================================/
 
-			MapShoreChainV0::MapShoreChainV0( )
+			MapShoreChainV3::MapShoreChainV3( )
 				: offset( 0 )
 				, opacity( 0 )
 				, animationSpeed( 0 )
@@ -41,12 +41,12 @@ namespace gw2f {
 				, simplifyDot( 0 ) {
 			}
 
-			MapShoreChainV0::MapShoreChainV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapShoreChainV3::MapShoreChainV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapShoreChainV0::MapShoreChainV0( const MapShoreChainV0& p_other )
+			MapShoreChainV3::MapShoreChainV3( const MapShoreChainV3& p_other )
 				: offset( p_other.offset )
 				, opacity( p_other.opacity )
 				, animationSpeed( p_other.animationSpeed )
@@ -62,7 +62,7 @@ namespace gw2f {
 				std::copy( p_other.fadeRanges, p_other.fadeRanges + 4, fadeRanges );
 			}
 
-			MapShoreChainV0& MapShoreChainV0::operator=( const MapShoreChainV0& p_other ) {
+			MapShoreChainV3& MapShoreChainV3::operator=( const MapShoreChainV3& p_other ) {
 				offset = p_other.offset;
 				opacity = p_other.opacity;
 				animationSpeed = p_other.animationSpeed;
@@ -79,7 +79,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* MapShoreChainV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapShoreChainV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, offset );
 				p_data = helpers::read( p_data, p_size, opacity );
 				p_data = helpers::read( p_data, p_size, animationSpeed );
@@ -97,27 +97,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MapShoreV0
+			//      MapShoreV3
 			//============================================================================/
 
-			MapShoreV0::MapShoreV0( ) {
+			MapShoreV3::MapShoreV3( ) {
 			}
 
-			MapShoreV0::MapShoreV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			MapShoreV3::MapShoreV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			MapShoreV0::MapShoreV0( const MapShoreV0& p_other )
+			MapShoreV3::MapShoreV3( const MapShoreV3& p_other )
 				: chains( p_other.chains ) {
 			}
 
-			MapShoreV0& MapShoreV0::operator=( const MapShoreV0& p_other ) {
+			MapShoreV3& MapShoreV3::operator=( const MapShoreV3& p_other ) {
 				chains = p_other.chains;
 				return *this;
 			}
 
-			const byte* MapShoreV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* MapShoreV3::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, chains );
 				return p_data;
 			}

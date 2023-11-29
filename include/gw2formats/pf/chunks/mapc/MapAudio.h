@@ -41,7 +41,7 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackMapAudioRegionV0 {
+			GW2FORMATS_API struct PackMapAudioRegionV8 {
 				dword regionType;
 				dword overrideMode;
 				helpers::FileName filenameSourceDay;
@@ -60,51 +60,51 @@ namespace gw2f {
 				qword guid;
 				dword flags;
 			public:
-				PackMapAudioRegionV0( );
-				PackMapAudioRegionV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapAudioRegionV0( const PackMapAudioRegionV0& p_other );
-				PackMapAudioRegionV0& operator=( const PackMapAudioRegionV0& p_other );
+				PackMapAudioRegionV8( );
+				PackMapAudioRegionV8( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapAudioRegionV8( const PackMapAudioRegionV8& p_other );
+				PackMapAudioRegionV8& operator=( const PackMapAudioRegionV8& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapAudioRegionToolV0 {
+			GW2FORMATS_API struct PackMapAudioRegionToolV8 {
 				helpers::WString annotation;
 			public:
-				PackMapAudioRegionToolV0( );
-				PackMapAudioRegionToolV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapAudioRegionToolV0( const PackMapAudioRegionToolV0& p_other );
-				PackMapAudioRegionToolV0& operator=( const PackMapAudioRegionToolV0& p_other );
+				PackMapAudioRegionToolV8( );
+				PackMapAudioRegionToolV8( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapAudioRegionToolV8( const PackMapAudioRegionToolV8& p_other );
+				PackMapAudioRegionToolV8& operator=( const PackMapAudioRegionToolV8& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapAudioDepV0 {
+			GW2FORMATS_API struct PackMapAudioDepV8 {
 				helpers::FileName dependency;
 				dword flags;
 			public:
-				PackMapAudioDepV0( );
-				PackMapAudioDepV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapAudioDepV0( const PackMapAudioDepV0& p_other );
-				PackMapAudioDepV0& operator=( const PackMapAudioDepV0& p_other );
+				PackMapAudioDepV8( );
+				PackMapAudioDepV8( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapAudioDepV8( const PackMapAudioDepV8& p_other );
+				PackMapAudioDepV8& operator=( const PackMapAudioDepV8& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct MapAudioV0 {
+			GW2FORMATS_API struct MapAudioV8 {
 				helpers::FileName filenameAmbientDaySurface;
 				helpers::FileName filenameAmbientDayUnderwater;
 				helpers::FileName filenameAmbientNightSurface;
 				helpers::FileName filenameAmbientNightUnderwater;
-				helpers::Array<PackMapAudioRegionV0> audioRegions;
-				helpers::Array<PackMapAudioRegionToolV0> audioRegionTools;
-				helpers::Array<PackMapAudioDepV0> audioDepArray;
+				helpers::Array<PackMapAudioRegionV8> audioRegions;
+				helpers::Array<PackMapAudioRegionToolV8> audioRegionTools;
+				helpers::Array<PackMapAudioDepV8> audioDepArray;
 			public:
-				MapAudioV0( );
-				MapAudioV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				MapAudioV0( const MapAudioV0& p_other );
-				MapAudioV0& operator=( const MapAudioV0& p_other );
+				MapAudioV8( );
+				MapAudioV8( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				MapAudioV8( const MapAudioV8& p_other );
+				MapAudioV8& operator=( const MapAudioV8& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef MapAudioV0 MapAudio;
+			typedef MapAudioV8 MapAudio;
 
 		}; // namespace chunks
 

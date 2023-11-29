@@ -40,7 +40,7 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct MapShoreChainV0 {
+			GW2FORMATS_API struct MapShoreChainV3 {
 				float offset;
 				float opacity;
 				float animationSpeed;
@@ -55,24 +55,24 @@ namespace gw2f {
 				float simplifyDistMax;
 				float simplifyDot;
 			public:
-				MapShoreChainV0( );
-				MapShoreChainV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				MapShoreChainV0( const MapShoreChainV0& p_other );
-				MapShoreChainV0& operator=( const MapShoreChainV0& p_other );
+				MapShoreChainV3( );
+				MapShoreChainV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				MapShoreChainV3( const MapShoreChainV3& p_other );
+				MapShoreChainV3& operator=( const MapShoreChainV3& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct MapShoreV0 {
-				helpers::Array<MapShoreChainV0> chains;
+			GW2FORMATS_API struct MapShoreV3 {
+				helpers::Array<MapShoreChainV3> chains;
 			public:
-				MapShoreV0( );
-				MapShoreV0( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				MapShoreV0( const MapShoreV0& p_other );
-				MapShoreV0& operator=( const MapShoreV0& p_other );
+				MapShoreV3( );
+				MapShoreV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				MapShoreV3( const MapShoreV3& p_other );
+				MapShoreV3& operator=( const MapShoreV3& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef MapShoreV0 MapShore;
+			typedef MapShoreV3 MapShore;
 
 		}; // namespace chunks
 
