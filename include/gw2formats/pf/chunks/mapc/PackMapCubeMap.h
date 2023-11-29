@@ -41,47 +41,51 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackMapCubeMapSampleV3 {
+			GW2FORMATS_API struct PackMapCubeMapSampleV4 {
 				float3 position;
 				helpers::FileName filenameDayDefault;
 				helpers::FileName filenameNightDefault;
 				helpers::FileName filenameDayScript;
 				helpers::FileName filenameNightScript;
+				helpers::FileName filenameDayDefaultHiRes;
+				helpers::FileName filenameNightDefaultHiRes;
+				helpers::FileName filenameDayScriptHiRes;
+				helpers::FileName filenameNightScriptHiRes;
 				qword envID;
 			public:
-				PackMapCubeMapSampleV3( );
-				PackMapCubeMapSampleV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapCubeMapSampleV3( const PackMapCubeMapSampleV3& p_other );
-				PackMapCubeMapSampleV3& operator=( const PackMapCubeMapSampleV3& p_other );
+				PackMapCubeMapSampleV4( );
+				PackMapCubeMapSampleV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapCubeMapSampleV4( const PackMapCubeMapSampleV4& p_other );
+				PackMapCubeMapSampleV4& operator=( const PackMapCubeMapSampleV4& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapCubeMapParamsV3 {
+			GW2FORMATS_API struct PackMapCubeMapParamsV4 {
 				dword modulateColor;
 				float brightness;
 				float contrast;
 				dword blurPasses;
 				helpers::WString envVolume;
 			public:
-				PackMapCubeMapParamsV3( );
-				PackMapCubeMapParamsV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapCubeMapParamsV3( const PackMapCubeMapParamsV3& p_other );
-				PackMapCubeMapParamsV3& operator=( const PackMapCubeMapParamsV3& p_other );
+				PackMapCubeMapParamsV4( );
+				PackMapCubeMapParamsV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapCubeMapParamsV4( const PackMapCubeMapParamsV4& p_other );
+				PackMapCubeMapParamsV4& operator=( const PackMapCubeMapParamsV4& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapCubeMapV3 {
-				helpers::Array<PackMapCubeMapSampleV3> sampleArray;
-				helpers::Array<PackMapCubeMapParamsV3> paramsArray;
+			GW2FORMATS_API struct PackMapCubeMapV4 {
+				helpers::Array<PackMapCubeMapSampleV4> sampleArray;
+				helpers::Array<PackMapCubeMapParamsV4> paramsArray;
 			public:
-				PackMapCubeMapV3( );
-				PackMapCubeMapV3( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapCubeMapV3( const PackMapCubeMapV3& p_other );
-				PackMapCubeMapV3& operator=( const PackMapCubeMapV3& p_other );
+				PackMapCubeMapV4( );
+				PackMapCubeMapV4( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapCubeMapV4( const PackMapCubeMapV4& p_other );
+				PackMapCubeMapV4& operator=( const PackMapCubeMapV4& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackMapCubeMapV3 PackMapCubeMap;
+			typedef PackMapCubeMapV4 PackMapCubeMap;
 
 		}; // namespace chunks
 

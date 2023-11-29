@@ -27,64 +27,76 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapCubeMapSampleV3
+			//      PackMapCubeMapSampleV4
 			//============================================================================/
 
-			PackMapCubeMapSampleV3::PackMapCubeMapSampleV3( )
+			PackMapCubeMapSampleV4::PackMapCubeMapSampleV4( )
 				: envID( 0 ) {
 			}
 
-			PackMapCubeMapSampleV3::PackMapCubeMapSampleV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCubeMapSampleV4::PackMapCubeMapSampleV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCubeMapSampleV3::PackMapCubeMapSampleV3( const PackMapCubeMapSampleV3& p_other )
+			PackMapCubeMapSampleV4::PackMapCubeMapSampleV4( const PackMapCubeMapSampleV4& p_other )
 				: position( p_other.position )
 				, filenameDayDefault( p_other.filenameDayDefault )
 				, filenameNightDefault( p_other.filenameNightDefault )
 				, filenameDayScript( p_other.filenameDayScript )
 				, filenameNightScript( p_other.filenameNightScript )
+				, filenameDayDefaultHiRes( p_other.filenameDayDefaultHiRes )
+				, filenameNightDefaultHiRes( p_other.filenameNightDefaultHiRes )
+				, filenameDayScriptHiRes( p_other.filenameDayScriptHiRes )
+				, filenameNightScriptHiRes( p_other.filenameNightScriptHiRes )
 				, envID( p_other.envID ) {
 			}
 
-			PackMapCubeMapSampleV3& PackMapCubeMapSampleV3::operator=( const PackMapCubeMapSampleV3& p_other ) {
+			PackMapCubeMapSampleV4& PackMapCubeMapSampleV4::operator=( const PackMapCubeMapSampleV4& p_other ) {
 				position = p_other.position;
 				filenameDayDefault = p_other.filenameDayDefault;
 				filenameNightDefault = p_other.filenameNightDefault;
 				filenameDayScript = p_other.filenameDayScript;
 				filenameNightScript = p_other.filenameNightScript;
+				filenameDayDefaultHiRes = p_other.filenameDayDefaultHiRes;
+				filenameNightDefaultHiRes = p_other.filenameNightDefaultHiRes;
+				filenameDayScriptHiRes = p_other.filenameDayScriptHiRes;
+				filenameNightScriptHiRes = p_other.filenameNightScriptHiRes;
 				envID = p_other.envID;
 				return *this;
 			}
 
-			const byte* PackMapCubeMapSampleV3::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCubeMapSampleV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, filenameDayDefault );
 				p_data = helpers::read( p_data, p_size, filenameNightDefault );
 				p_data = helpers::read( p_data, p_size, filenameDayScript );
 				p_data = helpers::read( p_data, p_size, filenameNightScript );
+				p_data = helpers::read( p_data, p_size, filenameDayDefaultHiRes );
+				p_data = helpers::read( p_data, p_size, filenameNightDefaultHiRes );
+				p_data = helpers::read( p_data, p_size, filenameDayScriptHiRes );
+				p_data = helpers::read( p_data, p_size, filenameNightScriptHiRes );
 				p_data = helpers::read( p_data, p_size, envID );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapCubeMapParamsV3
+			//      PackMapCubeMapParamsV4
 			//============================================================================/
 
-			PackMapCubeMapParamsV3::PackMapCubeMapParamsV3( )
+			PackMapCubeMapParamsV4::PackMapCubeMapParamsV4( )
 				: modulateColor( 0 )
 				, brightness( 0 )
 				, contrast( 0 )
 				, blurPasses( 0 ) {
 			}
 
-			PackMapCubeMapParamsV3::PackMapCubeMapParamsV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCubeMapParamsV4::PackMapCubeMapParamsV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCubeMapParamsV3::PackMapCubeMapParamsV3( const PackMapCubeMapParamsV3& p_other )
+			PackMapCubeMapParamsV4::PackMapCubeMapParamsV4( const PackMapCubeMapParamsV4& p_other )
 				: modulateColor( p_other.modulateColor )
 				, brightness( p_other.brightness )
 				, contrast( p_other.contrast )
@@ -92,7 +104,7 @@ namespace gw2f {
 				, envVolume( p_other.envVolume ) {
 			}
 
-			PackMapCubeMapParamsV3& PackMapCubeMapParamsV3::operator=( const PackMapCubeMapParamsV3& p_other ) {
+			PackMapCubeMapParamsV4& PackMapCubeMapParamsV4::operator=( const PackMapCubeMapParamsV4& p_other ) {
 				modulateColor = p_other.modulateColor;
 				brightness = p_other.brightness;
 				contrast = p_other.contrast;
@@ -101,7 +113,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCubeMapParamsV3::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCubeMapParamsV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, modulateColor );
 				p_data = helpers::read( p_data, p_size, brightness );
 				p_data = helpers::read( p_data, p_size, contrast );
@@ -111,29 +123,29 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCubeMapV3
+			//      PackMapCubeMapV4
 			//============================================================================/
 
-			PackMapCubeMapV3::PackMapCubeMapV3( ) {
+			PackMapCubeMapV4::PackMapCubeMapV4( ) {
 			}
 
-			PackMapCubeMapV3::PackMapCubeMapV3( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCubeMapV4::PackMapCubeMapV4( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCubeMapV3::PackMapCubeMapV3( const PackMapCubeMapV3& p_other )
+			PackMapCubeMapV4::PackMapCubeMapV4( const PackMapCubeMapV4& p_other )
 				: sampleArray( p_other.sampleArray )
 				, paramsArray( p_other.paramsArray ) {
 			}
 
-			PackMapCubeMapV3& PackMapCubeMapV3::operator=( const PackMapCubeMapV3& p_other ) {
+			PackMapCubeMapV4& PackMapCubeMapV4::operator=( const PackMapCubeMapV4& p_other ) {
 				sampleArray = p_other.sampleArray;
 				paramsArray = p_other.paramsArray;
 				return *this;
 			}
 
-			const byte* PackMapCubeMapV3::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCubeMapV4::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, sampleArray );
 				p_data = helpers::read( p_data, p_size, paramsArray );
 				return p_data;

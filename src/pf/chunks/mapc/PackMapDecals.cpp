@@ -27,25 +27,25 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapDecalVertexV8
+			//      PackMapDecalVertexV9
 			//============================================================================/
 
-			PackMapDecalVertexV8::PackMapDecalVertexV8( ) {
+			PackMapDecalVertexV9::PackMapDecalVertexV9( ) {
 			}
 
-			PackMapDecalVertexV8::PackMapDecalVertexV8( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapDecalVertexV9::PackMapDecalVertexV9( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapDecalVertexV8::PackMapDecalVertexV8( const PackMapDecalVertexV8& p_other )
+			PackMapDecalVertexV9::PackMapDecalVertexV9( const PackMapDecalVertexV9& p_other )
 				: position( p_other.position )
 				, normal( p_other.normal )
 				, tangent( p_other.tangent )
 				, bitangent( p_other.bitangent ) {
 			}
 
-			PackMapDecalVertexV8& PackMapDecalVertexV8::operator=( const PackMapDecalVertexV8& p_other ) {
+			PackMapDecalVertexV9& PackMapDecalVertexV9::operator=( const PackMapDecalVertexV9& p_other ) {
 				position = p_other.position;
 				normal = p_other.normal;
 				tangent = p_other.tangent;
@@ -53,7 +53,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapDecalVertexV8::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapDecalVertexV9::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, normal );
 				p_data = helpers::read( p_data, p_size, tangent );
@@ -62,10 +62,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MapParamV0
+			//      PackMapDecalV10
 			//============================================================================/
 
-			PackMapDecalV9::PackMapDecalV9( )
+			PackMapDecalV10::PackMapDecalV10( )
 				: flags( 0 )
 				, animRotation( 0 )
 				, surfaceBias( 0 )
@@ -74,12 +74,12 @@ namespace gw2f {
 				, id( 0 ) {
 			}
 
-			PackMapDecalV9::PackMapDecalV9( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapDecalV10::PackMapDecalV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapDecalV9::PackMapDecalV9( const PackMapDecalV9& p_other )
+			PackMapDecalV10::PackMapDecalV10( const PackMapDecalV10& p_other )
 				: position( p_other.position )
 				, extents( p_other.extents )
 				, rotation( p_other.rotation )
@@ -87,6 +87,7 @@ namespace gw2f {
 				, textureOffsetUV0( p_other.textureOffsetUV0 )
 				, textureScaleUV1( p_other.textureScaleUV1 )
 				, textureOffsetUV1( p_other.textureOffsetUV1 )
+				, gridSize( p_other.gridSize )
 				, materialFilename( p_other.materialFilename )
 				, textureFilenames( p_other.textureFilenames )
 				, flags( p_other.flags )
@@ -106,7 +107,7 @@ namespace gw2f {
 				, id( p_other.id ) {
 			}
 
-			PackMapDecalV9& PackMapDecalV9::operator=( const PackMapDecalV9& p_other ) {
+			PackMapDecalV10& PackMapDecalV10::operator=( const PackMapDecalV10& p_other ) {
 				position = p_other.position;
 				extents = p_other.extents;
 				rotation = p_other.rotation;
@@ -114,6 +115,7 @@ namespace gw2f {
 				textureOffsetUV0 = p_other.textureOffsetUV0;
 				textureScaleUV1 = p_other.textureScaleUV1;
 				textureOffsetUV1 = p_other.textureOffsetUV1;
+				gridSize = p_other.gridSize;
 				materialFilename = p_other.materialFilename;
 				textureFilenames = p_other.textureFilenames;
 				flags = p_other.flags;
@@ -134,7 +136,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapDecalV9::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapDecalV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, extents );
 				p_data = helpers::read( p_data, p_size, rotation );
@@ -142,6 +144,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, textureOffsetUV0 );
 				p_data = helpers::read( p_data, p_size, textureScaleUV1 );
 				p_data = helpers::read( p_data, p_size, textureOffsetUV1 );
+				p_data = helpers::read( p_data, p_size, gridSize );
 				p_data = helpers::read( p_data, p_size, materialFilename );
 				p_data = helpers::read( p_data, p_size, textureFilenames );
 				p_data = helpers::read( p_data, p_size, flags );
@@ -163,27 +166,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      MapParamV0
+			//      PackMapDecalsV10
 			//============================================================================/
 
-			PackMapDecalsV9::PackMapDecalsV9( ) {
+			PackMapDecalsV10::PackMapDecalsV10( ) {
 			}
 
-			PackMapDecalsV9::PackMapDecalsV9( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapDecalsV10::PackMapDecalsV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapDecalsV9::PackMapDecalsV9( const PackMapDecalsV9& p_other )
+			PackMapDecalsV10::PackMapDecalsV10( const PackMapDecalsV10& p_other )
 				: decals( p_other.decals ) {
 			}
 
-			PackMapDecalsV9& PackMapDecalsV9::operator=( const PackMapDecalsV9& p_other ) {
+			PackMapDecalsV10& PackMapDecalsV10::operator=( const PackMapDecalsV10& p_other ) {
 				decals = p_other.decals;
 				return *this;
 			}
 
-			const byte* PackMapDecalsV9::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapDecalsV10::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, decals );
 				return p_data;
 			}

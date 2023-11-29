@@ -27,50 +27,54 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapZoneModelV22
+			//      PackMapZoneModelV23
 			//============================================================================/
 
-			PackMapZoneModelV22::PackMapZoneModelV22( )
+			PackMapZoneModelV23::PackMapZoneModelV23( )
 				: probability( 0 )
-				, flags( 0 ) {
+				, flags( 0 )
+				, permutation( 0 ) {
 			}
 
-			PackMapZoneModelV22::PackMapZoneModelV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZoneModelV23::PackMapZoneModelV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZoneModelV22::PackMapZoneModelV22( const PackMapZoneModelV22& p_other )
+			PackMapZoneModelV23::PackMapZoneModelV23( const PackMapZoneModelV23& p_other )
 				: filename( p_other.filename )
 				, probability( p_other.probability )
 				, flags( p_other.flags )
-				, hslOffset( p_other.hslOffset ) {
+				, hslOffset( p_other.hslOffset )
+				, permutation( p_other.permutation ) {
 				std::copy( p_other.zOffsets, p_other.zOffsets + 2, zOffsets );
 			}
 
-			PackMapZoneModelV22& PackMapZoneModelV22::operator=( const PackMapZoneModelV22& p_other ) {
+			PackMapZoneModelV23& PackMapZoneModelV23::operator=( const PackMapZoneModelV23& p_other ) {
 				filename = p_other.filename;
 				probability = p_other.probability;
 				flags = p_other.flags;
 				hslOffset = p_other.hslOffset;
+				permutation = p_other.permutation;
 				std::copy( p_other.zOffsets, p_other.zOffsets + 2, zOffsets );
 				return *this;
 			}
 
-			const byte* PackMapZoneModelV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZoneModelV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, probability );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, hslOffset );
 				p_data = helpers::read( p_data, p_size, zOffsets );
+				p_data = helpers::read( p_data, p_size, permutation );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapZoneLayerDefV22
+			//      PackMapZoneLayerDefV23
 			//============================================================================/
 
-			PackMapZoneLayerDefV22::PackMapZoneLayerDefV22( )
+			PackMapZoneLayerDefV23::PackMapZoneLayerDefV23( )
 				: type( 0 )
 				, height( 0 )
 				, width( 0 )
@@ -83,12 +87,12 @@ namespace gw2f {
 				, layerFlags( 0 ) {
 			}
 
-			PackMapZoneLayerDefV22::PackMapZoneLayerDefV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZoneLayerDefV23::PackMapZoneLayerDefV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZoneLayerDefV22::PackMapZoneLayerDefV22( const PackMapZoneLayerDefV22& p_other )
+			PackMapZoneLayerDefV23::PackMapZoneLayerDefV23( const PackMapZoneLayerDefV23& p_other )
 				: type( p_other.type )
 				, height( p_other.height )
 				, width( p_other.width )
@@ -109,7 +113,7 @@ namespace gw2f {
 				std::copy( p_other.hslRanges, p_other.hslRanges + 4, hslRanges );
 			}
 
-			PackMapZoneLayerDefV22& PackMapZoneLayerDefV22::operator=( const PackMapZoneLayerDefV22& p_other ) {
+			PackMapZoneLayerDefV23& PackMapZoneLayerDefV23::operator=( const PackMapZoneLayerDefV23& p_other ) {
 				type = p_other.type;
 				height = p_other.height;
 				width = p_other.width;
@@ -131,7 +135,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneLayerDefV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZoneLayerDefV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, type );
 				p_data = helpers::read( p_data, p_size, height );
 				p_data = helpers::read( p_data, p_size, width );
@@ -154,19 +158,19 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapZonePageV10
+			//      PackMapZonePageV11
 			//============================================================================/
 
-			PackMapZonePageV10::PackMapZonePageV10( )
+			PackMapZonePageV11::PackMapZonePageV11( )
 				: seed( 0 ) {
 			}
 
-			PackMapZonePageV10::PackMapZonePageV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZonePageV11::PackMapZonePageV11( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZonePageV10::PackMapZonePageV10( const PackMapZonePageV10& p_other )
+			PackMapZonePageV11::PackMapZonePageV11( const PackMapZonePageV11& p_other )
 				: flags( p_other.flags )
 				, chunkCoord( p_other.chunkCoord )
 				, seed( p_other.seed )
@@ -174,7 +178,7 @@ namespace gw2f {
 				, string( p_other.string ) {
 			}
 
-			PackMapZonePageV10& PackMapZonePageV10::operator=( const PackMapZonePageV10& p_other ) {
+			PackMapZonePageV11& PackMapZonePageV11::operator=( const PackMapZonePageV11& p_other ) {
 				flags = p_other.flags;
 				chunkCoord = p_other.chunkCoord;
 				seed = p_other.seed;
@@ -183,7 +187,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZonePageV10::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZonePageV11::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, chunkCoord );
 				p_data = helpers::read( p_data, p_size, seed );
@@ -193,50 +197,50 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapZonePageTableV10
+			//      PackMapZonePageTableV11
 			//============================================================================/
 
-			PackMapZonePageTableV10::PackMapZonePageTableV10( )
+			PackMapZonePageTableV11::PackMapZonePageTableV11( )
 				: flags( 0 ) {
 			}
 
-			PackMapZonePageTableV10::PackMapZonePageTableV10( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZonePageTableV11::PackMapZonePageTableV11( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZonePageTableV10::PackMapZonePageTableV10( const PackMapZonePageTableV10& p_other )
+			PackMapZonePageTableV11::PackMapZonePageTableV11( const PackMapZonePageTableV11& p_other )
 				: pageArray( p_other.pageArray )
 				, flags( p_other.flags ) {
 			}
 
-			PackMapZonePageTableV10& PackMapZonePageTableV10::operator=( const PackMapZonePageTableV10& p_other ) {
+			PackMapZonePageTableV11& PackMapZonePageTableV11::operator=( const PackMapZonePageTableV11& p_other ) {
 				pageArray = p_other.pageArray;
 				flags = p_other.flags;
 				return *this;
 			}
 
-			const byte* PackMapZonePageTableV10::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZonePageTableV11::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, pageArray );
 				p_data = helpers::read( p_data, p_size, flags );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapZoneDefV22
+			//      PackMapZoneDefV23
 			//============================================================================/
 
-			PackMapZoneDefV22::PackMapZoneDefV22( )
+			PackMapZoneDefV23::PackMapZoneDefV23( )
 				: token( 0 )
 				, timeStamp( 0 ) {
 			}
 
-			PackMapZoneDefV22::PackMapZoneDefV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZoneDefV23::PackMapZoneDefV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZoneDefV22::PackMapZoneDefV22( const PackMapZoneDefV22& p_other )
+			PackMapZoneDefV23::PackMapZoneDefV23( const PackMapZoneDefV23& p_other )
 				: defFilename( p_other.defFilename )
 				, token( p_other.token )
 				, layerDefArray( p_other.layerDefArray )
@@ -245,7 +249,7 @@ namespace gw2f {
 				, reserved( p_other.reserved ) {
 			}
 
-			PackMapZoneDefV22& PackMapZoneDefV22::operator=( const PackMapZoneDefV22& p_other ) {
+			PackMapZoneDefV23& PackMapZoneDefV23::operator=( const PackMapZoneDefV23& p_other ) {
 				defFilename = p_other.defFilename;
 				token = p_other.token;
 				layerDefArray = p_other.layerDefArray;
@@ -255,7 +259,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneDefV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZoneDefV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, defFilename );
 				p_data = helpers::read( p_data, p_size, token );
 				p_data = helpers::read( p_data, p_size, layerDefArray );
@@ -266,65 +270,65 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapZoneEncodingDataV22
+			//      PackMapZoneEncodingDataV23
 			//============================================================================/
 
-			PackMapZoneEncodingDataV22::PackMapZoneEncodingDataV22( )
+			PackMapZoneEncodingDataV23::PackMapZoneEncodingDataV23( )
 				: index( 0 )
 				, offset( 0 ) {
 			}
 
-			PackMapZoneEncodingDataV22::PackMapZoneEncodingDataV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZoneEncodingDataV23::PackMapZoneEncodingDataV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZoneEncodingDataV22::PackMapZoneEncodingDataV22( const PackMapZoneEncodingDataV22& p_other )
+			PackMapZoneEncodingDataV23::PackMapZoneEncodingDataV23( const PackMapZoneEncodingDataV23& p_other )
 				: index( p_other.index )
 				, offset( p_other.offset ) {
 			}
 
-			PackMapZoneEncodingDataV22& PackMapZoneEncodingDataV22::operator=( const PackMapZoneEncodingDataV22& p_other ) {
+			PackMapZoneEncodingDataV23& PackMapZoneEncodingDataV23::operator=( const PackMapZoneEncodingDataV23& p_other ) {
 				index = p_other.index;
 				offset = p_other.offset;
 				return *this;
 			}
 
-			const byte* PackMapZoneEncodingDataV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZoneEncodingDataV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, index );
 				p_data = helpers::read( p_data, p_size, offset );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapZoneCollideDataV22
+			//      PackMapZoneCollideDataV23
 			//============================================================================/
 
-			PackMapZoneCollideDataV22::PackMapZoneCollideDataV22( )
+			PackMapZoneCollideDataV23::PackMapZoneCollideDataV23( )
 				: normalX( 0 )
 				, normalY( 0 )
 				, zPos( 0 ) {
 			}
 
-			PackMapZoneCollideDataV22::PackMapZoneCollideDataV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZoneCollideDataV23::PackMapZoneCollideDataV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZoneCollideDataV22::PackMapZoneCollideDataV22( const PackMapZoneCollideDataV22& p_other )
+			PackMapZoneCollideDataV23::PackMapZoneCollideDataV23( const PackMapZoneCollideDataV23& p_other )
 				: normalX( p_other.normalX )
 				, normalY( p_other.normalY )
 				, zPos( p_other.zPos ) {
 			}
 
-			PackMapZoneCollideDataV22& PackMapZoneCollideDataV22::operator=( const PackMapZoneCollideDataV22& p_other ) {
+			PackMapZoneCollideDataV23& PackMapZoneCollideDataV23::operator=( const PackMapZoneCollideDataV23& p_other ) {
 				normalX = p_other.normalX;
 				normalY = p_other.normalY;
 				zPos = p_other.zPos;
 				return *this;
 			}
 
-			const byte* PackMapZoneCollideDataV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZoneCollideDataV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, normalX );
 				p_data = helpers::read( p_data, p_size, normalY );
 				p_data = helpers::read( p_data, p_size, zPos );
@@ -332,10 +336,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapZoneV22
+			//      PackMapZoneV23
 			//============================================================================/
 
-			PackMapZoneV22::PackMapZoneV22( )
+			PackMapZoneV23::PackMapZoneV23( )
 				: zoneFlags( 0 )
 				, waterHeight( 0 )
 				, seed( 0 )
@@ -344,12 +348,12 @@ namespace gw2f {
 				, broadId( 0 ) {
 			}
 
-			PackMapZoneV22::PackMapZoneV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZoneV23::PackMapZoneV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZoneV22::PackMapZoneV22( const PackMapZoneV22& p_other )
+			PackMapZoneV23::PackMapZoneV23( const PackMapZoneV23& p_other )
 				: zoneFlags( p_other.zoneFlags )
 				, vertRect( p_other.vertRect )
 				, waterHeight( p_other.waterHeight )
@@ -366,7 +370,7 @@ namespace gw2f {
 				, reserved( p_other.reserved ) {
 			}
 
-			PackMapZoneV22& PackMapZoneV22::operator=( const PackMapZoneV22& p_other ) {
+			PackMapZoneV23& PackMapZoneV23::operator=( const PackMapZoneV23& p_other ) {
 				zoneFlags = p_other.zoneFlags;
 				vertRect = p_other.vertRect;
 				waterHeight = p_other.waterHeight;
@@ -384,7 +388,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZoneV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZoneV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, zoneFlags );
 				p_data = helpers::read( p_data, p_size, vertRect );
 				p_data = helpers::read( p_data, p_size, waterHeight );
@@ -403,19 +407,19 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapZonesV22
+			//      PackMapZonesV23
 			//============================================================================/
 
-			PackMapZonesV22::PackMapZonesV22( )
+			PackMapZonesV23::PackMapZonesV23( )
 				: maxBroadId( 0 ) {
 			}
 
-			PackMapZonesV22::PackMapZonesV22( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapZonesV23::PackMapZonesV23( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapZonesV22::PackMapZonesV22( const PackMapZonesV22& p_other )
+			PackMapZonesV23::PackMapZonesV23( const PackMapZonesV23& p_other )
 				: zoneDefArray( p_other.zoneDefArray )
 				, zoneArray( p_other.zoneArray )
 				, broadPhase( p_other.broadPhase )
@@ -423,7 +427,7 @@ namespace gw2f {
 				, string( p_other.string ) {
 			}
 
-			PackMapZonesV22& PackMapZonesV22::operator=( const PackMapZonesV22& p_other ) {
+			PackMapZonesV23& PackMapZonesV23::operator=( const PackMapZonesV23& p_other ) {
 				zoneDefArray = p_other.zoneDefArray;
 				zoneArray = p_other.zoneArray;
 				broadPhase = p_other.broadPhase;
@@ -432,7 +436,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapZonesV22::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapZonesV23::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, zoneDefArray );
 				p_data = helpers::read( p_data, p_size, zoneArray );
 				p_data = helpers::read( p_data, p_size, broadPhase );

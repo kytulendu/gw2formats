@@ -27,22 +27,22 @@ namespace gw2f {
 		namespace chunks {
 
 			//============================================================================/
-			//      PackMapLightV0
+			//      PackMapLightV19
 			//============================================================================/
 
-			PackMapLightV0::PackMapLightV0( )
+			PackMapLightV19::PackMapLightV19( )
 				: intensity( 0 )
 				, nearDistance( 0 )
 				, farDistance( 0 )
 				, flags( 0 ) {
 			}
 
-			PackMapLightV0::PackMapLightV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapLightV19::PackMapLightV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapLightV0::PackMapLightV0( const PackMapLightV0& p_other )
+			PackMapLightV19::PackMapLightV19( const PackMapLightV19& p_other )
 				: position( p_other.position )
 				, color( p_other.color )
 				, intensity( p_other.intensity )
@@ -51,7 +51,7 @@ namespace gw2f {
 				, flags( p_other.flags ) {
 			}
 
-			PackMapLightV0& PackMapLightV0::operator=( const PackMapLightV0& p_other ) {
+			PackMapLightV19& PackMapLightV19::operator=( const PackMapLightV19& p_other ) {
 				position = p_other.position;
 				color = p_other.color;
 				intensity = p_other.intensity;
@@ -61,7 +61,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapLightV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapLightV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, color );
 				p_data = helpers::read( p_data, p_size, intensity );
@@ -72,10 +72,10 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapCurveV0
+			//      PackMapCurveV19
 			//============================================================================/
 
-			PackMapCurveV0::PackMapCurveV0( )
+			PackMapCurveV19::PackMapCurveV19( )
 				: gust( 0 )
 				, gustFreq( 0 )
 				, noise( 0 )
@@ -85,12 +85,12 @@ namespace gw2f {
 				, curveType( 0 ) {
 			}
 
-			PackMapCurveV0::PackMapCurveV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapCurveV19::PackMapCurveV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapCurveV0::PackMapCurveV0( const PackMapCurveV0& p_other )
+			PackMapCurveV19::PackMapCurveV19( const PackMapCurveV19& p_other )
 				: gust( p_other.gust )
 				, gustFreq( p_other.gustFreq )
 				, noise( p_other.noise )
@@ -100,7 +100,7 @@ namespace gw2f {
 				, curveType( p_other.curveType ) {
 			}
 
-			PackMapCurveV0& PackMapCurveV0::operator=( const PackMapCurveV0& p_other ) {
+			PackMapCurveV19& PackMapCurveV19::operator=( const PackMapCurveV19& p_other ) {
 				gust = p_other.gust;
 				gustFreq = p_other.gustFreq;
 				noise = p_other.noise;
@@ -111,7 +111,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapCurveV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapCurveV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, gust );
 				p_data = helpers::read( p_data, p_size, gustFreq );
 				p_data = helpers::read( p_data, p_size, noise );
@@ -123,27 +123,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapPointLightgroupsV0
+			//      PackMapPointLightgroupsV19
 			//============================================================================/
 
-			PackMapPointLightgroupsV0::PackMapPointLightgroupsV0( )
+			PackMapPointLightgroupsV19::PackMapPointLightgroupsV19( )
 				: guid( 0 )
 				, broadId( 0 ) {
 			}
 
-			PackMapPointLightgroupsV0::PackMapPointLightgroupsV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapPointLightgroupsV19::PackMapPointLightgroupsV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapPointLightgroupsV0::PackMapPointLightgroupsV0( const PackMapPointLightgroupsV0& p_other )
+			PackMapPointLightgroupsV19::PackMapPointLightgroupsV19( const PackMapPointLightgroupsV19& p_other )
 				: guid( p_other.guid )
 				, lights( p_other.lights )
 				, curves( p_other.curves )
 				, broadId( p_other.broadId ) {
 			}
 
-			PackMapPointLightgroupsV0& PackMapPointLightgroupsV0::operator=( const PackMapPointLightgroupsV0& p_other ) {
+			PackMapPointLightgroupsV19& PackMapPointLightgroupsV19::operator=( const PackMapPointLightgroupsV19& p_other ) {
 				guid = p_other.guid;
 				lights = p_other.lights;
 				curves = p_other.curves;
@@ -151,7 +151,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPointLightgroupsV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapPointLightgroupsV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, lights );
 				p_data = helpers::read( p_data, p_size, curves );
@@ -160,29 +160,29 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapPortalDataV0
+			//      PackMapPortalDataV19
 			//============================================================================/
 
-			PackMapPortalDataV0::PackMapPortalDataV0( )
+			PackMapPortalDataV19::PackMapPortalDataV19( )
 				: fadeCamera( 0 )
 				, fadeLight( 0 )
 				, lighten( 0 )
 				, darken( 0 ) {
 			}
 
-			PackMapPortalDataV0::PackMapPortalDataV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapPortalDataV19::PackMapPortalDataV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapPortalDataV0::PackMapPortalDataV0( const PackMapPortalDataV0& p_other )
+			PackMapPortalDataV19::PackMapPortalDataV19( const PackMapPortalDataV19& p_other )
 				: fadeCamera( p_other.fadeCamera )
 				, fadeLight( p_other.fadeLight )
 				, lighten( p_other.lighten )
 				, darken( p_other.darken ) {
 			}
 
-			PackMapPortalDataV0& PackMapPortalDataV0::operator=( const PackMapPortalDataV0& p_other ) {
+			PackMapPortalDataV19& PackMapPortalDataV19::operator=( const PackMapPortalDataV19& p_other ) {
 				fadeCamera = p_other.fadeCamera;
 				fadeLight = p_other.fadeLight;
 				lighten = p_other.lighten;
@@ -190,7 +190,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPortalDataV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapPortalDataV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, fadeCamera );
 				p_data = helpers::read( p_data, p_size, fadeLight );
 				p_data = helpers::read( p_data, p_size, lighten );
@@ -199,27 +199,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapPortalLightV0
+			//      PackMapPortalLightV19
 			//============================================================================/
 
-			PackMapPortalLightV0::PackMapPortalLightV0( )
+			PackMapPortalLightV19::PackMapPortalLightV19( )
 				: guid( 0 )
 				, broadId( 0 ) {
 			}
 
-			PackMapPortalLightV0::PackMapPortalLightV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapPortalLightV19::PackMapPortalLightV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapPortalLightV0::PackMapPortalLightV0( const PackMapPortalLightV0& p_other )
+			PackMapPortalLightV19::PackMapPortalLightV19( const PackMapPortalLightV19& p_other )
 				: guid( p_other.guid )
 				, points( p_other.points )
 				, portalData( p_other.portalData )
 				, broadId( p_other.broadId ) {
 			}
 
-			PackMapPortalLightV0& PackMapPortalLightV0::operator=( const PackMapPortalLightV0& p_other ) {
+			PackMapPortalLightV19& PackMapPortalLightV19::operator=( const PackMapPortalLightV19& p_other ) {
 				guid = p_other.guid;
 				points = p_other.points;
 				portalData = p_other.portalData;
@@ -227,7 +227,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapPortalLightV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapPortalLightV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, points );
 				p_data = helpers::read( p_data, p_size, portalData );
@@ -236,36 +236,94 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapSpotShadowV0
+			//      PackMapSpotShadowV19
 			//============================================================================/
 
-			PackMapSpotShadowV0::PackMapSpotShadowV0( ) {
+			PackMapSpotShadowV19::PackMapSpotShadowV19( ) {
 			}
 
-			PackMapSpotShadowV0::PackMapSpotShadowV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapSpotShadowV19::PackMapSpotShadowV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapSpotShadowV0::PackMapSpotShadowV0( const PackMapSpotShadowV0& p_other )
+			PackMapSpotShadowV19::PackMapSpotShadowV19( const PackMapSpotShadowV19& p_other )
 				: shadowFilename( p_other.shadowFilename ) {
 			}
 
-			PackMapSpotShadowV0& PackMapSpotShadowV0::operator=( const PackMapSpotShadowV0& p_other ) {
+			PackMapSpotShadowV19& PackMapSpotShadowV19::operator=( const PackMapSpotShadowV19& p_other ) {
 				shadowFilename = p_other.shadowFilename;
 				return *this;
 			}
 
-			const byte* PackMapSpotShadowV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapSpotShadowV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, shadowFilename );
 				return p_data;
 			}
 
 			//============================================================================/
-			//      PackMapSpotLightV0
+			//      PackMapSpotLodV19
 			//============================================================================/
 
-			PackMapSpotLightV0::PackMapSpotLightV0( )
+			PackMapSpotLodV19::PackMapSpotLodV19( )
+				: distance( 0 )
+				, flags( 0 )
+				, lightFlags( 0 )
+				, intensity( 0 )
+				, nearDist( 0 )
+				, farDist( 0 )
+				, innerAngle( 0 )
+				, outerAngle( 0 ) {
+			}
+
+			PackMapSpotLodV19::PackMapSpotLodV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+				auto pointer = assign( p_data, p_size );
+				if ( po_pointer ) { *po_pointer = pointer; }
+			}
+
+			PackMapSpotLodV19::PackMapSpotLodV19( const PackMapSpotLodV19& p_other )
+				: distance( p_other.distance )
+				, flags( p_other.flags )
+				, lightFlags( p_other.lightFlags )
+				, color( p_other.color )
+				, intensity( p_other.intensity )
+				, nearDist( p_other.nearDist )
+				, farDist( p_other.farDist )
+				, innerAngle( p_other.innerAngle )
+				, outerAngle( p_other.outerAngle ) {
+			}
+
+			PackMapSpotLodV19& PackMapSpotLodV19::operator=( const PackMapSpotLodV19& p_other ) {
+				distance = p_other.distance;
+				flags = p_other.flags;
+				lightFlags = p_other.lightFlags;
+				color = p_other.color;
+				intensity = p_other.intensity;
+				nearDist = p_other.nearDist;
+				farDist = p_other.farDist;
+				innerAngle = p_other.innerAngle;
+				outerAngle = p_other.outerAngle;
+				return *this;
+			}
+
+			const byte* PackMapSpotLodV19::assign( const byte* p_data, size_t p_size ) {
+				p_data = helpers::read( p_data, p_size, distance );
+				p_data = helpers::read( p_data, p_size, flags );
+				p_data = helpers::read( p_data, p_size, lightFlags );
+				p_data = helpers::read( p_data, p_size, color );
+				p_data = helpers::read( p_data, p_size, intensity );
+				p_data = helpers::read( p_data, p_size, nearDist );
+				p_data = helpers::read( p_data, p_size, farDist );
+				p_data = helpers::read( p_data, p_size, innerAngle );
+				p_data = helpers::read( p_data, p_size, outerAngle );
+				return p_data;
+			}
+
+			//============================================================================/
+			//      PackMapSpotLightV19
+			//============================================================================/
+
+			PackMapSpotLightV19::PackMapSpotLightV19( )
 				: intensity( 0 )
 				, nearDistance( 0 )
 				, farDistance( 0 )
@@ -274,12 +332,12 @@ namespace gw2f {
 				, outerAngle( 0 ) {
 			}
 
-			PackMapSpotLightV0::PackMapSpotLightV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapSpotLightV19::PackMapSpotLightV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapSpotLightV0::PackMapSpotLightV0( const PackMapSpotLightV0& p_other )
+			PackMapSpotLightV19::PackMapSpotLightV19( const PackMapSpotLightV19& p_other )
 				: position( p_other.position )
 				, color( p_other.color )
 				, intensity( p_other.intensity )
@@ -287,13 +345,14 @@ namespace gw2f {
 				, farDistance( p_other.farDistance )
 				, flags( p_other.flags )
 				, direction( p_other.direction )
+				, upDirection( p_other.upDirection )
 				, innerAngle( p_other.innerAngle )
 				, outerAngle( p_other.outerAngle )
 				, textureName( p_other.textureName )
 				, shadowData( p_other.shadowData ) {
 			}
 
-			PackMapSpotLightV0& PackMapSpotLightV0::operator=( const PackMapSpotLightV0& p_other ) {
+			PackMapSpotLightV19& PackMapSpotLightV19::operator=( const PackMapSpotLightV19& p_other ) {
 				position = p_other.position;
 				color = p_other.color;
 				intensity = p_other.intensity;
@@ -301,6 +360,7 @@ namespace gw2f {
 				farDistance = p_other.farDistance;
 				flags = p_other.flags;
 				direction = p_other.direction;
+				upDirection = p_other.upDirection;
 				innerAngle = p_other.innerAngle;
 				outerAngle = p_other.outerAngle;
 				textureName = p_other.textureName;
@@ -308,7 +368,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapSpotLightV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapSpotLightV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, color );
 				p_data = helpers::read( p_data, p_size, intensity );
@@ -316,6 +376,7 @@ namespace gw2f {
 				p_data = helpers::read( p_data, p_size, farDistance );
 				p_data = helpers::read( p_data, p_size, flags );
 				p_data = helpers::read( p_data, p_size, direction );
+				p_data = helpers::read( p_data, p_size, upDirection );
 				p_data = helpers::read( p_data, p_size, innerAngle );
 				p_data = helpers::read( p_data, p_size, outerAngle );
 				p_data = helpers::read( p_data, p_size, textureName );
@@ -324,27 +385,27 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapSpotLightgroupsV0
+			//      PackMapSpotLightgroupsV19
 			//============================================================================/
 
-			PackMapSpotLightgroupsV0::PackMapSpotLightgroupsV0( )
+			PackMapSpotLightgroupsV19::PackMapSpotLightgroupsV19( )
 				: guid( 0 )
 				, broadId( 0 ) {
 			}
 
-			PackMapSpotLightgroupsV0::PackMapSpotLightgroupsV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapSpotLightgroupsV19::PackMapSpotLightgroupsV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapSpotLightgroupsV0::PackMapSpotLightgroupsV0( const PackMapSpotLightgroupsV0& p_other )
+			PackMapSpotLightgroupsV19::PackMapSpotLightgroupsV19( const PackMapSpotLightgroupsV19& p_other )
 				: guid( p_other.guid )
 				, lights( p_other.lights )
 				, curves( p_other.curves )
 				, broadId( p_other.broadId ) {
 			}
 
-			PackMapSpotLightgroupsV0& PackMapSpotLightgroupsV0::operator=( const PackMapSpotLightgroupsV0& p_other ) {
+			PackMapSpotLightgroupsV19& PackMapSpotLightgroupsV19::operator=( const PackMapSpotLightgroupsV19& p_other ) {
 				guid = p_other.guid;
 				lights = p_other.lights;
 				curves = p_other.curves;
@@ -352,7 +413,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapSpotLightgroupsV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapSpotLightgroupsV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, lights );
 				p_data = helpers::read( p_data, p_size, curves );
@@ -361,26 +422,26 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapVolumeImageV0
+			//      PackMapVolumeImageV19
 			//============================================================================/
 
-			PackMapVolumeImageV0::PackMapVolumeImageV0( )
+			PackMapVolumeImageV19::PackMapVolumeImageV19( )
 				: format( 0 ) {
 			}
 
-			PackMapVolumeImageV0::PackMapVolumeImageV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapVolumeImageV19::PackMapVolumeImageV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapVolumeImageV0::PackMapVolumeImageV0( const PackMapVolumeImageV0& p_other )
+			PackMapVolumeImageV19::PackMapVolumeImageV19( const PackMapVolumeImageV19& p_other )
 				: filename( p_other.filename )
 				, dims( p_other.dims )
 				, format( p_other.format )
 				, image( p_other.image ) {
 			}
 
-			PackMapVolumeImageV0& PackMapVolumeImageV0::operator=( const PackMapVolumeImageV0& p_other ) {
+			PackMapVolumeImageV19& PackMapVolumeImageV19::operator=( const PackMapVolumeImageV19& p_other ) {
 				filename = p_other.filename;
 				dims = p_other.dims;
 				format = p_other.format;
@@ -388,7 +449,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapVolumeImageV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapVolumeImageV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, filename );
 				p_data = helpers::read( p_data, p_size, dims );
 				p_data = helpers::read( p_data, p_size, format );
@@ -397,21 +458,21 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapVolumeLightV0
+			//      PackMapVolumeLightV19
 			//============================================================================/
 
-			PackMapVolumeLightV0::PackMapVolumeLightV0( )
+			PackMapVolumeLightV19::PackMapVolumeLightV19( )
 				: guid( 0 )
 				, flags( 0 )
 				, broadId( 0 ) {
 			}
 
-			PackMapVolumeLightV0::PackMapVolumeLightV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapVolumeLightV19::PackMapVolumeLightV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapVolumeLightV0::PackMapVolumeLightV0( const PackMapVolumeLightV0& p_other )
+			PackMapVolumeLightV19::PackMapVolumeLightV19( const PackMapVolumeLightV19& p_other )
 				: guid( p_other.guid )
 				, position( p_other.position )
 				, extents( p_other.extents )
@@ -425,7 +486,7 @@ namespace gw2f {
 				, broadId( p_other.broadId ) {
 			}
 
-			PackMapVolumeLightV0& PackMapVolumeLightV0::operator=( const PackMapVolumeLightV0& p_other ) {
+			PackMapVolumeLightV19& PackMapVolumeLightV19::operator=( const PackMapVolumeLightV19& p_other ) {
 				guid = p_other.guid;
 				position = p_other.position;
 				extents = p_other.extents;
@@ -440,7 +501,7 @@ namespace gw2f {
 				return *this;
 			}
 
-			const byte* PackMapVolumeLightV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapVolumeLightV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, guid );
 				p_data = helpers::read( p_data, p_size, position );
 				p_data = helpers::read( p_data, p_size, extents );
@@ -456,44 +517,48 @@ namespace gw2f {
 			}
 
 			//============================================================================/
-			//      PackMapLightsV0
+			//      PackMapLightsV19
 			//============================================================================/
 
-			PackMapLightsV0::PackMapLightsV0( )
-				: maxBroadId( 0 ) {
+			PackMapLightsV19::PackMapLightsV19( )
+				: maxBroadId( 0 )
+				, maxLightVsConstants( 0 ) {
 			}
 
-			PackMapLightsV0::PackMapLightsV0( const byte* p_data, size_t p_size, const byte** po_pointer ) {
+			PackMapLightsV19::PackMapLightsV19( const byte* p_data, size_t p_size, const byte** po_pointer ) {
 				auto pointer = assign( p_data, p_size );
 				if ( po_pointer ) { *po_pointer = pointer; }
 			}
 
-			PackMapLightsV0::PackMapLightsV0( const PackMapLightsV0& p_other )
+			PackMapLightsV19::PackMapLightsV19( const PackMapLightsV19& p_other )
 				: pointLights( p_other.pointLights )
 				, portalLights( p_other.portalLights )
 				, spotLights( p_other.spotLights )
 				, volumeLights( p_other.volumeLights )
 				, broadPhase( p_other.broadPhase )
-				, maxBroadId( p_other.maxBroadId ) {
+				, maxBroadId( p_other.maxBroadId )
+				, maxLightVsConstants( p_other.maxLightVsConstants ) {
 			}
 
-			PackMapLightsV0& PackMapLightsV0::operator=( const PackMapLightsV0& p_other ) {
+			PackMapLightsV19& PackMapLightsV19::operator=( const PackMapLightsV19& p_other ) {
 				pointLights = p_other.pointLights;
 				portalLights = p_other.portalLights;
 				spotLights = p_other.spotLights;
 				volumeLights = p_other.volumeLights;
 				broadPhase = p_other.broadPhase;
 				maxBroadId = p_other.maxBroadId;
+				maxLightVsConstants = p_other.maxLightVsConstants;
 				return *this;
 			}
 
-			const byte* PackMapLightsV0::assign( const byte* p_data, size_t p_size ) {
+			const byte* PackMapLightsV19::assign( const byte* p_data, size_t p_size ) {
 				p_data = helpers::read( p_data, p_size, pointLights );
 				p_data = helpers::read( p_data, p_size, portalLights );
 				p_data = helpers::read( p_data, p_size, spotLights );
 				p_data = helpers::read( p_data, p_size, volumeLights );
 				p_data = helpers::read( p_data, p_size, broadPhase );
 				p_data = helpers::read( p_data, p_size, maxBroadId );
+				p_data = helpers::read( p_data, p_size, maxLightVsConstants );
 				return p_data;
 			}
 

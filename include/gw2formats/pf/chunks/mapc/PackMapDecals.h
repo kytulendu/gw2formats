@@ -40,20 +40,20 @@ namespace gw2f {
 	namespace pf {
 		namespace chunks {
 
-			GW2FORMATS_API struct PackMapDecalVertexV8 {
+			GW2FORMATS_API struct PackMapDecalVertexV9 {
 				float3 position;
 				float3 normal;
 				float3 tangent;
 				float3 bitangent;
 			public:
-				PackMapDecalVertexV8( );
-				PackMapDecalVertexV8( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapDecalVertexV8( const PackMapDecalVertexV8& p_other );
-				PackMapDecalVertexV8& operator=( const PackMapDecalVertexV8& p_other );
+				PackMapDecalVertexV9( );
+				PackMapDecalVertexV9( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapDecalVertexV9( const PackMapDecalVertexV9& p_other );
+				PackMapDecalVertexV9& operator=( const PackMapDecalVertexV9& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapDecalV9 {
+			GW2FORMATS_API struct PackMapDecalV10 {
 				float3 position;
 				float3 extents;
 				float3 rotation;
@@ -61,6 +61,7 @@ namespace gw2f {
 				float2 textureOffsetUV0;
 				float2 textureScaleUV1;
 				float2 textureOffsetUV1;
+				float2 gridSize;
 				helpers::FileName materialFilename;
 				helpers::Array<helpers::FileName> textureFilenames;
 				dword flags;
@@ -72,31 +73,31 @@ namespace gw2f {
 				float surfaceBias;
 				helpers::Array<dword> constantTokens;
 				helpers::Array<float4> constantValues;
-				helpers::Array<PackMapDecalVertexV8> vertices;
+				helpers::Array<PackMapDecalVertexV9> vertices;
 				helpers::Array<word> indices;
 				helpers::Array<qword> propIds;
 				byte projection;
 				qword surfaceId;
 				qword id;
 			public:
-				PackMapDecalV9( );
-				PackMapDecalV9( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapDecalV9( const PackMapDecalV9& p_other );
-				PackMapDecalV9& operator=( const PackMapDecalV9& p_other );
+				PackMapDecalV10( );
+				PackMapDecalV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapDecalV10( const PackMapDecalV10& p_other );
+				PackMapDecalV10& operator=( const PackMapDecalV10& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			GW2FORMATS_API struct PackMapDecalsV9 {
-				helpers::Array<PackMapDecalV9> decals;
+			GW2FORMATS_API struct PackMapDecalsV10 {
+				helpers::Array<PackMapDecalV10> decals;
 			public:
-				PackMapDecalsV9( );
-				PackMapDecalsV9( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
-				PackMapDecalsV9( const PackMapDecalsV9& p_other );
-				PackMapDecalsV9& operator=( const PackMapDecalsV9& p_other );
+				PackMapDecalsV10( );
+				PackMapDecalsV10( const byte* p_data, size_t p_size, const byte** po_pointer = nullptr );
+				PackMapDecalsV10( const PackMapDecalsV10& p_other );
+				PackMapDecalsV10& operator=( const PackMapDecalsV10& p_other );
 				const byte* assign( const byte* p_data, size_t p_size );
 			};
 
-			typedef PackMapDecalsV9 PackMapDecals;
+			typedef PackMapDecalsV10 PackMapDecals;
 
 		}; // namespace chunks
 
