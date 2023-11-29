@@ -33,7 +33,6 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatDx9Material.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatGfxMaterial.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatGr.h" />
-    <ClInclude Include="..\include\gw2formats\pf\chunks\AMAT\AmatToolParams.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\AMSP\ScriptFileData.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\anic\PackAnimSequences.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\ASND\WaveformData.h" />
@@ -118,7 +117,6 @@
     <ClCompile Include="..\src\pf\chunks\AMAT\AmatDx9Material.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMAT\AmatGfxMaterial.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMAT\AmatGr.cpp" />
-    <ClCompile Include="..\src\pf\chunks\AMAT\AmatToolParams.cpp" />
     <ClCompile Include="..\src\pf\chunks\AMSP\ScriptFileData.cpp" />
     <ClCompile Include="..\src\pf\chunks\anic\PackAnimSequences.cpp" />
     <ClCompile Include="..\src\pf\chunks\ASND\WaveformData.cpp" />

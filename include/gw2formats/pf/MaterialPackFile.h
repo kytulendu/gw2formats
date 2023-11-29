@@ -30,7 +30,6 @@
 #include <gw2formats/pf/chunks/AMAT/AmatGr.h>
 #include <gw2formats/pf/chunks/AMAT/AmatDx9Material.h>
 #include <gw2formats/pf/chunks/AMAT/AmatGfxMaterial.h>
-#include <gw2formats/pf/chunks/AMAT/AmatToolParams.h>
 
 namespace gw2f {
     namespace pf {
@@ -45,7 +44,6 @@ namespace gw2f {
                 DX9S = fcc::DX9S,
                 Dx9Shader = fcc::DX9S,
                 BGFX = fcc::BGFX,
-                TOOL = fcc::TOOL,
             }; // anon enum
         }; // namespace MaterialChunks
 
