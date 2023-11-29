@@ -817,7 +817,7 @@ namespace gw2f {
 			//============================================================================/
 
 			PackMapEnvDataShaderConstantV47::PackMapEnvDataShaderConstantV47( )
-			{
+				: token( 0 ) {
 			}
 
 			PackMapEnvDataShaderConstantV47::PackMapEnvDataShaderConstantV47( const byte* p_data, size_t p_size, const byte** po_pointer ) {
@@ -846,7 +846,9 @@ namespace gw2f {
 			//      PackMapEnvLensFlareV47
 			//============================================================================/
 
-			PackMapEnvLensFlareV47::PackMapEnvLensFlareV47( ) {
+			PackMapEnvLensFlareV47::PackMapEnvLensFlareV47( )
+				: opacityCoeff( 0 )
+				, flags( 0 ) {
 			}
 
 			PackMapEnvLensFlareV47::PackMapEnvLensFlareV47( const byte* p_data, size_t p_size, const byte** po_pointer ) {
@@ -893,7 +895,8 @@ namespace gw2f {
 			//      PackMapEnvDataSkyCardAttributesExV47
 			//============================================================================/
 
-			PackMapEnvDataSkyCardAttributesExV47::PackMapEnvDataSkyCardAttributesExV47( ) {
+			PackMapEnvDataSkyCardAttributesExV47::PackMapEnvDataSkyCardAttributesExV47( )
+				: dummy( 0 ) {
 			}
 
 			PackMapEnvDataSkyCardAttributesExV47::PackMapEnvDataSkyCardAttributesExV47( const byte* p_data, size_t p_size, const byte** po_pointer ) {

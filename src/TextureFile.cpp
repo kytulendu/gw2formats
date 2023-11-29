@@ -111,7 +111,8 @@ namespace gw2f {
 
 	}; // anon namespace
 
-	TextureFile::TextureFile( ) {
+	TextureFile::TextureFile( )
+		: m_format( 0 ) {
 	}
 
 	TextureFile::TextureFile( const byte* p_data, size_t p_size ) {

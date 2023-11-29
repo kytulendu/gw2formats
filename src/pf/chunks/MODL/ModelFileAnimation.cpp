@@ -523,6 +523,7 @@ namespace gw2f {
 				, moveSpeed( 0 )
 				, isAdditive( 0 )
 				, variantCount( 0 )
+				, variantIndices{}
 				, radius( 0 ) {
 			}
 

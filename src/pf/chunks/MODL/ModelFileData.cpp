@@ -897,6 +897,7 @@ namespace gw2f {
 
 			ModelEffectLightV65::ModelEffectLightV65( )
 				: bone( 0 )
+				, color{}
 				, farDistance( 0 )
 				, intensity( 0 )
 				, nearDistance( 0 ) {
@@ -1356,6 +1357,8 @@ namespace gw2f {
 
 			ModelLightningBoltV65::ModelLightningBoltV65( )
 				: bone( 0 )
+				, colorBegin{}
+				, colorEnd{}
 				, colorPeriod( 0 )
 				, flags( 0 )
 				, fps( 0 )
@@ -1667,7 +1670,8 @@ namespace gw2f {
 			//      ModelFileDataV65
 			//============================================================================/
 
-			ModelFileDataV65::ModelFileDataV65( ) {
+			ModelFileDataV65::ModelFileDataV65( )
+				: lodOverride{} {
 			}
 
 			ModelFileDataV65::ModelFileDataV65( const byte* p_data, size_t p_size, const byte** po_pointer ) {

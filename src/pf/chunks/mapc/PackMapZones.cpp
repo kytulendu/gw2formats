@@ -33,6 +33,7 @@ namespace gw2f {
 			PackMapZoneModelV23::PackMapZoneModelV23( )
 				: probability( 0 )
 				, flags( 0 )
+				, zOffsets{}
 				, permutation( 0 ) {
 			}
 

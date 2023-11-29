@@ -60,7 +60,8 @@ namespace gw2f {
 			//      PackMapShadowV1
 			//============================================================================/
 
-			PackMapShadowV1::PackMapShadowV1( ) {
+			PackMapShadowV1::PackMapShadowV1( )
+				: worldToShadow{} {
 			}
 
 			PackMapShadowV1::PackMapShadowV1( const byte* p_data, size_t p_size, const byte** po_pointer ) {
