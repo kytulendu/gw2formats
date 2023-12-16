@@ -31,6 +31,7 @@ set(LIBGW2FORMATS_SOURCE_FILES
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/ABIX/BankIndexData.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/ABNK/BankFileData.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/AMAT/AmatDx9Material.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/AMAT/AmatGfxMaterial.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/AMAT/AmatGr.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/AMSP/ScriptFileData.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/anic/PackAnimSequences.cpp
@@ -58,10 +59,12 @@ set(LIBGW2FORMATS_SOURCE_FILES
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/mapc/PackMapRivers.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/mapc/PackMapShadowExt.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/mapc/PackMapTerrain.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/mapc/PackMapWater.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/mapc/PackMapZones.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/mMet/PackMapMetadata.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/MODL/common.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/MODL/ModelFileAnimation.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/MODL/ModelFileCollision.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/MODL/ModelFileData.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/MODL/ModelFileGeometry.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/MODL/ModelFileProperties.cpp
@@ -71,6 +74,7 @@ set(LIBGW2FORMATS_SOURCE_FILES
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/PIMG/PagedImageTableData.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/prlt/ContentPortalManifest.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/txtm/TextPackManifest.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/txtp/TextPackPasswords.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/txtV/TextPackVariants.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/txtv_/TextPackVoices.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/helpers/FileName.cpp
@@ -111,6 +115,7 @@ set(LIBGW2FORMATS_HEADER_FILES
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/ABIX/BankIndexData.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/ABNK/BankFileData.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/AMAT/AmatDx9Material.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/AMAT/AmatGfxMaterial.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/AMAT/AmatGr.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/AMSP/ScriptFileData.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/anic/PackAnimSequences.h
@@ -139,10 +144,12 @@ set(LIBGW2FORMATS_HEADER_FILES
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/mapc/PackMapRivers.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/mapc/PackMapShadowExt.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/mapc/PackMapTerrain.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/mapc/PackMapWater.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/mapc/PackMapZones.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/mMet/PackMapMetadata.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/MODL/common.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/MODL/ModelFileAnimation.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/MODL/ModelFileCollision.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/MODL/ModelFileData.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/MODL/ModelFileGeometry.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/MODL/ModelFileProperties.h
@@ -152,6 +159,7 @@ set(LIBGW2FORMATS_HEADER_FILES
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/PIMG/PagedImageTableData.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/prlt/ContentPortalManifest.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/txtm/TextPackManifest.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/txtp/TextPackPasswords.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/txtV/TextPackVariants.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/chunks/txtv_/TextPackVoices.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/helpers/Array.h
