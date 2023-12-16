@@ -42,6 +42,7 @@
 #include <gw2formats/pf/chunks/mapc/PackMapRivers.h>
 #include <gw2formats/pf/chunks/mapc/PackMapShadowExt.h>
 #include <gw2formats/pf/chunks/mapc/PackMapTerrain.h>
+#include <gw2formats/pf/chunks/mapc/PackMapWater.h>
 #include <gw2formats/pf/chunks/mapc/PackMapZones.h>
 
 namespace gw2f {
@@ -84,6 +85,8 @@ namespace gw2f {
 				ShadowExt = fcc::shex,
 				trn = fcc::trn,
 				Terrain = fcc::trn,
+				watr = fcc::watr,
+				Water = fcc::watr,
 				zon2 = fcc::zon2,
 				Zones = fcc::zon2,
 			}; // anon enum

@@ -104,6 +104,7 @@ namespace gw2f {
 			txtV = 0x56747874,
 			txtv = 0x76747874,
 			vari = 0x69726176,
+			watr = 0x72746177,
 			zon2 = 0x326e6f7a,
 		};
 

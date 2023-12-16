@@ -447,6 +447,9 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\txtp\TextPackPasswords.h">
       <Filter>Header Files\pf\chunks\txtp</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapWater.h">
+      <Filter>Header Files\pf\chunks\mapc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\pf\helpers\FileReference.cpp">
@@ -607,6 +610,9 @@
     </ClCompile>
     <ClCompile Include="..\src\pf\chunks\txtp\TextPackPasswords.cpp">
       <Filter>Source Files\pf\chunks\txtp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pf\chunks\mapc\PackMapWater.cpp">
+      <Filter>Source Files\pf\chunks\mapc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

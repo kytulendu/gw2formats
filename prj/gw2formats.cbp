@@ -116,6 +116,7 @@
 		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapRivers.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapShadowExt.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapTerrain.h" />
+		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapWater.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/mapc/PackMapZones.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/mapc/common.h" />
 		<Unit filename="../include/gw2formats/pf/chunks/mpsd/PackMapShadow.h" />
@@ -177,6 +178,7 @@
 		<Unit filename="../src/pf/chunks/mapc/PackMapRivers.cpp" />
 		<Unit filename="../src/pf/chunks/mapc/PackMapShadowExt.cpp" />
 		<Unit filename="../src/pf/chunks/mapc/PackMapTerrain.cpp" />
+		<Unit filename="../src/pf/chunks/mapc/PackMapWater.cpp" />
 		<Unit filename="../src/pf/chunks/mapc/PackMapZones.cpp" />
 		<Unit filename="../src/pf/chunks/mapc/common.cpp" />
 		<Unit filename="../src/pf/chunks/mpsd/PackMapShadow.cpp" />

@@ -60,6 +60,7 @@
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapRivers.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapShadowExt.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapTerrain.h" />
+    <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapWater.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\mapc\PackMapZones.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\mMet\PackMapMetadata.h" />
     <ClInclude Include="..\include\gw2formats\pf\chunks\MODL\common.h" />
@@ -143,6 +144,7 @@
     <ClCompile Include="..\src\pf\chunks\mapc\PackMapRivers.cpp" />
     <ClCompile Include="..\src\pf\chunks\mapc\PackMapShadowExt.cpp" />
     <ClCompile Include="..\src\pf\chunks\mapc\PackMapTerrain.cpp" />
+    <ClCompile Include="..\src\pf\chunks\mapc\PackMapWater.cpp" />
     <ClCompile Include="..\src\pf\chunks\mapc\PackMapZones.cpp" />
     <ClCompile Include="..\src\pf\chunks\mMet\PackMapMetadata.cpp" />
     <ClCompile Include="..\src\pf\chunks\MODL\common.cpp" />
