@@ -27,6 +27,11 @@ set(LIBGW2FORMATS_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(LIBGW2FORMATS_SOURCE_FILES
     ${LIBGW2FORMATS_SOURCE_DIR}/StringsFile.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/TextureFile.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/bxml2/Bxml2Reader.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/bxml2/XmlAttribute.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/bxml2/XmlDocument.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/bxml2/XmlElement.cpp
+    ${LIBGW2FORMATS_SOURCE_DIR}/bxml2/XmlWriter.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/exception/Exception.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/ABIX/BankIndexData.cpp
     ${LIBGW2FORMATS_SOURCE_DIR}/pf/chunks/ABNK/BankFileData.cpp
@@ -87,6 +92,11 @@ set(LIBGW2FORMATS_HEADER_FILES
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/Language.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/StringsFile.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/TextureFile.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/bxml2/Bxml2Reader.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/bxml2/XmlAttribute.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/bxml2/XmlDocument.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/bxml2/XmlElement.h
+    ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/bxml2/XmlWriter.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/exception/Exception.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/AnimSequencesPackFile.h
     ${LIBGW2FORMATS_INCLUDE_DIR}/gw2formats/pf/AudioPackFile.h

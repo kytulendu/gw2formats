@@ -48,6 +48,11 @@
 		<Unit filename="../include/gw2formats/StringsFile.h" />
 		<Unit filename="../include/gw2formats/TextureFile.h" />
 		<Unit filename="../include/gw2formats/base.h" />
+		<Unit filename="../include/gw2formats/bxml2/Bxml2Reader.h" />
+		<Unit filename="../include/gw2formats/bxml2/XmlAttribute.h" />
+		<Unit filename="../include/gw2formats/bxml2/XmlDocument.h" />
+		<Unit filename="../include/gw2formats/bxml2/XmlElement.h" />
+		<Unit filename="../include/gw2formats/bxml2/XmlWriter.h" />
 		<Unit filename="../include/gw2formats/exception/Exception.h" />
 		<Unit filename="../include/gw2formats/fcc.h" />
 		<Unit filename="../include/gw2formats/pf/AnimSequencesPackFile.h" />
@@ -137,6 +142,11 @@
 		<Unit filename="../include/gw2formats/pf/helpers/read.h" />
 		<Unit filename="../src/StringsFile.cpp" />
 		<Unit filename="../src/TextureFile.cpp" />
+		<Unit filename="../src/bxml2/Bxml2Reader.cpp" />
+		<Unit filename="../src/bxml2/XmlAttribute.cpp" />
+		<Unit filename="../src/bxml2/XmlDocument.cpp" />
+		<Unit filename="../src/bxml2/XmlElement.cpp" />
+		<Unit filename="../src/bxml2/XmlWriter.cpp" />
 		<Unit filename="../src/exception/Exception.cpp" />
 		<Unit filename="../src/pf/chunks/ABIX/BankIndexData.cpp" />
 		<Unit filename="../src/pf/chunks/ABNK/BankFileData.cpp" />
@@ -190,9 +200,6 @@
 		<Unit filename="../src/pf/helpers/FileName.cpp" />
 		<Unit filename="../src/pf/helpers/FileReference.cpp" />
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>

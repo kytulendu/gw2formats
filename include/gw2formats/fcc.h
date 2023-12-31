@@ -48,6 +48,7 @@ namespace gw2f {
 			BGFX = 0x58464742,
 			BIDX = 0x58444942,
 			BKCK = 0x4b434b42,
+			bxm2 = 0x326d7862,
 			CINP = 0x504e4943,
 			cmaC = 0x43616d63,
 			cmpc = 0x63706d63,

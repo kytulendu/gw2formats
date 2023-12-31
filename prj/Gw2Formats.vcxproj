@@ -20,6 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\gw2formats\base.h" />
+    <ClInclude Include="..\include\gw2formats\bxml2\Bxml2Reader.h" />
+    <ClInclude Include="..\include\gw2formats\bxml2\XmlAttribute.h" />
+    <ClInclude Include="..\include\gw2formats\bxml2\XmlDocument.h" />
+    <ClInclude Include="..\include\gw2formats\bxml2\XmlElement.h" />
+    <ClInclude Include="..\include\gw2formats\bxml2\XmlWriter.h" />
     <ClInclude Include="..\include\gw2formats\exception\Exception.h" />
     <ClInclude Include="..\include\gw2formats\fcc.h" />
     <ClInclude Include="..\include\gw2formats\language.h" />
@@ -112,6 +117,11 @@
     <ClInclude Include="..\include\gw2formats\TextureFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\bxml2\Bxml2Reader.cpp" />
+    <ClCompile Include="..\src\bxml2\XmlAttribute.cpp" />
+    <ClCompile Include="..\src\bxml2\XmlDocument.cpp" />
+    <ClCompile Include="..\src\bxml2\XmlElement.cpp" />
+    <ClCompile Include="..\src\bxml2\XmlWriter.cpp" />
     <ClCompile Include="..\src\exception\Exception.cpp" />
     <ClCompile Include="..\src\pf\chunks\ABIX\BankIndexData.cpp" />
     <ClCompile Include="..\src\pf\chunks\ABNK\BankFileData.cpp" />
