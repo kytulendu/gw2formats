@@ -92,18 +92,21 @@ namespace gw2f {
             std::list<XmlElement*> elements;
             root.clear( );
 
-            while ( pos < strings ) {
+            while ( pos < strings )
+            {
                 auto b = *pos++;
 
                 uint32 numAttributes;
                 uint32 numChildren;
 
-                if ( b & 0x80 ) {
+                if ( b & 0x80 )
+                {
                     numAttributes = *reinterpret_cast<const uint32*>( pos );
                     numChildren = *reinterpret_cast<const uint32*>( pos + sizeof( uint32 ) );
                     pos += 2 * sizeof( uint32 );
                 }
-                else {
+                else
+                {
                     numAttributes = b & 0x3f;
                     numChildren = *pos++;
                 }
@@ -111,23 +114,27 @@ namespace gw2f {
                 auto name = readString( pos, strings );
 
                 XmlElement* element;
-                if ( isFirstElement ) {
+                if ( isFirstElement )
+                {
                     isFirstElement = false;
                     element = &root;
                     root.setName( name );
                 }
-                else {
+                else
+                {
                     element = new XmlElement( name );
                     root.appendChild( element );
                 }
 
-                if ( b & 0x40 ) {
+                if ( b & 0x40 )
+                {
                     element->setValue( readString( pos, strings ) );
                 }
 
                 element->setAttribute( "__numChildren", std::to_string( numChildren ) );
 
-                for ( uint32 i = 0; i < numAttributes; i++ ) {
+                for ( uint32 i = 0; i < numAttributes; i++ )
+                {
                     auto key = readString( pos, strings );
                     auto value = readString( pos, strings );
                     element->setAttribute( key, value );
@@ -152,7 +159,8 @@ namespace gw2f {
             auto nextChild = std::begin( p_elements );
             nextChild++;
 
-            for ( auto parent = std::begin( p_elements ); parent != std::end( p_elements ); parent++ ) {
+            for ( auto parent = std::begin( p_elements ); parent != std::end( p_elements ); parent++ )
+            {
                 auto element = *parent;
 
                 // number of children this element is supposed to have
@@ -162,7 +170,8 @@ namespace gw2f {
                 delete attribute;
 
                 // append children
-                for ( auto i = 0; i < numChildren; i++ ) {
+                for ( auto i = 0; i < numChildren; i++ )
+                {
                     auto child = *nextChild++;
                     if ( child->parent( ) ) { child->parent( )->removeChild( child ); }
                     element->appendChild( child );
