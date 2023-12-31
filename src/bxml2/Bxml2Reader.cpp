@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <fstream>
+#include <string>
 
 #include <gw2formats/fcc.h>
 #include <gw2formats/bxml2/XmlDocument.h>
@@ -91,7 +92,6 @@ namespace gw2f {
             std::list<XmlElement*> elements;
             root.clear( );
 
-            char buffer[16];
             while ( pos < strings ) {
                 auto b = *pos++;
 
@@ -125,7 +125,7 @@ namespace gw2f {
                     element->setValue( readString( pos, strings ) );
                 }
 
-                element->setAttribute( "__numChildren", ::_itoa( numChildren, buffer, 10 ) );
+                element->setAttribute( "__numChildren", std::to_string( numChildren ) );
 
                 for ( uint32 i = 0; i < numAttributes; i++ ) {
                     auto key = readString( pos, strings );
